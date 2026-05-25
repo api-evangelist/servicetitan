@@ -1,0 +1,202 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ServiceTitan CRM API — Customers
+  description: 'ServiceTitan CRM API — Customers. 4 operations: list, create, get, update. Self-contained
+    Naftiko capability covering one ServiceTitan business surface.'
+  tags:
+  - ServiceTitan
+  - CRM
+  - Customers
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds:
+- namespace: env
+  keys:
+    SERVICETITAN_ACCESS_TOKEN: SERVICETITAN_ACCESS_TOKEN
+    SERVICETITAN_APP_KEY: SERVICETITAN_APP_KEY
+    SERVICETITAN_TENANT_ID: SERVICETITAN_TENANT_ID
+capability:
+  consumes:
+  - type: http
+    namespace: crm-customers
+    baseUri: https://api.servicetitan.io
+    description: ServiceTitan CRM Customers business capability.
+    resources:
+    - name: customers
+      path: /crm/v2/{{env.SERVICETITAN_TENANT_ID}}/customers
+      operations:
+      - name: listCustomers
+        method: GET
+        description: List ServiceTitan Customers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: page
+          in: query
+          type: integer
+        - name: pageSize
+          in: query
+          type: integer
+        - name: modifiedOnOrAfter
+          in: query
+          type: string
+      - name: createCustomer
+        method: POST
+        description: Create ServiceTitan Customer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          required: true
+    - name: customer-by-id
+      path: /crm/v2/{{env.SERVICETITAN_TENANT_ID}}/customers/{id}
+      operations:
+      - name: getCustomer
+        method: GET
+        description: Get ServiceTitan Customer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+      - name: updateCustomer
+        method: PATCH
+        description: Update ServiceTitan Customer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+        - name: body
+          in: body
+          type: object
+          required: true
+    authentication:
+      type: bearer
+      value: '{{env.SERVICETITAN_ACCESS_TOKEN}}'
+      placement: header
+    headers:
+      ST-App-Key: '{{env.SERVICETITAN_APP_KEY}}'
+  exposes:
+  - type: rest
+    namespace: crm-customers-rest
+    port: 8080
+    description: REST adapter for ServiceTitan CRM Customers.
+    resources:
+    - path: /v1/customers
+      name: customers
+      description: Customer collection.
+      operations:
+      - method: GET
+        name: listCustomers
+        call: crm-customers.listCustomers
+        with:
+          page: rest.query.page
+          pageSize: rest.query.pageSize
+          modifiedOnOrAfter: rest.query.modifiedOnOrAfter
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createCustomer
+        call: crm-customers.createCustomer
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/customers/{id}
+      name: customer-by-id
+      operations:
+      - method: GET
+        name: getCustomer
+        call: crm-customers.getCustomer
+        with:
+          id: rest.params.id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updateCustomer
+        call: crm-customers.updateCustomer
+        with:
+          id: rest.params.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: crm-customers-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ServiceTitan CRM Customers.
+    tools:
+    - name: servicetitan-list-customers
+      description: List ServiceTitan customers with optional pagination and incremental-sync filter.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: crm-customers.listCustomers
+      with:
+        page: tools.page
+        pageSize: tools.pageSize
+        modifiedOnOrAfter: tools.modifiedOnOrAfter
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: servicetitan-create-customer
+      description: Create a new ServiceTitan customer.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: crm-customers.createCustomer
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: servicetitan-get-customer
+      description: Retrieve a ServiceTitan customer by ID.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: crm-customers.getCustomer
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: servicetitan-update-customer
+      description: Update a ServiceTitan customer.
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: crm-customers.updateCustomer
+      with:
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

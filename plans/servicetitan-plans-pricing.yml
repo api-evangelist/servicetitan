@@ -1,0 +1,162 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: ServiceTitan
+providerId: servicetitan
+created: '2026-05-25'
+modified: '2026-05-25'
+reconciled: false
+tags:
+  - Field Service
+  - SaaS
+  - Trades
+description: |
+  ServiceTitan does not publish a transactional price list. Pricing is custom, quote-based, and
+  varies by trade, number of technicians, number of business units, included Pro add-ons, and
+  multi-product bundles (FieldRoutes, Aspire, Convex, Conduit). Costs are typically billed
+  per-technician per-month with platform fees and add-on Pro modules priced separately.
+  All API access is included at no extra metered cost within a tenant's subscription — there
+  is no per-request billing on the V2 API surface.
+sources:
+  - https://www.servicetitan.com/pricing
+  - https://www.servicetitan.com/contact
+  - https://www.servicetitan.com/products
+plans:
+  - id: servicetitan-core
+    name: ServiceTitan Core
+    type: quote-based
+    description: Per-technician monthly subscription covering CRM, JPM, Dispatch, Accounting,
+      Pricebook, Mobile, and the V2 API surface. Quote-based; sales engagement required.
+    entries:
+      - label: Per technician per month
+        name: technician_seat
+        type: tiered
+        metric: technician
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'Quote'
+        userMultiplied: true
+        description: Base seat pricing varies by trade, business unit count, and committed term.
+  - id: servicetitan-marketing-pro
+    name: Marketing Pro
+    type: add-on
+    description: Email + SMS campaign automation with audience segmentation and attribution
+      tracking. Priced per business unit per month.
+    entries:
+      - label: Per business unit per month
+        name: marketing_pro_bu
+        type: tiered
+        metric: business_unit
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'Quote'
+  - id: servicetitan-dispatch-pro
+    name: Dispatch Pro
+    type: add-on
+    description: ML-assisted automated dispatching to maximize technician revenue per day.
+    entries:
+      - label: Per business unit per month
+        name: dispatch_pro_bu
+        type: tiered
+        metric: business_unit
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'Quote'
+  - id: servicetitan-scheduling-pro
+    name: Scheduling Pro
+    type: add-on
+    description: Online booking widget powered by Schedule Engine. Per-business-unit pricing.
+    entries:
+      - label: Per business unit per month
+        name: scheduling_pro_bu
+        type: tiered
+        metric: business_unit
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'Quote'
+  - id: servicetitan-pricebook-pro
+    name: Pricebook Pro
+    type: add-on
+    description: Dynamic pricing, peer benchmarks, and curated pricebook content. Per-tenant pricing.
+    entries:
+      - label: Per tenant per month
+        name: pricebook_pro_tenant
+        type: tiered
+        metric: tenant
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'Quote'
+  - id: servicetitan-fleet-pro
+    name: Fleet Pro
+    type: add-on
+    description: GPS / telematics integration with route optimization and driver scoring.
+    entries:
+      - label: Per vehicle per month
+        name: fleet_pro_vehicle
+        type: tiered
+        metric: vehicle
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'Quote'
+  - id: servicetitan-contact-center-pro
+    name: Contact Center Pro
+    type: add-on
+    description: Omnichannel contact center (voice, SMS, web chat) integrated with Telecom + CRM.
+    entries:
+      - label: Per seat per month
+        name: ccp_seat
+        type: tiered
+        metric: seat
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'Quote'
+  - id: servicetitan-voice-agent
+    name: Voice Agent
+    type: add-on
+    description: AI-powered after-hours and overflow voice handling.
+    entries:
+      - label: Per minute or per call (usage-based)
+        name: voice_agent_minute
+        type: usage-based
+        metric: minute
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: 'Quote'
+  - id: servicetitan-field-pro
+    name: Field Pro
+    type: add-on
+    description: In-field sales enablement (formerly Sales Pro) — proposal recording, technician
+      coaching, and side-by-side good/better/best presentation.
+    entries:
+      - label: Per technician per month
+        name: field_pro_tech
+        type: tiered
+        metric: technician
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'Quote'
+        userMultiplied: true
+notes:
+  - apiAccessIncluded: true
+    description: All public V2 APIs and webhooks are included in the base subscription. There is no
+      per-call or metered API surcharge.
+  - sandboxAccess: Integration sandbox is available to existing customers; cloned from production
+    data and required for app certification.

@@ -1,0 +1,71 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ServiceTitan Settings API — Technicians
+  description: ServiceTitan Settings — Technicians (field service personnel).
+  tags: [ServiceTitan, Settings, Technicians]
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds:
+- namespace: env
+  keys:
+    SERVICETITAN_ACCESS_TOKEN: SERVICETITAN_ACCESS_TOKEN
+    SERVICETITAN_APP_KEY: SERVICETITAN_APP_KEY
+    SERVICETITAN_TENANT_ID: SERVICETITAN_TENANT_ID
+capability:
+  consumes:
+  - type: http
+    namespace: settings-technicians
+    baseUri: https://api.servicetitan.io
+    resources:
+    - name: technicians
+      path: /settings/v2/{{env.SERVICETITAN_TENANT_ID}}/technicians
+      operations:
+      - name: listTechnicians
+        method: GET
+        description: List technicians
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters:
+        - { name: active, in: query, type: string }
+        - { name: modifiedOnOrAfter, in: query, type: string }
+      - name: createTechnician
+        method: POST
+        description: Create a technician
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters:
+        - { name: body, in: body, type: object, required: true }
+    - name: technicians-by-id
+      path: /settings/v2/{{env.SERVICETITAN_TENANT_ID}}/technicians/{id}
+      operations:
+      - name: getTechnician
+        method: GET
+        description: Get a technician
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters:
+        - { name: id, in: path, type: integer, required: true }
+      - name: updateTechnician
+        method: PATCH
+        description: Update a technician
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters:
+        - { name: id, in: path, type: integer, required: true }
+        - { name: body, in: body, type: object, required: true }
+    authentication:
+      type: bearer
+      value: '{{env.SERVICETITAN_ACCESS_TOKEN}}'
+      placement: header
+    headers:
+      ST-App-Key: '{{env.SERVICETITAN_APP_KEY}}'
+  exposes:
+  - type: mcp
+    namespace: settings-technicians-mcp
+    port: 9090
+    transport: http
+    tools:
+    - { name: servicetitan-list-technicians, description: List technicians, hints: { readOnly: true, destructive: false, idempotent: true }, call: settings-technicians.listTechnicians, with: { active: tools.active, modifiedOnOrAfter: tools.modifiedOnOrAfter }, outputParameters: [ { type: object, mapping: $. } ] }
+    - { name: servicetitan-create-technician, description: Create a technician, hints: { readOnly: false, destructive: false, idempotent: false }, call: settings-technicians.createTechnician, with: { body: tools.body }, outputParameters: [ { type: object, mapping: $. } ] }
+    - { name: servicetitan-get-technician, description: Get a technician, hints: { readOnly: true, destructive: false, idempotent: true }, call: settings-technicians.getTechnician, with: { id: tools.id }, outputParameters: [ { type: object, mapping: $. } ] }
+    - { name: servicetitan-update-technician, description: Update a technician, hints: { readOnly: false, destructive: false, idempotent: false }, call: settings-technicians.updateTechnician, with: { id: tools.id, body: tools.body }, outputParameters: [ { type: object, mapping: $. } ] }

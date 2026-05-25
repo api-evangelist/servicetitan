@@ -1,0 +1,63 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ServiceTitan Pricebook API — Materials
+  description: ServiceTitan Pricebook — Materials CRUD.
+  tags: [ServiceTitan, Pricebook, Materials]
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds:
+- namespace: env
+  keys:
+    SERVICETITAN_ACCESS_TOKEN: SERVICETITAN_ACCESS_TOKEN
+    SERVICETITAN_APP_KEY: SERVICETITAN_APP_KEY
+    SERVICETITAN_TENANT_ID: SERVICETITAN_TENANT_ID
+capability:
+  consumes:
+  - type: http
+    namespace: pricebook-materials
+    baseUri: https://api.servicetitan.io
+    resources:
+    - name: materials
+      path: /pricebook/v2/{{env.SERVICETITAN_TENANT_ID}}/materials
+      operations:
+      - name: listMaterials
+        method: GET
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters: [ { name: modifiedOnOrAfter, in: query, type: string } ]
+      - name: createMaterial
+        method: POST
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters: [ { name: body, in: body, type: object, required: true } ]
+    - name: material-by-id
+      path: /pricebook/v2/{{env.SERVICETITAN_TENANT_ID}}/materials/{id}
+      operations:
+      - name: getMaterial
+        method: GET
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters: [ { name: id, in: path, type: integer, required: true } ]
+      - name: updateMaterial
+        method: PATCH
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters:
+        - { name: id, in: path, type: integer, required: true }
+        - { name: body, in: body, type: object, required: true }
+    authentication:
+      type: bearer
+      value: '{{env.SERVICETITAN_ACCESS_TOKEN}}'
+      placement: header
+    headers:
+      ST-App-Key: '{{env.SERVICETITAN_APP_KEY}}'
+  exposes:
+  - type: mcp
+    namespace: pricebook-materials-mcp
+    port: 9090
+    transport: http
+    tools:
+    - { name: servicetitan-list-pricebook-materials, description: List pricebook materials, hints: { readOnly: true, destructive: false, idempotent: true }, call: pricebook-materials.listMaterials, with: { modifiedOnOrAfter: tools.modifiedOnOrAfter }, outputParameters: [ { type: object, mapping: $. } ] }
+    - { name: servicetitan-get-pricebook-material, description: Get a material, hints: { readOnly: true, destructive: false, idempotent: true }, call: pricebook-materials.getMaterial, with: { id: tools.id }, outputParameters: [ { type: object, mapping: $. } ] }
+    - { name: servicetitan-create-pricebook-material, description: Create a material, hints: { readOnly: false, destructive: false, idempotent: false }, call: pricebook-materials.createMaterial, with: { body: tools.body }, outputParameters: [ { type: object, mapping: $. } ] }
+    - { name: servicetitan-update-pricebook-material, description: Update a material, hints: { readOnly: false, destructive: false, idempotent: false }, call: pricebook-materials.updateMaterial, with: { id: tools.id, body: tools.body }, outputParameters: [ { type: object, mapping: $. } ] }

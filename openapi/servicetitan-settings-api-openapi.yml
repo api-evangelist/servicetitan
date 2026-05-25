@@ -1,0 +1,300 @@
+openapi: 3.1.0
+info:
+  title: ServiceTitan Settings API
+  description: |
+    The Settings API manages business units, employees, technicians, user roles, employee
+    permissions, tag types, and tenant-wide settings. The tenant configuration surface for
+    every other API in the platform. Tenant-scoped; OAuth 2.0 + App Key.
+  version: "2.0.0"
+  contact:
+    name: ServiceTitan Developer Support
+    url: https://developer.servicetitan.io/
+    email: integrations@servicetitan.com
+  license:
+    name: ServiceTitan Terms of Service
+    url: https://www.servicetitan.com/legal/terms-of-service
+servers:
+  - url: https://api.servicetitan.io/settings/v2/{tenant}
+    description: Production
+    variables:
+      tenant:
+        default: "0000000"
+  - url: https://api-integration.servicetitan.io/settings/v2/{tenant}
+    description: Integration (Sandbox)
+    variables:
+      tenant:
+        default: "0000000"
+security:
+  - OAuth2: []
+    AppKey: []
+tags:
+  - name: Business Units
+  - name: Technicians
+  - name: Employees
+  - name: User Roles
+  - name: Tag Types
+paths:
+  /business-units:
+    get:
+      summary: List Business Units
+      operationId: listBusinessUnits
+      tags: [Business Units]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/ModifiedOnOrAfter'
+      responses:
+        '200':
+          description: Business units
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessUnitPagedResponse'
+  /business-units/{id}:
+    get:
+      summary: Get Business Unit
+      operationId: getBusinessUnit
+      tags: [Business Units]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Business unit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessUnit'
+  /technicians:
+    get:
+      summary: List Technicians
+      operationId: listTechnicians
+      tags: [Technicians]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/ModifiedOnOrAfter'
+        - name: active
+          in: query
+          schema: { type: string, enum: [True, Any, False] }
+      responses:
+        '200':
+          description: Technicians
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TechnicianPagedResponse'
+    post:
+      summary: Create Technician
+      operationId: createTechnician
+      tags: [Technicians]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TechnicianCreateRequest'
+      responses:
+        '200':
+          description: Created technician
+  /technicians/{id}:
+    get:
+      summary: Get Technician
+      operationId: getTechnician
+      tags: [Technicians]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Technician
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Technician'
+    patch:
+      summary: Update Technician
+      operationId: updateTechnician
+      tags: [Technicians]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TechnicianCreateRequest'
+      responses:
+        '200':
+          description: Updated
+  /employees:
+    get:
+      summary: List Employees
+      operationId: listEmployees
+      tags: [Employees]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/ModifiedOnOrAfter'
+      responses:
+        '200':
+          description: Employees
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeePagedResponse'
+  /user-roles:
+    get:
+      summary: List User Roles
+      operationId: listUserRoles
+      tags: [User Roles]
+      responses:
+        '200':
+          description: User roles
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id: { type: integer }
+                        name: { type: string }
+                        active: { type: boolean }
+                        employeeType: { type: string }
+  /tag-types:
+    get:
+      summary: List Tag Types
+      operationId: listTagTypes
+      tags: [Tag Types]
+      responses:
+        '200':
+          description: Tag types
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id: { type: integer }
+                        name: { type: string }
+                        color: { type: string }
+                        active: { type: boolean }
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.servicetitan.io/connect/token
+          scopes: {}
+    AppKey:
+      type: apiKey
+      in: header
+      name: ST-App-Key
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema: { type: integer, format: int64 }
+    Page:
+      name: page
+      in: query
+      schema: { type: integer, default: 1 }
+    PageSize:
+      name: pageSize
+      in: query
+      schema: { type: integer, default: 50, maximum: 500 }
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema: { type: string, format: date-time }
+  schemas:
+    BusinessUnit:
+      type: object
+      properties:
+        id: { type: integer }
+        name: { type: string }
+        official: { type: string, nullable: true }
+        email: { type: string, nullable: true }
+        currency: { type: string }
+        active: { type: boolean }
+        invoiceHeader: { type: string, nullable: true }
+        invoiceMessage: { type: string, nullable: true }
+        defaultTaxRate: { type: number }
+        phoneNumber: { type: string, nullable: true }
+        address:
+          type: object
+        modifiedOn: { type: string, format: date-time }
+    BusinessUnitPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/BusinessUnit' }
+    Technician:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        userId: { type: integer }
+        name: { type: string }
+        roleIds:
+          type: array
+          items: { type: integer }
+        businessUnitId: { type: integer }
+        loginName: { type: string }
+        phoneNumber: { type: string }
+        email: { type: string }
+        active: { type: boolean }
+        memo: { type: string, nullable: true }
+        dailyGoal: { type: number }
+        hourlyGoal: { type: number }
+        modifiedOn: { type: string, format: date-time }
+    TechnicianCreateRequest:
+      type: object
+      required: [name, businessUnitId, loginName]
+      properties:
+        name: { type: string }
+        businessUnitId: { type: integer }
+        loginName: { type: string }
+        phoneNumber: { type: string }
+        email: { type: string }
+        active: { type: boolean }
+        roleIds:
+          type: array
+          items: { type: integer }
+    TechnicianPagedResponse:
+      type: object
+      properties:
+        page: { type: integer }
+        pageSize: { type: integer }
+        hasMore: { type: boolean }
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/Technician' }
+    Employee:
+      type: object
+      properties:
+        id: { type: integer }
+        userId: { type: integer, nullable: true }
+        name: { type: string }
+        active: { type: boolean }
+        roleIds:
+          type: array
+          items: { type: integer }
+        businessUnitId: { type: integer }
+        email: { type: string }
+        phoneNumber: { type: string }
+        modifiedOn: { type: string, format: date-time }
+    EmployeePagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/Employee' }

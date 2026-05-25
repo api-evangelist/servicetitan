@@ -1,0 +1,166 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "https://schema.org/",
+    "st": "https://api.servicetitan.io/vocab/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Customer": {
+      "@id": "schema:Person",
+      "@context": {
+        "id": { "@id": "st:Customer/id", "@type": "xsd:integer" },
+        "name": { "@id": "schema:name", "@type": "xsd:string" },
+        "type": { "@id": "st:Customer/type", "@type": "xsd:string" },
+        "active": { "@id": "st:Customer/active", "@type": "xsd:boolean" },
+        "doNotMail": { "@id": "st:Customer/doNotMail", "@type": "xsd:boolean" },
+        "doNotService": { "@id": "st:Customer/doNotService", "@type": "xsd:boolean" },
+        "balance": { "@id": "st:Customer/balance", "@type": "xsd:decimal" },
+        "address": { "@id": "schema:address", "@type": "schema:PostalAddress" },
+        "createdOn": { "@id": "dcterms:created", "@type": "xsd:dateTime" },
+        "modifiedOn": { "@id": "dcterms:modified", "@type": "xsd:dateTime" }
+      }
+    },
+
+    "Location": {
+      "@id": "schema:Place",
+      "@context": {
+        "id": { "@id": "st:Location/id", "@type": "xsd:integer" },
+        "customerId": { "@id": "st:Location/customerId", "@type": "xsd:integer" },
+        "name": { "@id": "schema:name", "@type": "xsd:string" },
+        "address": { "@id": "schema:address", "@type": "schema:PostalAddress" },
+        "zoneId": { "@id": "st:Location/zoneId", "@type": "xsd:integer" },
+        "modifiedOn": { "@id": "dcterms:modified", "@type": "xsd:dateTime" }
+      }
+    },
+
+    "Job": {
+      "@id": "st:Job",
+      "@context": {
+        "id": { "@id": "st:Job/id", "@type": "xsd:integer" },
+        "jobNumber": { "@id": "st:Job/jobNumber", "@type": "xsd:string" },
+        "customerId": { "@id": "st:Job/customerId", "@type": "xsd:integer" },
+        "locationId": { "@id": "st:Job/locationId", "@type": "xsd:integer" },
+        "businessUnitId": { "@id": "st:Job/businessUnitId", "@type": "xsd:integer" },
+        "jobTypeId": { "@id": "st:Job/jobTypeId", "@type": "xsd:integer" },
+        "jobStatus": { "@id": "st:Job/jobStatus", "@type": "xsd:string" },
+        "priority": { "@id": "st:Job/priority", "@type": "xsd:string" },
+        "summary": { "@id": "schema:description", "@type": "xsd:string" },
+        "completedOn": { "@id": "st:Job/completedOn", "@type": "xsd:dateTime" },
+        "createdOn": { "@id": "dcterms:created", "@type": "xsd:dateTime" },
+        "modifiedOn": { "@id": "dcterms:modified", "@type": "xsd:dateTime" }
+      }
+    },
+
+    "Appointment": {
+      "@id": "schema:Reservation",
+      "@context": {
+        "id": { "@id": "st:Appointment/id", "@type": "xsd:integer" },
+        "jobId": { "@id": "st:Appointment/jobId", "@type": "xsd:integer" },
+        "start": { "@id": "schema:startTime", "@type": "xsd:dateTime" },
+        "end": { "@id": "schema:endTime", "@type": "xsd:dateTime" },
+        "arrivalWindowStart": { "@id": "st:Appointment/arrivalWindowStart", "@type": "xsd:dateTime" },
+        "arrivalWindowEnd": { "@id": "st:Appointment/arrivalWindowEnd", "@type": "xsd:dateTime" },
+        "status": { "@id": "st:Appointment/status", "@type": "xsd:string" }
+      }
+    },
+
+    "Invoice": {
+      "@id": "schema:Invoice",
+      "@context": {
+        "id": { "@id": "st:Invoice/id", "@type": "xsd:integer" },
+        "number": { "@id": "schema:identifier", "@type": "xsd:string" },
+        "jobId": { "@id": "st:Invoice/jobId", "@type": "xsd:integer" },
+        "customerId": { "@id": "st:Invoice/customerId", "@type": "xsd:integer" },
+        "invoiceDate": { "@id": "st:Invoice/invoiceDate", "@type": "xsd:date" },
+        "dueDate": { "@id": "schema:paymentDueDate", "@type": "xsd:date" },
+        "subTotal": { "@id": "st:Invoice/subTotal", "@type": "xsd:decimal" },
+        "salesTax": { "@id": "st:Invoice/salesTax", "@type": "xsd:decimal" },
+        "total": { "@id": "schema:totalPaymentDue", "@type": "xsd:decimal" },
+        "balance": { "@id": "st:Invoice/balance", "@type": "xsd:decimal" },
+        "status": { "@id": "schema:paymentStatus", "@type": "xsd:string" }
+      }
+    },
+
+    "Payment": {
+      "@id": "st:Payment",
+      "@context": {
+        "id": { "@id": "st:Payment/id", "@type": "xsd:integer" },
+        "date": { "@id": "schema:paymentDate", "@type": "xsd:dateTime" },
+        "type": { "@id": "schema:paymentMethod", "@type": "xsd:string" },
+        "total": { "@id": "st:Payment/total", "@type": "xsd:decimal" },
+        "referenceNumber": { "@id": "schema:identifier", "@type": "xsd:string" }
+      }
+    },
+
+    "Service": {
+      "@id": "schema:Service",
+      "@context": {
+        "id": { "@id": "st:Service/id", "@type": "xsd:integer" },
+        "code": { "@id": "schema:identifier", "@type": "xsd:string" },
+        "displayName": { "@id": "schema:name", "@type": "xsd:string" },
+        "description": { "@id": "schema:description", "@type": "xsd:string" },
+        "price": { "@id": "schema:price", "@type": "xsd:decimal" },
+        "memberPrice": { "@id": "st:Service/memberPrice", "@type": "xsd:decimal" },
+        "taxable": { "@id": "st:Service/taxable", "@type": "xsd:boolean" }
+      }
+    },
+
+    "Material": {
+      "@id": "schema:Product",
+      "@context": {
+        "id": { "@id": "st:Material/id", "@type": "xsd:integer" },
+        "code": { "@id": "schema:sku", "@type": "xsd:string" },
+        "displayName": { "@id": "schema:name", "@type": "xsd:string" },
+        "cost": { "@id": "st:Material/cost", "@type": "xsd:decimal" },
+        "price": { "@id": "schema:price", "@type": "xsd:decimal" }
+      }
+    },
+
+    "InstalledEquipment": {
+      "@id": "st:InstalledEquipment",
+      "@context": {
+        "id": { "@id": "st:InstalledEquipment/id", "@type": "xsd:integer" },
+        "locationId": { "@id": "st:InstalledEquipment/locationId", "@type": "xsd:integer" },
+        "name": { "@id": "schema:name", "@type": "xsd:string" },
+        "manufacturer": { "@id": "schema:manufacturer", "@type": "xsd:string" },
+        "model": { "@id": "schema:model", "@type": "xsd:string" },
+        "serialNumber": { "@id": "schema:serialNumber", "@type": "xsd:string" },
+        "installedOn": { "@id": "st:InstalledEquipment/installedOn", "@type": "xsd:dateTime" }
+      }
+    },
+
+    "Technician": {
+      "@id": "schema:Person",
+      "@context": {
+        "id": { "@id": "st:Technician/id", "@type": "xsd:integer" },
+        "name": { "@id": "schema:name", "@type": "xsd:string" },
+        "phoneNumber": { "@id": "schema:telephone", "@type": "xsd:string" },
+        "email": { "@id": "schema:email", "@type": "xsd:string" },
+        "businessUnitId": { "@id": "st:Technician/businessUnitId", "@type": "xsd:integer" }
+      }
+    },
+
+    "PurchaseOrder": {
+      "@id": "schema:Order",
+      "@context": {
+        "id": { "@id": "st:PurchaseOrder/id", "@type": "xsd:integer" },
+        "number": { "@id": "schema:orderNumber", "@type": "xsd:string" },
+        "status": { "@id": "schema:orderStatus", "@type": "xsd:string" },
+        "date": { "@id": "schema:orderDate", "@type": "xsd:dateTime" },
+        "total": { "@id": "schema:totalPaymentDue", "@type": "xsd:decimal" }
+      }
+    },
+
+    "BusinessUnit": {
+      "@id": "schema:Organization",
+      "@context": {
+        "id": { "@id": "st:BusinessUnit/id", "@type": "xsd:integer" },
+        "name": { "@id": "schema:name", "@type": "xsd:string" },
+        "email": { "@id": "schema:email", "@type": "xsd:string" },
+        "currency": { "@id": "schema:currency", "@type": "xsd:string" }
+      }
+    }
+  }
+}

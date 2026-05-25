@@ -1,0 +1,117 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: ServiceTitan
+providerId: servicetitan
+created: '2026-05-25'
+modified: '2026-05-25'
+reconciled: false
+tags:
+  - FinOps
+  - Cost Management
+  - FOCUS
+  - Field Service
+  - SaaS
+description: |
+  FOCUS-aligned FinOps definition for ServiceTitan. ServiceTitan is a SaaS subscription with
+  per-technician seat metering and per-business-unit add-on modules — not a usage-metered API.
+  The V2 REST API itself is included at no extra cost; the FinOps surface tracks seat licensing,
+  Pro add-on consumption, and Voice Agent / Conduit usage where applicable.
+sources:
+  - https://www.servicetitan.com/pricing
+  - https://www.servicetitan.com/products
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: ServiceTitan, Inc.
+serviceCategory: SaaS — Field Service Management
+billingModel:
+  pricingCategory: Subscription
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+    - Subscription
+    - Usage
+    - Purchase
+    - Tax
+    - Credit
+    - Adjustment
+  primaryUnit: technician_seat
+  secondaryUnits:
+    - business_unit
+    - vehicle
+    - voice_minute
+    - integration_event
+focusColumns:
+  ServiceName: ServiceTitan Platform
+  ServiceCategory: SaaS — Field Service Management
+  ProviderName: ServiceTitan
+  PublisherName: ServiceTitan, Inc.
+  InvoiceIssuerName: ServiceTitan, Inc.
+  PricingCategory: Subscription
+  PricingUnit: seat
+  BillingCurrency: USD
+meters:
+  - name: technician_seats
+    unit: seat
+    aggregation: max
+    dimensions:
+      - tenant
+      - business_unit
+      - product_tier
+    description: Active technician seat licenses billed monthly per tenant.
+  - name: business_unit_active
+    unit: business_unit
+    aggregation: max
+    dimensions:
+      - tenant
+      - addon_module
+    description: Active business unit count drives per-BU add-on pricing (Marketing Pro, Dispatch
+      Pro, Scheduling Pro).
+  - name: fleet_vehicles
+    unit: vehicle
+    aggregation: max
+    dimensions:
+      - tenant
+    description: Active vehicles enrolled in Fleet Pro telematics.
+  - name: voice_agent_minutes
+    unit: minute
+    aggregation: sum
+    dimensions:
+      - tenant
+      - business_unit
+      - call_disposition
+    description: Voice Agent talk-time minutes (usage-metered add-on).
+  - name: contact_center_seats
+    unit: seat
+    aggregation: max
+    dimensions:
+      - tenant
+      - business_unit
+    description: Contact Center Pro seat licenses.
+costAllocationDimensions:
+  - tenant
+  - business_unit
+  - product (ServiceTitan / FieldRoutes / Aspire / Convex / Conduit)
+  - addon_module (Marketing Pro / Dispatch Pro / Scheduling Pro / Pricebook Pro / Fleet Pro /
+    Contact Center Pro / Field Pro / Voice Agent)
+  - billing_period
+governanceConsiderations:
+  - name: Multi-product allocation
+    description: Customers running ServiceTitan + FieldRoutes + Aspire on the same parent contract
+      should allocate by product line for trade-level P&L visibility.
+  - name: BU sprawl
+    description: Each new Business Unit can multiply per-BU add-on costs — review BU consolidation
+      before adding new revenue centers.
+  - name: Seat hygiene
+    description: Deactivated technicians may retain a seat license until end-of-period; reconcile
+      Settings API `/technicians?active=False` against billed seats monthly.
+  - name: Voice Agent burst control
+    description: Voice Agent is usage-metered; storm seasons can spike minutes — set alerts on
+      `voice_agent_minutes` daily aggregates.
+  - name: API access included
+    description: V2 API and webhook usage have no incremental cost — there is no FinOps optimization
+      lever on API call volume.

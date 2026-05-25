@@ -1,0 +1,133 @@
+specification: API Commons Vocabulary
+specificationVersion: '0.1'
+provider: ServiceTitan
+providerId: servicetitan
+created: '2026-05-25'
+modified: '2026-05-25'
+tags:
+  - Field Service Management
+  - Trades
+  - HVAC
+  - Plumbing
+  - Electrical
+  - Vocabulary
+description: |
+  Normative vocabulary for the ServiceTitan platform — the operating system for the trades.
+  Captures the operational lexicon used across CRM, JPM, Dispatch, Accounting, Pricebook,
+  Inventory, Marketing, and Memberships.
+sources:
+  - https://developer.servicetitan.io/
+  - https://www.servicetitan.com/
+  - https://help.servicetitan.com/
+concepts:
+  - term: Tenant
+    definition: A ServiceTitan customer account (the contracting business itself). Every API path
+      includes the tenant ID; data is fully isolated per tenant.
+  - term: Business Unit
+    definition: A profit center inside a tenant — typically a trade (HVAC, Plumbing) or a geographic
+      branch. Drives tax, GL coding, dispatch routing, and reporting.
+  - term: Customer
+    definition: Customer-of-record for billing and history. Either Residential or Commercial. May own
+      multiple Locations.
+  - term: Location
+    definition: A physical service address belonging to a Customer. Jobs, Installed Equipment, and
+      Memberships attach to Locations, not Customers.
+  - term: Lead
+    definition: Pre-customer record captured from a marketing channel or inbound call before a Job is
+      booked.
+  - term: Booking
+    definition: A customer-initiated request to schedule service, typically via a Scheduling Pro online
+      widget or a Telecom-routed phone call.
+  - term: Job
+    definition: The atomic unit of field service execution — one work order at one Location, owned by
+      a single Customer.
+  - term: Appointment
+    definition: A scheduled visit (with arrival window and assigned technicians) that fulfills part or
+      all of a Job. A Job has 1..N Appointments.
+  - term: Project
+    definition: A multi-Job scope of work — typical for construction installs, commercial fit-outs, or
+      multi-visit service contracts.
+  - term: Job Type
+    definition: A template that pre-fills duration, business unit, skills, tags, and pricebook scope on
+      a new Job.
+  - term: Call Reason
+    definition: Categorization assigned to inbound calls and Job intakes — drives capacity planning and
+      marketing attribution.
+  - term: Pricebook
+    definition: The flat-rate catalog of Services, Materials, and Equipment available to technicians
+      in the field.
+  - term: Service
+    definition: A flat-rate pricebook line item — labor and parts bundled to a single customer-facing
+      price.
+  - term: Material
+    definition: A part SKU with cost (from Vendor) and price (charged to Customer). May appear on
+      Invoices, Purchase Orders, and Inventory transactions.
+  - term: Equipment
+    definition: A pricebook SKU for installable equipment (HVAC unit, water heater, panel, etc.) —
+      distinct from Installed Equipment, which is the asset record.
+  - term: Installed Equipment
+    definition: A persistent asset record at a Customer Location — serial, model, install date,
+      warranty terms, attachments. The asset-of-record for service history.
+  - term: Invoice
+    definition: A document presenting Services, Materials, Equipment, taxes, and totals to the Customer
+      against one Job (or Project).
+  - term: Payment
+    definition: A monetary transaction applied against one or more Invoices, with splits per Invoice.
+  - term: Journal Entry
+    definition: A debit/credit pair that posts to GL — drives the QuickBooks / Sage Intacct / Acumatica
+      export.
+  - term: Tax Zone
+    definition: A geographic tax jurisdiction with associated rate and use-tax rate.
+  - term: Membership
+    definition: A recurring service plan (maintenance agreement, club membership, annual tune-up) tied
+      to one or more Locations.
+  - term: Service Agreement
+    definition: A commercial contract — typically multi-Location — with renewal cadence and rate
+      cards. Distinct from a Membership.
+  - term: Technician
+    definition: An Employee who performs field work. Has Skills, a default Business Unit, and goal
+      metrics (hourly, daily).
+  - term: Shift
+    definition: A scheduled block of technician availability — Normal, OnCall, or TimeOff.
+  - term: Capacity
+    definition: Available technician-hours grouped by Business Unit, Job Type, and time window — used
+      by Scheduling Pro for slot recommendations.
+  - term: Zone
+    definition: A geographic dispatch zone (ZIPs + cities) used to route Jobs to the right team.
+  - term: Arrival Window
+    definition: The Customer-promised time range during which a Technician will arrive — narrower than
+      the Appointment window.
+  - term: GPS Ping
+    definition: A timestamped vehicle position emitted by the Fleet Pro telematics integration.
+  - term: Campaign
+    definition: A marketing source (Google Ads, Yard Sign, Direct Mail) that attribution rolls up to
+      Lead, Job, and Invoice revenue.
+  - term: Form Submission
+    definition: A completed field-form record — photos, signatures, checkbox values — captured from
+      the technician mobile app.
+  - term: App Key
+    definition: A per-application secret (header `ST-App-Key`) generated in the Developer Portal that
+      identifies the calling app to ServiceTitan.
+  - term: Client ID / Client Secret
+    definition: The OAuth 2.0 client-credentials pair issued per tenant in the API Application Access
+      panel. Combined with the App Key to authenticate.
+  - term: Integration Environment
+    definition: ServiceTitan's sandbox environment (`api-integration.servicetitan.io`) — cloned from
+      production data for existing customers and required for app certification.
+  - term: Webhook (V1)
+    definition: A push event subscription. V1 is closed to new subscriptions; recommended pattern is
+      polling via `modifiedOnOrAfter` until V2 launches.
+priorities:
+  - critical: Customer, Location, Job, Appointment, Invoice, Payment, Pricebook (Service / Material)
+  - common: Project, Lead, Booking, Technician, Membership, Purchase Order
+  - specialized: Service Agreement, Form Submission, GPS Ping, Royalty, Tax Zone
+patterns:
+  - name: Tenant-Scoped Paths
+    description: Every API path includes `/{tenant-id}/` after the module namespace.
+  - name: ModifiedOnOrAfter Polling
+    description: Standard incremental-sync filter on most collection endpoints; offsets `modifiedOnOrAfter`
+      from your last successful run.
+  - name: Paged Responses
+    description: All collection endpoints return `{ page, pageSize, hasMore, totalCount?, data: [...] }`.
+  - name: Customer → Location → Job
+    description: The fundamental hierarchy. Always resolve Locations before booking Jobs.

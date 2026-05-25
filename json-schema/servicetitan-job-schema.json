@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/servicetitan/main/json-schema/servicetitan-job-schema.json",
+  "title": "ServiceTitan Job",
+  "description": "Work order for the ServiceTitan JPM API. A job is the atomic unit of field service execution.",
+  "type": "object",
+  "required": ["id", "customerId", "locationId", "businessUnitId", "jobTypeId"],
+  "properties": {
+    "id": { "type": "integer", "format": "int64" },
+    "jobNumber": { "type": "string" },
+    "customerId": { "type": "integer", "format": "int64" },
+    "locationId": { "type": "integer", "format": "int64" },
+    "businessUnitId": { "type": "integer" },
+    "jobTypeId": { "type": "integer" },
+    "priority": { "type": "string", "enum": ["Urgent", "High", "Normal", "Low"] },
+    "jobStatus": { "type": "string", "enum": ["Scheduled", "Dispatched", "InProgress", "Hold", "Completed", "Canceled"] },
+    "completedOn": { "type": ["string", "null"], "format": "date-time" },
+    "campaignId": { "type": ["integer", "null"] },
+    "summary": { "type": "string" },
+    "appointmentCount": { "type": "integer" },
+    "firstAppointmentId": { "type": ["integer", "null"] },
+    "lastAppointmentId": { "type": ["integer", "null"] },
+    "recallForId": { "type": ["integer", "null"], "description": "Original job this recall is for" },
+    "warrantyId": { "type": ["integer", "null"] },
+    "noCharge": { "type": "boolean" },
+    "notificationsEnabled": { "type": "boolean" },
+    "createdOn": { "type": "string", "format": "date-time" },
+    "modifiedOn": { "type": "string", "format": "date-time" },
+    "customFields": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "typeId": { "type": "integer" },
+          "name": { "type": "string" },
+          "value": { "type": "string" }
+        }
+      }
+    },
+    "jobGeneratedLeadSource": {
+      "type": ["object", "null"],
+      "properties": {
+        "jobId": { "type": ["integer", "null"] },
+        "employeeId": { "type": ["integer", "null"] }
+      }
+    }
+  }
+}

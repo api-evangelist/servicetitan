@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/servicetitan/main/json-schema/servicetitan-payment-schema.json",
+  "title": "ServiceTitan Payment",
+  "description": "Payment record applied against one or more invoices.",
+  "type": "object",
+  "required": ["id", "date", "total"],
+  "properties": {
+    "id": { "type": "integer", "format": "int64" },
+    "active": { "type": "boolean" },
+    "referenceNumber": { "type": ["string", "null"] },
+    "date": { "type": "string", "format": "date-time" },
+    "type": { "type": "string" },
+    "typeId": { "type": ["integer", "null"] },
+    "total": { "type": "number" },
+    "unappliedAmount": { "type": "number" },
+    "memo": { "type": ["string", "null"] },
+    "status": { "type": "string", "enum": ["Pending", "Posted", "Exported"] },
+    "customer": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "integer" },
+        "name": { "type": "string" }
+      }
+    },
+    "batch": {
+      "type": "object",
+      "properties": {
+        "id": { "type": ["integer", "null"] },
+        "name": { "type": ["string", "null"] },
+        "number": { "type": ["string", "null"] }
+      }
+    },
+    "splits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "invoiceId": { "type": "integer" },
+          "amount": { "type": "number" }
+        }
+      }
+    },
+    "modifiedOn": { "type": "string", "format": "date-time" }
+  }
+}

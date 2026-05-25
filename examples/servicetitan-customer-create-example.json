@@ -1,0 +1,60 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/crm/v2/{tenant}/customers",
+    "headers": {
+      "Authorization": "Bearer {access_token}",
+      "ST-App-Key": "ak1.example_app_key",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "name": "Acme Plumbing Co",
+      "type": "Commercial",
+      "doNotMail": false,
+      "doNotService": false,
+      "locations": [
+        {
+          "name": "Acme HQ",
+          "address": {
+            "street": "1234 Main Street",
+            "unit": "Suite 200",
+            "city": "Austin",
+            "state": "TX",
+            "zip": "78701",
+            "country": "USA"
+          }
+        }
+      ],
+      "contacts": [
+        { "type": "Phone", "value": "+15125550100", "memo": "Main" },
+        { "type": "Email", "value": "ops@acmeplumbing.example", "memo": "Dispatch" }
+      ]
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "id": 5500123,
+      "active": true,
+      "name": "Acme Plumbing Co",
+      "type": "Commercial",
+      "address": {
+        "street": "1234 Main Street",
+        "unit": "Suite 200",
+        "city": "Austin",
+        "state": "TX",
+        "zip": "78701",
+        "country": "USA",
+        "latitude": 30.2672,
+        "longitude": -97.7431
+      },
+      "balance": 0,
+      "doNotMail": false,
+      "doNotService": false,
+      "hasActiveMembership": false,
+      "memberships": [],
+      "createdOn": "2026-05-25T17:14:02Z",
+      "modifiedOn": "2026-05-25T17:14:02Z"
+    }
+  }
+}

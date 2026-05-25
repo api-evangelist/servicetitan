@@ -1,0 +1,50 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ServiceTitan Customer Interactions API — Ratings
+  description: ServiceTitan Customer Interactions — Technician ratings.
+  tags: [ServiceTitan, Customer Feedback, Ratings]
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds:
+- namespace: env
+  keys:
+    SERVICETITAN_ACCESS_TOKEN: SERVICETITAN_ACCESS_TOKEN
+    SERVICETITAN_APP_KEY: SERVICETITAN_APP_KEY
+    SERVICETITAN_TENANT_ID: SERVICETITAN_TENANT_ID
+capability:
+  consumes:
+  - type: http
+    namespace: customerinteractions-technician-ratings
+    baseUri: https://api.servicetitan.io
+    resources:
+    - name: technician-ratings
+      path: /customerinteractions/v2/{{env.SERVICETITAN_TENANT_ID}}/technician-rating
+      operations:
+      - name: listTechnicianRatings
+        method: GET
+        description: List technician ratings
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters:
+        - { name: modifiedOnOrAfter, in: query, type: string }
+      - name: createTechnicianRating
+        method: POST
+        description: Submit a technician rating
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters:
+        - { name: body, in: body, type: object, required: true }
+    authentication:
+      type: bearer
+      value: '{{env.SERVICETITAN_ACCESS_TOKEN}}'
+      placement: header
+    headers:
+      ST-App-Key: '{{env.SERVICETITAN_APP_KEY}}'
+  exposes:
+  - type: mcp
+    namespace: customerinteractions-technician-ratings-mcp
+    port: 9090
+    transport: http
+    tools:
+    - { name: servicetitan-list-technician-ratings, description: List technician ratings, hints: { readOnly: true, destructive: false, idempotent: true }, call: customerinteractions-technician-ratings.listTechnicianRatings, with: { modifiedOnOrAfter: tools.modifiedOnOrAfter }, outputParameters: [ { type: object, mapping: $. } ] }
+    - { name: servicetitan-create-technician-rating, description: Submit a technician rating, hints: { readOnly: false, destructive: false, idempotent: false }, call: customerinteractions-technician-ratings.createTechnicianRating, with: { body: tools.body }, outputParameters: [ { type: object, mapping: $. } ] }

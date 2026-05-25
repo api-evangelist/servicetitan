@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/servicetitan/main/json-schema/servicetitan-material-schema.json",
+  "title": "ServiceTitan Pricebook Material",
+  "description": "Material/part SKU from the ServiceTitan Pricebook.",
+  "type": "object",
+  "required": ["id", "code", "displayName"],
+  "properties": {
+    "id": { "type": "integer", "format": "int64" },
+    "code": { "type": "string" },
+    "displayName": { "type": "string" },
+    "description": { "type": "string" },
+    "cost": { "type": "number" },
+    "price": { "type": "number" },
+    "memberPrice": { "type": ["number", "null"] },
+    "addOnPrice": { "type": ["number", "null"] },
+    "addOnMemberPrice": { "type": ["number", "null"] },
+    "active": { "type": "boolean" },
+    "taxable": { "type": "boolean" },
+    "account": { "type": ["string", "null"] },
+    "vendorParts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "vendorId": { "type": "integer" },
+          "vendorPartNumber": { "type": "string" },
+          "cost": { "type": "number" }
+        }
+      }
+    },
+    "primaryVendor": {
+      "type": "object",
+      "properties": {
+        "vendorId": { "type": "integer" },
+        "vendorPartNumber": { "type": "string" }
+      }
+    },
+    "categories": {
+      "type": "array",
+      "items": { "type": "integer" }
+    },
+    "modifiedOn": { "type": "string", "format": "date-time" }
+  }
+}

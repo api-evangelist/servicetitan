@@ -1,0 +1,60 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ServiceTitan Dispatch API — Appointment Assignments
+  description: ServiceTitan Dispatch — Assign/Unassign technicians on appointments.
+  tags: [ServiceTitan, Dispatch, Appointment Assignments]
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds:
+- namespace: env
+  keys:
+    SERVICETITAN_ACCESS_TOKEN: SERVICETITAN_ACCESS_TOKEN
+    SERVICETITAN_APP_KEY: SERVICETITAN_APP_KEY
+    SERVICETITAN_TENANT_ID: SERVICETITAN_TENANT_ID
+capability:
+  consumes:
+  - type: http
+    namespace: dispatch-assignments
+    baseUri: https://api.servicetitan.io
+    resources:
+    - name: appointment-assignments
+      path: /dispatch/v2/{{env.SERVICETITAN_TENANT_ID}}/appointment-assignments
+      operations:
+      - name: listAssignments
+        method: GET
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters:
+        - { name: technicianId, in: query, type: integer }
+        - { name: modifiedOnOrAfter, in: query, type: string }
+    - name: assign-technicians
+      path: /dispatch/v2/{{env.SERVICETITAN_TENANT_ID}}/appointment-assignments/assign-technicians
+      operations:
+      - name: assignTechnicians
+        method: POST
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters: [ { name: body, in: body, type: object, required: true } ]
+    - name: unassign-technicians
+      path: /dispatch/v2/{{env.SERVICETITAN_TENANT_ID}}/appointment-assignments/unassign-technicians
+      operations:
+      - name: unassignTechnicians
+        method: POST
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters: [ { name: body, in: body, type: object, required: true } ]
+    authentication:
+      type: bearer
+      value: '{{env.SERVICETITAN_ACCESS_TOKEN}}'
+      placement: header
+    headers:
+      ST-App-Key: '{{env.SERVICETITAN_APP_KEY}}'
+  exposes:
+  - type: mcp
+    namespace: dispatch-assignments-mcp
+    port: 9090
+    transport: http
+    tools:
+    - { name: servicetitan-list-assignments, description: List appointment assignments, hints: { readOnly: true, destructive: false, idempotent: true }, call: dispatch-assignments.listAssignments, with: { technicianId: tools.technicianId, modifiedOnOrAfter: tools.modifiedOnOrAfter }, outputParameters: [ { type: object, mapping: $. } ] }
+    - { name: servicetitan-assign-technicians, description: Assign technicians to an appointment, hints: { readOnly: false, destructive: false, idempotent: true }, call: dispatch-assignments.assignTechnicians, with: { body: tools.body }, outputParameters: [ { type: object, mapping: $. } ] }
+    - { name: servicetitan-unassign-technicians, description: Unassign technicians from an appointment, hints: { readOnly: false, destructive: true, idempotent: true }, call: dispatch-assignments.unassignTechnicians, with: { body: tools.body }, outputParameters: [ { type: object, mapping: $. } ] }

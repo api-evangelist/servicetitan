@@ -1,0 +1,50 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ServiceTitan Timesheets API — Entries
+  description: ServiceTitan Timesheets — Time entries.
+  tags: [ServiceTitan, Timesheets, Time Tracking]
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds:
+- namespace: env
+  keys:
+    SERVICETITAN_ACCESS_TOKEN: SERVICETITAN_ACCESS_TOKEN
+    SERVICETITAN_APP_KEY: SERVICETITAN_APP_KEY
+    SERVICETITAN_TENANT_ID: SERVICETITAN_TENANT_ID
+capability:
+  consumes:
+  - type: http
+    namespace: timesheets-non-job-timesheets
+    baseUri: https://api.servicetitan.io
+    resources:
+    - name: non-job-timesheets
+      path: /timesheets/v2/{{env.SERVICETITAN_TENANT_ID}}/non-job-timesheets
+      operations:
+      - name: listNonJobTimesheets
+        method: GET
+        description: List non-job timesheet entries
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters:
+        - { name: modifiedOnOrAfter, in: query, type: string }
+      - name: createNonJobTimesheet
+        method: POST
+        description: Create a non-job timesheet entry
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters:
+        - { name: body, in: body, type: object, required: true }
+    authentication:
+      type: bearer
+      value: '{{env.SERVICETITAN_ACCESS_TOKEN}}'
+      placement: header
+    headers:
+      ST-App-Key: '{{env.SERVICETITAN_APP_KEY}}'
+  exposes:
+  - type: mcp
+    namespace: timesheets-non-job-timesheets-mcp
+    port: 9090
+    transport: http
+    tools:
+    - { name: servicetitan-list-non-job-timesheets, description: List non-job timesheet entries, hints: { readOnly: true, destructive: false, idempotent: true }, call: timesheets-non-job-timesheets.listNonJobTimesheets, with: { modifiedOnOrAfter: tools.modifiedOnOrAfter }, outputParameters: [ { type: object, mapping: $. } ] }
+    - { name: servicetitan-create-non-job-timesheet, description: Create a non-job timesheet entry, hints: { readOnly: false, destructive: false, idempotent: false }, call: timesheets-non-job-timesheets.createNonJobTimesheet, with: { body: tools.body }, outputParameters: [ { type: object, mapping: $. } ] }

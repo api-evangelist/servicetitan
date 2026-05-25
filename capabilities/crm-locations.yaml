@@ -1,0 +1,81 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ServiceTitan CRM API — Locations
+  description: ServiceTitan CRM API — Locations. List, get, create, update operations.
+  tags:
+  - ServiceTitan
+  - CRM
+  - Locations
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds:
+- namespace: env
+  keys:
+    SERVICETITAN_ACCESS_TOKEN: SERVICETITAN_ACCESS_TOKEN
+    SERVICETITAN_APP_KEY: SERVICETITAN_APP_KEY
+    SERVICETITAN_TENANT_ID: SERVICETITAN_TENANT_ID
+capability:
+  consumes:
+  - type: http
+    namespace: crm-locations
+    baseUri: https://api.servicetitan.io
+    description: ServiceTitan CRM Locations.
+    resources:
+    - name: locations
+      path: /crm/v2/{{env.SERVICETITAN_TENANT_ID}}/locations
+      operations:
+      - name: listLocations
+        method: GET
+        description: List ServiceTitan Locations
+        outputRawFormat: json
+        outputParameters:
+        - { name: result, type: object, value: $. }
+        inputParameters:
+        - { name: customerId, in: query, type: integer }
+        - { name: page, in: query, type: integer }
+        - { name: pageSize, in: query, type: integer }
+      - name: createLocation
+        method: POST
+        description: Create ServiceTitan Location
+        outputRawFormat: json
+        outputParameters:
+        - { name: result, type: object, value: $. }
+        inputParameters:
+        - { name: body, in: body, type: object, required: true }
+    - name: location-by-id
+      path: /crm/v2/{{env.SERVICETITAN_TENANT_ID}}/locations/{id}
+      operations:
+      - name: getLocation
+        method: GET
+        description: Get ServiceTitan Location
+        outputRawFormat: json
+        outputParameters:
+        - { name: result, type: object, value: $. }
+        inputParameters:
+        - { name: id, in: path, type: integer, required: true }
+      - name: updateLocation
+        method: PATCH
+        description: Update ServiceTitan Location
+        outputRawFormat: json
+        outputParameters:
+        - { name: result, type: object, value: $. }
+        inputParameters:
+        - { name: id, in: path, type: integer, required: true }
+        - { name: body, in: body, type: object, required: true }
+    authentication:
+      type: bearer
+      value: '{{env.SERVICETITAN_ACCESS_TOKEN}}'
+      placement: header
+    headers:
+      ST-App-Key: '{{env.SERVICETITAN_APP_KEY}}'
+  exposes:
+  - type: mcp
+    namespace: crm-locations-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ServiceTitan CRM Locations.
+    tools:
+    - { name: servicetitan-list-locations, description: List service locations, hints: { readOnly: true, destructive: false, idempotent: true }, call: crm-locations.listLocations, with: { customerId: tools.customerId, page: tools.page, pageSize: tools.pageSize }, outputParameters: [ { type: object, mapping: $. } ] }
+    - { name: servicetitan-get-location, description: Get a service location, hints: { readOnly: true, destructive: false, idempotent: true }, call: crm-locations.getLocation, with: { id: tools.id }, outputParameters: [ { type: object, mapping: $. } ] }
+    - { name: servicetitan-create-location, description: Create a service location, hints: { readOnly: false, destructive: false, idempotent: false }, call: crm-locations.createLocation, with: { body: tools.body }, outputParameters: [ { type: object, mapping: $. } ] }
+    - { name: servicetitan-update-location, description: Update a service location, hints: { readOnly: false, destructive: false, idempotent: false }, call: crm-locations.updateLocation, with: { id: tools.id, body: tools.body }, outputParameters: [ { type: object, mapping: $. } ] }

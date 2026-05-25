@@ -1,0 +1,62 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ServiceTitan Marketing API — Campaigns
+  description: ServiceTitan Marketing — Campaigns and attribution data.
+  tags: [ServiceTitan, Marketing, Campaigns]
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds:
+- namespace: env
+  keys:
+    SERVICETITAN_ACCESS_TOKEN: SERVICETITAN_ACCESS_TOKEN
+    SERVICETITAN_APP_KEY: SERVICETITAN_APP_KEY
+    SERVICETITAN_TENANT_ID: SERVICETITAN_TENANT_ID
+capability:
+  consumes:
+  - type: http
+    namespace: marketing-campaigns
+    baseUri: https://api.servicetitan.io
+    resources:
+    - name: campaigns
+      path: /marketing/v2/{{env.SERVICETITAN_TENANT_ID}}/campaigns
+      operations:
+      - name: listCampaigns
+        method: GET
+        description: List marketing campaigns
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters:
+        - { name: modifiedOnOrAfter, in: query, type: string }
+        - { name: active, in: query, type: string }
+      - name: createCampaign
+        method: POST
+        description: Create a marketing campaign
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters:
+        - { name: body, in: body, type: object, required: true }
+    - name: campaigns-by-id
+      path: /marketing/v2/{{env.SERVICETITAN_TENANT_ID}}/campaigns/{id}
+      operations:
+      - name: getCampaign
+        method: GET
+        description: Get a campaign
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters:
+        - { name: id, in: path, type: integer, required: true }
+    authentication:
+      type: bearer
+      value: '{{env.SERVICETITAN_ACCESS_TOKEN}}'
+      placement: header
+    headers:
+      ST-App-Key: '{{env.SERVICETITAN_APP_KEY}}'
+  exposes:
+  - type: mcp
+    namespace: marketing-campaigns-mcp
+    port: 9090
+    transport: http
+    tools:
+    - { name: servicetitan-list-campaigns, description: List marketing campaigns, hints: { readOnly: true, destructive: false, idempotent: true }, call: marketing-campaigns.listCampaigns, with: { modifiedOnOrAfter: tools.modifiedOnOrAfter, active: tools.active }, outputParameters: [ { type: object, mapping: $. } ] }
+    - { name: servicetitan-get-campaign, description: Get a campaign, hints: { readOnly: true, destructive: false, idempotent: true }, call: marketing-campaigns.getCampaign, with: { id: tools.id }, outputParameters: [ { type: object, mapping: $. } ] }
+    - { name: servicetitan-create-campaign, description: Create a marketing campaign, hints: { readOnly: false, destructive: false, idempotent: false }, call: marketing-campaigns.createCampaign, with: { body: tools.body }, outputParameters: [ { type: object, mapping: $. } ] }

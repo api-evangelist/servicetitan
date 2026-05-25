@@ -1,0 +1,42 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ServiceTitan Payroll API — Timesheets
+  description: ServiceTitan Payroll — Timesheet codes and entries.
+  tags: [ServiceTitan, Payroll, Timesheets]
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds:
+- namespace: env
+  keys:
+    SERVICETITAN_ACCESS_TOKEN: SERVICETITAN_ACCESS_TOKEN
+    SERVICETITAN_APP_KEY: SERVICETITAN_APP_KEY
+    SERVICETITAN_TENANT_ID: SERVICETITAN_TENANT_ID
+capability:
+  consumes:
+  - type: http
+    namespace: payroll-timesheet-codes
+    baseUri: https://api.servicetitan.io
+    resources:
+    - name: timesheet-codes
+      path: /payroll/v2/{{env.SERVICETITAN_TENANT_ID}}/timesheet-codes
+      operations:
+      - name: listTimesheetCodes
+        method: GET
+        description: List timesheet codes
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters:
+        - { name: modifiedOnOrAfter, in: query, type: string }
+    authentication:
+      type: bearer
+      value: '{{env.SERVICETITAN_ACCESS_TOKEN}}'
+      placement: header
+    headers:
+      ST-App-Key: '{{env.SERVICETITAN_APP_KEY}}'
+  exposes:
+  - type: mcp
+    namespace: payroll-timesheet-codes-mcp
+    port: 9090
+    transport: http
+    tools:
+    - { name: servicetitan-list-timesheet-codes, description: List timesheet codes, hints: { readOnly: true, destructive: false, idempotent: true }, call: payroll-timesheet-codes.listTimesheetCodes, with: { modifiedOnOrAfter: tools.modifiedOnOrAfter }, outputParameters: [ { type: object, mapping: $. } ] }

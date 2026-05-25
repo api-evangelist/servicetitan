@@ -1,0 +1,41 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ServiceTitan Webhooks API — Subscriptions
+  description: ServiceTitan Webhooks — Subscription management (V1, closed to new subscriptions).
+  tags: [ServiceTitan, Webhooks, Events]
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds:
+- namespace: env
+  keys:
+    SERVICETITAN_ACCESS_TOKEN: SERVICETITAN_ACCESS_TOKEN
+    SERVICETITAN_APP_KEY: SERVICETITAN_APP_KEY
+    SERVICETITAN_TENANT_ID: SERVICETITAN_TENANT_ID
+capability:
+  consumes:
+  - type: http
+    namespace: webhooks-subscriptions
+    baseUri: https://api.servicetitan.io
+    resources:
+    - name: subscriptions
+      path: /webhooks/v2/{{env.SERVICETITAN_TENANT_ID}}/subscriptions
+      operations:
+      - name: listSubscriptions
+        method: GET
+        description: List webhook subscriptions
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters: []
+    authentication:
+      type: bearer
+      value: '{{env.SERVICETITAN_ACCESS_TOKEN}}'
+      placement: header
+    headers:
+      ST-App-Key: '{{env.SERVICETITAN_APP_KEY}}'
+  exposes:
+  - type: mcp
+    namespace: webhooks-subscriptions-mcp
+    port: 9090
+    transport: http
+    tools:
+    - { name: servicetitan-list-subscriptions, description: List webhook subscriptions, hints: { readOnly: true, destructive: false, idempotent: true }, call: webhooks-subscriptions.listSubscriptions, with: {}, outputParameters: [ { type: object, mapping: $. } ] }

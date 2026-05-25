@@ -1,0 +1,214 @@
+openapi: 3.1.0
+info:
+  title: ServiceTitan Equipment Systems API
+  description: |
+    The Equipment Systems API manages installed equipment records per customer location — make,
+    model, serial, install date, warranty terms, attachments, and equipment history. The
+    asset-of-record API for HVAC, plumbing, electrical, and refrigeration trades.
+    Tenant-scoped; OAuth 2.0 + App Key.
+  version: "2.0.0"
+  contact:
+    name: ServiceTitan Developer Support
+    url: https://developer.servicetitan.io/
+    email: integrations@servicetitan.com
+  license:
+    name: ServiceTitan Terms of Service
+    url: https://www.servicetitan.com/legal/terms-of-service
+servers:
+  - url: https://api.servicetitan.io/equipmentsystems/v2/{tenant}
+    description: Production
+    variables:
+      tenant:
+        default: "0000000"
+  - url: https://api-integration.servicetitan.io/equipmentsystems/v2/{tenant}
+    description: Integration (Sandbox)
+    variables:
+      tenant:
+        default: "0000000"
+security:
+  - OAuth2: []
+    AppKey: []
+tags:
+  - name: Installed Equipment
+  - name: Attachments
+paths:
+  /installed-equipment:
+    get:
+      summary: List Installed Equipment
+      operationId: listInstalledEquipment
+      tags: [Installed Equipment]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/ModifiedOnOrAfter'
+        - name: locationIds
+          in: query
+          schema: { type: string }
+      responses:
+        '200':
+          description: Installed equipment
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InstalledEquipmentPagedResponse'
+    post:
+      summary: Create Installed Equipment
+      operationId: createInstalledEquipment
+      tags: [Installed Equipment]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InstalledEquipmentCreateRequest'
+      responses:
+        '200':
+          description: Created equipment
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InstalledEquipment'
+  /installed-equipment/{id}:
+    get:
+      summary: Get Installed Equipment
+      operationId: getInstalledEquipment
+      tags: [Installed Equipment]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Installed equipment
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InstalledEquipment'
+    patch:
+      summary: Update Installed Equipment
+      operationId: updateInstalledEquipment
+      tags: [Installed Equipment]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InstalledEquipmentCreateRequest'
+      responses:
+        '200':
+          description: Updated
+  /installed-equipment/{id}/attachments:
+    post:
+      summary: Create Equipment Attachment
+      operationId: createEquipmentAttachment
+      tags: [Attachments]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Attachment created
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.servicetitan.io/connect/token
+          scopes: {}
+    AppKey:
+      type: apiKey
+      in: header
+      name: ST-App-Key
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema: { type: integer, format: int64 }
+    Page:
+      name: page
+      in: query
+      schema: { type: integer, default: 1 }
+    PageSize:
+      name: pageSize
+      in: query
+      schema: { type: integer, default: 50, maximum: 500 }
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema: { type: string, format: date-time }
+  schemas:
+    InstalledEquipment:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        locationId: { type: integer }
+        name: { type: string }
+        installedOn: { type: string, format: date-time, nullable: true }
+        serialNumber: { type: string, nullable: true }
+        barcodeId: { type: string, nullable: true }
+        memo: { type: string, nullable: true }
+        manufacturer: { type: string, nullable: true }
+        model: { type: string, nullable: true }
+        cost: { type: number, nullable: true }
+        manufacturerWarrantyStart: { type: string, format: date-time, nullable: true }
+        manufacturerWarrantyEnd: { type: string, format: date-time, nullable: true }
+        serviceProviderWarrantyStart: { type: string, format: date-time, nullable: true }
+        serviceProviderWarrantyEnd: { type: string, format: date-time, nullable: true }
+        customFields:
+          type: array
+          items:
+            type: object
+            properties:
+              name: { type: string }
+              value: { type: string }
+        attachments:
+          type: array
+          items:
+            type: object
+            properties:
+              alias: { type: string }
+              fileName: { type: string }
+              type: { type: string }
+              url: { type: string }
+        tags:
+          type: array
+          items: { type: string }
+        active: { type: boolean }
+        createdOn: { type: string, format: date-time }
+        modifiedOn: { type: string, format: date-time }
+    InstalledEquipmentCreateRequest:
+      type: object
+      required: [locationId, name]
+      properties:
+        locationId: { type: integer }
+        name: { type: string }
+        installedOn: { type: string, format: date-time }
+        serialNumber: { type: string }
+        manufacturer: { type: string }
+        model: { type: string }
+        cost: { type: number }
+        memo: { type: string }
+        customFields:
+          type: array
+          items:
+            type: object
+    InstalledEquipmentPagedResponse:
+      type: object
+      properties:
+        page: { type: integer }
+        pageSize: { type: integer }
+        hasMore: { type: boolean }
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/InstalledEquipment' }

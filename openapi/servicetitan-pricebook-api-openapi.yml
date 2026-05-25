@@ -1,0 +1,423 @@
+openapi: 3.1.0
+info:
+  title: ServiceTitan Pricebook API
+  description: |
+    The Pricebook API provides CRUD over the technician-facing flat-rate pricebook — categories,
+    services, materials, equipment, discounts and fees, images, and bulk operations. Tenant-scoped;
+    OAuth 2.0 + App Key.
+  version: "2.0.0"
+  contact:
+    name: ServiceTitan Developer Support
+    url: https://developer.servicetitan.io/
+    email: integrations@servicetitan.com
+  license:
+    name: ServiceTitan Terms of Service
+    url: https://www.servicetitan.com/legal/terms-of-service
+servers:
+  - url: https://api.servicetitan.io/pricebook/v2/{tenant}
+    description: Production
+    variables:
+      tenant:
+        default: "0000000"
+  - url: https://api-integration.servicetitan.io/pricebook/v2/{tenant}
+    description: Integration (Sandbox)
+    variables:
+      tenant:
+        default: "0000000"
+security:
+  - OAuth2: []
+    AppKey: []
+tags:
+  - name: Services
+  - name: Materials
+  - name: Equipment
+  - name: Categories
+  - name: Discounts And Fees
+  - name: Images
+paths:
+  /services:
+    get:
+      summary: List Services
+      operationId: listServices
+      tags: [Services]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/ModifiedOnOrAfter'
+        - name: active
+          in: query
+          schema: { type: boolean }
+      responses:
+        '200':
+          description: Paginated services
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServicePagedResponse'
+    post:
+      summary: Create Service
+      operationId: createService
+      tags: [Services]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceCreateRequest'
+      responses:
+        '200':
+          description: Created service
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Service'
+  /services/{id}:
+    get:
+      summary: Get Service
+      operationId: getService
+      tags: [Services]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Service
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Service'
+    patch:
+      summary: Update Service
+      operationId: updateService
+      tags: [Services]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Service'
+      responses:
+        '200':
+          description: Updated service
+    delete:
+      summary: Delete Service
+      operationId: deleteService
+      tags: [Services]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Deleted
+  /materials:
+    get:
+      summary: List Materials
+      operationId: listMaterials
+      tags: [Materials]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/ModifiedOnOrAfter'
+      responses:
+        '200':
+          description: Paginated materials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MaterialPagedResponse'
+    post:
+      summary: Create Material
+      operationId: createMaterial
+      tags: [Materials]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MaterialCreateRequest'
+      responses:
+        '200':
+          description: Created material
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Material'
+  /materials/{id}:
+    get:
+      summary: Get Material
+      operationId: getMaterial
+      tags: [Materials]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Material
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Material'
+    patch:
+      summary: Update Material
+      operationId: updateMaterial
+      tags: [Materials]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Material'
+      responses:
+        '200':
+          description: Updated material
+  /equipment:
+    get:
+      summary: List Equipment
+      operationId: listEquipment
+      tags: [Equipment]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/ModifiedOnOrAfter'
+      responses:
+        '200':
+          description: Paginated equipment
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EquipmentPagedResponse'
+  /equipment/{id}:
+    get:
+      summary: Get Equipment
+      operationId: getEquipment
+      tags: [Equipment]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Equipment
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Equipment'
+  /categories:
+    get:
+      summary: List Pricebook Categories
+      operationId: listCategories
+      tags: [Categories]
+      responses:
+        '200':
+          description: Categories
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryPagedResponse'
+  /discounts-and-fees:
+    get:
+      summary: List Discounts And Fees
+      operationId: listDiscountsAndFees
+      tags: [Discounts And Fees]
+      responses:
+        '200':
+          description: Discounts and fees
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id: { type: integer }
+                        type: { type: string, enum: [Discount, Fee] }
+                        code: { type: string }
+                        displayName: { type: string }
+                        amountType: { type: string, enum: [Percentage, Fixed] }
+                        amount: { type: number }
+                        active: { type: boolean }
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.servicetitan.io/connect/token
+          scopes: {}
+    AppKey:
+      type: apiKey
+      in: header
+      name: ST-App-Key
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema: { type: integer, format: int64 }
+    Page:
+      name: page
+      in: query
+      schema: { type: integer, default: 1 }
+    PageSize:
+      name: pageSize
+      in: query
+      schema: { type: integer, default: 50, maximum: 500 }
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema: { type: string, format: date-time }
+  schemas:
+    Service:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        code: { type: string }
+        displayName: { type: string }
+        description: { type: string }
+        warranty:
+          type: object
+          properties:
+            duration: { type: integer }
+            description: { type: string }
+        categories:
+          type: array
+          items: { type: integer }
+        price: { type: number, format: double }
+        memberPrice: { type: number, format: double, nullable: true }
+        addOnPrice: { type: number, format: double, nullable: true }
+        addOnMemberPrice: { type: number, format: double, nullable: true }
+        taxable: { type: boolean }
+        account: { type: string, nullable: true }
+        hours: { type: number }
+        isLabor: { type: boolean }
+        recommendations:
+          type: array
+          items: { type: integer }
+        upgrades:
+          type: array
+          items: { type: integer }
+        commissionBonus:
+          type: object
+          properties:
+            type: { type: string }
+            amount: { type: number }
+        paysCommission: { type: boolean }
+        active: { type: boolean }
+        modifiedOn: { type: string, format: date-time }
+    ServiceCreateRequest:
+      type: object
+      required: [code, displayName, price]
+      properties:
+        code: { type: string }
+        displayName: { type: string }
+        description: { type: string }
+        price: { type: number }
+        memberPrice: { type: number }
+        hours: { type: number }
+        taxable: { type: boolean }
+        categories:
+          type: array
+          items: { type: integer }
+    ServicePagedResponse:
+      type: object
+      properties:
+        page: { type: integer }
+        pageSize: { type: integer }
+        hasMore: { type: boolean }
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/Service' }
+    Material:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        code: { type: string }
+        displayName: { type: string }
+        description: { type: string }
+        cost: { type: number }
+        price: { type: number }
+        memberPrice: { type: number, nullable: true }
+        addOnPrice: { type: number, nullable: true }
+        addOnMemberPrice: { type: number, nullable: true }
+        active: { type: boolean }
+        taxable: { type: boolean }
+        account: { type: string, nullable: true }
+        categories:
+          type: array
+          items: { type: integer }
+        vendorParts:
+          type: array
+          items:
+            type: object
+            properties:
+              vendorId: { type: integer }
+              vendorPartNumber: { type: string }
+              cost: { type: number }
+        primaryVendor:
+          type: object
+          properties:
+            vendorId: { type: integer }
+            vendorPartNumber: { type: string }
+        modifiedOn: { type: string, format: date-time }
+    MaterialCreateRequest:
+      type: object
+      required: [code, displayName, cost, price]
+      properties:
+        code: { type: string }
+        displayName: { type: string }
+        description: { type: string }
+        cost: { type: number }
+        price: { type: number }
+        active: { type: boolean }
+        taxable: { type: boolean }
+    MaterialPagedResponse:
+      type: object
+      properties:
+        page: { type: integer }
+        pageSize: { type: integer }
+        hasMore: { type: boolean }
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/Material' }
+    Equipment:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        code: { type: string }
+        displayName: { type: string }
+        description: { type: string }
+        cost: { type: number }
+        price: { type: number }
+        memberPrice: { type: number, nullable: true }
+        active: { type: boolean }
+        warranty:
+          type: object
+          properties:
+            duration: { type: integer }
+            description: { type: string }
+        modifiedOn: { type: string, format: date-time }
+    EquipmentPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/Equipment' }
+    Category:
+      type: object
+      properties:
+        id: { type: integer }
+        name: { type: string }
+        active: { type: boolean }
+        parentId: { type: integer, nullable: true }
+        description: { type: string }
+        position: { type: integer }
+        image: { type: string, nullable: true }
+        modifiedOn: { type: string, format: date-time }
+    CategoryPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/Category' }

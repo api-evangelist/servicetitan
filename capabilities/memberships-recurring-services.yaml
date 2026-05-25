@@ -1,0 +1,42 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ServiceTitan Memberships API — Recurring Services
+  description: ServiceTitan Memberships — Recurring service definitions.
+  tags: [ServiceTitan, Memberships, Recurring Services]
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds:
+- namespace: env
+  keys:
+    SERVICETITAN_ACCESS_TOKEN: SERVICETITAN_ACCESS_TOKEN
+    SERVICETITAN_APP_KEY: SERVICETITAN_APP_KEY
+    SERVICETITAN_TENANT_ID: SERVICETITAN_TENANT_ID
+capability:
+  consumes:
+  - type: http
+    namespace: memberships-recurring-services
+    baseUri: https://api.servicetitan.io
+    resources:
+    - name: recurring-services
+      path: /memberships/v2/{{env.SERVICETITAN_TENANT_ID}}/recurring-services
+      operations:
+      - name: listRecurringServices
+        method: GET
+        description: List recurring services
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters:
+        - { name: modifiedOnOrAfter, in: query, type: string }
+    authentication:
+      type: bearer
+      value: '{{env.SERVICETITAN_ACCESS_TOKEN}}'
+      placement: header
+    headers:
+      ST-App-Key: '{{env.SERVICETITAN_APP_KEY}}'
+  exposes:
+  - type: mcp
+    namespace: memberships-recurring-services-mcp
+    port: 9090
+    transport: http
+    tools:
+    - { name: servicetitan-list-recurring-services, description: List recurring services, hints: { readOnly: true, destructive: false, idempotent: true }, call: memberships-recurring-services.listRecurringServices, with: { modifiedOnOrAfter: tools.modifiedOnOrAfter }, outputParameters: [ { type: object, mapping: $. } ] }

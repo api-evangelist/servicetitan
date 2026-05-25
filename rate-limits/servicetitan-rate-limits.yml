@@ -1,0 +1,58 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: ServiceTitan
+providerId: servicetitan
+created: '2026-05-25'
+modified: '2026-05-25'
+reconciled: true
+tags:
+  - Field Service
+  - Rate Limiting
+  - Quotas
+description: |
+  Reconciled rate limits for the ServiceTitan V2 API. Default limits are 60 requests per second
+  per application per tenant for all APIs except the Reporting API, which is restricted to 1 of
+  the same report per minute per tenant.
+sources:
+  - https://help.servicetitan.com/problem-solution/what-are-the-default-api-rate-limits-in-servicetitan-for-regular-apis-and
+  - https://developer.servicetitan.io/docs/faqs-apis-app-keys-client-keys/
+  - https://rollout.com/integration-guides/servicetitan/api-essentials
+responseCodes:
+  throttled: 429
+  quotaExceeded: 429
+headers:
+  retryAfter: Retry-After
+algorithm: leaky-bucket
+limits:
+  - scope: Application per Tenant
+    surface: All standard APIs (CRM, JPM, Dispatch, Accounting, Pricebook, Inventory, Marketing,
+      Memberships, Service Agreements, Equipment Systems, Forms, Payroll, Timesheets, Sales,
+      Settings, Task Management, Telecom, Scheduling Pro, JBCE, Customer Interactions, Marketing
+      Reputation)
+    rps: 60
+    description: 60 requests per second per application per tenant. Counted across all endpoints in
+      a single module per (app, tenant) pair.
+  - scope: Application per Tenant
+    surface: Reporting API
+    perReport: 1
+    window: minute
+    description: 1 invocation of the same report per minute per tenant. Distinct reports are limited
+      independently.
+policies:
+  - name: Per-app / per-tenant accounting
+    description: Limits are scoped to the (App Key, Tenant ID) pair. Connecting the same tenant from
+      two different apps gets two independent buckets.
+  - name: Integration environment parity
+    description: Integration (`api-integration.servicetitan.io`) enforces the same per-second limit
+      as Production. Run load tests against Integration before promotion.
+  - name: Webhook backoff
+    description: ServiceTitan V1 webhooks are closed to new subscriptions; recommended pattern is
+      `modifiedOnOrAfter` polling — keep polls well under 60 rps to leave headroom for synchronous
+      reads.
+  - name: 429 handling
+    description: On 429, back off and respect the Retry-After header. Persistent 429s indicate the
+      App Key needs to be split or the polling cadence reduced.
+  - name: Reporting cadence
+    description: Cache Reporting results — the 1-call/minute-per-report cap makes it unsuitable for
+      synchronous user-facing flows.

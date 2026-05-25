@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/servicetitan/main/json-schema/servicetitan-project-schema.json",
+  "title": "ServiceTitan Project",
+  "description": "Multi-job project — construction, install, or commercial recurring service scope.",
+  "type": "object",
+  "required": ["id", "customerId", "locationId"],
+  "properties": {
+    "id": { "type": "integer", "format": "int64" },
+    "number": { "type": "string" },
+    "name": { "type": "string" },
+    "summary": { "type": "string" },
+    "status": { "type": "string" },
+    "statusId": { "type": ["integer", "null"] },
+    "substatusId": { "type": ["integer", "null"] },
+    "customerId": { "type": "integer", "format": "int64" },
+    "locationId": { "type": "integer", "format": "int64" },
+    "projectManagerIds": {
+      "type": "array",
+      "items": { "type": "integer" }
+    },
+    "businessUnitIds": {
+      "type": "array",
+      "items": { "type": "integer" }
+    },
+    "startDate": { "type": ["string", "null"], "format": "date" },
+    "targetCompletionDate": { "type": ["string", "null"], "format": "date" },
+    "actualCompletionDate": { "type": ["string", "null"], "format": "date" },
+    "modifiedOn": { "type": "string", "format": "date-time" }
+  }
+}

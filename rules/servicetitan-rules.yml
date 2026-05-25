@@ -1,0 +1,111 @@
+extends: ["spectral:oas"]
+documentationUrl: https://github.com/api-evangelist/servicetitan
+rules:
+  servicetitan-tenant-scoped-server:
+    description: ServiceTitan server URL must include the `{tenant}` path variable after the module namespace.
+    given: "$.servers[*].url"
+    severity: error
+    then:
+      function: pattern
+      functionOptions:
+        match: "https://api(-integration)?\\.servicetitan\\.io/[a-z]+/v[0-9]+/\\{tenant\\}"
+
+  servicetitan-oauth-and-app-key-required:
+    description: Operations must require both the OAuth2 token and the ST-App-Key header.
+    given: "$.security[*]"
+    severity: error
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+          required: [OAuth2, AppKey]
+
+  servicetitan-app-key-header:
+    description: The App Key security scheme must be named `ST-App-Key` and live in the header.
+    given: "$.components.securitySchemes.AppKey"
+    severity: error
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+          properties:
+            type: { const: apiKey }
+            in: { const: header }
+            name: { const: ST-App-Key }
+          required: [type, in, name]
+
+  servicetitan-title-case-summaries:
+    description: Operation summaries should use Title Case (ServiceTitan convention).
+    given: "$.paths.*.*.summary"
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[A-Z][A-Za-z0-9]*(\\s+[A-Z][A-Za-z0-9]*)*$"
+
+  servicetitan-pagination-shape:
+    description: Paginated list responses should return `{ data: [...], hasMore: boolean, page, pageSize }`.
+    given: "$.paths.*[get].responses.200.content.application/json.schema"
+    severity: warn
+    then:
+      field: properties
+      function: truthy
+
+  servicetitan-modified-on-or-after:
+    description: Collection GETs should support the `modifiedOnOrAfter` incremental-sync filter.
+    given: "$.paths[?(@property.match(/.*s$/))][get].parameters[*].name"
+    severity: hint
+    then:
+      function: enumeration
+      functionOptions:
+        values:
+          - page
+          - pageSize
+          - includeTotal
+          - ids
+          - modifiedOnOrAfter
+          - modifiedBefore
+          - createdOnOrAfter
+          - createdBefore
+          - active
+          - status
+
+  servicetitan-int64-ids:
+    description: Tenant-unique IDs must be modeled as integer with format int64.
+    given: "$.components.schemas[*].properties.id"
+    severity: warn
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+          properties:
+            type: { const: integer }
+            format: { const: int64 }
+
+  servicetitan-no-camel-snake-mixing:
+    description: Property names should be camelCase (no snake_case in ServiceTitan APIs).
+    given: "$..properties[*]~"
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-zA-Z0-9]*$"
+
+  servicetitan-operation-id-required:
+    description: Every operation needs an operationId for SDK generation.
+    given: "$.paths.*.*.operationId"
+    severity: error
+    then:
+      function: truthy
+
+  servicetitan-list-operations-named-list:
+    description: List/get-collection operations should be named `list{Resource}`.
+    given: "$.paths.*[get].operationId"
+    severity: hint
+    then:
+      function: pattern
+      functionOptions:
+        match: "^(list|get|search)[A-Z]"

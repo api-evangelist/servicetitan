@@ -1,0 +1,51 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/jpm/v2/{tenant}/jobs",
+    "headers": {
+      "Authorization": "Bearer {access_token}",
+      "ST-App-Key": "ak1.example_app_key",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "customerId": 5500123,
+      "locationId": 5500124,
+      "businessUnitId": 12,
+      "jobTypeId": 47,
+      "priority": "Normal",
+      "campaignId": 9,
+      "summary": "AC not cooling - emergency service call",
+      "appointments": [
+        {
+          "start": "2026-05-26T14:00:00Z",
+          "end": "2026-05-26T16:00:00Z",
+          "arrivalWindowStart": "2026-05-26T14:00:00Z",
+          "arrivalWindowEnd": "2026-05-26T15:00:00Z",
+          "technicianIds": [801, 802]
+        }
+      ]
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "id": 7700456,
+      "jobNumber": "JOB-2026-04501",
+      "customerId": 5500123,
+      "locationId": 5500124,
+      "businessUnitId": 12,
+      "jobTypeId": 47,
+      "priority": "Normal",
+      "jobStatus": "Scheduled",
+      "campaignId": 9,
+      "summary": "AC not cooling - emergency service call",
+      "appointmentCount": 1,
+      "firstAppointmentId": 8800789,
+      "lastAppointmentId": 8800789,
+      "noCharge": false,
+      "notificationsEnabled": true,
+      "createdOn": "2026-05-25T17:15:30Z",
+      "modifiedOn": "2026-05-25T17:15:30Z"
+    }
+  }
+}

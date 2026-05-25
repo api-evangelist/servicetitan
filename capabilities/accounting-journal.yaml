@@ -1,0 +1,40 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ServiceTitan Accounting API — Journal
+  description: ServiceTitan Accounting — Journal Entries (read-only export surface).
+  tags: [ServiceTitan, Accounting, Journal Entries]
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds:
+- namespace: env
+  keys:
+    SERVICETITAN_ACCESS_TOKEN: SERVICETITAN_ACCESS_TOKEN
+    SERVICETITAN_APP_KEY: SERVICETITAN_APP_KEY
+    SERVICETITAN_TENANT_ID: SERVICETITAN_TENANT_ID
+capability:
+  consumes:
+  - type: http
+    namespace: accounting-journal
+    baseUri: https://api.servicetitan.io
+    resources:
+    - name: journal-entries
+      path: /accounting/v2/{{env.SERVICETITAN_TENANT_ID}}/journal-entries
+      operations:
+      - name: listJournalEntries
+        method: GET
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters: [ { name: modifiedOnOrAfter, in: query, type: string } ]
+    authentication:
+      type: bearer
+      value: '{{env.SERVICETITAN_ACCESS_TOKEN}}'
+      placement: header
+    headers:
+      ST-App-Key: '{{env.SERVICETITAN_APP_KEY}}'
+  exposes:
+  - type: mcp
+    namespace: accounting-journal-mcp
+    port: 9090
+    transport: http
+    tools:
+    - { name: servicetitan-list-journal-entries, description: List GL journal entries, hints: { readOnly: true, destructive: false, idempotent: true }, call: accounting-journal.listJournalEntries, with: { modifiedOnOrAfter: tools.modifiedOnOrAfter }, outputParameters: [ { type: object, mapping: $. } ] }

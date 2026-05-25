@@ -1,0 +1,342 @@
+openapi: 3.1.0
+info:
+  title: ServiceTitan Dispatch API
+  description: |
+    The Dispatch API manages technician shifts, appointment assignments, capacity windows,
+    business hours, zones, arrival windows, and gps pings. Drives the dispatch board.
+    Tenant-scoped; OAuth 2.0 + App Key.
+  version: "2.0.0"
+  contact:
+    name: ServiceTitan Developer Support
+    url: https://developer.servicetitan.io/
+    email: integrations@servicetitan.com
+  license:
+    name: ServiceTitan Terms of Service
+    url: https://www.servicetitan.com/legal/terms-of-service
+servers:
+  - url: https://api.servicetitan.io/dispatch/v2/{tenant}
+    description: Production
+    variables:
+      tenant:
+        default: "0000000"
+  - url: https://api-integration.servicetitan.io/dispatch/v2/{tenant}
+    description: Integration (Sandbox)
+    variables:
+      tenant:
+        default: "0000000"
+security:
+  - OAuth2: []
+    AppKey: []
+tags:
+  - name: Appointment Assignments
+  - name: Technician Shifts
+  - name: Capacity
+  - name: Zones
+  - name: Business Hours
+  - name: GPS
+paths:
+  /appointment-assignments:
+    get:
+      summary: List Appointment Assignments
+      operationId: listAppointmentAssignments
+      tags: [Appointment Assignments]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/ModifiedOnOrAfter'
+        - name: technicianId
+          in: query
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Assignments
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssignmentPagedResponse'
+  /appointment-assignments/assign-technicians:
+    post:
+      summary: Assign Technicians
+      operationId: assignTechnicians
+      tags: [Appointment Assignments]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [jobAppointmentId, technicianIds]
+              properties:
+                jobAppointmentId: { type: integer, format: int64 }
+                technicianIds:
+                  type: array
+                  items: { type: integer }
+      responses:
+        '200':
+          description: Technicians assigned
+  /appointment-assignments/unassign-technicians:
+    post:
+      summary: Unassign Technicians
+      operationId: unassignTechnicians
+      tags: [Appointment Assignments]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [jobAppointmentId, technicianIds]
+              properties:
+                jobAppointmentId: { type: integer, format: int64 }
+                technicianIds:
+                  type: array
+                  items: { type: integer }
+      responses:
+        '200':
+          description: Technicians unassigned
+  /technician-shifts:
+    get:
+      summary: List Technician Shifts
+      operationId: listTechnicianShifts
+      tags: [Technician Shifts]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - name: startsOnOrAfter
+          in: query
+          schema: { type: string, format: date-time }
+        - name: endsOnOrBefore
+          in: query
+          schema: { type: string, format: date-time }
+      responses:
+        '200':
+          description: Shifts
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShiftPagedResponse'
+    post:
+      summary: Create Technician Shift
+      operationId: createTechnicianShift
+      tags: [Technician Shifts]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [technicianIds, shiftType, title, start, end]
+              properties:
+                technicianIds:
+                  type: array
+                  items: { type: integer }
+                shiftType: { type: string, enum: [Normal, OnCall, TimeOff] }
+                title: { type: string }
+                note: { type: string }
+                start: { type: string, format: date-time }
+                end: { type: string, format: date-time }
+      responses:
+        '200':
+          description: Shift created
+  /capacity:
+    post:
+      summary: Get Capacity
+      operationId: getCapacity
+      tags: [Capacity]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [startsOnOrAfter, endsOnOrBefore]
+              properties:
+                startsOnOrAfter: { type: string, format: date-time }
+                endsOnOrBefore: { type: string, format: date-time }
+                businessUnitIds:
+                  type: array
+                  items: { type: integer }
+                jobTypeId: { type: integer }
+                skillBasedAvailability: { type: boolean }
+      responses:
+        '200':
+          description: Capacity windows
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  availabilities:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        start: { type: string, format: date-time }
+                        end: { type: string, format: date-time }
+                        timeslots:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              start: { type: string, format: date-time }
+                              end: { type: string, format: date-time }
+                              technicianIds:
+                                type: array
+                                items: { type: integer }
+                              isAvailable: { type: boolean }
+                              isExceedingIdealBookingPercentage: { type: boolean }
+                              totalAvailability: { type: integer }
+  /zones:
+    get:
+      summary: List Zones
+      operationId: listZones
+      tags: [Zones]
+      responses:
+        '200':
+          description: Zones
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id: { type: integer }
+                        name: { type: string }
+                        zips:
+                          type: array
+                          items: { type: string }
+                        cities:
+                          type: array
+                          items: { type: string }
+                        active: { type: boolean }
+  /business-hours:
+    get:
+      summary: Get Business Hours
+      operationId: getBusinessHours
+      tags: [Business Hours]
+      responses:
+        '200':
+          description: Business hours
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  weekdays:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        weekday: { type: string }
+                        timeSlots:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              from: { type: string }
+                              to: { type: string }
+  /gps-pings:
+    get:
+      summary: List GPS Pings
+      operationId: listGpsPings
+      tags: [GPS]
+      parameters:
+        - name: technicianId
+          in: query
+          required: true
+          schema: { type: integer }
+        - name: fromUtc
+          in: query
+          required: true
+          schema: { type: string, format: date-time }
+        - name: toUtc
+          in: query
+          required: true
+          schema: { type: string, format: date-time }
+      responses:
+        '200':
+          description: GPS pings
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        latitude: { type: number }
+                        longitude: { type: number }
+                        speed: { type: number }
+                        heading: { type: number }
+                        utcDateTime: { type: string, format: date-time }
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.servicetitan.io/connect/token
+          scopes: {}
+    AppKey:
+      type: apiKey
+      in: header
+      name: ST-App-Key
+  parameters:
+    Page:
+      name: page
+      in: query
+      schema: { type: integer, default: 1 }
+    PageSize:
+      name: pageSize
+      in: query
+      schema: { type: integer, default: 50, maximum: 500 }
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema: { type: string, format: date-time }
+  schemas:
+    AppointmentAssignment:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        jobAppointmentId: { type: integer }
+        technicianId: { type: integer }
+        assignedBy:
+          type: object
+          properties:
+            id: { type: integer }
+            name: { type: string }
+        assignedOn: { type: string, format: date-time }
+        unassignedOn: { type: string, format: date-time, nullable: true }
+        status: { type: string, enum: [Assigned, Unassigned] }
+        modifiedOn: { type: string, format: date-time }
+    AssignmentPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/AppointmentAssignment' }
+    TechnicianShift:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        technicianId: { type: integer }
+        shiftType: { type: string, enum: [Normal, OnCall, TimeOff] }
+        title: { type: string }
+        note: { type: string }
+        start: { type: string, format: date-time }
+        end: { type: string, format: date-time }
+        active: { type: boolean }
+        modifiedOn: { type: string, format: date-time }
+    ShiftPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/TechnicianShift' }

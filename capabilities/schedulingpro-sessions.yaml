@@ -1,0 +1,53 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ServiceTitan Scheduling Pro API — Sessions
+  description: ServiceTitan Scheduling Pro — Booking sessions for online widgets.
+  tags: [ServiceTitan, Scheduling Pro, Sessions]
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds:
+- namespace: env
+  keys:
+    SERVICETITAN_ACCESS_TOKEN: SERVICETITAN_ACCESS_TOKEN
+    SERVICETITAN_APP_KEY: SERVICETITAN_APP_KEY
+    SERVICETITAN_TENANT_ID: SERVICETITAN_TENANT_ID
+capability:
+  consumes:
+  - type: http
+    namespace: schedulingpro-sessions
+    baseUri: https://api.servicetitan.io
+    resources:
+    - name: sessions
+      path: /schedulingpro/v2/{{env.SERVICETITAN_TENANT_ID}}/sessions
+      operations:
+      - name: listSessions
+        method: GET
+        description: List booking sessions
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters:
+        - { name: modifiedOnOrAfter, in: query, type: string }
+    - name: sessions-by-id
+      path: /schedulingpro/v2/{{env.SERVICETITAN_TENANT_ID}}/sessions/{id}
+      operations:
+      - name: getSession
+        method: GET
+        description: Get a booking session
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters:
+        - { name: id, in: path, type: integer, required: true }
+    authentication:
+      type: bearer
+      value: '{{env.SERVICETITAN_ACCESS_TOKEN}}'
+      placement: header
+    headers:
+      ST-App-Key: '{{env.SERVICETITAN_APP_KEY}}'
+  exposes:
+  - type: mcp
+    namespace: schedulingpro-sessions-mcp
+    port: 9090
+    transport: http
+    tools:
+    - { name: servicetitan-list-sessions, description: List booking sessions, hints: { readOnly: true, destructive: false, idempotent: true }, call: schedulingpro-sessions.listSessions, with: { modifiedOnOrAfter: tools.modifiedOnOrAfter }, outputParameters: [ { type: object, mapping: $. } ] }
+    - { name: servicetitan-get-session, description: Get a booking session, hints: { readOnly: true, destructive: false, idempotent: true }, call: schedulingpro-sessions.getSession, with: { id: tools.id }, outputParameters: [ { type: object, mapping: $. } ] }

@@ -1,0 +1,60 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/accounting/v2/{tenant}/invoices?modifiedOnOrAfter=2026-05-24T00:00:00Z&page=1&pageSize=50",
+    "headers": {
+      "Authorization": "Bearer {access_token}",
+      "ST-App-Key": "ak1.example_app_key"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "page": 1,
+      "pageSize": 50,
+      "hasMore": false,
+      "data": [
+        {
+          "id": 9900111,
+          "number": "INV-2026-08821",
+          "jobId": 7700456,
+          "customerId": 5500123,
+          "locationId": 5500124,
+          "businessUnitId": 12,
+          "invoiceDate": "2026-05-25",
+          "dueDate": "2026-06-24",
+          "subTotal": 487.50,
+          "salesTax": 40.22,
+          "total": 527.72,
+          "balance": 527.72,
+          "status": "Pending",
+          "items": [
+            {
+              "id": 1,
+              "skuName": "AC Diagnostic Fee",
+              "skuType": "Service",
+              "description": "Diagnostic and refrigerant check",
+              "quantity": 1,
+              "price": 149.00,
+              "total": 149.00,
+              "taxable": false,
+              "chargeable": true
+            },
+            {
+              "id": 2,
+              "skuName": "R-410A Refrigerant",
+              "skuType": "Material",
+              "description": "R-410A refrigerant, per pound",
+              "quantity": 3,
+              "price": 112.83,
+              "total": 338.50,
+              "taxable": true,
+              "chargeable": true
+            }
+          ],
+          "modifiedOn": "2026-05-25T19:42:11Z"
+        }
+      ]
+    }
+  }
+}

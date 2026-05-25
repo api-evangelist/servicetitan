@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/servicetitan/main/json-schema/servicetitan-customer-schema.json",
+  "title": "ServiceTitan Customer",
+  "description": "Customer-of-record schema for the ServiceTitan CRM API.",
+  "type": "object",
+  "required": ["id", "name", "type"],
+  "properties": {
+    "id": { "type": "integer", "format": "int64", "description": "Tenant-unique customer ID" },
+    "active": { "type": "boolean" },
+    "name": { "type": "string", "description": "Display name; for residential, last + first" },
+    "type": { "type": "string", "enum": ["Residential", "Commercial"] },
+    "address": {
+      "type": "object",
+      "properties": {
+        "street": { "type": "string" },
+        "unit": { "type": ["string", "null"] },
+        "city": { "type": "string" },
+        "state": { "type": "string" },
+        "zip": { "type": "string" },
+        "country": { "type": "string" },
+        "latitude": { "type": ["number", "null"] },
+        "longitude": { "type": ["number", "null"] }
+      }
+    },
+    "contacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "type": { "type": "string", "enum": ["Phone", "MobilePhone", "Email", "Fax"] },
+          "value": { "type": "string" },
+          "memo": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "balance": { "type": "number", "description": "Outstanding balance in tenant currency" },
+    "doNotMail": { "type": "boolean" },
+    "doNotService": { "type": "boolean" },
+    "hasActiveMembership": { "type": "boolean" },
+    "memberships": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "customFields": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "typeId": { "type": "integer" },
+          "name": { "type": "string" },
+          "value": { "type": "string" }
+        }
+      }
+    },
+    "createdOn": { "type": "string", "format": "date-time" },
+    "modifiedOn": { "type": "string", "format": "date-time" },
+    "mergedToId": { "type": ["integer", "null"], "description": "If non-null, this customer was merged into another" },
+    "externalData": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": { "type": "string" },
+          "value": { "type": "string" }
+        }
+      }
+    }
+  }
+}

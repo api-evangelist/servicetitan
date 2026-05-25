@@ -1,0 +1,65 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ServiceTitan Equipment Systems API — Installed Equipment
+  description: ServiceTitan Equipment Systems — Installed Equipment asset-of-record CRUD.
+  tags: [ServiceTitan, Equipment, Installed Equipment]
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds:
+- namespace: env
+  keys:
+    SERVICETITAN_ACCESS_TOKEN: SERVICETITAN_ACCESS_TOKEN
+    SERVICETITAN_APP_KEY: SERVICETITAN_APP_KEY
+    SERVICETITAN_TENANT_ID: SERVICETITAN_TENANT_ID
+capability:
+  consumes:
+  - type: http
+    namespace: equipmentsystems-installed-equipment
+    baseUri: https://api.servicetitan.io
+    resources:
+    - name: installed-equipment
+      path: /equipmentsystems/v2/{{env.SERVICETITAN_TENANT_ID}}/installed-equipment
+      operations:
+      - name: listInstalledEquipment
+        method: GET
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters:
+        - { name: locationIds, in: query, type: string }
+        - { name: modifiedOnOrAfter, in: query, type: string }
+      - name: createInstalledEquipment
+        method: POST
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters: [ { name: body, in: body, type: object, required: true } ]
+    - name: installed-equipment-by-id
+      path: /equipmentsystems/v2/{{env.SERVICETITAN_TENANT_ID}}/installed-equipment/{id}
+      operations:
+      - name: getInstalledEquipment
+        method: GET
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters: [ { name: id, in: path, type: integer, required: true } ]
+      - name: updateInstalledEquipment
+        method: PATCH
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters:
+        - { name: id, in: path, type: integer, required: true }
+        - { name: body, in: body, type: object, required: true }
+    authentication:
+      type: bearer
+      value: '{{env.SERVICETITAN_ACCESS_TOKEN}}'
+      placement: header
+    headers:
+      ST-App-Key: '{{env.SERVICETITAN_APP_KEY}}'
+  exposes:
+  - type: mcp
+    namespace: equipmentsystems-installed-equipment-mcp
+    port: 9090
+    transport: http
+    tools:
+    - { name: servicetitan-list-installed-equipment, description: List installed equipment at customer locations, hints: { readOnly: true, destructive: false, idempotent: true }, call: equipmentsystems-installed-equipment.listInstalledEquipment, with: { locationIds: tools.locationIds, modifiedOnOrAfter: tools.modifiedOnOrAfter }, outputParameters: [ { type: object, mapping: $. } ] }
+    - { name: servicetitan-get-installed-equipment, description: Get installed equipment record, hints: { readOnly: true, destructive: false, idempotent: true }, call: equipmentsystems-installed-equipment.getInstalledEquipment, with: { id: tools.id }, outputParameters: [ { type: object, mapping: $. } ] }
+    - { name: servicetitan-create-installed-equipment, description: Create installed equipment record, hints: { readOnly: false, destructive: false, idempotent: false }, call: equipmentsystems-installed-equipment.createInstalledEquipment, with: { body: tools.body }, outputParameters: [ { type: object, mapping: $. } ] }
+    - { name: servicetitan-update-installed-equipment, description: Update installed equipment record, hints: { readOnly: false, destructive: false, idempotent: false }, call: equipmentsystems-installed-equipment.updateInstalledEquipment, with: { id: tools.id, body: tools.body }, outputParameters: [ { type: object, mapping: $. } ] }

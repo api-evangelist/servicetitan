@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/servicetitan/main/json-schema/servicetitan-invoice-schema.json",
+  "title": "ServiceTitan Invoice",
+  "description": "Invoice schema for the ServiceTitan Accounting API. Invoices belong to a job or project.",
+  "type": "object",
+  "required": ["id", "customerId", "invoiceDate", "total"],
+  "properties": {
+    "id": { "type": "integer", "format": "int64" },
+    "number": { "type": "string" },
+    "jobId": { "type": ["integer", "null"] },
+    "projectId": { "type": ["integer", "null"] },
+    "customerId": { "type": "integer", "format": "int64" },
+    "locationId": { "type": "integer", "format": "int64" },
+    "businessUnitId": { "type": "integer" },
+    "invoiceDate": { "type": "string", "format": "date" },
+    "dueDate": { "type": "string", "format": "date" },
+    "subTotal": { "type": "number" },
+    "salesTax": { "type": "number" },
+    "salesTaxCode": { "type": ["string", "null"] },
+    "total": { "type": "number" },
+    "balance": { "type": "number" },
+    "status": { "type": "string", "enum": ["Pending", "Posted", "Exported"] },
+    "depositedOn": { "type": ["string", "null"], "format": "date-time" },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "skuId": { "type": ["integer", "null"] },
+          "skuName": { "type": "string" },
+          "skuType": { "type": "string", "enum": ["Service", "Material", "Equipment"] },
+          "description": { "type": "string" },
+          "quantity": { "type": "number" },
+          "cost": { "type": "number" },
+          "totalCost": { "type": "number" },
+          "price": { "type": "number" },
+          "total": { "type": "number" },
+          "generalLedgerAccountId": { "type": ["integer", "null"] },
+          "taxable": { "type": "boolean" },
+          "chargeable": { "type": "boolean" }
+        }
+      }
+    },
+    "payments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "paymentId": { "type": "integer" },
+          "amount": { "type": "number" },
+          "memo": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "royalty": {
+      "type": "object",
+      "properties": {
+        "status": { "type": "string" },
+        "date": { "type": ["string", "null"], "format": "date-time" },
+        "sentOn": { "type": ["string", "null"], "format": "date-time" },
+        "memo": { "type": ["string", "null"] }
+      }
+    },
+    "modifiedOn": { "type": "string", "format": "date-time" }
+  }
+}

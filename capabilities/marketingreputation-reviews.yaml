@@ -1,0 +1,44 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ServiceTitan Marketing Reputation API — Reviews
+  description: ServiceTitan Marketing Reputation — Aggregated reviews and ratings.
+  tags: [ServiceTitan, Marketing Reputation, Reviews]
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds:
+- namespace: env
+  keys:
+    SERVICETITAN_ACCESS_TOKEN: SERVICETITAN_ACCESS_TOKEN
+    SERVICETITAN_APP_KEY: SERVICETITAN_APP_KEY
+    SERVICETITAN_TENANT_ID: SERVICETITAN_TENANT_ID
+capability:
+  consumes:
+  - type: http
+    namespace: marketingreputation-reviews
+    baseUri: https://api.servicetitan.io
+    resources:
+    - name: reviews
+      path: /marketingreputation/v2/{{env.SERVICETITAN_TENANT_ID}}/reviews
+      operations:
+      - name: listReviews
+        method: GET
+        description: List customer reviews
+        outputRawFormat: json
+        outputParameters: [ { name: result, type: object, value: $. } ]
+        inputParameters:
+        - { name: modifiedOnOrAfter, in: query, type: string }
+        - { name: ratingFrom, in: query, type: number }
+        - { name: ratingTo, in: query, type: number }
+    authentication:
+      type: bearer
+      value: '{{env.SERVICETITAN_ACCESS_TOKEN}}'
+      placement: header
+    headers:
+      ST-App-Key: '{{env.SERVICETITAN_APP_KEY}}'
+  exposes:
+  - type: mcp
+    namespace: marketingreputation-reviews-mcp
+    port: 9090
+    transport: http
+    tools:
+    - { name: servicetitan-list-reviews, description: List customer reviews, hints: { readOnly: true, destructive: false, idempotent: true }, call: marketingreputation-reviews.listReviews, with: { modifiedOnOrAfter: tools.modifiedOnOrAfter, ratingFrom: tools.ratingFrom, ratingTo: tools.ratingTo }, outputParameters: [ { type: object, mapping: $. } ] }
