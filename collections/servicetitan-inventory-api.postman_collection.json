@@ -1,0 +1,1128 @@
+{
+  "item": [
+    {
+      "id": "9fc5f0af-659b-4533-8ddd-17568234115d",
+      "name": "Purchase Orders",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b17e3373-3cb5-4615-b26c-33dd0574f9dd",
+          "name": "List Purchase Orders",
+          "request": {
+            "name": "List Purchase Orders",
+            "description": {},
+            "url": {
+              "path": [
+                "purchase-orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "vendorId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "701af43d-b7fd-4264-bdb9-8f5f9c78f794",
+              "name": "Purchase orders",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "purchase-orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "vendorId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 7572,\n      \"active\": true,\n      \"number\": \"string\",\n      \"typeId\": 1300,\n      \"status\": \"string\",\n      \"date\": \"1946-12-11T08:25:36.269Z\",\n      \"requiredOn\": \"2016-06-18T02:26:01.498Z\",\n      \"sentOn\": \"2014-05-28T20:42:50.178Z\",\n      \"receivedOn\": \"1974-08-08T18:24:07.849Z\",\n      \"memo\": \"string\",\n      \"jobId\": 2027,\n      \"projectId\": 9235,\n      \"technicianId\": 6862,\n      \"vendor\": {\n        \"id\": 930,\n        \"name\": \"string\"\n      },\n      \"warehouse\": {\n        \"id\": 5229,\n        \"name\": \"string\"\n      },\n      \"items\": [\n        {\n          \"skuId\": 431,\n          \"skuName\": \"string\",\n          \"quantity\": 3695.2956475179853,\n          \"cost\": 3927.0179712535537,\n          \"total\": 5770.823082278342\n        },\n        {\n          \"skuId\": 1561,\n          \"skuName\": \"string\",\n          \"quantity\": 3401.6536197911782,\n          \"cost\": 6543.028612678475,\n          \"total\": 5590.715117265998\n        }\n      ],\n      \"total\": 5571.771665760468,\n      \"tax\": 2656.753695169929,\n      \"shipping\": 6948.414899454235,\n      \"modifiedOn\": \"2024-08-19T23:38:07.560Z\"\n    },\n    {\n      \"id\": 5501,\n      \"active\": false,\n      \"number\": \"string\",\n      \"typeId\": 1168,\n      \"status\": \"string\",\n      \"date\": \"2018-05-18T07:35:01.198Z\",\n      \"requiredOn\": \"2026-04-16T18:23:10.082Z\",\n      \"sentOn\": \"2025-11-29T23:36:10.650Z\",\n      \"receivedOn\": \"1950-11-07T13:34:39.393Z\",\n      \"memo\": \"string\",\n      \"jobId\": 6866,\n      \"projectId\": 5067,\n      \"technicianId\": 6912,\n      \"vendor\": {\n        \"id\": 3084,\n        \"name\": \"string\"\n      },\n      \"warehouse\": {\n        \"id\": 6795,\n        \"name\": \"string\"\n      },\n      \"items\": [\n        {\n          \"skuId\": 9390,\n          \"skuName\": \"string\",\n          \"quantity\": 9268.224367138186,\n          \"cost\": 6769.0451885669045,\n          \"total\": 7661.228388780855\n        },\n        {\n          \"skuId\": 7840,\n          \"skuName\": \"string\",\n          \"quantity\": 6881.3587460037415,\n          \"cost\": 135.39345659478008,\n          \"total\": 457.4182719926689\n        }\n      ],\n      \"total\": 9827.33896116017,\n      \"tax\": 7855.322921724112,\n      \"shipping\": 5683.4266279130015,\n      \"modifiedOn\": \"1952-03-01T00:15:03.171Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "03932029-beed-4851-8dcf-0505c466535a",
+          "name": "Create Purchase Order",
+          "request": {
+            "name": "Create Purchase Order",
+            "description": {},
+            "url": {
+              "path": [
+                "purchase-orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"typeId\": \"<integer>\",\n  \"vendorId\": \"<integer>\",\n  \"items\": [\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\"\n    },\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\"\n    }\n  ],\n  \"warehouseId\": \"<integer>\",\n  \"jobId\": \"<integer>\",\n  \"projectId\": \"<integer>\",\n  \"technicianId\": \"<integer>\",\n  \"memo\": \"<string>\",\n  \"date\": \"<dateTime>\",\n  \"requiredOn\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d7382545-5bf5-405a-a792-dcbfea83d109",
+              "name": "Created purchase order",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "purchase-orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"typeId\": \"<integer>\",\n  \"vendorId\": \"<integer>\",\n  \"items\": [\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\"\n    },\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\"\n    }\n  ],\n  \"warehouseId\": \"<integer>\",\n  \"jobId\": \"<integer>\",\n  \"projectId\": \"<integer>\",\n  \"technicianId\": \"<integer>\",\n  \"memo\": \"<string>\",\n  \"date\": \"<dateTime>\",\n  \"requiredOn\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 3156,\n  \"active\": false,\n  \"number\": \"string\",\n  \"typeId\": 5288,\n  \"status\": \"string\",\n  \"date\": \"1977-06-27T23:31:35.353Z\",\n  \"requiredOn\": \"1948-10-11T20:08:37.141Z\",\n  \"sentOn\": \"2021-08-22T03:13:02.292Z\",\n  \"receivedOn\": \"2007-12-12T06:23:35.772Z\",\n  \"memo\": \"string\",\n  \"jobId\": 864,\n  \"projectId\": 7569,\n  \"technicianId\": 1049,\n  \"vendor\": {\n    \"id\": 5315,\n    \"name\": \"string\"\n  },\n  \"warehouse\": {\n    \"id\": 7234,\n    \"name\": \"string\"\n  },\n  \"items\": [\n    {\n      \"skuId\": 682,\n      \"skuName\": \"string\",\n      \"quantity\": 505.27226622656076,\n      \"cost\": 2537.1765936168235,\n      \"total\": 8955.919831162786\n    },\n    {\n      \"skuId\": 9669,\n      \"skuName\": \"string\",\n      \"quantity\": 787.2905998112856,\n      \"cost\": 1230.14324483256,\n      \"total\": 1550.4249480430965\n    }\n  ],\n  \"total\": 3005.6358225276026,\n  \"tax\": 761.1302890306026,\n  \"shipping\": 2647.602435089399,\n  \"modifiedOn\": \"1967-10-02T18:26:25.429Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "12771a27-bf72-4e7b-b34a-d0e511356b60",
+          "name": "Get Purchase Order",
+          "request": {
+            "name": "Get Purchase Order",
+            "description": {},
+            "url": {
+              "path": [
+                "purchase-orders",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f3bb8486-34ee-4fef-9c5d-bd69d86fb0a0",
+              "name": "Purchase order",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "purchase-orders",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 3156,\n  \"active\": false,\n  \"number\": \"string\",\n  \"typeId\": 5288,\n  \"status\": \"string\",\n  \"date\": \"1977-06-27T23:31:35.353Z\",\n  \"requiredOn\": \"1948-10-11T20:08:37.141Z\",\n  \"sentOn\": \"2021-08-22T03:13:02.292Z\",\n  \"receivedOn\": \"2007-12-12T06:23:35.772Z\",\n  \"memo\": \"string\",\n  \"jobId\": 864,\n  \"projectId\": 7569,\n  \"technicianId\": 1049,\n  \"vendor\": {\n    \"id\": 5315,\n    \"name\": \"string\"\n  },\n  \"warehouse\": {\n    \"id\": 7234,\n    \"name\": \"string\"\n  },\n  \"items\": [\n    {\n      \"skuId\": 682,\n      \"skuName\": \"string\",\n      \"quantity\": 505.27226622656076,\n      \"cost\": 2537.1765936168235,\n      \"total\": 8955.919831162786\n    },\n    {\n      \"skuId\": 9669,\n      \"skuName\": \"string\",\n      \"quantity\": 787.2905998112856,\n      \"cost\": 1230.14324483256,\n      \"total\": 1550.4249480430965\n    }\n  ],\n  \"total\": 3005.6358225276026,\n  \"tax\": 761.1302890306026,\n  \"shipping\": 2647.602435089399,\n  \"modifiedOn\": \"1967-10-02T18:26:25.429Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "7ec7a608-2f3e-4655-96ca-14105ccf2450",
+      "name": "Vendors",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "953c3752-15d4-450c-91e2-bd32367e4366",
+          "name": "List Vendors",
+          "request": {
+            "name": "List Vendors",
+            "description": {},
+            "url": {
+              "path": [
+                "vendors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "50"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ea9ec312-f59e-4c34-9bd7-78ccd3337aaa",
+              "name": "Vendors",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "vendors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 2872,\n      \"name\": \"string\",\n      \"active\": true,\n      \"memo\": \"string\",\n      \"phone\": \"string\",\n      \"email\": \"string\",\n      \"address\": {},\n      \"modifiedOn\": \"1981-02-06T16:26:40.730Z\"\n    },\n    {\n      \"id\": 2930,\n      \"name\": \"string\",\n      \"active\": false,\n      \"memo\": \"string\",\n      \"phone\": \"string\",\n      \"email\": \"string\",\n      \"address\": {},\n      \"modifiedOn\": \"2001-05-16T20:07:00.349Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "748b10fc-2d6a-4774-ad25-a5d1e4d9845e",
+      "name": "Warehouses",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "907cbaca-abc9-4f68-9047-a041b57170ba",
+          "name": "List Warehouses",
+          "request": {
+            "name": "List Warehouses",
+            "description": {},
+            "url": {
+              "path": [
+                "warehouses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bdf1ce6d-a180-4583-bbd7-db73b4c87518",
+              "name": "Warehouses",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "warehouses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 6840,\n      \"name\": \"string\",\n      \"active\": true,\n      \"address\": {}\n    },\n    {\n      \"id\": 1654,\n      \"name\": \"string\",\n      \"active\": true,\n      \"address\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "baa5aa10-3e18-4008-9ebe-b8a11b6a5c16",
+      "name": "Trucks",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "91db9ec2-a3d6-4640-b2a4-60e035158694",
+          "name": "List Trucks",
+          "request": {
+            "name": "List Trucks",
+            "description": {},
+            "url": {
+              "path": [
+                "trucks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "02f1daba-8c22-487b-b268-52715dd1956f",
+              "name": "Trucks",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trucks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 883,\n      \"name\": \"string\",\n      \"active\": true\n    },\n    {\n      \"id\": 9959,\n      \"name\": \"string\",\n      \"active\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "34f1eb3e-cd70-454d-ad1d-a5c99e179448",
+      "name": "Adjustments",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "14f6f95d-65ad-4ce0-913c-d0640695ab3a",
+          "name": "Create Inventory Adjustment",
+          "request": {
+            "name": "Create Inventory Adjustment",
+            "description": {},
+            "url": {
+              "path": [
+                "adjustments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"items\": [\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\"\n    },\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\"\n    }\n  ],\n  \"fromWarehouseId\": \"<integer>\",\n  \"date\": \"<dateTime>\",\n  \"memo\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9a3642d0-acc9-4be8-ae56-4cf846d12f54",
+              "name": "Adjustment created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "adjustments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"items\": [\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\"\n    },\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\"\n    }\n  ],\n  \"fromWarehouseId\": \"<integer>\",\n  \"date\": \"<dateTime>\",\n  \"memo\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "79c8e849-a977-4852-bcf3-4255eae0777e",
+      "name": "Transfers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "307fb126-4c83-4633-966b-215ad6908e41",
+          "name": "Create Inventory Transfer",
+          "request": {
+            "name": "Create Inventory Transfer",
+            "description": {},
+            "url": {
+              "path": [
+                "transfers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fromWarehouseId\": \"<integer>\",\n  \"toWarehouseId\": \"<integer>\",\n  \"items\": [\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "17d95e16-f634-4c63-9c19-9538eb5f96bb",
+              "name": "Transfer created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transfers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fromWarehouseId\": \"<integer>\",\n  \"toWarehouseId\": \"<integer>\",\n  \"items\": [\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "4d0d8214-c41b-4e29-a7d7-7ea0d90b1ad6",
+      "name": "Returns",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [],
+      "event": []
+    },
+    {
+      "id": "46d2f780-9131-4bbb-8626-56e815bf8cf4",
+      "name": "Receipts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ae98a8fe-ca50-4c0d-852b-a5a309ea4bc9",
+          "name": "Create Receipt",
+          "request": {
+            "name": "Create Receipt",
+            "description": {},
+            "url": {
+              "path": [
+                "receipts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"purchaseOrderId\": \"<integer>\",\n  \"items\": [\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\"\n    },\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0074de12-6446-46f5-94b3-21eae7a26500",
+              "name": "Receipt created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "receipts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"purchaseOrderId\": \"<integer>\",\n  \"items\": [\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\"\n    },\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "0000000",
+      "key": "tenant"
+    },
+    {
+      "type": "string",
+      "value": "https://api.servicetitan.io/inventory/v2/{{tenant}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0e6782ba-a65c-4f27-8c09-87436ff1945c",
+    "name": "ServiceTitan Inventory API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Inventory API manages purchase orders, types, transfers, returns, adjustments, receipts,\nwarehouses, trucks, vendors, and inventory bills. Backed by the open-source\nrequest-middleware-templates Liquid framework for supply-chain partner integrations.\nTenant-scoped; OAuth 2.0 + App Key.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+      "type": "text/plain"
+    }
+  }
+}

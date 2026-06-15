@@ -1,0 +1,681 @@
+{
+  "item": [
+    {
+      "id": "3ac1818b-8e54-4e26-907b-51388b42267b",
+      "name": "Installed Equipment",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "05c03333-22d9-4e52-b56d-a091d9bfa597",
+          "name": "List Installed Equipment",
+          "request": {
+            "name": "List Installed Equipment",
+            "description": {},
+            "url": {
+              "path": [
+                "installed-equipment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "locationIds",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c7e90bb0-f5d4-469b-882d-02c6d345a906",
+              "name": "Installed equipment",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "installed-equipment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "locationIds",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 2784,\n  \"pageSize\": 8552,\n  \"hasMore\": false,\n  \"data\": [\n    {\n      \"id\": 1028,\n      \"locationId\": 6167,\n      \"name\": \"string\",\n      \"installedOn\": \"2000-01-13T06:27:38.169Z\",\n      \"serialNumber\": \"string\",\n      \"barcodeId\": \"string\",\n      \"memo\": \"string\",\n      \"manufacturer\": \"string\",\n      \"model\": \"string\",\n      \"cost\": 5249.497461272173,\n      \"manufacturerWarrantyStart\": \"1955-01-11T09:33:24.650Z\",\n      \"manufacturerWarrantyEnd\": \"2021-03-13T12:10:53.394Z\",\n      \"serviceProviderWarrantyStart\": \"1974-03-07T14:44:19.734Z\",\n      \"serviceProviderWarrantyEnd\": \"1994-10-25T11:02:26.065Z\",\n      \"customFields\": [\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"attachments\": [\n        {\n          \"alias\": \"string\",\n          \"fileName\": \"string\",\n          \"type\": \"string\",\n          \"url\": \"string\"\n        },\n        {\n          \"alias\": \"string\",\n          \"fileName\": \"string\",\n          \"type\": \"string\",\n          \"url\": \"string\"\n        }\n      ],\n      \"tags\": [\n        \"string\",\n        \"string\"\n      ],\n      \"active\": true,\n      \"createdOn\": \"1998-05-31T03:13:47.662Z\",\n      \"modifiedOn\": \"1989-03-14T23:54:02.879Z\"\n    },\n    {\n      \"id\": 5808,\n      \"locationId\": 6990,\n      \"name\": \"string\",\n      \"installedOn\": \"1967-12-07T14:29:43.263Z\",\n      \"serialNumber\": \"string\",\n      \"barcodeId\": \"string\",\n      \"memo\": \"string\",\n      \"manufacturer\": \"string\",\n      \"model\": \"string\",\n      \"cost\": 5725.43522054211,\n      \"manufacturerWarrantyStart\": \"1973-06-28T10:55:00.735Z\",\n      \"manufacturerWarrantyEnd\": \"1959-08-13T01:23:10.842Z\",\n      \"serviceProviderWarrantyStart\": \"2006-11-01T08:31:24.071Z\",\n      \"serviceProviderWarrantyEnd\": \"1956-11-21T00:47:48.036Z\",\n      \"customFields\": [\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"attachments\": [\n        {\n          \"alias\": \"string\",\n          \"fileName\": \"string\",\n          \"type\": \"string\",\n          \"url\": \"string\"\n        },\n        {\n          \"alias\": \"string\",\n          \"fileName\": \"string\",\n          \"type\": \"string\",\n          \"url\": \"string\"\n        }\n      ],\n      \"tags\": [\n        \"string\",\n        \"string\"\n      ],\n      \"active\": true,\n      \"createdOn\": \"1997-10-19T21:21:02.064Z\",\n      \"modifiedOn\": \"2006-01-02T11:20:16.303Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a708a97f-7de7-4c90-a52b-5ce1ae43ea5a",
+          "name": "Create Installed Equipment",
+          "request": {
+            "name": "Create Installed Equipment",
+            "description": {},
+            "url": {
+              "path": [
+                "installed-equipment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"locationId\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"installedOn\": \"<dateTime>\",\n  \"serialNumber\": \"<string>\",\n  \"manufacturer\": \"<string>\",\n  \"model\": \"<string>\",\n  \"cost\": \"<number>\",\n  \"memo\": \"<string>\",\n  \"customFields\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1bf7188f-3eab-4729-922b-d1897bc042eb",
+              "name": "Created equipment",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "installed-equipment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"locationId\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"installedOn\": \"<dateTime>\",\n  \"serialNumber\": \"<string>\",\n  \"manufacturer\": \"<string>\",\n  \"model\": \"<string>\",\n  \"cost\": \"<number>\",\n  \"memo\": \"<string>\",\n  \"customFields\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6714,\n  \"locationId\": 6203,\n  \"name\": \"string\",\n  \"installedOn\": \"1984-10-20T07:21:59.457Z\",\n  \"serialNumber\": \"string\",\n  \"barcodeId\": \"string\",\n  \"memo\": \"string\",\n  \"manufacturer\": \"string\",\n  \"model\": \"string\",\n  \"cost\": 2986.5426686404317,\n  \"manufacturerWarrantyStart\": \"1966-10-04T13:51:23.037Z\",\n  \"manufacturerWarrantyEnd\": \"2005-01-13T16:30:21.753Z\",\n  \"serviceProviderWarrantyStart\": \"1993-05-19T22:49:03.447Z\",\n  \"serviceProviderWarrantyEnd\": \"1996-11-23T07:55:41.446Z\",\n  \"customFields\": [\n    {\n      \"name\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"attachments\": [\n    {\n      \"alias\": \"string\",\n      \"fileName\": \"string\",\n      \"type\": \"string\",\n      \"url\": \"string\"\n    },\n    {\n      \"alias\": \"string\",\n      \"fileName\": \"string\",\n      \"type\": \"string\",\n      \"url\": \"string\"\n    }\n  ],\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"active\": true,\n  \"createdOn\": \"1980-12-12T14:07:06.309Z\",\n  \"modifiedOn\": \"2017-12-07T04:28:59.368Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "15ee3c12-5c98-4a80-8231-130cb41f911e",
+          "name": "Get Installed Equipment",
+          "request": {
+            "name": "Get Installed Equipment",
+            "description": {},
+            "url": {
+              "path": [
+                "installed-equipment",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7b65c0f4-c3c4-4cbe-997e-cdf9070d571b",
+              "name": "Installed equipment",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "installed-equipment",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6714,\n  \"locationId\": 6203,\n  \"name\": \"string\",\n  \"installedOn\": \"1984-10-20T07:21:59.457Z\",\n  \"serialNumber\": \"string\",\n  \"barcodeId\": \"string\",\n  \"memo\": \"string\",\n  \"manufacturer\": \"string\",\n  \"model\": \"string\",\n  \"cost\": 2986.5426686404317,\n  \"manufacturerWarrantyStart\": \"1966-10-04T13:51:23.037Z\",\n  \"manufacturerWarrantyEnd\": \"2005-01-13T16:30:21.753Z\",\n  \"serviceProviderWarrantyStart\": \"1993-05-19T22:49:03.447Z\",\n  \"serviceProviderWarrantyEnd\": \"1996-11-23T07:55:41.446Z\",\n  \"customFields\": [\n    {\n      \"name\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"attachments\": [\n    {\n      \"alias\": \"string\",\n      \"fileName\": \"string\",\n      \"type\": \"string\",\n      \"url\": \"string\"\n    },\n    {\n      \"alias\": \"string\",\n      \"fileName\": \"string\",\n      \"type\": \"string\",\n      \"url\": \"string\"\n    }\n  ],\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"active\": true,\n  \"createdOn\": \"1980-12-12T14:07:06.309Z\",\n  \"modifiedOn\": \"2017-12-07T04:28:59.368Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f8a8db9b-0802-436c-859a-0320221583d1",
+          "name": "Update Installed Equipment",
+          "request": {
+            "name": "Update Installed Equipment",
+            "description": {},
+            "url": {
+              "path": [
+                "installed-equipment",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"locationId\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"installedOn\": \"<dateTime>\",\n  \"serialNumber\": \"<string>\",\n  \"manufacturer\": \"<string>\",\n  \"model\": \"<string>\",\n  \"cost\": \"<number>\",\n  \"memo\": \"<string>\",\n  \"customFields\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "971381fd-0c64-4859-82aa-b57c06e5eabc",
+              "name": "Updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "installed-equipment",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"locationId\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"installedOn\": \"<dateTime>\",\n  \"serialNumber\": \"<string>\",\n  \"manufacturer\": \"<string>\",\n  \"model\": \"<string>\",\n  \"cost\": \"<number>\",\n  \"memo\": \"<string>\",\n  \"customFields\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2fd13f75-2f4e-4726-9122-a7e60c395367",
+      "name": "Attachments",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "845605d4-2763-4213-badb-28d8559069f4",
+          "name": "Create Equipment Attachment",
+          "request": {
+            "name": "Create Equipment Attachment",
+            "description": {},
+            "url": {
+              "path": [
+                "installed-equipment",
+                ":id",
+                "attachments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a46fb472-ed24-439e-8943-cfe48e3f7a05",
+              "name": "Attachment created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "installed-equipment",
+                    ":id",
+                    "attachments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "0000000",
+      "key": "tenant"
+    },
+    {
+      "type": "string",
+      "value": "https://api.servicetitan.io/equipmentsystems/v2/{{tenant}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5a4ecace-433f-495a-94ec-caf9fd63ef7f",
+    "name": "ServiceTitan Equipment Systems API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Equipment Systems API manages installed equipment records per customer location — make,\nmodel, serial, install date, warranty terms, attachments, and equipment history. The\nasset-of-record API for HVAC, plumbing, electrical, and refrigeration trades.\nTenant-scoped; OAuth 2.0 + App Key.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+      "type": "text/plain"
+    }
+  }
+}

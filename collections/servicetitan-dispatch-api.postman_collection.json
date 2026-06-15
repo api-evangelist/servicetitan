@@ -1,0 +1,1136 @@
+{
+  "item": [
+    {
+      "id": "d2b8fabf-3020-4df7-86ab-bef61bd373d7",
+      "name": "Appointment Assignments",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8fa880d6-3919-4547-bdf0-73ad6f135ee6",
+          "name": "List Appointment Assignments",
+          "request": {
+            "name": "List Appointment Assignments",
+            "description": {},
+            "url": {
+              "path": [
+                "appointment-assignments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "technicianId",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1c100094-109e-4fd3-9342-901037004fd3",
+              "name": "Assignments",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appointment-assignments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "technicianId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 8355,\n      \"jobAppointmentId\": 658,\n      \"technicianId\": 6530,\n      \"assignedBy\": {\n        \"id\": 3409,\n        \"name\": \"string\"\n      },\n      \"assignedOn\": \"2019-07-22T12:31:14.363Z\",\n      \"unassignedOn\": \"1970-02-06T06:27:56.600Z\",\n      \"status\": \"Unassigned\",\n      \"modifiedOn\": \"1976-11-08T15:04:01.882Z\"\n    },\n    {\n      \"id\": 519,\n      \"jobAppointmentId\": 7911,\n      \"technicianId\": 8948,\n      \"assignedBy\": {\n        \"id\": 6681,\n        \"name\": \"string\"\n      },\n      \"assignedOn\": \"1961-11-19T13:05:19.339Z\",\n      \"unassignedOn\": \"1967-03-31T20:09:11.563Z\",\n      \"status\": \"Unassigned\",\n      \"modifiedOn\": \"2000-12-18T07:00:47.851Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2161332b-ba79-4895-a1d8-b4b8e2fe0fe0",
+          "name": "Assign Technicians",
+          "request": {
+            "name": "Assign Technicians",
+            "description": {},
+            "url": {
+              "path": [
+                "appointment-assignments",
+                "assign-technicians"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"jobAppointmentId\": \"<long>\",\n  \"technicianIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a2692d6f-f913-478c-bc66-1ccd7e346b12",
+              "name": "Technicians assigned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appointment-assignments",
+                    "assign-technicians"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"jobAppointmentId\": \"<long>\",\n  \"technicianIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ffed4f2b-1938-40b2-ad9e-27bf8ca2b2e7",
+          "name": "Unassign Technicians",
+          "request": {
+            "name": "Unassign Technicians",
+            "description": {},
+            "url": {
+              "path": [
+                "appointment-assignments",
+                "unassign-technicians"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"jobAppointmentId\": \"<long>\",\n  \"technicianIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ff65fe33-3bc3-4369-a78b-e7dd9d8a0937",
+              "name": "Technicians unassigned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appointment-assignments",
+                    "unassign-technicians"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"jobAppointmentId\": \"<long>\",\n  \"technicianIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b0169b8a-3dae-4420-b2c9-7df43047dc47",
+      "name": "Technician Shifts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "081e8476-4fc8-4fc8-89ea-579d43404e4d",
+          "name": "List Technician Shifts",
+          "request": {
+            "name": "List Technician Shifts",
+            "description": {},
+            "url": {
+              "path": [
+                "technician-shifts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "startsOnOrAfter",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "endsOnOrBefore",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7909111c-36ac-41a4-8216-4f1fb5739d31",
+              "name": "Shifts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "technician-shifts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "startsOnOrAfter",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "endsOnOrBefore",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 7722,\n      \"technicianId\": 8839,\n      \"shiftType\": \"Normal\",\n      \"title\": \"string\",\n      \"note\": \"string\",\n      \"start\": \"2021-06-20T00:42:41.930Z\",\n      \"end\": \"1962-08-30T17:39:42.987Z\",\n      \"active\": false,\n      \"modifiedOn\": \"2016-07-22T00:22:51.960Z\"\n    },\n    {\n      \"id\": 200,\n      \"technicianId\": 8713,\n      \"shiftType\": \"TimeOff\",\n      \"title\": \"string\",\n      \"note\": \"string\",\n      \"start\": \"1992-12-05T13:28:59.629Z\",\n      \"end\": \"1983-05-10T07:44:33.682Z\",\n      \"active\": true,\n      \"modifiedOn\": \"1975-10-02T19:49:14.066Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6b9f83d9-9a29-4c28-9f7d-ff10e550f75b",
+          "name": "Create Technician Shift",
+          "request": {
+            "name": "Create Technician Shift",
+            "description": {},
+            "url": {
+              "path": [
+                "technician-shifts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"technicianIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"shiftType\": \"<string>\",\n  \"title\": \"<string>\",\n  \"start\": \"<dateTime>\",\n  \"end\": \"<dateTime>\",\n  \"note\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "62fe761e-f91f-4436-9b87-39322241f4b9",
+              "name": "Shift created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "technician-shifts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"technicianIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"shiftType\": \"<string>\",\n  \"title\": \"<string>\",\n  \"start\": \"<dateTime>\",\n  \"end\": \"<dateTime>\",\n  \"note\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "42192ada-fbaa-4144-aae2-dc970fa4602e",
+      "name": "Capacity",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "21fa226f-43ee-4972-a0e1-31e8601456b5",
+          "name": "Get Capacity",
+          "request": {
+            "name": "Get Capacity",
+            "description": {},
+            "url": {
+              "path": [
+                "capacity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"startsOnOrAfter\": \"<dateTime>\",\n  \"endsOnOrBefore\": \"<dateTime>\",\n  \"businessUnitIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"jobTypeId\": \"<integer>\",\n  \"skillBasedAvailability\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9800162a-5aba-4004-8192-da877c27b2d6",
+              "name": "Capacity windows",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "capacity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"startsOnOrAfter\": \"<dateTime>\",\n  \"endsOnOrBefore\": \"<dateTime>\",\n  \"businessUnitIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"jobTypeId\": \"<integer>\",\n  \"skillBasedAvailability\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"availabilities\": [\n    {\n      \"start\": \"2024-05-28T01:30:58.979Z\",\n      \"end\": \"2017-12-22T18:40:25.242Z\",\n      \"timeslots\": [\n        {\n          \"start\": \"1958-09-26T18:18:19.837Z\",\n          \"end\": \"2017-03-17T22:32:39.913Z\",\n          \"technicianIds\": [\n            3872,\n            373\n          ],\n          \"isAvailable\": true,\n          \"isExceedingIdealBookingPercentage\": true,\n          \"totalAvailability\": 9074\n        },\n        {\n          \"start\": \"1969-12-31T09:46:06.993Z\",\n          \"end\": \"2005-02-13T19:29:47.004Z\",\n          \"technicianIds\": [\n            2726,\n            3171\n          ],\n          \"isAvailable\": true,\n          \"isExceedingIdealBookingPercentage\": false,\n          \"totalAvailability\": 5213\n        }\n      ]\n    },\n    {\n      \"start\": \"1971-01-22T12:30:51.897Z\",\n      \"end\": \"1988-07-19T18:54:08.032Z\",\n      \"timeslots\": [\n        {\n          \"start\": \"1969-08-21T02:18:54.079Z\",\n          \"end\": \"2010-05-16T08:57:45.174Z\",\n          \"technicianIds\": [\n            171,\n            5257\n          ],\n          \"isAvailable\": true,\n          \"isExceedingIdealBookingPercentage\": true,\n          \"totalAvailability\": 6246\n        },\n        {\n          \"start\": \"1990-01-07T20:55:06.179Z\",\n          \"end\": \"1955-07-27T04:01:01.593Z\",\n          \"technicianIds\": [\n            4253,\n            5079\n          ],\n          \"isAvailable\": false,\n          \"isExceedingIdealBookingPercentage\": true,\n          \"totalAvailability\": 7493\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "d371037b-7704-494d-a5fe-ca35de5b201d",
+      "name": "Zones",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8e7b40f4-5295-4591-850e-ec8620990daa",
+          "name": "List Zones",
+          "request": {
+            "name": "List Zones",
+            "description": {},
+            "url": {
+              "path": [
+                "zones"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f3faa28f-72ea-4cd0-8a32-5d6596d47417",
+              "name": "Zones",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 395,\n      \"name\": \"string\",\n      \"zips\": [\n        \"string\",\n        \"string\"\n      ],\n      \"cities\": [\n        \"string\",\n        \"string\"\n      ],\n      \"active\": false\n    },\n    {\n      \"id\": 5199,\n      \"name\": \"string\",\n      \"zips\": [\n        \"string\",\n        \"string\"\n      ],\n      \"cities\": [\n        \"string\",\n        \"string\"\n      ],\n      \"active\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "796c6535-a988-4cfc-8793-c0fd38dc4e31",
+      "name": "Business Hours",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "df29e705-54fb-4d53-8596-002278f65d4e",
+          "name": "Get Business Hours",
+          "request": {
+            "name": "Get Business Hours",
+            "description": {},
+            "url": {
+              "path": [
+                "business-hours"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "98cd574b-b409-42b8-9873-7d025b42490d",
+              "name": "Business hours",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business-hours"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"weekdays\": [\n    {\n      \"weekday\": \"string\",\n      \"timeSlots\": [\n        {\n          \"from\": \"string\",\n          \"to\": \"string\"\n        },\n        {\n          \"from\": \"string\",\n          \"to\": \"string\"\n        }\n      ]\n    },\n    {\n      \"weekday\": \"string\",\n      \"timeSlots\": [\n        {\n          \"from\": \"string\",\n          \"to\": \"string\"\n        },\n        {\n          \"from\": \"string\",\n          \"to\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2a7cf1ce-035d-4430-9c34-e8b2282d04f3",
+      "name": "GPS",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f17f3e02-abd7-4a9d-b74e-b9cd70b1d5e4",
+          "name": "List GPS Pings",
+          "request": {
+            "name": "List GPS Pings",
+            "description": {},
+            "url": {
+              "path": [
+                "gps-pings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "technicianId",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "fromUtc",
+                  "value": "<dateTime>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "toUtc",
+                  "value": "<dateTime>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9952ff7c-1c6d-4655-a88d-5c4992b31f5e",
+              "name": "GPS pings",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gps-pings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "technicianId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "fromUtc",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "toUtc",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"latitude\": 9981.100931293797,\n      \"longitude\": 9920.172820959968,\n      \"speed\": 2481.975466854591,\n      \"heading\": 3510.4933110549173,\n      \"utcDateTime\": \"1996-09-13T13:15:19.306Z\"\n    },\n    {\n      \"latitude\": 4303.686311475553,\n      \"longitude\": 480.32482852894077,\n      \"speed\": 3550.1272914302995,\n      \"heading\": 7022.744286193454,\n      \"utcDateTime\": \"1961-01-29T17:46:44.681Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "0000000",
+      "key": "tenant"
+    },
+    {
+      "type": "string",
+      "value": "https://api.servicetitan.io/dispatch/v2/{{tenant}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8b8caa36-8374-41f5-9369-46ef7934c6fe",
+    "name": "ServiceTitan Dispatch API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Dispatch API manages technician shifts, appointment assignments, capacity windows,\nbusiness hours, zones, arrival windows, and gps pings. Drives the dispatch board.\nTenant-scoped; OAuth 2.0 + App Key.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+      "type": "text/plain"
+    }
+  }
+}

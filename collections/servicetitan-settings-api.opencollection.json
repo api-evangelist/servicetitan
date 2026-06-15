@@ -1,0 +1,245 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ServiceTitan Settings API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://auth.servicetitan.io/connect/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Business Units",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Business Units",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.servicetitan.io/settings/v2/{tenant}/business-units",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "modifiedOnOrAfter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Business Units"
+        },
+        {
+          "info": {
+            "name": "Get Business Unit",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.servicetitan.io/settings/v2/{tenant}/business-units/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Business Unit"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Technicians",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Technicians",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.servicetitan.io/settings/v2/{tenant}/technicians",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "modifiedOnOrAfter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "active",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Technicians"
+        },
+        {
+          "info": {
+            "name": "Create Technician",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.servicetitan.io/settings/v2/{tenant}/technicians",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Technician"
+        },
+        {
+          "info": {
+            "name": "Get Technician",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.servicetitan.io/settings/v2/{tenant}/technicians/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Technician"
+        },
+        {
+          "info": {
+            "name": "Update Technician",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.servicetitan.io/settings/v2/{tenant}/technicians/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Technician"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Employees",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Employees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.servicetitan.io/settings/v2/{tenant}/employees",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "modifiedOnOrAfter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Employees"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "User Roles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List User Roles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.servicetitan.io/settings/v2/{tenant}/user-roles"
+          },
+          "docs": "List User Roles"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Tag Types",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Tag Types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.servicetitan.io/settings/v2/{tenant}/tag-types"
+          },
+          "docs": "List Tag Types"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

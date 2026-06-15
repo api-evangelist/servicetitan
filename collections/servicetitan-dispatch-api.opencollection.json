@@ -1,0 +1,245 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ServiceTitan Dispatch API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://auth.servicetitan.io/connect/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Appointment Assignments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Appointment Assignments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.servicetitan.io/dispatch/v2/{tenant}/appointment-assignments",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "modifiedOnOrAfter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "technicianId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Appointment Assignments"
+        },
+        {
+          "info": {
+            "name": "Assign Technicians",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.servicetitan.io/dispatch/v2/{tenant}/appointment-assignments/assign-technicians",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Assign Technicians"
+        },
+        {
+          "info": {
+            "name": "Unassign Technicians",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.servicetitan.io/dispatch/v2/{tenant}/appointment-assignments/unassign-technicians",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Unassign Technicians"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Technician Shifts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Technician Shifts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.servicetitan.io/dispatch/v2/{tenant}/technician-shifts",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startsOnOrAfter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endsOnOrBefore",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Technician Shifts"
+        },
+        {
+          "info": {
+            "name": "Create Technician Shift",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.servicetitan.io/dispatch/v2/{tenant}/technician-shifts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Technician Shift"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Capacity",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Capacity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.servicetitan.io/dispatch/v2/{tenant}/capacity",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get Capacity"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Zones",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Zones",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.servicetitan.io/dispatch/v2/{tenant}/zones"
+          },
+          "docs": "List Zones"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Business Hours",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Business Hours",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.servicetitan.io/dispatch/v2/{tenant}/business-hours"
+          },
+          "docs": "Get Business Hours"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "GPS",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List GPS Pings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.servicetitan.io/dispatch/v2/{tenant}/gps-pings",
+            "params": [
+              {
+                "name": "technicianId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fromUtc",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "toUtc",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List GPS Pings"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1974 @@
+{
+  "item": [
+    {
+      "id": "1ccee124-cd72-464c-908e-bd32ba8c4ca6",
+      "name": "Customers",
+      "description": {
+        "content": "Customer-of-record records",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e853c656-d681-4f12-b82d-0d3adba344d8",
+          "name": "List Customers",
+          "request": {
+            "name": "List Customers",
+            "description": {
+              "content": "Returns a paginated list of customers matching the provided filters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "customers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeTotal",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<string>",
+                  "description": "Comma-separated list of IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedBefore",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "createdBefore",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "createdOnOrAfter",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Tenant ID assigned by ServiceTitan",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a5e8a702-3a82-4f8a-ba4b-1abbf6ce35dc",
+              "name": "Paginated list of customers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "includeTotal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "modifiedBefore",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "createdBefore",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "createdOnOrAfter",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Tenant ID assigned by ServiceTitan",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 1061,\n  \"pageSize\": 1480,\n  \"hasMore\": true,\n  \"totalCount\": 4398,\n  \"data\": [\n    {\n      \"id\": 2417,\n      \"active\": true,\n      \"name\": \"string\",\n      \"type\": \"Residential\",\n      \"address\": {\n        \"street\": \"string\",\n        \"unit\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"zip\": \"string\",\n        \"country\": \"string\",\n        \"latitude\": 5667.20373122931,\n        \"longitude\": 8852.433272678301\n      },\n      \"customFields\": [\n        {\n          \"typeId\": 1047,\n          \"name\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"typeId\": 4132,\n          \"name\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"balance\": 8834.899963114332,\n      \"doNotMail\": true,\n      \"doNotService\": false,\n      \"createdOn\": \"1999-03-22T05:40:20.744Z\",\n      \"modifiedOn\": \"1962-11-07T16:14:51.854Z\",\n      \"contacts\": [\n        {\n          \"id\": 2605,\n          \"type\": \"MobilePhone\",\n          \"value\": \"string\",\n          \"memo\": \"string\",\n          \"modifiedOn\": \"2003-08-27T21:15:28.727Z\"\n        },\n        {\n          \"id\": 3605,\n          \"type\": \"Phone\",\n          \"value\": \"string\",\n          \"memo\": \"string\",\n          \"modifiedOn\": \"1974-10-16T17:05:04.378Z\"\n        }\n      ],\n      \"hasActiveMembership\": true\n    },\n    {\n      \"id\": 3529,\n      \"active\": false,\n      \"name\": \"string\",\n      \"type\": \"Residential\",\n      \"address\": {\n        \"street\": \"string\",\n        \"unit\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"zip\": \"string\",\n        \"country\": \"string\",\n        \"latitude\": 3902.722974925723,\n        \"longitude\": 844.9504266953422\n      },\n      \"customFields\": [\n        {\n          \"typeId\": 2449,\n          \"name\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"typeId\": 3123,\n          \"name\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"balance\": 3789.504787007355,\n      \"doNotMail\": false,\n      \"doNotService\": false,\n      \"createdOn\": \"1958-04-14T23:48:27.673Z\",\n      \"modifiedOn\": \"1949-12-18T10:02:25.473Z\",\n      \"contacts\": [\n        {\n          \"id\": 3099,\n          \"type\": \"Phone\",\n          \"value\": \"string\",\n          \"memo\": \"string\",\n          \"modifiedOn\": \"1962-04-24T03:54:41.363Z\"\n        },\n        {\n          \"id\": 9211,\n          \"type\": \"Fax\",\n          \"value\": \"string\",\n          \"memo\": \"string\",\n          \"modifiedOn\": \"1998-11-11T00:36:32.179Z\"\n        }\n      ],\n      \"hasActiveMembership\": false\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a8379d77-b035-4e8d-8ec9-8a32f0f54937",
+          "name": "Create Customer",
+          "request": {
+            "name": "Create Customer",
+            "description": {
+              "content": "Creates a new customer record in the tenant.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "customers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Tenant ID assigned by ServiceTitan",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"locations\": [\n    {\n      \"address\": {\n        \"street\": \"<string>\",\n        \"unit\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"country\": \"<string>\",\n        \"latitude\": \"<number>\",\n        \"longitude\": \"<number>\"\n      },\n      \"name\": \"<string>\",\n      \"zoneId\": \"<integer>\"\n    },\n    {\n      \"address\": {\n        \"street\": \"<string>\",\n        \"unit\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"country\": \"<string>\",\n        \"latitude\": \"<number>\",\n        \"longitude\": \"<number>\"\n      },\n      \"name\": \"<string>\",\n      \"zoneId\": \"<integer>\"\n    }\n  ],\n  \"doNotMail\": \"<boolean>\",\n  \"doNotService\": \"<boolean>\",\n  \"contacts\": [\n    {\n      \"type\": \"<string>\",\n      \"value\": \"<string>\",\n      \"memo\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"value\": \"<string>\",\n      \"memo\": \"<string>\"\n    }\n  ],\n  \"customFields\": [\n    {\n      \"typeId\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"typeId\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e8e829cc-a1bf-4e2f-805b-fb277405e4c9",
+              "name": "Created customer",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Tenant ID assigned by ServiceTitan",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"locations\": [\n    {\n      \"address\": {\n        \"street\": \"string\",\n        \"unit\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"zip\": \"string\",\n        \"country\": \"string\",\n        \"latitude\": 7956.209036822558,\n        \"longitude\": 5675.79650618248\n      },\n      \"name\": \"string\",\n      \"zoneId\": 6901\n    },\n    {\n      \"address\": {\n        \"street\": \"string\",\n        \"unit\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"zip\": \"string\",\n        \"country\": \"string\",\n        \"latitude\": 5417.836538617168,\n        \"longitude\": 6035.292825244096\n      },\n      \"name\": \"string\",\n      \"zoneId\": 6978\n    }\n  ],\n  \"doNotMail\": \"<boolean>\",\n  \"doNotService\": \"<boolean>\",\n  \"contacts\": [\n    {\n      \"type\": \"string\",\n      \"value\": \"string\",\n      \"memo\": \"string\"\n    },\n    {\n      \"type\": \"string\",\n      \"value\": \"string\",\n      \"memo\": \"string\"\n    }\n  ],\n  \"customFields\": [\n    {\n      \"typeId\": 6205,\n      \"name\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"typeId\": 6548,\n      \"name\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 4098,\n  \"active\": false,\n  \"name\": \"string\",\n  \"type\": \"Residential\",\n  \"address\": {\n    \"street\": \"string\",\n    \"unit\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"zip\": \"string\",\n    \"country\": \"string\",\n    \"latitude\": 1574.5741812573788,\n    \"longitude\": 4078.7122001863686\n  },\n  \"customFields\": [\n    {\n      \"typeId\": 4564,\n      \"name\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"typeId\": 1900,\n      \"name\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"balance\": 7483.726394719414,\n  \"doNotMail\": false,\n  \"doNotService\": false,\n  \"createdOn\": \"1976-07-25T07:45:35.923Z\",\n  \"modifiedOn\": \"2021-08-01T09:46:56.047Z\",\n  \"contacts\": [\n    {\n      \"id\": 6264,\n      \"type\": \"MobilePhone\",\n      \"value\": \"string\",\n      \"memo\": \"string\",\n      \"modifiedOn\": \"1987-08-09T14:17:50.198Z\"\n    },\n    {\n      \"id\": 5969,\n      \"type\": \"Fax\",\n      \"value\": \"string\",\n      \"memo\": \"string\",\n      \"modifiedOn\": \"1957-06-10T15:51:39.358Z\"\n    }\n  ],\n  \"hasActiveMembership\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "770b884f-7b80-4ca0-898f-09546c2cd52e",
+          "name": "Get Customer",
+          "request": {
+            "name": "Get Customer",
+            "description": {},
+            "url": {
+              "path": [
+                "customers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Tenant ID assigned by ServiceTitan",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d7ad2408-1a4f-4d22-a564-d935c10bbaba",
+              "name": "Customer record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Tenant ID assigned by ServiceTitan",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 4098,\n  \"active\": false,\n  \"name\": \"string\",\n  \"type\": \"Residential\",\n  \"address\": {\n    \"street\": \"string\",\n    \"unit\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"zip\": \"string\",\n    \"country\": \"string\",\n    \"latitude\": 1574.5741812573788,\n    \"longitude\": 4078.7122001863686\n  },\n  \"customFields\": [\n    {\n      \"typeId\": 4564,\n      \"name\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"typeId\": 1900,\n      \"name\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"balance\": 7483.726394719414,\n  \"doNotMail\": false,\n  \"doNotService\": false,\n  \"createdOn\": \"1976-07-25T07:45:35.923Z\",\n  \"modifiedOn\": \"2021-08-01T09:46:56.047Z\",\n  \"contacts\": [\n    {\n      \"id\": 6264,\n      \"type\": \"MobilePhone\",\n      \"value\": \"string\",\n      \"memo\": \"string\",\n      \"modifiedOn\": \"1987-08-09T14:17:50.198Z\"\n    },\n    {\n      \"id\": 5969,\n      \"type\": \"Fax\",\n      \"value\": \"string\",\n      \"memo\": \"string\",\n      \"modifiedOn\": \"1957-06-10T15:51:39.358Z\"\n    }\n  ],\n  \"hasActiveMembership\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3def24ff-3cfc-474e-b2d4-c3a64345a4c4",
+          "name": "Update Customer",
+          "request": {
+            "name": "Update Customer",
+            "description": {},
+            "url": {
+              "path": [
+                "customers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Tenant ID assigned by ServiceTitan",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"doNotMail\": \"<boolean>\",\n  \"doNotService\": \"<boolean>\",\n  \"customFields\": [\n    {\n      \"typeId\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"typeId\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "69153b34-9b6c-4acf-b5f0-3647ab14175a",
+              "name": "Updated customer",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Tenant ID assigned by ServiceTitan",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"doNotMail\": \"<boolean>\",\n  \"doNotService\": \"<boolean>\",\n  \"customFields\": [\n    {\n      \"typeId\": 3458,\n      \"name\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"typeId\": 5605,\n      \"name\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 4098,\n  \"active\": false,\n  \"name\": \"string\",\n  \"type\": \"Residential\",\n  \"address\": {\n    \"street\": \"string\",\n    \"unit\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"zip\": \"string\",\n    \"country\": \"string\",\n    \"latitude\": 1574.5741812573788,\n    \"longitude\": 4078.7122001863686\n  },\n  \"customFields\": [\n    {\n      \"typeId\": 4564,\n      \"name\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"typeId\": 1900,\n      \"name\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"balance\": 7483.726394719414,\n  \"doNotMail\": false,\n  \"doNotService\": false,\n  \"createdOn\": \"1976-07-25T07:45:35.923Z\",\n  \"modifiedOn\": \"2021-08-01T09:46:56.047Z\",\n  \"contacts\": [\n    {\n      \"id\": 6264,\n      \"type\": \"MobilePhone\",\n      \"value\": \"string\",\n      \"memo\": \"string\",\n      \"modifiedOn\": \"1987-08-09T14:17:50.198Z\"\n    },\n    {\n      \"id\": 5969,\n      \"type\": \"Fax\",\n      \"value\": \"string\",\n      \"memo\": \"string\",\n      \"modifiedOn\": \"1957-06-10T15:51:39.358Z\"\n    }\n  ],\n  \"hasActiveMembership\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "46295721-9638-48f2-af6c-d64391afc894",
+      "name": "Locations",
+      "description": {
+        "content": "Customer service locations and addresses",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8a4e2e19-d3d3-4682-b8dc-68217a5724b1",
+          "name": "List Locations",
+          "request": {
+            "name": "List Locations",
+            "description": {},
+            "url": {
+              "path": [
+                "locations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "customerId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Tenant ID assigned by ServiceTitan",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1e5a2697-7396-4761-8215-9d2ee8c74f20",
+              "name": "Paginated list of locations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "customerId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Tenant ID assigned by ServiceTitan",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 8098,\n  \"pageSize\": 284,\n  \"hasMore\": true,\n  \"data\": [\n    {\n      \"id\": 506,\n      \"customerId\": 5000,\n      \"active\": true,\n      \"name\": \"string\",\n      \"address\": {\n        \"street\": \"string\",\n        \"unit\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"zip\": \"string\",\n        \"country\": \"string\",\n        \"latitude\": 8150.679221201643,\n        \"longitude\": 7498.973287258058\n      },\n      \"zoneId\": 7908,\n      \"taxZoneId\": 5371,\n      \"createdOn\": \"1961-05-23T07:07:47.791Z\",\n      \"modifiedOn\": \"1958-01-10T09:27:34.236Z\"\n    },\n    {\n      \"id\": 3300,\n      \"customerId\": 7099,\n      \"active\": true,\n      \"name\": \"string\",\n      \"address\": {\n        \"street\": \"string\",\n        \"unit\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"zip\": \"string\",\n        \"country\": \"string\",\n        \"latitude\": 4402.7333948334435,\n        \"longitude\": 3582.677162423992\n      },\n      \"zoneId\": 5341,\n      \"taxZoneId\": 2433,\n      \"createdOn\": \"1984-02-09T12:43:23.110Z\",\n      \"modifiedOn\": \"1987-01-13T21:46:21.994Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d8b13e63-c02d-40a9-a928-12bc982ee4eb",
+          "name": "Create Location",
+          "request": {
+            "name": "Create Location",
+            "description": {},
+            "url": {
+              "path": [
+                "locations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Tenant ID assigned by ServiceTitan",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"address\": {\n    \"street\": \"<string>\",\n    \"unit\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"zip\": \"<string>\",\n    \"country\": \"<string>\",\n    \"latitude\": \"<number>\",\n    \"longitude\": \"<number>\"\n  },\n  \"name\": \"<string>\",\n  \"zoneId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4cc9af98-ca2b-4720-9061-21bf7cd5d521",
+              "name": "Created location",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Tenant ID assigned by ServiceTitan",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"address\": {\n    \"street\": \"string\",\n    \"unit\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"zip\": \"string\",\n    \"country\": \"string\",\n    \"latitude\": 5894.2953346891745,\n    \"longitude\": 1306.0847928314322\n  },\n  \"name\": \"<string>\",\n  \"zoneId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2055,\n  \"customerId\": 8728,\n  \"active\": true,\n  \"name\": \"string\",\n  \"address\": {\n    \"street\": \"string\",\n    \"unit\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"zip\": \"string\",\n    \"country\": \"string\",\n    \"latitude\": 5443.315165531754,\n    \"longitude\": 6100.137139175137\n  },\n  \"zoneId\": 8752,\n  \"taxZoneId\": 5678,\n  \"createdOn\": \"1999-02-18T11:43:19.932Z\",\n  \"modifiedOn\": \"2009-08-08T17:23:42.580Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "257bd6e8-a3be-4b02-bdee-ae17a7e591f6",
+          "name": "Get Location",
+          "request": {
+            "name": "Get Location",
+            "description": {},
+            "url": {
+              "path": [
+                "locations",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Tenant ID assigned by ServiceTitan",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "69a6d775-7e38-43da-ae21-5f02b1b7d245",
+              "name": "Location record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "locations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Tenant ID assigned by ServiceTitan",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2055,\n  \"customerId\": 8728,\n  \"active\": true,\n  \"name\": \"string\",\n  \"address\": {\n    \"street\": \"string\",\n    \"unit\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"zip\": \"string\",\n    \"country\": \"string\",\n    \"latitude\": 5443.315165531754,\n    \"longitude\": 6100.137139175137\n  },\n  \"zoneId\": 8752,\n  \"taxZoneId\": 5678,\n  \"createdOn\": \"1999-02-18T11:43:19.932Z\",\n  \"modifiedOn\": \"2009-08-08T17:23:42.580Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3115703f-c380-42d2-995e-0a8f64cc40fd",
+          "name": "Update Location",
+          "request": {
+            "name": "Update Location",
+            "description": {},
+            "url": {
+              "path": [
+                "locations",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Tenant ID assigned by ServiceTitan",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"address\": {\n    \"street\": \"<string>\",\n    \"unit\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"zip\": \"<string>\",\n    \"country\": \"<string>\",\n    \"latitude\": \"<number>\",\n    \"longitude\": \"<number>\"\n  },\n  \"zoneId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5b3a2727-b254-4a9e-adab-79060316643b",
+              "name": "Updated location",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "locations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Tenant ID assigned by ServiceTitan",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"address\": {\n    \"street\": \"string\",\n    \"unit\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"zip\": \"string\",\n    \"country\": \"string\",\n    \"latitude\": 2696.0935520389485,\n    \"longitude\": 287.12459527283187\n  },\n  \"zoneId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2055,\n  \"customerId\": 8728,\n  \"active\": true,\n  \"name\": \"string\",\n  \"address\": {\n    \"street\": \"string\",\n    \"unit\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"zip\": \"string\",\n    \"country\": \"string\",\n    \"latitude\": 5443.315165531754,\n    \"longitude\": 6100.137139175137\n  },\n  \"zoneId\": 8752,\n  \"taxZoneId\": 5678,\n  \"createdOn\": \"1999-02-18T11:43:19.932Z\",\n  \"modifiedOn\": \"2009-08-08T17:23:42.580Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c27c7c6c-40ab-4da0-952b-97b381a5b68e",
+      "name": "Contacts",
+      "description": {
+        "content": "Customer contact methods (phone, email)",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "09b058ea-74d9-4a58-870a-caef4bead980",
+          "name": "List Customer Contacts",
+          "request": {
+            "name": "List Customer Contacts",
+            "description": {},
+            "url": {
+              "path": [
+                "customers",
+                ":id",
+                "contacts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Tenant ID assigned by ServiceTitan",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e082c60f-4ede-4a3d-8aca-615bcd818f40",
+              "name": "List of customer contacts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers",
+                    ":id",
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Tenant ID assigned by ServiceTitan",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 8454,\n      \"type\": \"MobilePhone\",\n      \"value\": \"string\",\n      \"memo\": \"string\",\n      \"modifiedOn\": \"2019-03-07T01:41:57.188Z\"\n    },\n    {\n      \"id\": 9620,\n      \"type\": \"MobilePhone\",\n      \"value\": \"string\",\n      \"memo\": \"string\",\n      \"modifiedOn\": \"1964-03-01T20:33:56.749Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a9ca975d-239b-4192-8c21-9efef73e7808",
+          "name": "Create Customer Contact",
+          "request": {
+            "name": "Create Customer Contact",
+            "description": {},
+            "url": {
+              "path": [
+                "customers",
+                ":id",
+                "contacts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Tenant ID assigned by ServiceTitan",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"<string>\",\n  \"value\": \"<string>\",\n  \"memo\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4f742721-3e4b-451b-b497-89ce69546d4c",
+              "name": "Created contact",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers",
+                    ":id",
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Tenant ID assigned by ServiceTitan",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"value\": \"<string>\",\n  \"memo\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2425,\n  \"type\": \"Phone\",\n  \"value\": \"string\",\n  \"memo\": \"string\",\n  \"modifiedOn\": \"1983-03-14T06:59:16.632Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c760b543-0e33-4ca7-80c7-23d8e6044acd",
+      "name": "Leads",
+      "description": {
+        "content": "Pre-customer lead records",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "35371d57-7de6-44f8-8ffe-c2d98bdd9118",
+          "name": "List Leads",
+          "request": {
+            "name": "List Leads",
+            "description": {},
+            "url": {
+              "path": [
+                "leads"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Tenant ID assigned by ServiceTitan",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "872fcb1a-fcb2-4a98-a607-9a74c5ea7f4a",
+              "name": "Paginated list of leads",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "leads"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Tenant ID assigned by ServiceTitan",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 5566,\n      \"status\": \"Open\",\n      \"customerId\": 2443,\n      \"locationId\": 969,\n      \"businessUnitId\": 4022,\n      \"jobTypeId\": 7205,\n      \"priority\": \"string\",\n      \"summary\": \"string\",\n      \"callReasonId\": 9884,\n      \"campaignId\": 1796,\n      \"followUpDate\": \"1989-12-14T17:29:41.207Z\",\n      \"createdOn\": \"1991-01-18T09:50:26.248Z\",\n      \"modifiedOn\": \"2017-12-12T04:35:17.179Z\"\n    },\n    {\n      \"id\": 4158,\n      \"status\": \"Open\",\n      \"customerId\": 1135,\n      \"locationId\": 4412,\n      \"businessUnitId\": 1847,\n      \"jobTypeId\": 4678,\n      \"priority\": \"string\",\n      \"summary\": \"string\",\n      \"callReasonId\": 5565,\n      \"campaignId\": 9132,\n      \"followUpDate\": \"1947-03-27T06:34:14.507Z\",\n      \"createdOn\": \"2012-03-20T15:12:31.099Z\",\n      \"modifiedOn\": \"1977-01-04T06:50:57.640Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5a9f72ea-a8d5-4207-ae55-c15abb6ec759",
+          "name": "Create Lead",
+          "request": {
+            "name": "Create Lead",
+            "description": {},
+            "url": {
+              "path": [
+                "leads"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Tenant ID assigned by ServiceTitan",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"summary\": \"<string>\",\n  \"customerId\": \"<integer>\",\n  \"locationId\": \"<integer>\",\n  \"businessUnitId\": \"<integer>\",\n  \"jobTypeId\": \"<integer>\",\n  \"priority\": \"<string>\",\n  \"campaignId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e06726a5-9770-4533-988a-e606e31750a6",
+              "name": "Created lead",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "leads"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Tenant ID assigned by ServiceTitan",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"summary\": \"<string>\",\n  \"customerId\": \"<integer>\",\n  \"locationId\": \"<integer>\",\n  \"businessUnitId\": \"<integer>\",\n  \"jobTypeId\": \"<integer>\",\n  \"priority\": \"<string>\",\n  \"campaignId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 5464,\n  \"status\": \"Dismissed\",\n  \"customerId\": 8318,\n  \"locationId\": 6806,\n  \"businessUnitId\": 4075,\n  \"jobTypeId\": 1120,\n  \"priority\": \"string\",\n  \"summary\": \"string\",\n  \"callReasonId\": 3281,\n  \"campaignId\": 8514,\n  \"followUpDate\": \"2005-04-23T16:28:14.561Z\",\n  \"createdOn\": \"1982-10-26T03:41:22.504Z\",\n  \"modifiedOn\": \"2006-11-07T05:20:57.193Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "87ee7fbf-c975-48be-86d9-cfce7df5334a",
+          "name": "Dismiss Lead",
+          "request": {
+            "name": "Dismiss Lead",
+            "description": {},
+            "url": {
+              "path": [
+                "leads",
+                ":id",
+                "dismiss"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Tenant ID assigned by ServiceTitan",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d72ecd44-1998-44e1-ae46-a91173d6784f",
+              "name": "Lead dismissed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "leads",
+                    ":id",
+                    "dismiss"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Tenant ID assigned by ServiceTitan",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "7b9d51a9-b1b4-4502-8a15-1c616008f0bf",
+      "name": "Bookings",
+      "description": {
+        "content": "Customer-initiated booking requests",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7e2005ac-f571-42e2-a6bf-87e5a4c252a1",
+          "name": "List Bookings",
+          "request": {
+            "name": "List Bookings",
+            "description": {},
+            "url": {
+              "path": [
+                "bookings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Tenant ID assigned by ServiceTitan",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3a25fc65-bced-431b-b5a2-5bb5c58ba3c7",
+              "name": "Paginated list of bookings",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bookings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Tenant ID assigned by ServiceTitan",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 5624,\n      \"source\": \"string\",\n      \"name\": \"string\",\n      \"address\": {\n        \"street\": \"string\",\n        \"unit\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"zip\": \"string\",\n        \"country\": \"string\",\n        \"latitude\": 2236.4405718294065,\n        \"longitude\": 8119.2399945099905\n      },\n      \"customerType\": \"string\",\n      \"start\": \"2014-07-21T09:15:14.615Z\",\n      \"summary\": \"string\",\n      \"campaignId\": 3283,\n      \"businessUnitId\": 4164,\n      \"isFirstTimeClient\": false,\n      \"uploadedImages\": [\n        \"string\",\n        \"string\"\n      ],\n      \"status\": \"Dismissed\",\n      \"modifiedOn\": \"2005-01-03T09:17:21.684Z\"\n    },\n    {\n      \"id\": 1085,\n      \"source\": \"string\",\n      \"name\": \"string\",\n      \"address\": {\n        \"street\": \"string\",\n        \"unit\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"zip\": \"string\",\n        \"country\": \"string\",\n        \"latitude\": 4618.201701725993,\n        \"longitude\": 2950.2940233570284\n      },\n      \"customerType\": \"string\",\n      \"start\": \"1997-07-03T00:25:42.145Z\",\n      \"summary\": \"string\",\n      \"campaignId\": 9965,\n      \"businessUnitId\": 9360,\n      \"isFirstTimeClient\": false,\n      \"uploadedImages\": [\n        \"string\",\n        \"string\"\n      ],\n      \"status\": \"Converted\",\n      \"modifiedOn\": \"2023-06-19T09:43:26.768Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "055c8b66-f952-40f3-a5aa-f78d66104bb6",
+          "name": "Create Booking",
+          "request": {
+            "name": "Create Booking",
+            "description": {},
+            "url": {
+              "path": [
+                "bookings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Tenant ID assigned by ServiceTitan",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"start\": \"<dateTime>\",\n  \"source\": \"<string>\",\n  \"address\": {\n    \"street\": \"<string>\",\n    \"unit\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"zip\": \"<string>\",\n    \"country\": \"<string>\",\n    \"latitude\": \"<number>\",\n    \"longitude\": \"<number>\"\n  },\n  \"customerType\": \"<string>\",\n  \"campaignId\": \"<integer>\",\n  \"businessUnitId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "562158d5-aca0-4304-a6bb-29fa4f71c640",
+              "name": "Created booking",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bookings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Tenant ID assigned by ServiceTitan",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"start\": \"<dateTime>\",\n  \"source\": \"<string>\",\n  \"address\": {\n    \"street\": \"string\",\n    \"unit\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"zip\": \"string\",\n    \"country\": \"string\",\n    \"latitude\": 992.332062339526,\n    \"longitude\": 8319.945134284782\n  },\n  \"customerType\": \"<string>\",\n  \"campaignId\": \"<integer>\",\n  \"businessUnitId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 7147,\n  \"source\": \"string\",\n  \"name\": \"string\",\n  \"address\": {\n    \"street\": \"string\",\n    \"unit\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"zip\": \"string\",\n    \"country\": \"string\",\n    \"latitude\": 4960.399151748264,\n    \"longitude\": 2457.085895917519\n  },\n  \"customerType\": \"string\",\n  \"start\": \"1985-11-15T10:14:57.456Z\",\n  \"summary\": \"string\",\n  \"campaignId\": 2631,\n  \"businessUnitId\": 7571,\n  \"isFirstTimeClient\": false,\n  \"uploadedImages\": [\n    \"string\",\n    \"string\"\n  ],\n  \"status\": \"Pending\",\n  \"modifiedOn\": \"2019-08-19T01:33:30.148Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "4d0e4d52-0da7-4e04-ba20-ff510ce732ea",
+      "name": "Tags",
+      "description": {
+        "content": "Tag types and customer tagging",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8ae024b1-8c44-486c-818f-a3d554112289",
+          "name": "List Tag Types",
+          "request": {
+            "name": "List Tag Types",
+            "description": {},
+            "url": {
+              "path": [
+                "tagtypes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Tenant ID assigned by ServiceTitan",
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8da0b4e0-7fd0-432f-8b23-b30f969f0786",
+              "name": "Tag types",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tagtypes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Tenant ID assigned by ServiceTitan",
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 878,\n      \"name\": \"string\",\n      \"color\": \"string\",\n      \"active\": true\n    },\n    {\n      \"id\": 6176,\n      \"name\": \"string\",\n      \"color\": \"string\",\n      \"active\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Tenant ID assigned by ServiceTitan",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "0000000",
+      "key": "tenant"
+    },
+    {
+      "type": "string",
+      "value": "https://api.servicetitan.io/crm/v2/{{tenant}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "438506f8-9806-43f1-8826-46d969e15c4d",
+    "name": "ServiceTitan CRM API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The CRM API provides access to ServiceTitan customer-of-record data — residential and\ncommercial customers, locations, contacts, leads, bookings, tags, and booking provider\nsessions. All paths are tenant-scoped and require an OAuth 2.0 access token plus the\nST-App-Key header.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+      "type": "text/plain"
+    }
+  }
+}

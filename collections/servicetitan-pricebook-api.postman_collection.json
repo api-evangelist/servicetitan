@@ -1,0 +1,1593 @@
+{
+  "item": [
+    {
+      "id": "23cdc049-eb11-4689-b06c-f0aabb15546c",
+      "name": "Services",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d11121da-c9ac-4845-a899-cfa51bce1e0f",
+          "name": "List Services",
+          "request": {
+            "name": "List Services",
+            "description": {},
+            "url": {
+              "path": [
+                "services"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "active",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6a597090-596c-405a-9564-c01b5f843da5",
+              "name": "Paginated services",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "active",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 8152,\n  \"pageSize\": 4583,\n  \"hasMore\": true,\n  \"data\": [\n    {\n      \"id\": 8753,\n      \"code\": \"string\",\n      \"displayName\": \"string\",\n      \"description\": \"string\",\n      \"warranty\": {\n        \"duration\": 5295,\n        \"description\": \"string\"\n      },\n      \"categories\": [\n        8156,\n        3070\n      ],\n      \"price\": 908.6508962981244,\n      \"memberPrice\": 2207.679555710055,\n      \"addOnPrice\": 6905.416236927508,\n      \"addOnMemberPrice\": 2824.351089420569,\n      \"taxable\": true,\n      \"account\": \"string\",\n      \"hours\": 5228.861602607634,\n      \"isLabor\": true,\n      \"recommendations\": [\n        6247,\n        6864\n      ],\n      \"upgrades\": [\n        4652,\n        3603\n      ],\n      \"commissionBonus\": {\n        \"type\": \"string\",\n        \"amount\": 4924.681414240749\n      },\n      \"paysCommission\": true,\n      \"active\": false,\n      \"modifiedOn\": \"1982-09-10T17:26:16.828Z\"\n    },\n    {\n      \"id\": 303,\n      \"code\": \"string\",\n      \"displayName\": \"string\",\n      \"description\": \"string\",\n      \"warranty\": {\n        \"duration\": 1056,\n        \"description\": \"string\"\n      },\n      \"categories\": [\n        1549,\n        4620\n      ],\n      \"price\": 5704.122890800324,\n      \"memberPrice\": 1616.374792815719,\n      \"addOnPrice\": 5912.239894749127,\n      \"addOnMemberPrice\": 3736.25360482262,\n      \"taxable\": true,\n      \"account\": \"string\",\n      \"hours\": 3451.56997387719,\n      \"isLabor\": false,\n      \"recommendations\": [\n        6688,\n        9901\n      ],\n      \"upgrades\": [\n        146,\n        7519\n      ],\n      \"commissionBonus\": {\n        \"type\": \"string\",\n        \"amount\": 9705.42934951496\n      },\n      \"paysCommission\": false,\n      \"active\": false,\n      \"modifiedOn\": \"1967-12-24T01:04:32.103Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "71192e6b-15d1-46cf-a61d-f6294b902b1d",
+          "name": "Create Service",
+          "request": {
+            "name": "Create Service",
+            "description": {},
+            "url": {
+              "path": [
+                "services"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"price\": \"<number>\",\n  \"description\": \"<string>\",\n  \"memberPrice\": \"<number>\",\n  \"hours\": \"<number>\",\n  \"taxable\": \"<boolean>\",\n  \"categories\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "727d38cb-0ab5-47bd-84ec-48cd179e2140",
+              "name": "Created service",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"price\": \"<number>\",\n  \"description\": \"<string>\",\n  \"memberPrice\": \"<number>\",\n  \"hours\": \"<number>\",\n  \"taxable\": \"<boolean>\",\n  \"categories\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 3488,\n  \"code\": \"string\",\n  \"displayName\": \"string\",\n  \"description\": \"string\",\n  \"warranty\": {\n    \"duration\": 7552,\n    \"description\": \"string\"\n  },\n  \"categories\": [\n    1113,\n    6287\n  ],\n  \"price\": 7698.006686245578,\n  \"memberPrice\": 8877.937727592274,\n  \"addOnPrice\": 9215.855694296215,\n  \"addOnMemberPrice\": 5721.757913676618,\n  \"taxable\": true,\n  \"account\": \"string\",\n  \"hours\": 9684.743502074802,\n  \"isLabor\": true,\n  \"recommendations\": [\n    760,\n    3367\n  ],\n  \"upgrades\": [\n    7792,\n    7269\n  ],\n  \"commissionBonus\": {\n    \"type\": \"string\",\n    \"amount\": 4636.970303648368\n  },\n  \"paysCommission\": false,\n  \"active\": false,\n  \"modifiedOn\": \"1974-03-06T08:37:09.698Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ae0c8594-8519-4475-8e90-702198cee88a",
+          "name": "Get Service",
+          "request": {
+            "name": "Get Service",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "47a06fa7-bf0d-4c39-ac84-9ce2409d5239",
+              "name": "Service",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 3488,\n  \"code\": \"string\",\n  \"displayName\": \"string\",\n  \"description\": \"string\",\n  \"warranty\": {\n    \"duration\": 7552,\n    \"description\": \"string\"\n  },\n  \"categories\": [\n    1113,\n    6287\n  ],\n  \"price\": 7698.006686245578,\n  \"memberPrice\": 8877.937727592274,\n  \"addOnPrice\": 9215.855694296215,\n  \"addOnMemberPrice\": 5721.757913676618,\n  \"taxable\": true,\n  \"account\": \"string\",\n  \"hours\": 9684.743502074802,\n  \"isLabor\": true,\n  \"recommendations\": [\n    760,\n    3367\n  ],\n  \"upgrades\": [\n    7792,\n    7269\n  ],\n  \"commissionBonus\": {\n    \"type\": \"string\",\n    \"amount\": 4636.970303648368\n  },\n  \"paysCommission\": false,\n  \"active\": false,\n  \"modifiedOn\": \"1974-03-06T08:37:09.698Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b2a5d05e-15fe-49fa-b188-c1ad4abfb369",
+          "name": "Update Service",
+          "request": {
+            "name": "Update Service",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<long>\",\n  \"code\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"warranty\": {\n    \"duration\": \"<integer>\",\n    \"description\": \"<string>\"\n  },\n  \"categories\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"price\": \"<double>\",\n  \"memberPrice\": \"<double>\",\n  \"addOnPrice\": \"<double>\",\n  \"addOnMemberPrice\": \"<double>\",\n  \"taxable\": \"<boolean>\",\n  \"account\": \"<string>\",\n  \"hours\": \"<number>\",\n  \"isLabor\": \"<boolean>\",\n  \"recommendations\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"upgrades\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"commissionBonus\": {\n    \"type\": \"<string>\",\n    \"amount\": \"<number>\"\n  },\n  \"paysCommission\": \"<boolean>\",\n  \"active\": \"<boolean>\",\n  \"modifiedOn\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2088c5cf-b406-46cc-9992-b2347f7eac93",
+              "name": "Updated service",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<long>\",\n  \"code\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"warranty\": {\n    \"duration\": \"<integer>\",\n    \"description\": \"<string>\"\n  },\n  \"categories\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"price\": \"<double>\",\n  \"memberPrice\": \"<double>\",\n  \"addOnPrice\": \"<double>\",\n  \"addOnMemberPrice\": \"<double>\",\n  \"taxable\": \"<boolean>\",\n  \"account\": \"<string>\",\n  \"hours\": \"<number>\",\n  \"isLabor\": \"<boolean>\",\n  \"recommendations\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"upgrades\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"commissionBonus\": {\n    \"type\": \"<string>\",\n    \"amount\": \"<number>\"\n  },\n  \"paysCommission\": \"<boolean>\",\n  \"active\": \"<boolean>\",\n  \"modifiedOn\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "80ee0a78-3f1a-4c82-a321-b152639e79bf",
+          "name": "Delete Service",
+          "request": {
+            "name": "Delete Service",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "64395969-f6f6-489d-866a-9ff47e8a6197",
+              "name": "Deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "d664a8b1-6927-4830-9921-95e263d792a2",
+      "name": "Materials",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a6524864-5627-4d23-9870-231bf57dbbe3",
+          "name": "List Materials",
+          "request": {
+            "name": "List Materials",
+            "description": {},
+            "url": {
+              "path": [
+                "materials"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "55b96939-b374-476f-8593-be76b16a1743",
+              "name": "Paginated materials",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "materials"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 285,\n  \"pageSize\": 9562,\n  \"hasMore\": true,\n  \"data\": [\n    {\n      \"id\": 2520,\n      \"code\": \"string\",\n      \"displayName\": \"string\",\n      \"description\": \"string\",\n      \"cost\": 7404.037576852173,\n      \"price\": 2395.078285096283,\n      \"memberPrice\": 7984.21067876001,\n      \"addOnPrice\": 4783.880808294929,\n      \"addOnMemberPrice\": 931.432580212671,\n      \"active\": false,\n      \"taxable\": true,\n      \"account\": \"string\",\n      \"categories\": [\n        5072,\n        6918\n      ],\n      \"vendorParts\": [\n        {\n          \"vendorId\": 5362,\n          \"vendorPartNumber\": \"string\",\n          \"cost\": 7734.162393212971\n        },\n        {\n          \"vendorId\": 2070,\n          \"vendorPartNumber\": \"string\",\n          \"cost\": 8490.333178901496\n        }\n      ],\n      \"primaryVendor\": {\n        \"vendorId\": 1502,\n        \"vendorPartNumber\": \"string\"\n      },\n      \"modifiedOn\": \"1965-07-19T12:13:48.299Z\"\n    },\n    {\n      \"id\": 2626,\n      \"code\": \"string\",\n      \"displayName\": \"string\",\n      \"description\": \"string\",\n      \"cost\": 8368.731674807259,\n      \"price\": 4900.536826295222,\n      \"memberPrice\": 4373.549962755677,\n      \"addOnPrice\": 7502.168389098976,\n      \"addOnMemberPrice\": 703.7848303970984,\n      \"active\": false,\n      \"taxable\": false,\n      \"account\": \"string\",\n      \"categories\": [\n        416,\n        3748\n      ],\n      \"vendorParts\": [\n        {\n          \"vendorId\": 7842,\n          \"vendorPartNumber\": \"string\",\n          \"cost\": 2099.409941885273\n        },\n        {\n          \"vendorId\": 3779,\n          \"vendorPartNumber\": \"string\",\n          \"cost\": 3478.3048649630455\n        }\n      ],\n      \"primaryVendor\": {\n        \"vendorId\": 2537,\n        \"vendorPartNumber\": \"string\"\n      },\n      \"modifiedOn\": \"2017-10-18T03:13:42.819Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fa0bb094-482a-4a6f-a0ba-adc57e62cf74",
+          "name": "Create Material",
+          "request": {
+            "name": "Create Material",
+            "description": {},
+            "url": {
+              "path": [
+                "materials"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"cost\": \"<number>\",\n  \"price\": \"<number>\",\n  \"description\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"taxable\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9c02e164-cf7b-4e0b-a437-bd7174534111",
+              "name": "Created material",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "materials"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"cost\": \"<number>\",\n  \"price\": \"<number>\",\n  \"description\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"taxable\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 9784,\n  \"code\": \"string\",\n  \"displayName\": \"string\",\n  \"description\": \"string\",\n  \"cost\": 8448.53444047953,\n  \"price\": 1214.2314026959932,\n  \"memberPrice\": 5244.701915824349,\n  \"addOnPrice\": 5944.118485872328,\n  \"addOnMemberPrice\": 3251.8559581798368,\n  \"active\": false,\n  \"taxable\": true,\n  \"account\": \"string\",\n  \"categories\": [\n    505,\n    8832\n  ],\n  \"vendorParts\": [\n    {\n      \"vendorId\": 4262,\n      \"vendorPartNumber\": \"string\",\n      \"cost\": 3651.1104032140806\n    },\n    {\n      \"vendorId\": 3128,\n      \"vendorPartNumber\": \"string\",\n      \"cost\": 4135.214659560308\n    }\n  ],\n  \"primaryVendor\": {\n    \"vendorId\": 8531,\n    \"vendorPartNumber\": \"string\"\n  },\n  \"modifiedOn\": \"1984-07-22T02:46:24.803Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "060f9dba-1132-4862-bc1e-47d1e2bf6c3b",
+          "name": "Get Material",
+          "request": {
+            "name": "Get Material",
+            "description": {},
+            "url": {
+              "path": [
+                "materials",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "66f14705-5c17-43d2-b740-aca1a3be8069",
+              "name": "Material",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "materials",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 9784,\n  \"code\": \"string\",\n  \"displayName\": \"string\",\n  \"description\": \"string\",\n  \"cost\": 8448.53444047953,\n  \"price\": 1214.2314026959932,\n  \"memberPrice\": 5244.701915824349,\n  \"addOnPrice\": 5944.118485872328,\n  \"addOnMemberPrice\": 3251.8559581798368,\n  \"active\": false,\n  \"taxable\": true,\n  \"account\": \"string\",\n  \"categories\": [\n    505,\n    8832\n  ],\n  \"vendorParts\": [\n    {\n      \"vendorId\": 4262,\n      \"vendorPartNumber\": \"string\",\n      \"cost\": 3651.1104032140806\n    },\n    {\n      \"vendorId\": 3128,\n      \"vendorPartNumber\": \"string\",\n      \"cost\": 4135.214659560308\n    }\n  ],\n  \"primaryVendor\": {\n    \"vendorId\": 8531,\n    \"vendorPartNumber\": \"string\"\n  },\n  \"modifiedOn\": \"1984-07-22T02:46:24.803Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "418bda3f-9c00-45ff-814d-39dfe15e3aa9",
+          "name": "Update Material",
+          "request": {
+            "name": "Update Material",
+            "description": {},
+            "url": {
+              "path": [
+                "materials",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<long>\",\n  \"code\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"cost\": \"<number>\",\n  \"price\": \"<number>\",\n  \"memberPrice\": \"<number>\",\n  \"addOnPrice\": \"<number>\",\n  \"addOnMemberPrice\": \"<number>\",\n  \"active\": \"<boolean>\",\n  \"taxable\": \"<boolean>\",\n  \"account\": \"<string>\",\n  \"categories\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"vendorParts\": [\n    {\n      \"vendorId\": \"<integer>\",\n      \"vendorPartNumber\": \"<string>\",\n      \"cost\": \"<number>\"\n    },\n    {\n      \"vendorId\": \"<integer>\",\n      \"vendorPartNumber\": \"<string>\",\n      \"cost\": \"<number>\"\n    }\n  ],\n  \"primaryVendor\": {\n    \"vendorId\": \"<integer>\",\n    \"vendorPartNumber\": \"<string>\"\n  },\n  \"modifiedOn\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e38002cd-cda3-48ef-aae4-47198fae9acc",
+              "name": "Updated material",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "materials",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<long>\",\n  \"code\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"cost\": \"<number>\",\n  \"price\": \"<number>\",\n  \"memberPrice\": \"<number>\",\n  \"addOnPrice\": \"<number>\",\n  \"addOnMemberPrice\": \"<number>\",\n  \"active\": \"<boolean>\",\n  \"taxable\": \"<boolean>\",\n  \"account\": \"<string>\",\n  \"categories\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"vendorParts\": [\n    {\n      \"vendorId\": \"<integer>\",\n      \"vendorPartNumber\": \"<string>\",\n      \"cost\": \"<number>\"\n    },\n    {\n      \"vendorId\": \"<integer>\",\n      \"vendorPartNumber\": \"<string>\",\n      \"cost\": \"<number>\"\n    }\n  ],\n  \"primaryVendor\": {\n    \"vendorId\": \"<integer>\",\n    \"vendorPartNumber\": \"<string>\"\n  },\n  \"modifiedOn\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "5122782a-5c32-41ed-a0e5-38a4c537bba0",
+      "name": "Equipment",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7840c655-ca48-4853-87d7-4c51f1b9ba48",
+          "name": "List Equipment",
+          "request": {
+            "name": "List Equipment",
+            "description": {},
+            "url": {
+              "path": [
+                "equipment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3da71ffa-5693-42d9-8b95-a3d0a7f79f51",
+              "name": "Paginated equipment",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "equipment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 6897,\n      \"code\": \"string\",\n      \"displayName\": \"string\",\n      \"description\": \"string\",\n      \"cost\": 4108.295614075286,\n      \"price\": 3395.568816096929,\n      \"memberPrice\": 7296.1443543230835,\n      \"active\": true,\n      \"warranty\": {\n        \"duration\": 6423,\n        \"description\": \"string\"\n      },\n      \"modifiedOn\": \"1981-12-07T07:50:14.739Z\"\n    },\n    {\n      \"id\": 9720,\n      \"code\": \"string\",\n      \"displayName\": \"string\",\n      \"description\": \"string\",\n      \"cost\": 2663.608337631044,\n      \"price\": 8321.574091766772,\n      \"memberPrice\": 2428.313367649525,\n      \"active\": false,\n      \"warranty\": {\n        \"duration\": 4933,\n        \"description\": \"string\"\n      },\n      \"modifiedOn\": \"1972-09-17T16:16:41.748Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f2f2de57-2a88-491b-b4e8-b36c9a430c7e",
+          "name": "Get Equipment",
+          "request": {
+            "name": "Get Equipment",
+            "description": {},
+            "url": {
+              "path": [
+                "equipment",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "578ce709-dea2-4d08-b078-1c307dc4e263",
+              "name": "Equipment",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "equipment",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1745,\n  \"code\": \"string\",\n  \"displayName\": \"string\",\n  \"description\": \"string\",\n  \"cost\": 6989.951765265422,\n  \"price\": 3645.69453283631,\n  \"memberPrice\": 9308.697491317536,\n  \"active\": true,\n  \"warranty\": {\n    \"duration\": 6474,\n    \"description\": \"string\"\n  },\n  \"modifiedOn\": \"2024-09-11T15:33:39.006Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "714e1676-9510-468c-a6c4-b66617e05ab4",
+      "name": "Categories",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "501609da-6c2b-4dbc-b9db-b4fc92d3e866",
+          "name": "List Pricebook Categories",
+          "request": {
+            "name": "List Pricebook Categories",
+            "description": {},
+            "url": {
+              "path": [
+                "categories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "91d9c145-beaa-4d65-b37f-92663ff84077",
+              "name": "Categories",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 6056,\n      \"name\": \"string\",\n      \"active\": true,\n      \"parentId\": 7998,\n      \"description\": \"string\",\n      \"position\": 3080,\n      \"image\": \"string\",\n      \"modifiedOn\": \"2010-11-02T11:00:44.102Z\"\n    },\n    {\n      \"id\": 7263,\n      \"name\": \"string\",\n      \"active\": true,\n      \"parentId\": 5056,\n      \"description\": \"string\",\n      \"position\": 8465,\n      \"image\": \"string\",\n      \"modifiedOn\": \"2022-01-11T17:27:03.502Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "388676b1-231d-4cc9-9ef5-60b2e1396563",
+      "name": "Discounts And Fees",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fd52fef7-cb1f-4bb9-b2ad-88d20c1780db",
+          "name": "List Discounts And Fees",
+          "request": {
+            "name": "List Discounts And Fees",
+            "description": {},
+            "url": {
+              "path": [
+                "discounts-and-fees"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1bc2d3f3-e8ec-4c9c-9f8e-16fbdfff8607",
+              "name": "Discounts and fees",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discounts-and-fees"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 9189,\n      \"type\": \"Discount\",\n      \"code\": \"string\",\n      \"displayName\": \"string\",\n      \"amountType\": \"Percentage\",\n      \"amount\": 6589.847159640879,\n      \"active\": false\n    },\n    {\n      \"id\": 4161,\n      \"type\": \"Fee\",\n      \"code\": \"string\",\n      \"displayName\": \"string\",\n      \"amountType\": \"Fixed\",\n      \"amount\": 3596.846065803322,\n      \"active\": false\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "bf190981-abe4-4c56-be96-6af2dd694706",
+      "name": "Images",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "0000000",
+      "key": "tenant"
+    },
+    {
+      "type": "string",
+      "value": "https://api.servicetitan.io/pricebook/v2/{{tenant}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "fcf75e7b-344c-4cb1-a633-3490cb52932c",
+    "name": "ServiceTitan Pricebook API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Pricebook API provides CRUD over the technician-facing flat-rate pricebook — categories,\nservices, materials, equipment, discounts and fees, images, and bulk operations. Tenant-scoped;\nOAuth 2.0 + App Key.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+      "type": "text/plain"
+    }
+  }
+}
