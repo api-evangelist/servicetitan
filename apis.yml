@@ -472,7 +472,7 @@ common:
     type: Careers
   - url: https://community.servicetitan.com/
     name: ServiceTitan Community
-    type: Forum
+    type: Forums
   - url: https://www.servicetitan.com/legal/privacy-policy
     type: PrivacyPolicy
   - url: https://www.servicetitan.com/legal/terms-of-service
@@ -482,19 +482,19 @@ common:
   - url: https://www.servicetitan.com/pricing
     type: Pricing
   - url: https://www.servicetitan.com/contact
-    type: ContactInfo
+    type: Contact
   - url: https://www.servicetitan.com/partners
     name: ServiceTitan Partners
     type: Partners
   - url: https://app.servicetitan.com/
     name: ServiceTitan App
-    type: SignIn
+    type: Login
   - url: https://github.com/servicetitan/request-middleware-templates
     name: Supply Chain Middleware Templates
-    type: Tool
+    type: Tools
   - url: https://github.com/servicetitan/Stl.Fusion
     name: Stl.Fusion Real-Time Library
-    type: Tool
+    type: Tools
   - url: https://www.postman.com/api-evangelist/servicetitan
     name: Postman Workspace (community)
     type: Documentation
