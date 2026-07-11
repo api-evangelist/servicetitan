@@ -1,0 +1,43 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/servicetitan-accounting-api-openapi.yml, openapi/servicetitan-crm-api-openapi.yml,
+  openapi/servicetitan-dispatch-api-openapi.yml, openapi/servicetitan-equipment-systems-api-openapi.yml,
+  openapi/servicetitan-inventory-api-openapi.yml, openapi/servicetitan-jpm-api-openapi.yml,
+  openapi/servicetitan-pricebook-api-openapi.yml, openapi/servicetitan-settings-api-openapi.yml
+summary:
+  types:
+  - apiKey
+  - oauth2
+  api_key_in:
+  - header
+  oauth2_flows:
+  - clientCredentials
+schemes:
+- name: OAuth2
+  type: oauth2
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+    scopes: 0
+  sources:
+  - openapi/servicetitan-accounting-api-openapi.yml
+  - openapi/servicetitan-crm-api-openapi.yml
+  - openapi/servicetitan-dispatch-api-openapi.yml
+  - openapi/servicetitan-equipment-systems-api-openapi.yml
+  - openapi/servicetitan-inventory-api-openapi.yml
+  - openapi/servicetitan-jpm-api-openapi.yml
+  - openapi/servicetitan-pricebook-api-openapi.yml
+  - openapi/servicetitan-settings-api-openapi.yml
+- name: AppKey
+  type: apiKey
+  in: header
+  parameter: ST-App-Key
+  sources:
+  - openapi/servicetitan-accounting-api-openapi.yml
+  - openapi/servicetitan-crm-api-openapi.yml
+  - openapi/servicetitan-dispatch-api-openapi.yml
+  - openapi/servicetitan-equipment-systems-api-openapi.yml
+  - openapi/servicetitan-inventory-api-openapi.yml
+  - openapi/servicetitan-jpm-api-openapi.yml
+  - openapi/servicetitan-pricebook-api-openapi.yml
+  - openapi/servicetitan-settings-api-openapi.yml
