@@ -1,0 +1,53 @@
+generated: '2026-07-11'
+method: derived
+docs: https://developer.servicetitan.io/docs/oauth20/
+note: ServiceTitan supports only the OAuth 2.0 client_credentials grant and publishes
+  no OAuth scope strings — access is governed by per-app "API scopes" (View/Modify
+  per API resource) selected in the developer portal and approved by the tenant admin
+  (https://developer.servicetitan.io/docs/oauth20/, https://partnerapis.servicetitan.io/docs/create-and-manage-applications/).
+source: openapi/servicetitan-accounting-api-openapi.yml, openapi/servicetitan-crm-api-openapi.yml,
+  openapi/servicetitan-dispatch-api-openapi.yml, openapi/servicetitan-equipment-systems-api-openapi.yml,
+  openapi/servicetitan-inventory-api-openapi.yml, openapi/servicetitan-jpm-api-openapi.yml,
+  openapi/servicetitan-pricebook-api-openapi.yml, openapi/servicetitan-settings-api-openapi.yml
+schemes:
+- name: OAuth2
+  source: openapi/servicetitan-accounting-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-crm-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-dispatch-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-equipment-systems-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-inventory-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-jpm-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-pricebook-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-settings-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+scopes: []
