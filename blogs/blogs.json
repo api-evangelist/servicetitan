@@ -1,10 +1,19 @@
 {
   "repo": "servicetitan",
   "feeds": [
-    {"source": "https://www.servicetitan.com/blog", "feed_url": "", "saved": 0, "method": "agent-scrape", "error": "listing has no determinable post dates"},
-    {"source": "https://www.servicetitan.com/news", "saved": 0, "error": "404 not found"}
+    {
+      "source": "https://www.servicetitan.com/blog",
+      "feed_url": "https://www.servicetitan.com/blog",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://www.servicetitan.com/news",
+      "error": "HTTPError"
+    }
   ],
   "post_count": 0,
-  "fetched": "2026-06-27T13:09:24Z",
-  "agent_pulled": "2026-06-27"
+  "fetched": "2026-07-11T11:50:51Z",
+  "agent_pulled": "2026-07-04"
 }
