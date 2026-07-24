@@ -1,0 +1,117 @@
+openapi: 3.1.0
+info:
+  title: ServiceTitan Accounting Adjustments Capacity API
+  description: 'The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,
+
+    payment types, journal entries, journal entry details, tax zones, and GL accounts.
+
+    Tenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.
+
+    '
+  version: 2.0.0
+  contact:
+    name: ServiceTitan Developer Support
+    url: https://developer.servicetitan.io/
+    email: integrations@servicetitan.com
+  license:
+    name: ServiceTitan Terms of Service
+    url: https://www.servicetitan.com/legal/terms-of-service
+servers:
+- url: https://api.servicetitan.io/accounting/v2/{tenant}
+  description: Production
+  variables:
+    tenant:
+      default: '0000000'
+- url: https://api-integration.servicetitan.io/accounting/v2/{tenant}
+  description: Integration (Sandbox)
+  variables:
+    tenant:
+      default: '0000000'
+security:
+- OAuth2: []
+  AppKey: []
+tags:
+- name: Capacity
+paths:
+  /capacity:
+    post:
+      summary: Get Capacity
+      operationId: getCapacity
+      tags:
+      - Capacity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - startsOnOrAfter
+              - endsOnOrBefore
+              properties:
+                startsOnOrAfter:
+                  type: string
+                  format: date-time
+                endsOnOrBefore:
+                  type: string
+                  format: date-time
+                businessUnitIds:
+                  type: array
+                  items:
+                    type: integer
+                jobTypeId:
+                  type: integer
+                skillBasedAvailability:
+                  type: boolean
+      responses:
+        '200':
+          description: Capacity windows
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  availabilities:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        start:
+                          type: string
+                          format: date-time
+                        end:
+                          type: string
+                          format: date-time
+                        timeslots:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              start:
+                                type: string
+                                format: date-time
+                              end:
+                                type: string
+                                format: date-time
+                              technicianIds:
+                                type: array
+                                items:
+                                  type: integer
+                              isAvailable:
+                                type: boolean
+                              isExceedingIdealBookingPercentage:
+                                type: boolean
+                              totalAvailability:
+                                type: integer
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.servicetitan.io/connect/token
+          scopes: {}
+    AppKey:
+      type: apiKey
+      in: header
+      name: ST-App-Key

@@ -1,0 +1,180 @@
+openapi: 3.1.0
+info:
+  title: ServiceTitan Accounting Adjustments Appointment Assignments API
+  description: 'The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,
+
+    payment types, journal entries, journal entry details, tax zones, and GL accounts.
+
+    Tenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.
+
+    '
+  version: 2.0.0
+  contact:
+    name: ServiceTitan Developer Support
+    url: https://developer.servicetitan.io/
+    email: integrations@servicetitan.com
+  license:
+    name: ServiceTitan Terms of Service
+    url: https://www.servicetitan.com/legal/terms-of-service
+servers:
+- url: https://api.servicetitan.io/accounting/v2/{tenant}
+  description: Production
+  variables:
+    tenant:
+      default: '0000000'
+- url: https://api-integration.servicetitan.io/accounting/v2/{tenant}
+  description: Integration (Sandbox)
+  variables:
+    tenant:
+      default: '0000000'
+security:
+- OAuth2: []
+  AppKey: []
+tags:
+- name: Appointment Assignments
+paths:
+  /appointment-assignments:
+    get:
+      summary: List Appointment Assignments
+      operationId: listAppointmentAssignments
+      tags:
+      - Appointment Assignments
+      parameters:
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/PageSize'
+      - $ref: '#/components/parameters/ModifiedOnOrAfter'
+      - name: technicianId
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Assignments
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssignmentPagedResponse'
+  /appointment-assignments/assign-technicians:
+    post:
+      summary: Assign Technicians
+      operationId: assignTechnicians
+      tags:
+      - Appointment Assignments
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - jobAppointmentId
+              - technicianIds
+              properties:
+                jobAppointmentId:
+                  type: integer
+                  format: int64
+                technicianIds:
+                  type: array
+                  items:
+                    type: integer
+      responses:
+        '200':
+          description: Technicians assigned
+  /appointment-assignments/unassign-technicians:
+    post:
+      summary: Unassign Technicians
+      operationId: unassignTechnicians
+      tags:
+      - Appointment Assignments
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - jobAppointmentId
+              - technicianIds
+              properties:
+                jobAppointmentId:
+                  type: integer
+                  format: int64
+                technicianIds:
+                  type: array
+                  items:
+                    type: integer
+      responses:
+        '200':
+          description: Technicians unassigned
+components:
+  schemas:
+    AppointmentAssignment:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        jobAppointmentId:
+          type: integer
+        technicianId:
+          type: integer
+        assignedBy:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+        assignedOn:
+          type: string
+          format: date-time
+        unassignedOn:
+          type: string
+          format: date-time
+          nullable: true
+        status:
+          type: string
+          enum:
+          - Assigned
+          - Unassigned
+        modifiedOn:
+          type: string
+          format: date-time
+    AssignmentPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AppointmentAssignment'
+  parameters:
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.servicetitan.io/connect/token
+          scopes: {}
+    AppKey:
+      type: apiKey
+      in: header
+      name: ST-App-Key

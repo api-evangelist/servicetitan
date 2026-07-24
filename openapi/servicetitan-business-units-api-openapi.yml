@@ -1,0 +1,147 @@
+openapi: 3.1.0
+info:
+  title: ServiceTitan Accounting Adjustments Business Units API
+  description: 'The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,
+
+    payment types, journal entries, journal entry details, tax zones, and GL accounts.
+
+    Tenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.
+
+    '
+  version: 2.0.0
+  contact:
+    name: ServiceTitan Developer Support
+    url: https://developer.servicetitan.io/
+    email: integrations@servicetitan.com
+  license:
+    name: ServiceTitan Terms of Service
+    url: https://www.servicetitan.com/legal/terms-of-service
+servers:
+- url: https://api.servicetitan.io/accounting/v2/{tenant}
+  description: Production
+  variables:
+    tenant:
+      default: '0000000'
+- url: https://api-integration.servicetitan.io/accounting/v2/{tenant}
+  description: Integration (Sandbox)
+  variables:
+    tenant:
+      default: '0000000'
+security:
+- OAuth2: []
+  AppKey: []
+tags:
+- name: Business Units
+paths:
+  /business-units:
+    get:
+      summary: List Business Units
+      operationId: listBusinessUnits
+      tags:
+      - Business Units
+      parameters:
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/PageSize'
+      - $ref: '#/components/parameters/ModifiedOnOrAfter'
+      responses:
+        '200':
+          description: Business units
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessUnitPagedResponse'
+  /business-units/{id}:
+    get:
+      summary: Get Business Unit
+      operationId: getBusinessUnit
+      tags:
+      - Business Units
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Business unit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessUnit'
+components:
+  schemas:
+    BusinessUnitPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/BusinessUnit'
+    BusinessUnit:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        official:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        currency:
+          type: string
+        active:
+          type: boolean
+        invoiceHeader:
+          type: string
+          nullable: true
+        invoiceMessage:
+          type: string
+          nullable: true
+        defaultTaxRate:
+          type: number
+        phoneNumber:
+          type: string
+          nullable: true
+        address:
+          type: object
+        modifiedOn:
+          type: string
+          format: date-time
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.servicetitan.io/connect/token
+          scopes: {}
+    AppKey:
+      type: apiKey
+      in: header
+      name: ST-App-Key

@@ -1,0 +1,165 @@
+openapi: 3.1.0
+info:
+  title: ServiceTitan Accounting Adjustments Technician Shifts API
+  description: 'The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,
+
+    payment types, journal entries, journal entry details, tax zones, and GL accounts.
+
+    Tenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.
+
+    '
+  version: 2.0.0
+  contact:
+    name: ServiceTitan Developer Support
+    url: https://developer.servicetitan.io/
+    email: integrations@servicetitan.com
+  license:
+    name: ServiceTitan Terms of Service
+    url: https://www.servicetitan.com/legal/terms-of-service
+servers:
+- url: https://api.servicetitan.io/accounting/v2/{tenant}
+  description: Production
+  variables:
+    tenant:
+      default: '0000000'
+- url: https://api-integration.servicetitan.io/accounting/v2/{tenant}
+  description: Integration (Sandbox)
+  variables:
+    tenant:
+      default: '0000000'
+security:
+- OAuth2: []
+  AppKey: []
+tags:
+- name: Technician Shifts
+paths:
+  /technician-shifts:
+    get:
+      summary: List Technician Shifts
+      operationId: listTechnicianShifts
+      tags:
+      - Technician Shifts
+      parameters:
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/PageSize'
+      - name: startsOnOrAfter
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: endsOnOrBefore
+        in: query
+        schema:
+          type: string
+          format: date-time
+      responses:
+        '200':
+          description: Shifts
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShiftPagedResponse'
+    post:
+      summary: Create Technician Shift
+      operationId: createTechnicianShift
+      tags:
+      - Technician Shifts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - technicianIds
+              - shiftType
+              - title
+              - start
+              - end
+              properties:
+                technicianIds:
+                  type: array
+                  items:
+                    type: integer
+                shiftType:
+                  type: string
+                  enum:
+                  - Normal
+                  - OnCall
+                  - TimeOff
+                title:
+                  type: string
+                note:
+                  type: string
+                start:
+                  type: string
+                  format: date-time
+                end:
+                  type: string
+                  format: date-time
+      responses:
+        '200':
+          description: Shift created
+components:
+  schemas:
+    ShiftPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/TechnicianShift'
+    TechnicianShift:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        technicianId:
+          type: integer
+        shiftType:
+          type: string
+          enum:
+          - Normal
+          - OnCall
+          - TimeOff
+        title:
+          type: string
+        note:
+          type: string
+        start:
+          type: string
+          format: date-time
+        end:
+          type: string
+          format: date-time
+        active:
+          type: boolean
+        modifiedOn:
+          type: string
+          format: date-time
+  parameters:
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.servicetitan.io/connect/token
+          scopes: {}
+    AppKey:
+      type: apiKey
+      in: header
+      name: ST-App-Key

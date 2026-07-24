@@ -1,0 +1,76 @@
+openapi: 3.1.0
+info:
+  title: ServiceTitan Accounting Adjustments Transfers API
+  description: 'The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,
+
+    payment types, journal entries, journal entry details, tax zones, and GL accounts.
+
+    Tenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.
+
+    '
+  version: 2.0.0
+  contact:
+    name: ServiceTitan Developer Support
+    url: https://developer.servicetitan.io/
+    email: integrations@servicetitan.com
+  license:
+    name: ServiceTitan Terms of Service
+    url: https://www.servicetitan.com/legal/terms-of-service
+servers:
+- url: https://api.servicetitan.io/accounting/v2/{tenant}
+  description: Production
+  variables:
+    tenant:
+      default: '0000000'
+- url: https://api-integration.servicetitan.io/accounting/v2/{tenant}
+  description: Integration (Sandbox)
+  variables:
+    tenant:
+      default: '0000000'
+security:
+- OAuth2: []
+  AppKey: []
+tags:
+- name: Transfers
+paths:
+  /transfers:
+    post:
+      summary: Create Inventory Transfer
+      operationId: createTransfer
+      tags:
+      - Transfers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fromWarehouseId:
+                  type: integer
+                toWarehouseId:
+                  type: integer
+                items:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      skuId:
+                        type: integer
+                      quantity:
+                        type: number
+      responses:
+        '200':
+          description: Transfer created
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.servicetitan.io/connect/token
+          scopes: {}
+    AppKey:
+      type: apiKey
+      in: header
+      name: ST-App-Key

@@ -1,0 +1,117 @@
+openapi: 3.1.0
+info:
+  title: ServiceTitan Accounting Adjustments Employees API
+  description: 'The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,
+
+    payment types, journal entries, journal entry details, tax zones, and GL accounts.
+
+    Tenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.
+
+    '
+  version: 2.0.0
+  contact:
+    name: ServiceTitan Developer Support
+    url: https://developer.servicetitan.io/
+    email: integrations@servicetitan.com
+  license:
+    name: ServiceTitan Terms of Service
+    url: https://www.servicetitan.com/legal/terms-of-service
+servers:
+- url: https://api.servicetitan.io/accounting/v2/{tenant}
+  description: Production
+  variables:
+    tenant:
+      default: '0000000'
+- url: https://api-integration.servicetitan.io/accounting/v2/{tenant}
+  description: Integration (Sandbox)
+  variables:
+    tenant:
+      default: '0000000'
+security:
+- OAuth2: []
+  AppKey: []
+tags:
+- name: Employees
+paths:
+  /employees:
+    get:
+      summary: List Employees
+      operationId: listEmployees
+      tags:
+      - Employees
+      parameters:
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/PageSize'
+      - $ref: '#/components/parameters/ModifiedOnOrAfter'
+      responses:
+        '200':
+          description: Employees
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeePagedResponse'
+components:
+  schemas:
+    Employee:
+      type: object
+      properties:
+        id:
+          type: integer
+        userId:
+          type: integer
+          nullable: true
+        name:
+          type: string
+        active:
+          type: boolean
+        roleIds:
+          type: array
+          items:
+            type: integer
+        businessUnitId:
+          type: integer
+        email:
+          type: string
+        phoneNumber:
+          type: string
+        modifiedOn:
+          type: string
+          format: date-time
+    EmployeePagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Employee'
+  parameters:
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.servicetitan.io/connect/token
+          scopes: {}
+    AppKey:
+      type: apiKey
+      in: header
+      name: ST-App-Key

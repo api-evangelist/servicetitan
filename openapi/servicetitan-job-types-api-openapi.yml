@@ -1,0 +1,113 @@
+openapi: 3.1.0
+info:
+  title: ServiceTitan Accounting Adjustments Job Types API
+  description: 'The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,
+
+    payment types, journal entries, journal entry details, tax zones, and GL accounts.
+
+    Tenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.
+
+    '
+  version: 2.0.0
+  contact:
+    name: ServiceTitan Developer Support
+    url: https://developer.servicetitan.io/
+    email: integrations@servicetitan.com
+  license:
+    name: ServiceTitan Terms of Service
+    url: https://www.servicetitan.com/legal/terms-of-service
+servers:
+- url: https://api.servicetitan.io/accounting/v2/{tenant}
+  description: Production
+  variables:
+    tenant:
+      default: '0000000'
+- url: https://api-integration.servicetitan.io/accounting/v2/{tenant}
+  description: Integration (Sandbox)
+  variables:
+    tenant:
+      default: '0000000'
+security:
+- OAuth2: []
+  AppKey: []
+tags:
+- name: Job Types
+  description: Job type definitions
+paths:
+  /job-types:
+    get:
+      summary: List Job Types
+      operationId: listJobTypes
+      tags:
+      - Job Types
+      responses:
+        '200':
+          description: Job types
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobTypePagedResponse'
+components:
+  schemas:
+    JobType:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        businessUnitIds:
+          type: array
+          items:
+            type: integer
+        skills:
+          type: array
+          items:
+            type: string
+        tagTypeIds:
+          type: array
+          items:
+            type: integer
+        priority:
+          type: string
+        duration:
+          type: integer
+          description: Duration in minutes
+        soldThreshold:
+          type: number
+          nullable: true
+        class:
+          type: string
+        summary:
+          type: string
+        noCharge:
+          type: boolean
+        enforceRecurringServiceEventSelection:
+          type: boolean
+        invoiceSignaturesRequired:
+          type: boolean
+        modifiedOn:
+          type: string
+          format: date-time
+        externalData:
+          type: array
+          items:
+            type: object
+    JobTypePagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/JobType'
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.servicetitan.io/connect/token
+          scopes: {}
+    AppKey:
+      type: apiKey
+      in: header
+      name: ST-App-Key
