@@ -1,403 +1,1519 @@
 aid: servicetitan
 url: https://raw.githubusercontent.com/api-evangelist/servicetitan/refs/heads/main/apis.yml
 apis:
-  - aid: servicetitan:servicetitan-crm-api
-    name: ServiceTitan CRM API
-    tags:
-      - CRM
-      - Customers
-      - Leads
-      - Bookings
-      - Field Service
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-      - url: openapi/servicetitan-crm-api-openapi.yml
-        type: OpenAPI
-      - url: json-schema/servicetitan-customer-schema.json
-        type: JSONSchema
-      - url: json-schema/servicetitan-location-schema.json
-        type: JSONSchema
-      - url: json-ld/servicetitan-context.jsonld
-        type: JSONLD
-    description: >-
-      Manage residential and commercial customer records, locations, contacts, leads, bookings, tags, and booking
-      provider sessions. The CRM API is the primary entry point for customer-of-record data, address geocoding, and
-      lead-to-customer conversion flows in ServiceTitan.
-  - aid: servicetitan:servicetitan-jpm-api
-    name: ServiceTitan Job Planning & Management API
-    tags:
-      - Jobs
-      - Projects
-      - Appointments
-      - Field Service
-      - Dispatch
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/jpm/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-      - url: openapi/servicetitan-jpm-api-openapi.yml
-        type: OpenAPI
-      - url: json-schema/servicetitan-job-schema.json
-        type: JSONSchema
-      - url: json-schema/servicetitan-project-schema.json
-        type: JSONSchema
-      - url: json-schema/servicetitan-appointment-schema.json
-        type: JSONSchema
-    description: >-
-      Create, retrieve, update, hold, cancel, and reschedule jobs, projects, appointments, job types, call reasons, job
-      cancel reasons, and job history. JPM is the operational core of ServiceTitan — every work order and recurring
-      service rolls through this surface.
-  - aid: servicetitan:servicetitan-dispatch-api
-    name: ServiceTitan Dispatch API
-    tags:
-      - Dispatch
-      - Scheduling
-      - Capacity
-      - Zones
-      - Field Service
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/dispatch/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-      - url: openapi/servicetitan-dispatch-api-openapi.yml
-        type: OpenAPI
-    description: >-
-      Manage technician shifts, appointment assignments, capacity windows, business hours, zones, arrival windows, and
-      gps pings. Drives the dispatch board and integrates with Dispatch Pro automation.
-  - aid: servicetitan:servicetitan-accounting-api
-    name: ServiceTitan Accounting API
-    tags:
-      - Accounting
-      - Invoices
-      - Payments
-      - Journal Entries
-      - Tax Zones
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/accounting/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-      - url: openapi/servicetitan-accounting-api-openapi.yml
-        type: OpenAPI
-      - url: json-schema/servicetitan-invoice-schema.json
-        type: JSONSchema
-      - url: json-schema/servicetitan-payment-schema.json
-        type: JSONSchema
-    description: >-
-      Read and write invoices, invoice items, AP credits, payments, payment terms, payment types, journal entries,
-      journal entry details, tax zones, and GL accounts. Integrates with QuickBooks Online, QuickBooks Desktop, Sage
-      Intacct, and Acumatica exports.
-  - aid: servicetitan:servicetitan-pricebook-api
-    name: ServiceTitan Pricebook API
-    tags:
-      - Pricebook
-      - Services
-      - Materials
-      - Equipment
-      - Pricing
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/pricebook/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-      - url: openapi/servicetitan-pricebook-api-openapi.yml
-        type: OpenAPI
-      - url: json-schema/servicetitan-service-schema.json
-        type: JSONSchema
-      - url: json-schema/servicetitan-material-schema.json
-        type: JSONSchema
-    description: >-
-      CRUD over the pricebook — categories, services, materials, equipment, discounts and fees, images, and pricebook
-      bulk operations. Powers Pricebook Pro dynamic pricing and technician-facing flat-rate presentations.
-  - aid: servicetitan:servicetitan-inventory-api
-    name: ServiceTitan Inventory API
-    tags:
-      - Inventory
-      - Purchase Orders
-      - Warehouses
-      - Trucks
-      - Supply Chain
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/inventory/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-      - url: openapi/servicetitan-inventory-api-openapi.yml
-        type: OpenAPI
-    description: >-
-      Manage purchase orders, purchase order types, transfers, returns, adjustments, receipts, warehouses, trucks,
-      vendors, and inventory bills. Backed by ServiceTitan's request-middleware-templates Liquid framework for
-      supply-chain partner integrations.
-  - aid: servicetitan:servicetitan-marketing-api
-    name: ServiceTitan Marketing API
-    tags:
-      - Marketing
-      - Campaigns
-      - Attribution
-      - Categories
-      - Suppression
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/marketing/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-    description: >-
-      Manage marketing campaigns, campaign categories, suppression lists, and attribution data that powers cost-per-lead
-      and cost-per-booked-job reporting. Underpins Marketing Pro email and SMS campaigns.
-  - aid: servicetitan:servicetitan-marketing-reputation-api
-    name: ServiceTitan Marketing Reputation API
-    tags:
-      - Marketing
-      - Reputation
-      - Reviews
-      - Sentiment
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/marketingreputation/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-    description: >-
-      Retrieve aggregated customer reviews and reputation metrics across Google, Facebook, Yelp, BBB, and other
-      connected review providers. Read-only API surfacing review text, ratings, sentiment, and response state.
-  - aid: servicetitan:servicetitan-memberships-api
-    name: ServiceTitan Memberships API
-    tags:
-      - Memberships
-      - Recurring Services
-      - Contracts
-      - Subscriptions
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/memberships/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-    description: >-
-      Manage membership types, customer memberships, membership invoice templates, recurring service types, and
-      recurring service events. Drives the recurring revenue surface — maintenance agreements, club memberships, and
-      annual tune-up plans.
-  - aid: servicetitan:servicetitan-service-agreements-api
-    name: ServiceTitan Service Agreements API
-    tags:
-      - Service Agreements
-      - Contracts
-      - Commercial
-      - Renewals
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/serviceagreements/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-    description: >-
-      Manage commercial service agreements — contract terms, billed locations, line items, renewal cadence, and invoice
-      generation rules. Used by commercial trades for multi-site recurring service contracts.
-  - aid: servicetitan:servicetitan-equipment-systems-api
-    name: ServiceTitan Equipment Systems API
-    tags:
-      - Equipment
-      - Installed Equipment
-      - Assets
-      - Field Service
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/equipmentsystems/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-      - url: openapi/servicetitan-equipment-systems-api-openapi.yml
-        type: OpenAPI
-    description: >-
-      Read and write installed equipment records per customer location — make, model, serial, install date, warranty
-      terms, attachments, and equipment history. The asset-of-record API for HVAC, plumbing, electrical, and
-      refrigeration trades.
-  - aid: servicetitan:servicetitan-forms-api
-    name: ServiceTitan Forms API
-    tags:
-      - Forms
-      - Submissions
-      - Compliance
-      - Field Capture
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/forms/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-    description: >-
-      Retrieve form definitions and field-completed form submissions including photos, signatures, checkbox values, and
-      free-text responses. Used for safety checklists, equipment commissioning, compliance audits, and post-service
-      surveys.
-  - aid: servicetitan:servicetitan-payroll-api
-    name: ServiceTitan Payroll API
-    tags:
-      - Payroll
-      - Timesheets
-      - Adjustments
-      - Compensation
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/payroll/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-    description: >-
-      Manage payroll adjustments, gross-pay items, job splits, timesheet codes, activity codes, non-job timesheets, and
-      payroll settings. Exports to ADP, Paychex, Gusto, Paylocity, and other downstream payroll providers.
-  - aid: servicetitan:servicetitan-timesheets-api
-    name: ServiceTitan Timesheets API
-    tags:
-      - Timesheets
-      - Time Tracking
-      - Activity
-      - Payroll
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/timesheets/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-    description: >-
-      Read and write timesheet entries, activity codes, and shift segments tying technician time to jobs, non-job
-      activities, paid time off, and travel. Feeds the Payroll API and FieldRoutes reconciliation.
-  - aid: servicetitan:servicetitan-reporting-api
-    name: ServiceTitan Reporting API
-    tags:
-      - Reporting
-      - Analytics
-      - Custom Reports
-      - Beta
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/reporting/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-    description: >-
-      Run published custom reports with parameters and retrieve dynamic value sets used by report inputs. Lower rate
-      limit than other surfaces — 1 of the same report per minute per tenant. Replaces fragile UI exports for BI
-      pipelines.
-  - aid: servicetitan:servicetitan-sales-estimates-api
-    name: ServiceTitan Sales & Estimates API
-    tags:
-      - Sales
-      - Estimates
-      - Quotes
-      - Proposals
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/sales/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-    description: >-
-      Create and retrieve estimates, estimate items, and proposal templates. Backs the Proposal Builder feature used to
-      convert leads into approved scopes of work — including good / better / best presentations from technicians in the
-      field.
-  - aid: servicetitan:servicetitan-customer-interactions-api
-    name: ServiceTitan Customer Interactions API
-    tags:
-      - Customer Feedback
-      - Technician Ratings
-      - NPS
-      - Surveys
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/customerinteractions/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-    description: >-
-      Submit and retrieve post-service technician ratings and customer feedback. Powers the "How did we do?" SMS / email
-      flow that aggregates into Marketing Reputation.
-  - aid: servicetitan:servicetitan-settings-api
-    name: ServiceTitan Settings API
-    tags:
-      - Settings
-      - Business Units
-      - Technicians
-      - User Roles
-      - Tenants
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/settings/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-      - url: openapi/servicetitan-settings-api-openapi.yml
-        type: OpenAPI
-    description: >-
-      Manage business units, employees, technicians, user roles, employee permissions, tag types, and tenant-wide
-      settings. The tenant configuration surface for every other API in the platform.
-  - aid: servicetitan:servicetitan-task-management-api
-    name: ServiceTitan Task Management API
-    tags:
-      - Tasks
-      - Workflow
-      - Internal Tickets
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/taskmanagement/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-    description: >-
-      Create, update, and resolve internal tasks, task types, sub-tasks, and task statuses. Used for office-to-field
-      handoffs, escalations, and back-office workflows that aren't customer jobs.
-  - aid: servicetitan:servicetitan-telecom-api
-    name: ServiceTitan Telecom API
-    tags:
-      - Telecom
-      - Calls
-      - Voice
-      - Contact Center
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/telecom/v3/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-    description: >-
-      Retrieve inbound and outbound call records, call recordings, call analytics, and call reasons. Powers Contact
-      Center Pro reporting and Voice Agent transcript analysis.
-  - aid: servicetitan:servicetitan-scheduling-pro-api
-    name: ServiceTitan Scheduling Pro API
-    tags:
-      - Scheduling Pro
-      - Online Booking
-      - Schedulers
-      - Sessions
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/schedulingpro/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-    description: >-
-      Power online booking widgets — list configured schedulers, retrieve scheduler availability, create and update
-      booking sessions. Backed by the Schedule Engine acquisition; required for customer-facing self-service scheduling.
-  - aid: servicetitan:servicetitan-jbce-api
-    name: ServiceTitan Job Booking & Capacity API
-    tags:
-      - Job Booking
-      - Call Reasons
-      - Capacity Estimation
-      - Field Service
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/jbce/v2/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-    description: >-
-      Retrieve call reasons, job booking call reason metadata, capacity-aware booking windows, and recommended slot
-      suggestions. Bridges Telecom call intake with JPM job creation.
-  - aid: servicetitan:servicetitan-webhooks-api
-    name: ServiceTitan Webhooks API
-    tags:
-      - Webhooks
-      - Events
-      - Integration
-    humanURL: https://developer.servicetitan.io/api-details/
-    baseURL: https://api.servicetitan.io/webhooks/v1/{tenant}/
-    properties:
-      - url: https://developer.servicetitan.io/api-details/
-        type: Documentation
-    description: >-
-      Manage webhook subscriptions for customer, job, appointment, invoice, payment, and membership lifecycle events. V1
-      is closed to new subscriptions; V2 webhooks are in development. Polling-based change-tracking via
-      `modifiedOnOrAfter` filters is the recommended interim pattern.
+- aid: servicetitan:servicetitan-marketing-api
+  name: ServiceTitan Marketing API
+  tags:
+  - Marketing
+  - Campaigns
+  - Attribution
+  - Categories
+  - Suppression
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/marketing/v2/{tenant}/
+  properties:
+  - url: https://developer.servicetitan.io/api-details/
+    type: Documentation
+  description: >-
+    Manage marketing campaigns, campaign categories, suppression lists, and attribution data that powers
+    cost-per-lead and cost-per-booked-job reporting. Underpins Marketing Pro email and SMS campaigns.
+- aid: servicetitan:servicetitan-marketing-reputation-api
+  name: ServiceTitan Marketing Reputation API
+  tags:
+  - Marketing
+  - Reputation
+  - Reviews
+  - Sentiment
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/marketingreputation/v2/{tenant}/
+  properties:
+  - url: https://developer.servicetitan.io/api-details/
+    type: Documentation
+  description: >-
+    Retrieve aggregated customer reviews and reputation metrics across Google, Facebook, Yelp, BBB, and
+    other connected review providers. Read-only API surfacing review text, ratings, sentiment, and response
+    state.
+- aid: servicetitan:servicetitan-memberships-api
+  name: ServiceTitan Memberships API
+  tags:
+  - Memberships
+  - Recurring Services
+  - Contracts
+  - Subscriptions
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/memberships/v2/{tenant}/
+  properties:
+  - url: https://developer.servicetitan.io/api-details/
+    type: Documentation
+  description: >-
+    Manage membership types, customer memberships, membership invoice templates, recurring service types,
+    and recurring service events. Drives the recurring revenue surface — maintenance agreements, club
+    memberships, and annual tune-up plans.
+- aid: servicetitan:servicetitan-service-agreements-api
+  name: ServiceTitan Service Agreements API
+  tags:
+  - Service Agreements
+  - Contracts
+  - Commercial
+  - Renewals
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/serviceagreements/v2/{tenant}/
+  properties:
+  - url: https://developer.servicetitan.io/api-details/
+    type: Documentation
+  description: >-
+    Manage commercial service agreements — contract terms, billed locations, line items, renewal cadence,
+    and invoice generation rules. Used by commercial trades for multi-site recurring service contracts.
+- aid: servicetitan:servicetitan-forms-api
+  name: ServiceTitan Forms API
+  tags:
+  - Forms
+  - Submissions
+  - Compliance
+  - Field Capture
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/forms/v2/{tenant}/
+  properties:
+  - url: https://developer.servicetitan.io/api-details/
+    type: Documentation
+  description: >-
+    Retrieve form definitions and field-completed form submissions including photos, signatures, checkbox
+    values, and free-text responses. Used for safety checklists, equipment commissioning, compliance audits,
+    and post-service surveys.
+- aid: servicetitan:servicetitan-payroll-api
+  name: ServiceTitan Payroll API
+  tags:
+  - Payroll
+  - Timesheets
+  - Adjustments
+  - Compensation
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/payroll/v2/{tenant}/
+  properties:
+  - url: https://developer.servicetitan.io/api-details/
+    type: Documentation
+  description: >-
+    Manage payroll adjustments, gross-pay items, job splits, timesheet codes, activity codes, non-job
+    timesheets, and payroll settings. Exports to ADP, Paychex, Gusto, Paylocity, and other downstream
+    payroll providers.
+- aid: servicetitan:servicetitan-timesheets-api
+  name: ServiceTitan Timesheets API
+  tags:
+  - Timesheets
+  - Time Tracking
+  - Activity
+  - Payroll
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/timesheets/v2/{tenant}/
+  properties:
+  - url: https://developer.servicetitan.io/api-details/
+    type: Documentation
+  description: >-
+    Read and write timesheet entries, activity codes, and shift segments tying technician time to jobs,
+    non-job activities, paid time off, and travel. Feeds the Payroll API and FieldRoutes reconciliation.
+- aid: servicetitan:servicetitan-reporting-api
+  name: ServiceTitan Reporting API
+  tags:
+  - Reporting
+  - Analytics
+  - Custom Reports
+  - Beta
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/reporting/v2/{tenant}/
+  properties:
+  - url: https://developer.servicetitan.io/api-details/
+    type: Documentation
+  description: >-
+    Run published custom reports with parameters and retrieve dynamic value sets used by report inputs.
+    Lower rate limit than other surfaces — 1 of the same report per minute per tenant. Replaces fragile
+    UI exports for BI pipelines.
+- aid: servicetitan:servicetitan-sales-estimates-api
+  name: ServiceTitan Sales & Estimates API
+  tags:
+  - Sales
+  - Estimates
+  - Quotes
+  - Proposals
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/sales/v2/{tenant}/
+  properties:
+  - url: https://developer.servicetitan.io/api-details/
+    type: Documentation
+  description: >-
+    Create and retrieve estimates, estimate items, and proposal templates. Backs the Proposal Builder
+    feature used to convert leads into approved scopes of work — including good / better / best presentations
+    from technicians in the field.
+- aid: servicetitan:servicetitan-customer-interactions-api
+  name: ServiceTitan Customer Interactions API
+  tags:
+  - Customer Feedback
+  - Technician Ratings
+  - NPS
+  - Surveys
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/customerinteractions/v2/{tenant}/
+  properties:
+  - url: https://developer.servicetitan.io/api-details/
+    type: Documentation
+  description: >-
+    Submit and retrieve post-service technician ratings and customer feedback. Powers the "How did we
+    do?" SMS / email flow that aggregates into Marketing Reputation.
+- aid: servicetitan:servicetitan-task-management-api
+  name: ServiceTitan Task Management API
+  tags:
+  - Tasks
+  - Workflow
+  - Internal Tickets
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/taskmanagement/v2/{tenant}/
+  properties:
+  - url: https://developer.servicetitan.io/api-details/
+    type: Documentation
+  description: >-
+    Create, update, and resolve internal tasks, task types, sub-tasks, and task statuses. Used for office-to-field
+    handoffs, escalations, and back-office workflows that aren't customer jobs.
+- aid: servicetitan:servicetitan-telecom-api
+  name: ServiceTitan Telecom API
+  tags:
+  - Telecom
+  - Calls
+  - Voice
+  - Contact Center
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/telecom/v3/{tenant}/
+  properties:
+  - url: https://developer.servicetitan.io/api-details/
+    type: Documentation
+  description: >-
+    Retrieve inbound and outbound call records, call recordings, call analytics, and call reasons. Powers
+    Contact Center Pro reporting and Voice Agent transcript analysis.
+- aid: servicetitan:servicetitan-scheduling-pro-api
+  name: ServiceTitan Scheduling Pro API
+  tags:
+  - Scheduling Pro
+  - Online Booking
+  - Schedulers
+  - Sessions
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/schedulingpro/v2/{tenant}/
+  properties:
+  - url: https://developer.servicetitan.io/api-details/
+    type: Documentation
+  description: >-
+    Power online booking widgets — list configured schedulers, retrieve scheduler availability, create
+    and update booking sessions. Backed by the Schedule Engine acquisition; required for customer-facing
+    self-service scheduling.
+- aid: servicetitan:servicetitan-jbce-api
+  name: ServiceTitan Job Booking & Capacity API
+  tags:
+  - Job Booking
+  - Call Reasons
+  - Capacity Estimation
+  - Field Service
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/jbce/v2/{tenant}/
+  properties:
+  - url: https://developer.servicetitan.io/api-details/
+    type: Documentation
+  description: >-
+    Retrieve call reasons, job booking call reason metadata, capacity-aware booking windows, and recommended
+    slot suggestions. Bridges Telecom call intake with JPM job creation.
+- aid: servicetitan:servicetitan-webhooks-api
+  name: ServiceTitan Webhooks API
+  tags:
+  - Webhooks
+  - Events
+  - Integration
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/webhooks/v1/{tenant}/
+  properties:
+  - url: https://developer.servicetitan.io/api-details/
+    type: Documentation
+  description: >-
+    Manage webhook subscriptions for customer, job, appointment, invoice, payment, and membership lifecycle
+    events. V1 is closed to new subscriptions; V2 webhooks are in development. Polling-based change-tracking
+    via `modifiedOnOrAfter` filters is the recommended interim pattern.
+- aid: servicetitan:servicetitan-adjustments-api
+  name: ServiceTitan Adjustments API
+  description: The Adjustments API from ServiceTitan — 1 operation(s) for adjustments.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Adjustments
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-adjustments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-appointment-assignments-api
+  name: ServiceTitan Appointment Assignments API
+  description: >-
+    The Appointment Assignments API from ServiceTitan — 3 operation(s) for appointment assignments.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Appointment Assignments
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-appointment-assignments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-appointments-api
+  name: ServiceTitan Appointments API
+  description: Job appointments and visits
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Appointments
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-appointments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-attachments-api
+  name: ServiceTitan Attachments API
+  description: The Attachments API from ServiceTitan — 1 operation(s) for attachments.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Attachments
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-attachments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-bookings-api
+  name: ServiceTitan Bookings API
+  description: Customer-initiated booking requests
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Bookings
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-bookings-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-business-hours-api
+  name: ServiceTitan Business Hours API
+  description: The Business Hours API from ServiceTitan — 1 operation(s) for business hours.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Business Hours
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-business-hours-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-business-units-api
+  name: ServiceTitan Business Units API
+  description: The Business Units API from ServiceTitan — 2 operation(s) for business units.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Business Units
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-business-units-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-capacity-api
+  name: ServiceTitan Capacity API
+  description: The Capacity API from ServiceTitan — 1 operation(s) for capacity.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Capacity
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-capacity-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-categories-api
+  name: ServiceTitan Categories API
+  description: The Categories API from ServiceTitan — 1 operation(s) for categories.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Categories
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-categories-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-contacts-api
+  name: ServiceTitan Contacts API
+  description: Customer contact methods (phone, email)
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Contacts
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-contacts-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-customers-api
+  name: ServiceTitan Customers API
+  description: Customer-of-record records
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Customers
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-customers-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-discounts-and-fees-api
+  name: ServiceTitan Discounts And Fees API
+  description: The Discounts And Fees API from ServiceTitan — 1 operation(s) for discounts and fees.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Discounts And Fees
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-discounts-and-fees-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-employees-api
+  name: ServiceTitan Employees API
+  description: The Employees API from ServiceTitan — 1 operation(s) for employees.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Employees
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-employees-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-equipment-api
+  name: ServiceTitan Equipment API
+  description: The Equipment API from ServiceTitan — 2 operation(s) for equipment.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Equipment
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-equipment-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-gl-accounts-api
+  name: ServiceTitan GL Accounts API
+  description: The GL Accounts API from ServiceTitan — 1 operation(s) for gl accounts.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - GL Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-gl-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-gps-api
+  name: ServiceTitan GPS API
+  description: The GPS API from ServiceTitan — 1 operation(s) for gps.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - GPS
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-gps-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-installed-equipment-api
+  name: ServiceTitan Installed Equipment API
+  description: The Installed Equipment API from ServiceTitan — 2 operation(s) for installed equipment.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Installed Equipment
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-installed-equipment-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-invoices-api
+  name: ServiceTitan Invoices API
+  description: The Invoices API from ServiceTitan — 3 operation(s) for invoices.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Invoices
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-invoices-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-job-types-api
+  name: ServiceTitan Job Types API
+  description: Job type definitions
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Job Types
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-job-types-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-jobs-api
+  name: ServiceTitan Jobs API
+  description: Service jobs (work orders)
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-jobs-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-journal-entries-api
+  name: ServiceTitan Journal Entries API
+  description: The Journal Entries API from ServiceTitan — 1 operation(s) for journal entries.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Journal Entries
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-journal-entries-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-leads-api
+  name: ServiceTitan Leads API
+  description: Pre-customer lead records
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Leads
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-leads-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-locations-api
+  name: ServiceTitan Locations API
+  description: Customer service locations and addresses
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Locations
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-locations-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-materials-api
+  name: ServiceTitan Materials API
+  description: The Materials API from ServiceTitan — 2 operation(s) for materials.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Materials
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-materials-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-payments-api
+  name: ServiceTitan Payments API
+  description: The Payments API from ServiceTitan — 3 operation(s) for payments.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-projects-api
+  name: ServiceTitan Projects API
+  description: Multi-job projects
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-projects-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-purchase-orders-api
+  name: ServiceTitan Purchase Orders API
+  description: The Purchase Orders API from ServiceTitan — 2 operation(s) for purchase orders.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Purchase Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-purchase-orders-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-receipts-api
+  name: ServiceTitan Receipts API
+  description: The Receipts API from ServiceTitan — 1 operation(s) for receipts.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Receipts
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-receipts-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-services-api
+  name: ServiceTitan Services API
+  description: The Services API from ServiceTitan — 2 operation(s) for services.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Services
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-services-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-tag-types-api
+  name: ServiceTitan Tag Types API
+  description: The Tag Types API from ServiceTitan — 1 operation(s) for tag types.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Tag Types
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-tag-types-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-tags-api
+  name: ServiceTitan Tags API
+  description: Tag types and customer tagging
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-tags-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-tax-zones-api
+  name: ServiceTitan Tax Zones API
+  description: The Tax Zones API from ServiceTitan — 1 operation(s) for tax zones.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Tax Zones
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-tax-zones-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-technician-shifts-api
+  name: ServiceTitan Technician Shifts API
+  description: The Technician Shifts API from ServiceTitan — 1 operation(s) for technician shifts.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Technician Shifts
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-technician-shifts-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-technicians-api
+  name: ServiceTitan Technicians API
+  description: The Technicians API from ServiceTitan — 2 operation(s) for technicians.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Technicians
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-technicians-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-transfers-api
+  name: ServiceTitan Transfers API
+  description: The Transfers API from ServiceTitan — 1 operation(s) for transfers.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Transfers
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-transfers-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-trucks-api
+  name: ServiceTitan Trucks API
+  description: The Trucks API from ServiceTitan — 1 operation(s) for trucks.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Trucks
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-trucks-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-user-roles-api
+  name: ServiceTitan User Roles API
+  description: The User Roles API from ServiceTitan — 1 operation(s) for user roles.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - User Roles
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-user-roles-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-vendors-api
+  name: ServiceTitan Vendors API
+  description: The Vendors API from ServiceTitan — 1 operation(s) for vendors.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Vendors
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-vendors-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-warehouses-api
+  name: ServiceTitan Warehouses API
+  description: The Warehouses API from ServiceTitan — 1 operation(s) for warehouses.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Warehouses
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-warehouses-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
+- aid: servicetitan:servicetitan-zones-api
+  name: ServiceTitan Zones API
+  description: The Zones API from ServiceTitan — 1 operation(s) for zones.
+  humanURL: https://developer.servicetitan.io/api-details/
+  baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
+  tags:
+  - Zones
+  properties:
+  - type: OpenAPI
+    url: openapi/servicetitan-zones-api-openapi.yml
+  - type: Documentation
+    url: https://developer.servicetitan.io/api-details/
+  - type: JSONSchema
+    url: json-schema/servicetitan-customer-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-location-schema.json
+  - type: JSONLD
+    url: json-ld/servicetitan-context.jsonld
+  - type: JSONSchema
+    url: json-schema/servicetitan-job-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-project-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-appointment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-invoice-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-payment-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-service-schema.json
+  - type: JSONSchema
+    url: json-schema/servicetitan-material-schema.json
 name: ServiceTitan
 tags:
   - Field Service Management
@@ -414,9 +1530,24 @@ tags:
   - Memberships
   - Webhooks
 kind: contract
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - finops
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/servicetitan.png
 access: 3rd-Party
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/servicetitan/overview
   - type: AgenticAccess
     url: agentic-access/servicetitan-agentic-access.yml
   - type: DomainSecurity
