@@ -1,0 +1,120 @@
+{
+  "info": {
+    "_postman_id": "58b00a3e-dfee-4e36-a6c5-ee5a9dbeab3d",
+    "name": "ServiceTitan Accounting Adjustments Zones API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:53:01.000Z",
+    "updatedAt": "2026-07-28T02:53:01.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-58b00a3e-dfee-4e36-a6c5-ee5a9dbeab3d"
+  },
+  "item": [
+    {
+      "name": "zones",
+      "item": [
+        {
+          "name": "List Zones",
+          "id": "9c4f24a0-2d2d-47a7-870f-ae097f35a20d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/zones",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "zones"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "444c54b1-3872-47b4-9455-9f9b352498d4",
+              "name": "Zones",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/zones",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "zones"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"zips\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"cities\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"active\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"zips\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"cities\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"active\": \"<boolean>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:53:01.000Z",
+              "updatedAt": "2026-07-28T02:53:01.000Z",
+              "uid": "35240-444c54b1-3872-47b4-9455-9f9b352498d4"
+            }
+          ],
+          "createdAt": "2026-07-28T02:53:01.000Z",
+          "updatedAt": "2026-07-28T02:53:01.000Z",
+          "uid": "35240-9c4f24a0-2d2d-47a7-870f-ae097f35a20d"
+        }
+      ],
+      "id": "5f2049de-16bb-4dd0-92c3-8d94cb9b9b68",
+      "createdAt": "2026-07-28T02:53:01.000Z",
+      "updatedAt": "2026-07-28T02:53:01.000Z",
+      "uid": "35240-5f2049de-16bb-4dd0-92c3-8d94cb9b9b68"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "info": {
+    "_postman_id": "5cb27161-8916-48b3-8f85-cb7a214b2bdf",
+    "name": "ServiceTitan Accounting Adjustments GPS API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:13.000Z",
+    "updatedAt": "2026-07-28T02:52:14.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-5cb27161-8916-48b3-8f85-cb7a214b2bdf"
+  },
+  "item": [
+    {
+      "name": "gps-pings",
+      "item": [
+        {
+          "name": "List GPS Pings",
+          "id": "1dd6ad55-6952-4f39-9c9a-4b17bed32ec6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/gps-pings?technicianId=<integer>&fromUtc=<dateTime>&toUtc=<dateTime>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "gps-pings"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "technicianId",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "fromUtc",
+                  "value": "<dateTime>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "toUtc",
+                  "value": "<dateTime>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9f395673-88e7-4f64-beed-32b69357232a",
+              "name": "GPS pings",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/gps-pings?technicianId=<integer>&fromUtc=<dateTime>&toUtc=<dateTime>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "gps-pings"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "technicianId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "fromUtc",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "toUtc",
+                      "value": "<dateTime>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": [\n    {\n      \"latitude\": \"<number>\",\n      \"longitude\": \"<number>\",\n      \"speed\": \"<number>\",\n      \"heading\": \"<number>\",\n      \"utcDateTime\": \"<dateTime>\"\n    },\n    {\n      \"latitude\": \"<number>\",\n      \"longitude\": \"<number>\",\n      \"speed\": \"<number>\",\n      \"heading\": \"<number>\",\n      \"utcDateTime\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:52:14.000Z",
+              "updatedAt": "2026-07-28T02:52:14.000Z",
+              "uid": "35240-9f395673-88e7-4f64-beed-32b69357232a"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:14.000Z",
+          "updatedAt": "2026-07-28T02:52:14.000Z",
+          "uid": "35240-1dd6ad55-6952-4f39-9c9a-4b17bed32ec6"
+        }
+      ],
+      "id": "7f66b9b5-28a7-4204-9a98-1d517ba4d903",
+      "createdAt": "2026-07-28T02:52:14.000Z",
+      "updatedAt": "2026-07-28T02:52:14.000Z",
+      "uid": "35240-7f66b9b5-28a7-4204-9a98-1d517ba4d903"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

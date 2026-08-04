@@ -1,0 +1,244 @@
+{
+  "info": {
+    "_postman_id": "539af3c1-81bd-47c6-afaa-d54a62011164",
+    "name": "ServiceTitan Accounting Adjustments Business Units API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:06.000Z",
+    "updatedAt": "2026-07-28T02:52:06.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-539af3c1-81bd-47c6-afaa-d54a62011164"
+  },
+  "item": [
+    {
+      "name": "business-units",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "Get Business Unit",
+              "id": "e6f1fb17-e21e-41f9-839e-36aaf62dff20",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/business-units/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "business-units",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "2e235159-30c2-47ac-90e9-f8c990ababfc",
+                      "key": "id",
+                      "value": "<long>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "5f7da241-5a0a-47ab-ac9a-6fc2569207ac",
+                  "name": "Business unit",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business-units/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business-units",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"official\": \"<string>\",\n  \"email\": \"<string>\",\n  \"currency\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"invoiceHeader\": \"<string>\",\n  \"invoiceMessage\": \"<string>\",\n  \"defaultTaxRate\": \"<number>\",\n  \"phoneNumber\": \"<string>\",\n  \"address\": {},\n  \"modifiedOn\": \"<dateTime>\"\n}",
+                  "createdAt": "2026-07-28T02:52:06.000Z",
+                  "updatedAt": "2026-07-28T02:52:06.000Z",
+                  "uid": "35240-5f7da241-5a0a-47ab-ac9a-6fc2569207ac"
+                }
+              ],
+              "createdAt": "2026-07-28T02:52:06.000Z",
+              "updatedAt": "2026-07-28T02:52:06.000Z",
+              "uid": "35240-e6f1fb17-e21e-41f9-839e-36aaf62dff20"
+            }
+          ],
+          "id": "009c05c7-fa13-496a-aa18-4747458a8b77",
+          "createdAt": "2026-07-28T02:52:06.000Z",
+          "updatedAt": "2026-07-28T02:52:06.000Z",
+          "uid": "35240-009c05c7-fa13-496a-aa18-4747458a8b77"
+        },
+        {
+          "name": "List Business Units",
+          "id": "846285a2-99c8-4a26-a682-408907187448",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/business-units?page=1&pageSize=50&modifiedOnOrAfter=<dateTime>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "business-units"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3a2493ca-bf21-4073-80f8-ac48886c51d3",
+              "name": "Business units",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/business-units?page=1&pageSize=50&modifiedOnOrAfter=<dateTime>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "business-units"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"official\": \"<string>\",\n      \"email\": \"<string>\",\n      \"currency\": \"<string>\",\n      \"active\": \"<boolean>\",\n      \"invoiceHeader\": \"<string>\",\n      \"invoiceMessage\": \"<string>\",\n      \"defaultTaxRate\": \"<number>\",\n      \"phoneNumber\": \"<string>\",\n      \"address\": {},\n      \"modifiedOn\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"official\": \"<string>\",\n      \"email\": \"<string>\",\n      \"currency\": \"<string>\",\n      \"active\": \"<boolean>\",\n      \"invoiceHeader\": \"<string>\",\n      \"invoiceMessage\": \"<string>\",\n      \"defaultTaxRate\": \"<number>\",\n      \"phoneNumber\": \"<string>\",\n      \"address\": {},\n      \"modifiedOn\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:52:06.000Z",
+              "updatedAt": "2026-07-28T02:52:06.000Z",
+              "uid": "35240-3a2493ca-bf21-4073-80f8-ac48886c51d3"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:06.000Z",
+          "updatedAt": "2026-07-28T02:52:06.000Z",
+          "uid": "35240-846285a2-99c8-4a26-a682-408907187448"
+        }
+      ],
+      "id": "15e5cf9e-3e1d-4063-8a72-9317f95b0708",
+      "createdAt": "2026-07-28T02:52:06.000Z",
+      "updatedAt": "2026-07-28T02:52:06.000Z",
+      "uid": "35240-15e5cf9e-3e1d-4063-8a72-9317f95b0708"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

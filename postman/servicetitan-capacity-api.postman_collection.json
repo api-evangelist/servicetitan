@@ -1,0 +1,148 @@
+{
+  "info": {
+    "_postman_id": "a3fd8fbe-e8a8-4aa4-b767-a1d03145dbe2",
+    "name": "ServiceTitan Accounting Adjustments Capacity API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:06.000Z",
+    "updatedAt": "2026-07-28T02:52:07.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-a3fd8fbe-e8a8-4aa4-b767-a1d03145dbe2"
+  },
+  "item": [
+    {
+      "name": "capacity",
+      "item": [
+        {
+          "name": "Get Capacity",
+          "id": "0adc7e78-337a-497e-8c4f-211b4fe204a9",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"startsOnOrAfter\": \"<dateTime>\",\n  \"endsOnOrBefore\": \"<dateTime>\",\n  \"businessUnitIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"jobTypeId\": \"<integer>\",\n  \"skillBasedAvailability\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/capacity",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "capacity"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "498c58b2-f8d5-4109-9a8e-fc8c47eb2e50",
+              "name": "Capacity windows",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"startsOnOrAfter\": \"<dateTime>\",\n  \"endsOnOrBefore\": \"<dateTime>\",\n  \"businessUnitIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"jobTypeId\": \"<integer>\",\n  \"skillBasedAvailability\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/capacity",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "capacity"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"availabilities\": [\n    {\n      \"start\": \"<dateTime>\",\n      \"end\": \"<dateTime>\",\n      \"timeslots\": [\n        {\n          \"start\": \"<dateTime>\",\n          \"end\": \"<dateTime>\",\n          \"technicianIds\": [\n            \"<integer>\",\n            \"<integer>\"\n          ],\n          \"isAvailable\": \"<boolean>\",\n          \"isExceedingIdealBookingPercentage\": \"<boolean>\",\n          \"totalAvailability\": \"<integer>\"\n        },\n        {\n          \"start\": \"<dateTime>\",\n          \"end\": \"<dateTime>\",\n          \"technicianIds\": [\n            \"<integer>\",\n            \"<integer>\"\n          ],\n          \"isAvailable\": \"<boolean>\",\n          \"isExceedingIdealBookingPercentage\": \"<boolean>\",\n          \"totalAvailability\": \"<integer>\"\n        }\n      ]\n    },\n    {\n      \"start\": \"<dateTime>\",\n      \"end\": \"<dateTime>\",\n      \"timeslots\": [\n        {\n          \"start\": \"<dateTime>\",\n          \"end\": \"<dateTime>\",\n          \"technicianIds\": [\n            \"<integer>\",\n            \"<integer>\"\n          ],\n          \"isAvailable\": \"<boolean>\",\n          \"isExceedingIdealBookingPercentage\": \"<boolean>\",\n          \"totalAvailability\": \"<integer>\"\n        },\n        {\n          \"start\": \"<dateTime>\",\n          \"end\": \"<dateTime>\",\n          \"technicianIds\": [\n            \"<integer>\",\n            \"<integer>\"\n          ],\n          \"isAvailable\": \"<boolean>\",\n          \"isExceedingIdealBookingPercentage\": \"<boolean>\",\n          \"totalAvailability\": \"<integer>\"\n        }\n      ]\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:52:07.000Z",
+              "updatedAt": "2026-07-28T02:52:07.000Z",
+              "uid": "35240-498c58b2-f8d5-4109-9a8e-fc8c47eb2e50"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:07.000Z",
+          "updatedAt": "2026-07-28T02:52:07.000Z",
+          "uid": "35240-0adc7e78-337a-497e-8c4f-211b4fe204a9"
+        }
+      ],
+      "id": "6ed64bb9-b281-4091-96b4-08e977748653",
+      "createdAt": "2026-07-28T02:52:07.000Z",
+      "updatedAt": "2026-07-28T02:52:07.000Z",
+      "uid": "35240-6ed64bb9-b281-4091-96b4-08e977748653"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

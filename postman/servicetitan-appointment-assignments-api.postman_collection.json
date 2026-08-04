@@ -1,0 +1,352 @@
+{
+  "info": {
+    "_postman_id": "3331668b-01e0-4f8a-8440-8bdca604eb6d",
+    "name": "ServiceTitan Accounting Adjustments Appointment Assignments API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:00.000Z",
+    "updatedAt": "2026-07-28T02:52:00.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3331668b-01e0-4f8a-8440-8bdca604eb6d"
+  },
+  "item": [
+    {
+      "name": "appointment-assignments",
+      "item": [
+        {
+          "name": "assign-technicians",
+          "item": [
+            {
+              "name": "Assign Technicians",
+              "id": "469158a7-97a6-4f36-92da-c20a43c40ff0",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"jobAppointmentId\": \"<long>\",\n  \"technicianIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/appointment-assignments/assign-technicians",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "appointment-assignments",
+                    "assign-technicians"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "0c037269-535d-4040-ae89-1932985516bf",
+                  "name": "Technicians assigned",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"jobAppointmentId\": \"<long>\",\n  \"technicianIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/appointment-assignments/assign-technicians",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "appointment-assignments",
+                        "assign-technicians"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:52:00.000Z",
+                  "updatedAt": "2026-07-28T02:52:00.000Z",
+                  "uid": "35240-0c037269-535d-4040-ae89-1932985516bf"
+                }
+              ],
+              "createdAt": "2026-07-28T02:52:00.000Z",
+              "updatedAt": "2026-07-28T02:52:00.000Z",
+              "uid": "35240-469158a7-97a6-4f36-92da-c20a43c40ff0"
+            }
+          ],
+          "id": "13c22cc6-12ce-4506-bc48-3febeefd998d",
+          "createdAt": "2026-07-28T02:52:00.000Z",
+          "updatedAt": "2026-07-28T02:52:00.000Z",
+          "uid": "35240-13c22cc6-12ce-4506-bc48-3febeefd998d"
+        },
+        {
+          "name": "unassign-technicians",
+          "item": [
+            {
+              "name": "Unassign Technicians",
+              "id": "265150c0-4123-495a-8cda-b7401206de69",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"jobAppointmentId\": \"<long>\",\n  \"technicianIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/appointment-assignments/unassign-technicians",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "appointment-assignments",
+                    "unassign-technicians"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "132cb972-3bc4-46f4-97b4-5010d34d7cd2",
+                  "name": "Technicians unassigned",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"jobAppointmentId\": \"<long>\",\n  \"technicianIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/appointment-assignments/unassign-technicians",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "appointment-assignments",
+                        "unassign-technicians"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:52:00.000Z",
+                  "updatedAt": "2026-07-28T02:52:00.000Z",
+                  "uid": "35240-132cb972-3bc4-46f4-97b4-5010d34d7cd2"
+                }
+              ],
+              "createdAt": "2026-07-28T02:52:00.000Z",
+              "updatedAt": "2026-07-28T02:52:00.000Z",
+              "uid": "35240-265150c0-4123-495a-8cda-b7401206de69"
+            }
+          ],
+          "id": "839c8d32-5470-4874-a30d-660cf32b47c8",
+          "createdAt": "2026-07-28T02:52:00.000Z",
+          "updatedAt": "2026-07-28T02:52:00.000Z",
+          "uid": "35240-839c8d32-5470-4874-a30d-660cf32b47c8"
+        },
+        {
+          "name": "List Appointment Assignments",
+          "id": "2e0ebf95-71f1-41e5-8867-554ac570ae35",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/appointment-assignments?page=1&pageSize=50&modifiedOnOrAfter=<dateTime>&technicianId=<integer>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "appointment-assignments"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                },
+                {
+                  "key": "technicianId",
+                  "value": "<integer>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0e0a4cf9-7bba-4d5a-bf48-371fb88126b9",
+              "name": "Assignments",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/appointment-assignments?page=1&pageSize=50&modifiedOnOrAfter=<dateTime>&technicianId=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "appointment-assignments"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "technicianId",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"<long>\",\n      \"jobAppointmentId\": \"<integer>\",\n      \"technicianId\": \"<integer>\",\n      \"assignedBy\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\"\n      },\n      \"assignedOn\": \"<dateTime>\",\n      \"unassignedOn\": \"<dateTime>\",\n      \"status\": \"Unassigned\",\n      \"modifiedOn\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"jobAppointmentId\": \"<integer>\",\n      \"technicianId\": \"<integer>\",\n      \"assignedBy\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\"\n      },\n      \"assignedOn\": \"<dateTime>\",\n      \"unassignedOn\": \"<dateTime>\",\n      \"status\": \"Assigned\",\n      \"modifiedOn\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:52:00.000Z",
+              "updatedAt": "2026-07-28T02:52:00.000Z",
+              "uid": "35240-0e0a4cf9-7bba-4d5a-bf48-371fb88126b9"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:00.000Z",
+          "updatedAt": "2026-07-28T02:52:00.000Z",
+          "uid": "35240-2e0ebf95-71f1-41e5-8867-554ac570ae35"
+        }
+      ],
+      "id": "52993df6-c47b-4f5f-a080-9a2bc4dc27a6",
+      "createdAt": "2026-07-28T02:52:00.000Z",
+      "updatedAt": "2026-07-28T02:52:00.000Z",
+      "uid": "35240-52993df6-c47b-4f5f-a080-9a2bc4dc27a6"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "info": {
+    "_postman_id": "55beb8b2-0574-4a0b-ac44-3eae9f766fd8",
+    "name": "ServiceTitan Accounting Adjustments Bookings API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:04.000Z",
+    "updatedAt": "2026-07-28T02:52:04.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-55beb8b2-0574-4a0b-ac44-3eae9f766fd8"
+  },
+  "item": [
+    {
+      "name": "bookings",
+      "item": [
+        {
+          "name": "List Bookings",
+          "id": "1a6d032a-6779-4f67-8ffc-c520e0bc9a70",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/bookings?page=1&pageSize=50&modifiedOnOrAfter=<dateTime>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bookings"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f3149833-41c4-4110-b7f6-41135cb6938a",
+              "name": "Paginated list of bookings",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/bookings?page=1&pageSize=50&modifiedOnOrAfter=<dateTime>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bookings"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"<long>\",\n      \"source\": \"<string>\",\n      \"name\": \"<string>\",\n      \"address\": {\n        \"street\": \"<string>\",\n        \"unit\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"country\": \"<string>\",\n        \"latitude\": \"<number>\",\n        \"longitude\": \"<number>\"\n      },\n      \"customerType\": \"<string>\",\n      \"start\": \"<dateTime>\",\n      \"summary\": \"<string>\",\n      \"campaignId\": \"<integer>\",\n      \"businessUnitId\": \"<integer>\",\n      \"isFirstTimeClient\": \"<boolean>\",\n      \"uploadedImages\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"status\": \"Converted\",\n      \"modifiedOn\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"source\": \"<string>\",\n      \"name\": \"<string>\",\n      \"address\": {\n        \"street\": \"<string>\",\n        \"unit\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"country\": \"<string>\",\n        \"latitude\": \"<number>\",\n        \"longitude\": \"<number>\"\n      },\n      \"customerType\": \"<string>\",\n      \"start\": \"<dateTime>\",\n      \"summary\": \"<string>\",\n      \"campaignId\": \"<integer>\",\n      \"businessUnitId\": \"<integer>\",\n      \"isFirstTimeClient\": \"<boolean>\",\n      \"uploadedImages\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"status\": \"Pending\",\n      \"modifiedOn\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:52:04.000Z",
+              "updatedAt": "2026-07-28T02:52:04.000Z",
+              "uid": "35240-f3149833-41c4-4110-b7f6-41135cb6938a"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:04.000Z",
+          "updatedAt": "2026-07-28T02:52:04.000Z",
+          "uid": "35240-1a6d032a-6779-4f67-8ffc-c520e0bc9a70"
+        },
+        {
+          "name": "Create Booking",
+          "id": "e16bb730-86be-4122-8733-f402dfc989c0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"start\": \"<dateTime>\",\n  \"source\": \"<string>\",\n  \"address\": {\n    \"street\": \"<string>\",\n    \"unit\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"zip\": \"<string>\",\n    \"country\": \"<string>\",\n    \"latitude\": \"<number>\",\n    \"longitude\": \"<number>\"\n  },\n  \"customerType\": \"<string>\",\n  \"campaignId\": \"<integer>\",\n  \"businessUnitId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/bookings",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bookings"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "eccd16ad-0606-4b02-a5a1-5877a0cda321",
+              "name": "Created booking",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"start\": \"<dateTime>\",\n  \"source\": \"<string>\",\n  \"address\": {\n    \"street\": \"<string>\",\n    \"unit\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"zip\": \"<string>\",\n    \"country\": \"<string>\",\n    \"latitude\": \"<number>\",\n    \"longitude\": \"<number>\"\n  },\n  \"customerType\": \"<string>\",\n  \"campaignId\": \"<integer>\",\n  \"businessUnitId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/bookings",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bookings"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"id\": \"<long>\",\n  \"source\": \"<string>\",\n  \"name\": \"<string>\",\n  \"address\": {\n    \"street\": \"<string>\",\n    \"unit\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"zip\": \"<string>\",\n    \"country\": \"<string>\",\n    \"latitude\": \"<number>\",\n    \"longitude\": \"<number>\"\n  },\n  \"customerType\": \"<string>\",\n  \"start\": \"<dateTime>\",\n  \"summary\": \"<string>\",\n  \"campaignId\": \"<integer>\",\n  \"businessUnitId\": \"<integer>\",\n  \"isFirstTimeClient\": \"<boolean>\",\n  \"uploadedImages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"Pending\",\n  \"modifiedOn\": \"<dateTime>\"\n}",
+              "createdAt": "2026-07-28T02:52:04.000Z",
+              "updatedAt": "2026-07-28T02:52:04.000Z",
+              "uid": "35240-eccd16ad-0606-4b02-a5a1-5877a0cda321"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:04.000Z",
+          "updatedAt": "2026-07-28T02:52:04.000Z",
+          "uid": "35240-e16bb730-86be-4122-8733-f402dfc989c0"
+        }
+      ],
+      "id": "7c7c30c7-e861-4ffd-ac7d-83c82b3aaf88",
+      "createdAt": "2026-07-28T02:52:04.000Z",
+      "updatedAt": "2026-07-28T02:52:04.000Z",
+      "uid": "35240-7c7c30c7-e861-4ffd-ac7d-83c82b3aaf88"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

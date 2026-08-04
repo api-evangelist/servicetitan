@@ -1,0 +1,148 @@
+{
+  "info": {
+    "_postman_id": "efb06c8e-a85a-4c9e-8a9f-00af9e4a1a21",
+    "name": "ServiceTitan Accounting Adjustments Journal Entries API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:35.000Z",
+    "updatedAt": "2026-07-28T02:52:35.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-efb06c8e-a85a-4c9e-8a9f-00af9e4a1a21"
+  },
+  "item": [
+    {
+      "name": "journal-entries",
+      "item": [
+        {
+          "name": "List Journal Entries",
+          "id": "faa5bfe7-4e96-4090-ac09-45f4ba4dae37",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/journal-entries?page=1&pageSize=50&modifiedOnOrAfter=<dateTime>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "journal-entries"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fff790e3-64cc-4d46-9169-295a2928738a",
+              "name": "Paginated list of journal entries",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/journal-entries?page=1&pageSize=50&modifiedOnOrAfter=<dateTime>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "journal-entries"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"<long>\",\n      \"number\": \"<string>\",\n      \"memo\": \"<string>\",\n      \"date\": \"<dateTime>\",\n      \"active\": \"<boolean>\",\n      \"status\": \"<string>\",\n      \"modifiedOn\": \"<dateTime>\",\n      \"details\": [\n        {\n          \"accountId\": \"<integer>\",\n          \"debit\": \"<number>\",\n          \"credit\": \"<number>\",\n          \"description\": \"<string>\"\n        },\n        {\n          \"accountId\": \"<integer>\",\n          \"debit\": \"<number>\",\n          \"credit\": \"<number>\",\n          \"description\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<long>\",\n      \"number\": \"<string>\",\n      \"memo\": \"<string>\",\n      \"date\": \"<dateTime>\",\n      \"active\": \"<boolean>\",\n      \"status\": \"<string>\",\n      \"modifiedOn\": \"<dateTime>\",\n      \"details\": [\n        {\n          \"accountId\": \"<integer>\",\n          \"debit\": \"<number>\",\n          \"credit\": \"<number>\",\n          \"description\": \"<string>\"\n        },\n        {\n          \"accountId\": \"<integer>\",\n          \"debit\": \"<number>\",\n          \"credit\": \"<number>\",\n          \"description\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"hasMore\": \"<boolean>\"\n}",
+              "createdAt": "2026-07-28T02:52:35.000Z",
+              "updatedAt": "2026-07-28T02:52:35.000Z",
+              "uid": "35240-fff790e3-64cc-4d46-9169-295a2928738a"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:35.000Z",
+          "updatedAt": "2026-07-28T02:52:35.000Z",
+          "uid": "35240-faa5bfe7-4e96-4090-ac09-45f4ba4dae37"
+        }
+      ],
+      "id": "33a8599b-1688-46d3-96bf-5bb81ea8e694",
+      "createdAt": "2026-07-28T02:52:35.000Z",
+      "updatedAt": "2026-07-28T02:52:35.000Z",
+      "uid": "35240-33a8599b-1688-46d3-96bf-5bb81ea8e694"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

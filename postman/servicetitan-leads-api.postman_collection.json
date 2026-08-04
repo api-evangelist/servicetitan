@@ -1,0 +1,349 @@
+{
+  "info": {
+    "_postman_id": "857b5e40-2205-48d4-90a1-ab050e8b7587",
+    "name": "ServiceTitan Accounting Adjustments Leads API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:36.000Z",
+    "updatedAt": "2026-07-28T02:52:36.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-857b5e40-2205-48d4-90a1-ab050e8b7587"
+  },
+  "item": [
+    {
+      "name": "leads",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "dismiss",
+              "item": [
+                {
+                  "name": "Dismiss Lead",
+                  "id": "871677c1-f55b-4b68-8eb7-26886b476ff0",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "PUT",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/leads/:id/dismiss",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "leads",
+                        ":id",
+                        "dismiss"
+                      ],
+                      "variable": [
+                        {
+                          "id": "3090771d-1bf1-49ca-8505-1ee83ebfe90c",
+                          "key": "id",
+                          "value": "<long>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "5f59fa8f-9251-4a21-a44e-bb890107b12f",
+                      "name": "Lead dismissed",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/leads/:id/dismiss",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "leads",
+                            ":id",
+                            "dismiss"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:52:36.000Z",
+                      "updatedAt": "2026-07-28T02:52:36.000Z",
+                      "uid": "35240-5f59fa8f-9251-4a21-a44e-bb890107b12f"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:52:36.000Z",
+                  "updatedAt": "2026-07-28T02:52:36.000Z",
+                  "uid": "35240-871677c1-f55b-4b68-8eb7-26886b476ff0"
+                }
+              ],
+              "id": "9fe40d0d-106c-4b7a-bcda-9e9a9e3c703c",
+              "createdAt": "2026-07-28T02:52:36.000Z",
+              "updatedAt": "2026-07-28T02:52:36.000Z",
+              "uid": "35240-9fe40d0d-106c-4b7a-bcda-9e9a9e3c703c"
+            }
+          ],
+          "id": "fcd87af8-c157-4862-ad19-38e821b62015",
+          "createdAt": "2026-07-28T02:52:36.000Z",
+          "updatedAt": "2026-07-28T02:52:36.000Z",
+          "uid": "35240-fcd87af8-c157-4862-ad19-38e821b62015"
+        },
+        {
+          "name": "List Leads",
+          "id": "80a174f5-4f3e-4743-85ea-f57e67919abd",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/leads?page=1&pageSize=50&status=<string>&modifiedOnOrAfter=<dateTime>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "leads"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "95ed5015-2c5a-40cd-8bcb-21ce76931979",
+              "name": "Paginated list of leads",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/leads?page=1&pageSize=50&status=<string>&modifiedOnOrAfter=<dateTime>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "leads"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"<long>\",\n      \"status\": \"Converted\",\n      \"customerId\": \"<long>\",\n      \"locationId\": \"<long>\",\n      \"businessUnitId\": \"<long>\",\n      \"jobTypeId\": \"<long>\",\n      \"priority\": \"<string>\",\n      \"summary\": \"<string>\",\n      \"callReasonId\": \"<integer>\",\n      \"campaignId\": \"<integer>\",\n      \"followUpDate\": \"<dateTime>\",\n      \"createdOn\": \"<dateTime>\",\n      \"modifiedOn\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"status\": \"Converted\",\n      \"customerId\": \"<long>\",\n      \"locationId\": \"<long>\",\n      \"businessUnitId\": \"<long>\",\n      \"jobTypeId\": \"<long>\",\n      \"priority\": \"<string>\",\n      \"summary\": \"<string>\",\n      \"callReasonId\": \"<integer>\",\n      \"campaignId\": \"<integer>\",\n      \"followUpDate\": \"<dateTime>\",\n      \"createdOn\": \"<dateTime>\",\n      \"modifiedOn\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:52:36.000Z",
+              "updatedAt": "2026-07-28T02:52:36.000Z",
+              "uid": "35240-95ed5015-2c5a-40cd-8bcb-21ce76931979"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:36.000Z",
+          "updatedAt": "2026-07-28T02:52:36.000Z",
+          "uid": "35240-80a174f5-4f3e-4743-85ea-f57e67919abd"
+        },
+        {
+          "name": "Create Lead",
+          "id": "3c99c85e-a4f6-49d8-ac9b-3fa7fe333e92",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"summary\": \"<string>\",\n  \"customerId\": \"<integer>\",\n  \"locationId\": \"<integer>\",\n  \"businessUnitId\": \"<integer>\",\n  \"jobTypeId\": \"<integer>\",\n  \"priority\": \"<string>\",\n  \"campaignId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/leads",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "leads"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b3dc08b6-a8f9-4396-a9ae-05e7dc5206a4",
+              "name": "Created lead",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"summary\": \"<string>\",\n  \"customerId\": \"<integer>\",\n  \"locationId\": \"<integer>\",\n  \"businessUnitId\": \"<integer>\",\n  \"jobTypeId\": \"<integer>\",\n  \"priority\": \"<string>\",\n  \"campaignId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/leads",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "leads"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"id\": \"<long>\",\n  \"status\": \"Open\",\n  \"customerId\": \"<long>\",\n  \"locationId\": \"<long>\",\n  \"businessUnitId\": \"<long>\",\n  \"jobTypeId\": \"<long>\",\n  \"priority\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"callReasonId\": \"<integer>\",\n  \"campaignId\": \"<integer>\",\n  \"followUpDate\": \"<dateTime>\",\n  \"createdOn\": \"<dateTime>\",\n  \"modifiedOn\": \"<dateTime>\"\n}",
+              "createdAt": "2026-07-28T02:52:36.000Z",
+              "updatedAt": "2026-07-28T02:52:36.000Z",
+              "uid": "35240-b3dc08b6-a8f9-4396-a9ae-05e7dc5206a4"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:36.000Z",
+          "updatedAt": "2026-07-28T02:52:36.000Z",
+          "uid": "35240-3c99c85e-a4f6-49d8-ac9b-3fa7fe333e92"
+        }
+      ],
+      "id": "2637545a-991c-42b0-9581-5ab2d344cefd",
+      "createdAt": "2026-07-28T02:52:36.000Z",
+      "updatedAt": "2026-07-28T02:52:36.000Z",
+      "uid": "35240-2637545a-991c-42b0-9581-5ab2d344cefd"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

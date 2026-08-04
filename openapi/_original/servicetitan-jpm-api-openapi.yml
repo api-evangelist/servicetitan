@@ -1,0 +1,569 @@
+openapi: 3.1.0
+info:
+  title: ServiceTitan Job Planning & Management API
+  description: |
+    The JPM API manages jobs, projects, appointments, job types, call reasons, job cancel
+    reasons, and job history. It is the operational core of ServiceTitan — every work order
+    and recurring service rolls through this surface. Tenant-scoped; OAuth 2.0 + App Key.
+  version: "2.0.0"
+  contact:
+    name: ServiceTitan Developer Support
+    url: https://developer.servicetitan.io/
+    email: integrations@servicetitan.com
+  license:
+    name: ServiceTitan Terms of Service
+    url: https://www.servicetitan.com/legal/terms-of-service
+servers:
+  - url: https://api.servicetitan.io/jpm/v2/{tenant}
+    description: Production
+    variables:
+      tenant:
+        default: "0000000"
+  - url: https://api-integration.servicetitan.io/jpm/v2/{tenant}
+    description: Integration (Sandbox)
+    variables:
+      tenant:
+        default: "0000000"
+security:
+  - OAuth2: []
+    AppKey: []
+tags:
+  - name: Jobs
+    description: Service jobs (work orders)
+  - name: Appointments
+    description: Job appointments and visits
+  - name: Projects
+    description: Multi-job projects
+  - name: Job Types
+    description: Job type definitions
+  - name: Call Reasons
+    description: Job booking call reasons
+paths:
+  /jobs:
+    get:
+      summary: List Jobs
+      operationId: listJobs
+      tags: [Jobs]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/ModifiedOnOrAfter'
+        - $ref: '#/components/parameters/JobStatus'
+      responses:
+        '200':
+          description: Paginated list of jobs
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobPagedResponse'
+    post:
+      summary: Create Job
+      operationId: createJob
+      tags: [Jobs]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobCreateRequest'
+      responses:
+        '200':
+          description: Created job
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+  /jobs/{id}:
+    get:
+      summary: Get Job
+      operationId: getJob
+      tags: [Jobs]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Job record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+    patch:
+      summary: Update Job
+      operationId: updateJob
+      tags: [Jobs]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobUpdateRequest'
+      responses:
+        '200':
+          description: Updated job
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+  /jobs/{id}/cancel:
+    put:
+      summary: Cancel Job
+      operationId: cancelJob
+      tags: [Jobs]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reasonId: { type: integer }
+                memo: { type: string }
+      responses:
+        '200':
+          description: Job cancelled
+  /jobs/{id}/hold:
+    put:
+      summary: Hold Job
+      operationId: holdJob
+      tags: [Jobs]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reasonId: { type: integer }
+                memo: { type: string }
+      responses:
+        '200':
+          description: Job placed on hold
+  /jobs/{id}/history:
+    get:
+      summary: Get Job History
+      operationId: getJobHistory
+      tags: [Jobs]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Job history
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobHistory'
+  /appointments:
+    get:
+      summary: List Appointments
+      operationId: listAppointments
+      tags: [Appointments]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/ModifiedOnOrAfter'
+        - name: jobId
+          in: query
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Paginated list of appointments
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppointmentPagedResponse'
+    post:
+      summary: Create Appointment
+      operationId: createAppointment
+      tags: [Appointments]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppointmentCreateRequest'
+      responses:
+        '200':
+          description: Created appointment
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Appointment'
+  /appointments/{id}:
+    get:
+      summary: Get Appointment
+      operationId: getAppointment
+      tags: [Appointments]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Appointment record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Appointment'
+    patch:
+      summary: Update Appointment
+      operationId: updateAppointment
+      tags: [Appointments]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppointmentUpdateRequest'
+      responses:
+        '200':
+          description: Updated appointment
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Appointment'
+  /appointments/{id}/reschedule:
+    patch:
+      summary: Reschedule Appointment
+      operationId: rescheduleAppointment
+      tags: [Appointments]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [start, end]
+              properties:
+                start: { type: string, format: date-time }
+                end: { type: string, format: date-time }
+                arrivalWindowStart: { type: string, format: date-time }
+                arrivalWindowEnd: { type: string, format: date-time }
+      responses:
+        '200':
+          description: Appointment rescheduled
+  /projects:
+    get:
+      summary: List Projects
+      operationId: listProjects
+      tags: [Projects]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/ModifiedOnOrAfter'
+      responses:
+        '200':
+          description: Paginated list of projects
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectPagedResponse'
+    post:
+      summary: Create Project
+      operationId: createProject
+      tags: [Projects]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProjectCreateRequest'
+      responses:
+        '200':
+          description: Created project
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+  /projects/{id}:
+    get:
+      summary: Get Project
+      operationId: getProject
+      tags: [Projects]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Project record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+  /job-types:
+    get:
+      summary: List Job Types
+      operationId: listJobTypes
+      tags: [Job Types]
+      responses:
+        '200':
+          description: Job types
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobTypePagedResponse'
+  /job-cancel-reasons:
+    get:
+      summary: List Job Cancel Reasons
+      operationId: listJobCancelReasons
+      tags: [Jobs]
+      responses:
+        '200':
+          description: Cancel reasons
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id: { type: integer }
+                        name: { type: string }
+                        active: { type: boolean }
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.servicetitan.io/connect/token
+          scopes: {}
+    AppKey:
+      type: apiKey
+      in: header
+      name: ST-App-Key
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema: { type: integer, format: int64 }
+    Page:
+      name: page
+      in: query
+      schema: { type: integer, default: 1 }
+    PageSize:
+      name: pageSize
+      in: query
+      schema: { type: integer, default: 50, maximum: 500 }
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema: { type: string, format: date-time }
+    JobStatus:
+      name: jobStatus
+      in: query
+      schema: { type: string, enum: [Scheduled, Dispatched, InProgress, Hold, Completed, Canceled] }
+  schemas:
+    Job:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        jobNumber: { type: string }
+        customerId: { type: integer, format: int64 }
+        locationId: { type: integer, format: int64 }
+        jobStatus: { type: string }
+        completedOn: { type: string, format: date-time, nullable: true }
+        businessUnitId: { type: integer }
+        jobTypeId: { type: integer }
+        priority: { type: string }
+        campaignId: { type: integer, nullable: true }
+        summary: { type: string }
+        customFields:
+          type: array
+          items:
+            type: object
+            properties:
+              typeId: { type: integer }
+              name: { type: string }
+              value: { type: string }
+        appointmentCount: { type: integer }
+        firstAppointmentId: { type: integer, nullable: true }
+        lastAppointmentId: { type: integer, nullable: true }
+        recallForId: { type: integer, nullable: true }
+        warrantyId: { type: integer, nullable: true }
+        jobGeneratedLeadSource:
+          type: object
+          properties:
+            jobId: { type: integer, nullable: true }
+            employeeId: { type: integer, nullable: true }
+        noCharge: { type: boolean }
+        notificationsEnabled: { type: boolean }
+        createdOn: { type: string, format: date-time }
+        modifiedOn: { type: string, format: date-time }
+    JobCreateRequest:
+      type: object
+      required: [customerId, locationId, businessUnitId, jobTypeId, priority, campaignId, appointments]
+      properties:
+        customerId: { type: integer }
+        locationId: { type: integer }
+        businessUnitId: { type: integer }
+        jobTypeId: { type: integer }
+        priority: { type: string }
+        campaignId: { type: integer }
+        appointments:
+          type: array
+          items:
+            type: object
+            properties:
+              start: { type: string, format: date-time }
+              end: { type: string, format: date-time }
+              arrivalWindowStart: { type: string, format: date-time }
+              arrivalWindowEnd: { type: string, format: date-time }
+              technicianIds:
+                type: array
+                items: { type: integer }
+        summary: { type: string }
+        shouldUpdateInvoiceItems: { type: boolean }
+    JobUpdateRequest:
+      type: object
+      properties:
+        summary: { type: string }
+        priority: { type: string }
+        businessUnitId: { type: integer }
+        jobTypeId: { type: integer }
+        campaignId: { type: integer }
+    JobPagedResponse:
+      type: object
+      properties:
+        page: { type: integer }
+        pageSize: { type: integer }
+        hasMore: { type: boolean }
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/Job' }
+    JobHistory:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              id: { type: integer }
+              eventType: { type: string }
+              date: { type: string, format: date-time }
+              employeeId: { type: integer, nullable: true }
+              usedSchedulingTool: { type: string, nullable: true }
+              usedSchedulingToolVersion: { type: string, nullable: true }
+    Appointment:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        jobId: { type: integer, format: int64 }
+        appointmentNumber: { type: string }
+        start: { type: string, format: date-time }
+        end: { type: string, format: date-time }
+        arrivalWindowStart: { type: string, format: date-time }
+        arrivalWindowEnd: { type: string, format: date-time }
+        status: { type: string, enum: [Scheduled, Dispatched, InProgress, Hold, Done, Canceled] }
+        specialInstructions: { type: string, nullable: true }
+        createdOn: { type: string, format: date-time }
+        modifiedOn: { type: string, format: date-time }
+        customerId: { type: integer }
+        unused: { type: boolean }
+    AppointmentCreateRequest:
+      type: object
+      required: [jobId, start, end]
+      properties:
+        jobId: { type: integer }
+        start: { type: string, format: date-time }
+        end: { type: string, format: date-time }
+        arrivalWindowStart: { type: string, format: date-time }
+        arrivalWindowEnd: { type: string, format: date-time }
+        technicianIds:
+          type: array
+          items: { type: integer }
+        specialInstructions: { type: string }
+    AppointmentUpdateRequest:
+      type: object
+      properties:
+        specialInstructions: { type: string }
+    AppointmentPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/Appointment' }
+    Project:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        number: { type: string }
+        name: { type: string }
+        summary: { type: string }
+        status: { type: string }
+        statusId: { type: integer, nullable: true }
+        substatusId: { type: integer, nullable: true }
+        customerId: { type: integer }
+        locationId: { type: integer }
+        projectManagerIds:
+          type: array
+          items: { type: integer }
+        businessUnitIds:
+          type: array
+          items: { type: integer }
+        startDate: { type: string, format: date, nullable: true }
+        targetCompletionDate: { type: string, format: date, nullable: true }
+        actualCompletionDate: { type: string, format: date, nullable: true }
+        modifiedOn: { type: string, format: date-time }
+    ProjectCreateRequest:
+      type: object
+      required: [customerId, locationId]
+      properties:
+        name: { type: string }
+        summary: { type: string }
+        customerId: { type: integer }
+        locationId: { type: integer }
+        projectManagerIds:
+          type: array
+          items: { type: integer }
+        startDate: { type: string, format: date }
+        targetCompletionDate: { type: string, format: date }
+    ProjectPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/Project' }
+    JobType:
+      type: object
+      properties:
+        id: { type: integer }
+        name: { type: string }
+        businessUnitIds:
+          type: array
+          items: { type: integer }
+        skills:
+          type: array
+          items: { type: string }
+        tagTypeIds:
+          type: array
+          items: { type: integer }
+        priority: { type: string }
+        duration: { type: integer, description: Duration in minutes }
+        soldThreshold: { type: number, nullable: true }
+        class: { type: string }
+        summary: { type: string }
+        noCharge: { type: boolean }
+        enforceRecurringServiceEventSelection: { type: boolean }
+        invoiceSignaturesRequired: { type: boolean }
+        modifiedOn: { type: string, format: date-time }
+        externalData:
+          type: array
+          items: { type: object }
+    JobTypePagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/JobType' }

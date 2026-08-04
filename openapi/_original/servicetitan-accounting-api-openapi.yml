@@ -1,0 +1,445 @@
+openapi: 3.1.0
+info:
+  title: ServiceTitan Accounting API
+  description: |
+    The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,
+    payment types, journal entries, journal entry details, tax zones, and GL accounts.
+    Tenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.
+  version: "2.0.0"
+  contact:
+    name: ServiceTitan Developer Support
+    url: https://developer.servicetitan.io/
+    email: integrations@servicetitan.com
+  license:
+    name: ServiceTitan Terms of Service
+    url: https://www.servicetitan.com/legal/terms-of-service
+servers:
+  - url: https://api.servicetitan.io/accounting/v2/{tenant}
+    description: Production
+    variables:
+      tenant:
+        default: "0000000"
+  - url: https://api-integration.servicetitan.io/accounting/v2/{tenant}
+    description: Integration (Sandbox)
+    variables:
+      tenant:
+        default: "0000000"
+security:
+  - OAuth2: []
+    AppKey: []
+tags:
+  - name: Invoices
+  - name: Payments
+  - name: Journal Entries
+  - name: Tax Zones
+  - name: GL Accounts
+paths:
+  /invoices:
+    get:
+      summary: List Invoices
+      operationId: listInvoices
+      tags: [Invoices]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/ModifiedOnOrAfter'
+        - name: jobId
+          in: query
+          schema: { type: integer }
+        - name: customerId
+          in: query
+          schema: { type: integer }
+        - name: batchId
+          in: query
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Paginated list of invoices
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoicePagedResponse'
+  /invoices/{id}:
+    get:
+      summary: Get Invoice
+      operationId: getInvoice
+      tags: [Invoices]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Invoice
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+    patch:
+      summary: Update Invoice
+      operationId: updateInvoice
+      tags: [Invoices]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InvoiceUpdateRequest'
+      responses:
+        '200':
+          description: Updated invoice
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+  /invoices/{id}/items:
+    post:
+      summary: Update Invoice Items
+      operationId: updateInvoiceItems
+      tags: [Invoices]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                items:
+                  type: array
+                  items: { $ref: '#/components/schemas/InvoiceItem' }
+      responses:
+        '200':
+          description: Items updated
+  /payments:
+    get:
+      summary: List Payments
+      operationId: listPayments
+      tags: [Payments]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/ModifiedOnOrAfter'
+      responses:
+        '200':
+          description: Paginated list of payments
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentPagedResponse'
+    post:
+      summary: Create Payment
+      operationId: createPayment
+      tags: [Payments]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentCreateRequest'
+      responses:
+        '200':
+          description: Created payment
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Payment'
+  /payments/{id}:
+    get:
+      summary: Get Payment
+      operationId: getPayment
+      tags: [Payments]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Payment
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Payment'
+    patch:
+      summary: Update Payment
+      operationId: updatePayment
+      tags: [Payments]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Updated payment
+  /payment-types:
+    get:
+      summary: List Payment Types
+      operationId: listPaymentTypes
+      tags: [Payments]
+      responses:
+        '200':
+          description: Payment types
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id: { type: integer }
+                        name: { type: string }
+                        active: { type: boolean }
+                        modifiedOn: { type: string, format: date-time }
+  /journal-entries:
+    get:
+      summary: List Journal Entries
+      operationId: listJournalEntries
+      tags: [Journal Entries]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/ModifiedOnOrAfter'
+      responses:
+        '200':
+          description: Paginated list of journal entries
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items: { $ref: '#/components/schemas/JournalEntry' }
+                  hasMore: { type: boolean }
+  /tax-zones:
+    get:
+      summary: List Tax Zones
+      operationId: listTaxZones
+      tags: [Tax Zones]
+      responses:
+        '200':
+          description: Tax zones
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id: { type: integer }
+                        name: { type: string }
+                        rate: { type: number }
+                        useTaxRate: { type: number }
+                        active: { type: boolean }
+  /gl-accounts:
+    get:
+      summary: List GL Accounts
+      operationId: listGlAccounts
+      tags: [GL Accounts]
+      responses:
+        '200':
+          description: GL accounts
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id: { type: integer }
+                        name: { type: string }
+                        number: { type: string }
+                        accountType: { type: string }
+                        active: { type: boolean }
+                        isInterCompany: { type: boolean }
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.servicetitan.io/connect/token
+          scopes: {}
+    AppKey:
+      type: apiKey
+      in: header
+      name: ST-App-Key
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema: { type: integer, format: int64 }
+    Page:
+      name: page
+      in: query
+      schema: { type: integer, default: 1 }
+    PageSize:
+      name: pageSize
+      in: query
+      schema: { type: integer, default: 50, maximum: 500 }
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema: { type: string, format: date-time }
+  schemas:
+    Invoice:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        number: { type: string }
+        jobId: { type: integer, format: int64, nullable: true }
+        projectId: { type: integer, format: int64, nullable: true }
+        customerId: { type: integer, format: int64 }
+        locationId: { type: integer, format: int64 }
+        businessUnitId: { type: integer }
+        invoiceDate: { type: string, format: date }
+        dueDate: { type: string, format: date }
+        subTotal: { type: number, format: double }
+        salesTax: { type: number, format: double }
+        salesTaxCode: { type: string, nullable: true }
+        total: { type: number, format: double }
+        balance: { type: number, format: double }
+        royalty:
+          type: object
+          properties:
+            status: { type: string }
+            date: { type: string, format: date-time, nullable: true }
+            sentOn: { type: string, format: date-time, nullable: true }
+            memo: { type: string, nullable: true }
+        status: { type: string, enum: [Pending, Posted, Exported] }
+        depositedOn: { type: string, format: date-time, nullable: true }
+        items:
+          type: array
+          items: { $ref: '#/components/schemas/InvoiceItem' }
+        payments:
+          type: array
+          items:
+            type: object
+            properties:
+              paymentId: { type: integer }
+              amount: { type: number }
+              memo: { type: string }
+        modifiedOn: { type: string, format: date-time }
+    InvoiceItem:
+      type: object
+      properties:
+        id: { type: integer }
+        skuId: { type: integer, nullable: true }
+        skuName: { type: string }
+        skuType: { type: string }
+        description: { type: string }
+        quantity: { type: number }
+        cost: { type: number }
+        totalCost: { type: number }
+        price: { type: number }
+        total: { type: number }
+        generalLedgerAccountId: { type: integer, nullable: true }
+        taxable: { type: boolean }
+        chargeable: { type: boolean }
+    InvoiceUpdateRequest:
+      type: object
+      properties:
+        invoiceDate: { type: string, format: date }
+        dueDate: { type: string, format: date }
+        summary: { type: string }
+        royalty:
+          type: object
+    InvoicePagedResponse:
+      type: object
+      properties:
+        page: { type: integer }
+        pageSize: { type: integer }
+        hasMore: { type: boolean }
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/Invoice' }
+    Payment:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        active: { type: boolean }
+        referenceNumber: { type: string, nullable: true }
+        date: { type: string, format: date-time }
+        type: { type: string }
+        typeId: { type: integer, nullable: true }
+        total: { type: number }
+        unappliedAmount: { type: number }
+        memo: { type: string, nullable: true }
+        customer:
+          type: object
+          properties:
+            id: { type: integer }
+            name: { type: string }
+        batch:
+          type: object
+          properties:
+            id: { type: integer, nullable: true }
+            name: { type: string, nullable: true }
+            number: { type: string, nullable: true }
+        status: { type: string }
+        splits:
+          type: array
+          items:
+            type: object
+            properties:
+              invoiceId: { type: integer }
+              amount: { type: number }
+        modifiedOn: { type: string, format: date-time }
+    PaymentCreateRequest:
+      type: object
+      required: [date, typeId, total, splits]
+      properties:
+        date: { type: string, format: date-time }
+        typeId: { type: integer }
+        total: { type: number }
+        referenceNumber: { type: string }
+        memo: { type: string }
+        splits:
+          type: array
+          items:
+            type: object
+            required: [invoiceId, amount]
+            properties:
+              invoiceId: { type: integer }
+              amount: { type: number }
+    PaymentPagedResponse:
+      type: object
+      properties:
+        page: { type: integer }
+        pageSize: { type: integer }
+        hasMore: { type: boolean }
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/Payment' }
+    JournalEntry:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        number: { type: string }
+        memo: { type: string, nullable: true }
+        date: { type: string, format: date-time }
+        active: { type: boolean }
+        status: { type: string }
+        modifiedOn: { type: string, format: date-time }
+        details:
+          type: array
+          items:
+            type: object
+            properties:
+              accountId: { type: integer }
+              debit: { type: number }
+              credit: { type: number }
+              description: { type: string, nullable: true }

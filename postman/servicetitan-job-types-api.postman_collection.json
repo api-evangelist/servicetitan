@@ -1,0 +1,120 @@
+{
+  "info": {
+    "_postman_id": "dde63f7a-f404-4401-a161-8e4b9105d3ee",
+    "name": "ServiceTitan Accounting Adjustments Job Types API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:33.000Z",
+    "updatedAt": "2026-07-28T02:52:33.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-dde63f7a-f404-4401-a161-8e4b9105d3ee"
+  },
+  "item": [
+    {
+      "name": "job-types",
+      "item": [
+        {
+          "name": "List Job Types",
+          "id": "c412bd21-1622-488f-aa5f-1b4220ddd6f7",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/job-types",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "job-types"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "cabd26fe-4a8e-45be-9802-f6b724bf9bbb",
+              "name": "Job types",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/job-types",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "job-types"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"businessUnitIds\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"skills\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"tagTypeIds\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"priority\": \"<string>\",\n      \"duration\": \"<integer>\",\n      \"soldThreshold\": \"<number>\",\n      \"class\": \"<string>\",\n      \"summary\": \"<string>\",\n      \"noCharge\": \"<boolean>\",\n      \"enforceRecurringServiceEventSelection\": \"<boolean>\",\n      \"invoiceSignaturesRequired\": \"<boolean>\",\n      \"modifiedOn\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"businessUnitIds\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"skills\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"tagTypeIds\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"priority\": \"<string>\",\n      \"duration\": \"<integer>\",\n      \"soldThreshold\": \"<number>\",\n      \"class\": \"<string>\",\n      \"summary\": \"<string>\",\n      \"noCharge\": \"<boolean>\",\n      \"enforceRecurringServiceEventSelection\": \"<boolean>\",\n      \"invoiceSignaturesRequired\": \"<boolean>\",\n      \"modifiedOn\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:52:33.000Z",
+              "updatedAt": "2026-07-28T02:52:33.000Z",
+              "uid": "35240-cabd26fe-4a8e-45be-9802-f6b724bf9bbb"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:33.000Z",
+          "updatedAt": "2026-07-28T02:52:33.000Z",
+          "uid": "35240-c412bd21-1622-488f-aa5f-1b4220ddd6f7"
+        }
+      ],
+      "id": "ecff0624-31a6-41e6-8c54-fea12c2c5d19",
+      "createdAt": "2026-07-28T02:52:33.000Z",
+      "updatedAt": "2026-07-28T02:52:33.000Z",
+      "uid": "35240-ecff0624-31a6-41e6-8c54-fea12c2c5d19"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

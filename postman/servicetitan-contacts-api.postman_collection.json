@@ -1,0 +1,272 @@
+{
+  "info": {
+    "_postman_id": "00c6bf6d-8439-419a-a76f-dc20d5286f54",
+    "name": "ServiceTitan Accounting Adjustments Contacts API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:08.000Z",
+    "updatedAt": "2026-07-28T02:52:09.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-00c6bf6d-8439-419a-a76f-dc20d5286f54"
+  },
+  "item": [
+    {
+      "name": "customers",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "contacts",
+              "item": [
+                {
+                  "name": "List Customer Contacts",
+                  "id": "31946dab-532f-4afe-81bb-09df39e21711",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/customers/:id/contacts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "customers",
+                        ":id",
+                        "contacts"
+                      ],
+                      "variable": [
+                        {
+                          "id": "c42ae90b-1b44-4c87-adba-9ebbcd521d77",
+                          "key": "id",
+                          "value": "<long>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "f630c877-69d8-49eb-ae03-bbfd90dcb2bf",
+                      "name": "List of customer contacts",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/customers/:id/contacts",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "customers",
+                            ":id",
+                            "contacts"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"data\": [\n    {\n      \"id\": \"<long>\",\n      \"type\": \"Fax\",\n      \"value\": \"<string>\",\n      \"memo\": \"<string>\",\n      \"modifiedOn\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"type\": \"Email\",\n      \"value\": \"<string>\",\n      \"memo\": \"<string>\",\n      \"modifiedOn\": \"<dateTime>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:52:09.000Z",
+                      "updatedAt": "2026-07-28T02:52:09.000Z",
+                      "uid": "35240-f630c877-69d8-49eb-ae03-bbfd90dcb2bf"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:52:09.000Z",
+                  "updatedAt": "2026-07-28T02:52:09.000Z",
+                  "uid": "35240-31946dab-532f-4afe-81bb-09df39e21711"
+                },
+                {
+                  "name": "Create Customer Contact",
+                  "id": "439ee342-77dd-4dfa-8f23-882b9525eaf1",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"type\": \"<string>\",\n  \"value\": \"<string>\",\n  \"memo\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/customers/:id/contacts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "customers",
+                        ":id",
+                        "contacts"
+                      ],
+                      "variable": [
+                        {
+                          "id": "23bbc98e-939a-45a7-94c8-a510d1d07370",
+                          "key": "id",
+                          "value": "<long>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "023c4fa6-0efc-46b6-8004-7c20b628fbc7",
+                      "name": "Created contact",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"type\": \"<string>\",\n  \"value\": \"<string>\",\n  \"memo\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/customers/:id/contacts",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "customers",
+                            ":id",
+                            "contacts"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<long>\",\n  \"type\": \"Phone\",\n  \"value\": \"<string>\",\n  \"memo\": \"<string>\",\n  \"modifiedOn\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-07-28T02:52:09.000Z",
+                      "updatedAt": "2026-07-28T02:52:09.000Z",
+                      "uid": "35240-023c4fa6-0efc-46b6-8004-7c20b628fbc7"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:52:09.000Z",
+                  "updatedAt": "2026-07-28T02:52:09.000Z",
+                  "uid": "35240-439ee342-77dd-4dfa-8f23-882b9525eaf1"
+                }
+              ],
+              "id": "e959def5-0740-4bbc-8f11-f1f31f501da6",
+              "createdAt": "2026-07-28T02:52:09.000Z",
+              "updatedAt": "2026-07-28T02:52:09.000Z",
+              "uid": "35240-e959def5-0740-4bbc-8f11-f1f31f501da6"
+            }
+          ],
+          "id": "fc073e64-1395-4153-8cd9-b2bf5ebe1508",
+          "createdAt": "2026-07-28T02:52:09.000Z",
+          "updatedAt": "2026-07-28T02:52:09.000Z",
+          "uid": "35240-fc073e64-1395-4153-8cd9-b2bf5ebe1508"
+        }
+      ],
+      "id": "ee06aed4-fa79-4575-9162-33a6abeb651b",
+      "createdAt": "2026-07-28T02:52:09.000Z",
+      "updatedAt": "2026-07-28T02:52:09.000Z",
+      "uid": "35240-ee06aed4-fa79-4575-9162-33a6abeb651b"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

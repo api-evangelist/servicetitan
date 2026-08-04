@@ -1,0 +1,140 @@
+{
+  "info": {
+    "_postman_id": "43e57feb-8e0a-4071-bf47-829ea1f4d05a",
+    "name": "ServiceTitan Accounting Adjustments Vendors API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:59.000Z",
+    "updatedAt": "2026-07-28T02:52:59.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-43e57feb-8e0a-4071-bf47-829ea1f4d05a"
+  },
+  "item": [
+    {
+      "name": "vendors",
+      "item": [
+        {
+          "name": "List Vendors",
+          "id": "2acf0b19-ff76-4aaf-8388-9aa32aab5960",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/vendors?page=1&pageSize=50",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vendors"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "50"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "00e89e8e-24c2-43db-bd28-797c1d900bf4",
+              "name": "Vendors",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/vendors?page=1&pageSize=50",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "vendors"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"active\": \"<boolean>\",\n      \"memo\": \"<string>\",\n      \"phone\": \"<string>\",\n      \"email\": \"<string>\",\n      \"address\": {},\n      \"modifiedOn\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"active\": \"<boolean>\",\n      \"memo\": \"<string>\",\n      \"phone\": \"<string>\",\n      \"email\": \"<string>\",\n      \"address\": {},\n      \"modifiedOn\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:52:59.000Z",
+              "updatedAt": "2026-07-28T02:52:59.000Z",
+              "uid": "35240-00e89e8e-24c2-43db-bd28-797c1d900bf4"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:59.000Z",
+          "updatedAt": "2026-07-28T02:52:59.000Z",
+          "uid": "35240-2acf0b19-ff76-4aaf-8388-9aa32aab5960"
+        }
+      ],
+      "id": "f10739b0-df4b-422b-9583-18ef50a343d9",
+      "createdAt": "2026-07-28T02:52:59.000Z",
+      "updatedAt": "2026-07-28T02:52:59.000Z",
+      "uid": "35240-f10739b0-df4b-422b-9583-18ef50a343d9"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

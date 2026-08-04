@@ -1,0 +1,120 @@
+{
+  "info": {
+    "_postman_id": "38801140-48f6-41ae-9e60-f87357c7cc36",
+    "name": "ServiceTitan Accounting Adjustments Warehouses API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:53:00.000Z",
+    "updatedAt": "2026-07-28T02:53:00.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-38801140-48f6-41ae-9e60-f87357c7cc36"
+  },
+  "item": [
+    {
+      "name": "warehouses",
+      "item": [
+        {
+          "name": "List Warehouses",
+          "id": "bfb717bc-1023-4eaf-a603-75d2e4e03bd3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/warehouses",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "warehouses"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1c609848-1ba1-43bf-87ae-8c3779479348",
+              "name": "Warehouses",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/warehouses",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "warehouses"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"active\": \"<boolean>\",\n      \"address\": {}\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"active\": \"<boolean>\",\n      \"address\": {}\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:53:00.000Z",
+              "updatedAt": "2026-07-28T02:53:00.000Z",
+              "uid": "35240-1c609848-1ba1-43bf-87ae-8c3779479348"
+            }
+          ],
+          "createdAt": "2026-07-28T02:53:00.000Z",
+          "updatedAt": "2026-07-28T02:53:00.000Z",
+          "uid": "35240-bfb717bc-1023-4eaf-a603-75d2e4e03bd3"
+        }
+      ],
+      "id": "21316724-c80e-4387-a9d9-c9ff1e7b1c11",
+      "createdAt": "2026-07-28T02:53:00.000Z",
+      "updatedAt": "2026-07-28T02:53:00.000Z",
+      "uid": "35240-21316724-c80e-4387-a9d9-c9ff1e7b1c11"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

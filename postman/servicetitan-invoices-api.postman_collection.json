@@ -1,0 +1,496 @@
+{
+  "info": {
+    "_postman_id": "10d0a6f3-6b3f-4b3a-80f0-bc1da8585abe",
+    "name": "ServiceTitan Accounting Adjustments Invoices API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:32.000Z",
+    "updatedAt": "2026-07-28T02:52:32.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-10d0a6f3-6b3f-4b3a-80f0-bc1da8585abe"
+  },
+  "item": [
+    {
+      "name": "invoices",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "items",
+              "item": [
+                {
+                  "name": "Update Invoice Items",
+                  "id": "584d7453-f177-400d-a289-14c0aafd3e48",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"items\": [\n    {\n      \"id\": \"<integer>\",\n      \"skuId\": \"<integer>\",\n      \"skuName\": \"<string>\",\n      \"skuType\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\",\n      \"totalCost\": \"<number>\",\n      \"price\": \"<number>\",\n      \"total\": \"<number>\",\n      \"generalLedgerAccountId\": \"<integer>\",\n      \"taxable\": \"<boolean>\",\n      \"chargeable\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"skuId\": \"<integer>\",\n      \"skuName\": \"<string>\",\n      \"skuType\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\",\n      \"totalCost\": \"<number>\",\n      \"price\": \"<number>\",\n      \"total\": \"<number>\",\n      \"generalLedgerAccountId\": \"<integer>\",\n      \"taxable\": \"<boolean>\",\n      \"chargeable\": \"<boolean>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/invoices/:id/items",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "invoices",
+                        ":id",
+                        "items"
+                      ],
+                      "variable": [
+                        {
+                          "id": "9ce8d481-c899-4e4f-a99c-8850b362b1df",
+                          "key": "id",
+                          "value": "<long>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "c1f11d8d-e8c6-4669-8f9e-c8dab3c3751d",
+                      "name": "Items updated",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"items\": [\n    {\n      \"id\": \"<integer>\",\n      \"skuId\": \"<integer>\",\n      \"skuName\": \"<string>\",\n      \"skuType\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\",\n      \"totalCost\": \"<number>\",\n      \"price\": \"<number>\",\n      \"total\": \"<number>\",\n      \"generalLedgerAccountId\": \"<integer>\",\n      \"taxable\": \"<boolean>\",\n      \"chargeable\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"skuId\": \"<integer>\",\n      \"skuName\": \"<string>\",\n      \"skuType\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\",\n      \"totalCost\": \"<number>\",\n      \"price\": \"<number>\",\n      \"total\": \"<number>\",\n      \"generalLedgerAccountId\": \"<integer>\",\n      \"taxable\": \"<boolean>\",\n      \"chargeable\": \"<boolean>\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/invoices/:id/items",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "invoices",
+                            ":id",
+                            "items"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:52:32.000Z",
+                      "updatedAt": "2026-07-28T02:52:32.000Z",
+                      "uid": "35240-c1f11d8d-e8c6-4669-8f9e-c8dab3c3751d"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:52:32.000Z",
+                  "updatedAt": "2026-07-28T02:52:32.000Z",
+                  "uid": "35240-584d7453-f177-400d-a289-14c0aafd3e48"
+                }
+              ],
+              "id": "ad32b146-f8ff-42ed-83a3-f46126ab304b",
+              "createdAt": "2026-07-28T02:52:32.000Z",
+              "updatedAt": "2026-07-28T02:52:32.000Z",
+              "uid": "35240-ad32b146-f8ff-42ed-83a3-f46126ab304b"
+            },
+            {
+              "name": "Get Invoice",
+              "id": "b814a250-787a-447d-9b04-8afb04d33c88",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invoices/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invoices",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "52a63651-4d11-4ac1-9fb1-0d13d806d696",
+                      "key": "id",
+                      "value": "<long>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "68cbe720-63cb-4d8f-ae4b-1dc8245d244e",
+                  "name": "Invoice",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/invoices/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "invoices",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<long>\",\n  \"number\": \"<string>\",\n  \"jobId\": \"<long>\",\n  \"projectId\": \"<long>\",\n  \"customerId\": \"<long>\",\n  \"locationId\": \"<long>\",\n  \"businessUnitId\": \"<integer>\",\n  \"invoiceDate\": \"<date>\",\n  \"dueDate\": \"<date>\",\n  \"subTotal\": \"<double>\",\n  \"salesTax\": \"<double>\",\n  \"salesTaxCode\": \"<string>\",\n  \"total\": \"<double>\",\n  \"balance\": \"<double>\",\n  \"royalty\": {\n    \"status\": \"<string>\",\n    \"date\": \"<dateTime>\",\n    \"sentOn\": \"<dateTime>\",\n    \"memo\": \"<string>\"\n  },\n  \"status\": \"Pending\",\n  \"depositedOn\": \"<dateTime>\",\n  \"items\": [\n    {\n      \"id\": \"<integer>\",\n      \"skuId\": \"<integer>\",\n      \"skuName\": \"<string>\",\n      \"skuType\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\",\n      \"totalCost\": \"<number>\",\n      \"price\": \"<number>\",\n      \"total\": \"<number>\",\n      \"generalLedgerAccountId\": \"<integer>\",\n      \"taxable\": \"<boolean>\",\n      \"chargeable\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"skuId\": \"<integer>\",\n      \"skuName\": \"<string>\",\n      \"skuType\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\",\n      \"totalCost\": \"<number>\",\n      \"price\": \"<number>\",\n      \"total\": \"<number>\",\n      \"generalLedgerAccountId\": \"<integer>\",\n      \"taxable\": \"<boolean>\",\n      \"chargeable\": \"<boolean>\"\n    }\n  ],\n  \"payments\": [\n    {\n      \"paymentId\": \"<integer>\",\n      \"amount\": \"<number>\",\n      \"memo\": \"<string>\"\n    },\n    {\n      \"paymentId\": \"<integer>\",\n      \"amount\": \"<number>\",\n      \"memo\": \"<string>\"\n    }\n  ],\n  \"modifiedOn\": \"<dateTime>\"\n}",
+                  "createdAt": "2026-07-28T02:52:32.000Z",
+                  "updatedAt": "2026-07-28T02:52:32.000Z",
+                  "uid": "35240-68cbe720-63cb-4d8f-ae4b-1dc8245d244e"
+                }
+              ],
+              "createdAt": "2026-07-28T02:52:32.000Z",
+              "updatedAt": "2026-07-28T02:52:32.000Z",
+              "uid": "35240-b814a250-787a-447d-9b04-8afb04d33c88"
+            },
+            {
+              "name": "Update Invoice",
+              "id": "80634e67-a11a-4534-a36e-41ed29785b41",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"invoiceDate\": \"<date>\",\n  \"dueDate\": \"<date>\",\n  \"summary\": \"<string>\",\n  \"royalty\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/invoices/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invoices",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "a4be221f-718e-44a5-99a1-df63c9ed20cc",
+                      "key": "id",
+                      "value": "<long>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "552e57c6-5a49-4423-9642-82c2bdadefb6",
+                  "name": "Updated invoice",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"invoiceDate\": \"<date>\",\n  \"dueDate\": \"<date>\",\n  \"summary\": \"<string>\",\n  \"royalty\": {}\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/invoices/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "invoices",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<long>\",\n  \"number\": \"<string>\",\n  \"jobId\": \"<long>\",\n  \"projectId\": \"<long>\",\n  \"customerId\": \"<long>\",\n  \"locationId\": \"<long>\",\n  \"businessUnitId\": \"<integer>\",\n  \"invoiceDate\": \"<date>\",\n  \"dueDate\": \"<date>\",\n  \"subTotal\": \"<double>\",\n  \"salesTax\": \"<double>\",\n  \"salesTaxCode\": \"<string>\",\n  \"total\": \"<double>\",\n  \"balance\": \"<double>\",\n  \"royalty\": {\n    \"status\": \"<string>\",\n    \"date\": \"<dateTime>\",\n    \"sentOn\": \"<dateTime>\",\n    \"memo\": \"<string>\"\n  },\n  \"status\": \"Pending\",\n  \"depositedOn\": \"<dateTime>\",\n  \"items\": [\n    {\n      \"id\": \"<integer>\",\n      \"skuId\": \"<integer>\",\n      \"skuName\": \"<string>\",\n      \"skuType\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\",\n      \"totalCost\": \"<number>\",\n      \"price\": \"<number>\",\n      \"total\": \"<number>\",\n      \"generalLedgerAccountId\": \"<integer>\",\n      \"taxable\": \"<boolean>\",\n      \"chargeable\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"skuId\": \"<integer>\",\n      \"skuName\": \"<string>\",\n      \"skuType\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\",\n      \"totalCost\": \"<number>\",\n      \"price\": \"<number>\",\n      \"total\": \"<number>\",\n      \"generalLedgerAccountId\": \"<integer>\",\n      \"taxable\": \"<boolean>\",\n      \"chargeable\": \"<boolean>\"\n    }\n  ],\n  \"payments\": [\n    {\n      \"paymentId\": \"<integer>\",\n      \"amount\": \"<number>\",\n      \"memo\": \"<string>\"\n    },\n    {\n      \"paymentId\": \"<integer>\",\n      \"amount\": \"<number>\",\n      \"memo\": \"<string>\"\n    }\n  ],\n  \"modifiedOn\": \"<dateTime>\"\n}",
+                  "createdAt": "2026-07-28T02:52:32.000Z",
+                  "updatedAt": "2026-07-28T02:52:32.000Z",
+                  "uid": "35240-552e57c6-5a49-4423-9642-82c2bdadefb6"
+                }
+              ],
+              "createdAt": "2026-07-28T02:52:32.000Z",
+              "updatedAt": "2026-07-28T02:52:32.000Z",
+              "uid": "35240-80634e67-a11a-4534-a36e-41ed29785b41"
+            }
+          ],
+          "id": "956e80ed-bc2d-4825-8538-7876af335b52",
+          "createdAt": "2026-07-28T02:52:32.000Z",
+          "updatedAt": "2026-07-28T02:52:32.000Z",
+          "uid": "35240-956e80ed-bc2d-4825-8538-7876af335b52"
+        },
+        {
+          "name": "List Invoices",
+          "id": "7b25795b-b658-46c8-87a9-0856de4913eb",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/invoices?page=1&pageSize=50&modifiedOnOrAfter=<dateTime>&jobId=<integer>&customerId=<integer>&batchId=<integer>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "invoices"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                },
+                {
+                  "key": "jobId",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "customerId",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "batchId",
+                  "value": "<integer>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7a546480-dbb9-463e-ac77-ba485b518512",
+              "name": "Paginated list of invoices",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invoices?page=1&pageSize=50&modifiedOnOrAfter=<dateTime>&jobId=<integer>&customerId=<integer>&batchId=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invoices"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "jobId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "customerId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "batchId",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"page\": \"<integer>\",\n  \"pageSize\": \"<integer>\",\n  \"hasMore\": \"<boolean>\",\n  \"data\": [\n    {\n      \"id\": \"<long>\",\n      \"number\": \"<string>\",\n      \"jobId\": \"<long>\",\n      \"projectId\": \"<long>\",\n      \"customerId\": \"<long>\",\n      \"locationId\": \"<long>\",\n      \"businessUnitId\": \"<integer>\",\n      \"invoiceDate\": \"<date>\",\n      \"dueDate\": \"<date>\",\n      \"subTotal\": \"<double>\",\n      \"salesTax\": \"<double>\",\n      \"salesTaxCode\": \"<string>\",\n      \"total\": \"<double>\",\n      \"balance\": \"<double>\",\n      \"royalty\": {\n        \"status\": \"<string>\",\n        \"date\": \"<dateTime>\",\n        \"sentOn\": \"<dateTime>\",\n        \"memo\": \"<string>\"\n      },\n      \"status\": \"Pending\",\n      \"depositedOn\": \"<dateTime>\",\n      \"items\": [\n        {\n          \"id\": \"<integer>\",\n          \"skuId\": \"<integer>\",\n          \"skuName\": \"<string>\",\n          \"skuType\": \"<string>\",\n          \"description\": \"<string>\",\n          \"quantity\": \"<number>\",\n          \"cost\": \"<number>\",\n          \"totalCost\": \"<number>\",\n          \"price\": \"<number>\",\n          \"total\": \"<number>\",\n          \"generalLedgerAccountId\": \"<integer>\",\n          \"taxable\": \"<boolean>\",\n          \"chargeable\": \"<boolean>\"\n        },\n        {\n          \"id\": \"<integer>\",\n          \"skuId\": \"<integer>\",\n          \"skuName\": \"<string>\",\n          \"skuType\": \"<string>\",\n          \"description\": \"<string>\",\n          \"quantity\": \"<number>\",\n          \"cost\": \"<number>\",\n          \"totalCost\": \"<number>\",\n          \"price\": \"<number>\",\n          \"total\": \"<number>\",\n          \"generalLedgerAccountId\": \"<integer>\",\n          \"taxable\": \"<boolean>\",\n          \"chargeable\": \"<boolean>\"\n        }\n      ],\n      \"payments\": [\n        {\n          \"paymentId\": \"<integer>\",\n          \"amount\": \"<number>\",\n          \"memo\": \"<string>\"\n        },\n        {\n          \"paymentId\": \"<integer>\",\n          \"amount\": \"<number>\",\n          \"memo\": \"<string>\"\n        }\n      ],\n      \"modifiedOn\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"number\": \"<string>\",\n      \"jobId\": \"<long>\",\n      \"projectId\": \"<long>\",\n      \"customerId\": \"<long>\",\n      \"locationId\": \"<long>\",\n      \"businessUnitId\": \"<integer>\",\n      \"invoiceDate\": \"<date>\",\n      \"dueDate\": \"<date>\",\n      \"subTotal\": \"<double>\",\n      \"salesTax\": \"<double>\",\n      \"salesTaxCode\": \"<string>\",\n      \"total\": \"<double>\",\n      \"balance\": \"<double>\",\n      \"royalty\": {\n        \"status\": \"<string>\",\n        \"date\": \"<dateTime>\",\n        \"sentOn\": \"<dateTime>\",\n        \"memo\": \"<string>\"\n      },\n      \"status\": \"Pending\",\n      \"depositedOn\": \"<dateTime>\",\n      \"items\": [\n        {\n          \"id\": \"<integer>\",\n          \"skuId\": \"<integer>\",\n          \"skuName\": \"<string>\",\n          \"skuType\": \"<string>\",\n          \"description\": \"<string>\",\n          \"quantity\": \"<number>\",\n          \"cost\": \"<number>\",\n          \"totalCost\": \"<number>\",\n          \"price\": \"<number>\",\n          \"total\": \"<number>\",\n          \"generalLedgerAccountId\": \"<integer>\",\n          \"taxable\": \"<boolean>\",\n          \"chargeable\": \"<boolean>\"\n        },\n        {\n          \"id\": \"<integer>\",\n          \"skuId\": \"<integer>\",\n          \"skuName\": \"<string>\",\n          \"skuType\": \"<string>\",\n          \"description\": \"<string>\",\n          \"quantity\": \"<number>\",\n          \"cost\": \"<number>\",\n          \"totalCost\": \"<number>\",\n          \"price\": \"<number>\",\n          \"total\": \"<number>\",\n          \"generalLedgerAccountId\": \"<integer>\",\n          \"taxable\": \"<boolean>\",\n          \"chargeable\": \"<boolean>\"\n        }\n      ],\n      \"payments\": [\n        {\n          \"paymentId\": \"<integer>\",\n          \"amount\": \"<number>\",\n          \"memo\": \"<string>\"\n        },\n        {\n          \"paymentId\": \"<integer>\",\n          \"amount\": \"<number>\",\n          \"memo\": \"<string>\"\n        }\n      ],\n      \"modifiedOn\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:52:32.000Z",
+              "updatedAt": "2026-07-28T02:52:32.000Z",
+              "uid": "35240-7a546480-dbb9-463e-ac77-ba485b518512"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:32.000Z",
+          "updatedAt": "2026-07-28T02:52:32.000Z",
+          "uid": "35240-7b25795b-b658-46c8-87a9-0856de4913eb"
+        }
+      ],
+      "id": "560b1e6e-40fb-43e5-88d4-2fc7b20d21d5",
+      "createdAt": "2026-07-28T02:52:32.000Z",
+      "updatedAt": "2026-07-28T02:52:32.000Z",
+      "uid": "35240-560b1e6e-40fb-43e5-88d4-2fc7b20d21d5"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

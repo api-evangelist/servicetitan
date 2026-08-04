@@ -1,0 +1,148 @@
+{
+  "info": {
+    "_postman_id": "f586ae53-be87-4797-a64b-3ee4a8a5871e",
+    "name": "ServiceTitan Accounting Adjustments Employees API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:11.000Z",
+    "updatedAt": "2026-07-28T02:52:11.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f586ae53-be87-4797-a64b-3ee4a8a5871e"
+  },
+  "item": [
+    {
+      "name": "employees",
+      "item": [
+        {
+          "name": "List Employees",
+          "id": "5212dba3-9fd2-4320-9b9f-7143a6cc86d5",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/employees?page=1&pageSize=50&modifiedOnOrAfter=<dateTime>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "employees"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e6639b2a-b5c3-4355-8562-ba989599d9b2",
+              "name": "Employees",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/employees?page=1&pageSize=50&modifiedOnOrAfter=<dateTime>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "employees"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"userId\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"active\": \"<boolean>\",\n      \"roleIds\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"businessUnitId\": \"<integer>\",\n      \"email\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"modifiedOn\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"userId\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"active\": \"<boolean>\",\n      \"roleIds\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"businessUnitId\": \"<integer>\",\n      \"email\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"modifiedOn\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:52:12.000Z",
+              "updatedAt": "2026-07-28T02:52:12.000Z",
+              "uid": "35240-e6639b2a-b5c3-4355-8562-ba989599d9b2"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:12.000Z",
+          "updatedAt": "2026-07-28T02:52:12.000Z",
+          "uid": "35240-5212dba3-9fd2-4320-9b9f-7143a6cc86d5"
+        }
+      ],
+      "id": "f01ce57a-c626-4a49-9a59-7ffb7fd531b6",
+      "createdAt": "2026-07-28T02:52:12.000Z",
+      "updatedAt": "2026-07-28T02:52:12.000Z",
+      "uid": "35240-f01ce57a-c626-4a49-9a59-7ffb7fd531b6"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

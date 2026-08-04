@@ -1,0 +1,527 @@
+{
+  "info": {
+    "_postman_id": "b9f0ad0a-b101-4bb9-93b8-4d18f6e7c10a",
+    "name": "ServiceTitan Accounting Adjustments Payments API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:46.000Z",
+    "updatedAt": "2026-07-28T02:52:46.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b9f0ad0a-b101-4bb9-93b8-4d18f6e7c10a"
+  },
+  "item": [
+    {
+      "name": "payments",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "Get Payment",
+              "id": "a2c4055a-ce25-431e-8539-f3830e34d9d6",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/payments/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "payments",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "0a631b89-7404-40ca-995f-b9501bd77594",
+                      "key": "id",
+                      "value": "<long>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "2082de94-a84b-4ae7-a20f-43d0b4728054",
+                  "name": "Payment",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/payments/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "payments",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<long>\",\n  \"active\": \"<boolean>\",\n  \"referenceNumber\": \"<string>\",\n  \"date\": \"<dateTime>\",\n  \"type\": \"<string>\",\n  \"typeId\": \"<integer>\",\n  \"total\": \"<number>\",\n  \"unappliedAmount\": \"<number>\",\n  \"memo\": \"<string>\",\n  \"customer\": {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\"\n  },\n  \"batch\": {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"number\": \"<string>\"\n  },\n  \"status\": \"<string>\",\n  \"splits\": [\n    {\n      \"invoiceId\": \"<integer>\",\n      \"amount\": \"<number>\"\n    },\n    {\n      \"invoiceId\": \"<integer>\",\n      \"amount\": \"<number>\"\n    }\n  ],\n  \"modifiedOn\": \"<dateTime>\"\n}",
+                  "createdAt": "2026-07-28T02:52:46.000Z",
+                  "updatedAt": "2026-07-28T02:52:46.000Z",
+                  "uid": "35240-2082de94-a84b-4ae7-a20f-43d0b4728054"
+                }
+              ],
+              "createdAt": "2026-07-28T02:52:46.000Z",
+              "updatedAt": "2026-07-28T02:52:46.000Z",
+              "uid": "35240-a2c4055a-ce25-431e-8539-f3830e34d9d6"
+            },
+            {
+              "name": "Update Payment",
+              "id": "924a3626-0dc3-4bc4-a06e-0a99d9acbfe0",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/payments/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "payments",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "c60e783b-0d29-49df-b6d0-5f8abe95eade",
+                      "key": "id",
+                      "value": "<long>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "86b4a90b-afd3-48c1-aef7-49e6cac84188",
+                  "name": "Updated payment",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/payments/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "payments",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:52:46.000Z",
+                  "updatedAt": "2026-07-28T02:52:46.000Z",
+                  "uid": "35240-86b4a90b-afd3-48c1-aef7-49e6cac84188"
+                }
+              ],
+              "createdAt": "2026-07-28T02:52:46.000Z",
+              "updatedAt": "2026-07-28T02:52:46.000Z",
+              "uid": "35240-924a3626-0dc3-4bc4-a06e-0a99d9acbfe0"
+            }
+          ],
+          "id": "900a6f30-33e5-4e76-9081-1617e27aefdc",
+          "createdAt": "2026-07-28T02:52:46.000Z",
+          "updatedAt": "2026-07-28T02:52:46.000Z",
+          "uid": "35240-900a6f30-33e5-4e76-9081-1617e27aefdc"
+        },
+        {
+          "name": "List Payments",
+          "id": "319e5c30-68dd-461e-b414-4e4752179f1e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/payments?page=1&pageSize=50&modifiedOnOrAfter=<dateTime>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "payments"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2d470f23-851f-4f9b-a3d7-22eaec482590",
+              "name": "Paginated list of payments",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/payments?page=1&pageSize=50&modifiedOnOrAfter=<dateTime>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "payments"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"page\": \"<integer>\",\n  \"pageSize\": \"<integer>\",\n  \"hasMore\": \"<boolean>\",\n  \"data\": [\n    {\n      \"id\": \"<long>\",\n      \"active\": \"<boolean>\",\n      \"referenceNumber\": \"<string>\",\n      \"date\": \"<dateTime>\",\n      \"type\": \"<string>\",\n      \"typeId\": \"<integer>\",\n      \"total\": \"<number>\",\n      \"unappliedAmount\": \"<number>\",\n      \"memo\": \"<string>\",\n      \"customer\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\"\n      },\n      \"batch\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"number\": \"<string>\"\n      },\n      \"status\": \"<string>\",\n      \"splits\": [\n        {\n          \"invoiceId\": \"<integer>\",\n          \"amount\": \"<number>\"\n        },\n        {\n          \"invoiceId\": \"<integer>\",\n          \"amount\": \"<number>\"\n        }\n      ],\n      \"modifiedOn\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"active\": \"<boolean>\",\n      \"referenceNumber\": \"<string>\",\n      \"date\": \"<dateTime>\",\n      \"type\": \"<string>\",\n      \"typeId\": \"<integer>\",\n      \"total\": \"<number>\",\n      \"unappliedAmount\": \"<number>\",\n      \"memo\": \"<string>\",\n      \"customer\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\"\n      },\n      \"batch\": {\n        \"id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"number\": \"<string>\"\n      },\n      \"status\": \"<string>\",\n      \"splits\": [\n        {\n          \"invoiceId\": \"<integer>\",\n          \"amount\": \"<number>\"\n        },\n        {\n          \"invoiceId\": \"<integer>\",\n          \"amount\": \"<number>\"\n        }\n      ],\n      \"modifiedOn\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:52:46.000Z",
+              "updatedAt": "2026-07-28T02:52:46.000Z",
+              "uid": "35240-2d470f23-851f-4f9b-a3d7-22eaec482590"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:46.000Z",
+          "updatedAt": "2026-07-28T02:52:46.000Z",
+          "uid": "35240-319e5c30-68dd-461e-b414-4e4752179f1e"
+        },
+        {
+          "name": "Create Payment",
+          "id": "78b82820-8f3e-4fcf-a9bd-16165099dc8a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"date\": \"<dateTime>\",\n  \"typeId\": \"<integer>\",\n  \"total\": \"<number>\",\n  \"splits\": [\n    {\n      \"invoiceId\": \"<integer>\",\n      \"amount\": \"<number>\"\n    },\n    {\n      \"invoiceId\": \"<integer>\",\n      \"amount\": \"<number>\"\n    }\n  ],\n  \"referenceNumber\": \"<string>\",\n  \"memo\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/payments",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "payments"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "05fe7fe0-dadc-40a5-96ae-b37affc7b67d",
+              "name": "Created payment",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"date\": \"<dateTime>\",\n  \"typeId\": \"<integer>\",\n  \"total\": \"<number>\",\n  \"splits\": [\n    {\n      \"invoiceId\": \"<integer>\",\n      \"amount\": \"<number>\"\n    },\n    {\n      \"invoiceId\": \"<integer>\",\n      \"amount\": \"<number>\"\n    }\n  ],\n  \"referenceNumber\": \"<string>\",\n  \"memo\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/payments",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "payments"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"id\": \"<long>\",\n  \"active\": \"<boolean>\",\n  \"referenceNumber\": \"<string>\",\n  \"date\": \"<dateTime>\",\n  \"type\": \"<string>\",\n  \"typeId\": \"<integer>\",\n  \"total\": \"<number>\",\n  \"unappliedAmount\": \"<number>\",\n  \"memo\": \"<string>\",\n  \"customer\": {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\"\n  },\n  \"batch\": {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"number\": \"<string>\"\n  },\n  \"status\": \"<string>\",\n  \"splits\": [\n    {\n      \"invoiceId\": \"<integer>\",\n      \"amount\": \"<number>\"\n    },\n    {\n      \"invoiceId\": \"<integer>\",\n      \"amount\": \"<number>\"\n    }\n  ],\n  \"modifiedOn\": \"<dateTime>\"\n}",
+              "createdAt": "2026-07-28T02:52:46.000Z",
+              "updatedAt": "2026-07-28T02:52:46.000Z",
+              "uid": "35240-05fe7fe0-dadc-40a5-96ae-b37affc7b67d"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:46.000Z",
+          "updatedAt": "2026-07-28T02:52:46.000Z",
+          "uid": "35240-78b82820-8f3e-4fcf-a9bd-16165099dc8a"
+        }
+      ],
+      "id": "de623027-ad3b-4a7f-a7ae-63fe904f0bc6",
+      "createdAt": "2026-07-28T02:52:46.000Z",
+      "updatedAt": "2026-07-28T02:52:46.000Z",
+      "uid": "35240-de623027-ad3b-4a7f-a7ae-63fe904f0bc6"
+    },
+    {
+      "name": "payment-types",
+      "item": [
+        {
+          "name": "List Payment Types",
+          "id": "9e3a824d-6ff4-4c01-80df-10410022e642",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/payment-types",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "payment-types"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "881cb3bb-9820-496b-b76b-26387da2fc27",
+              "name": "Payment types",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/payment-types",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "payment-types"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"active\": \"<boolean>\",\n      \"modifiedOn\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"active\": \"<boolean>\",\n      \"modifiedOn\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:52:46.000Z",
+              "updatedAt": "2026-07-28T02:52:46.000Z",
+              "uid": "35240-881cb3bb-9820-496b-b76b-26387da2fc27"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:46.000Z",
+          "updatedAt": "2026-07-28T02:52:46.000Z",
+          "uid": "35240-9e3a824d-6ff4-4c01-80df-10410022e642"
+        }
+      ],
+      "id": "afc93a3e-daad-4809-bca5-ac411aa74390",
+      "createdAt": "2026-07-28T02:52:46.000Z",
+      "updatedAt": "2026-07-28T02:52:46.000Z",
+      "uid": "35240-afc93a3e-daad-4809-bca5-ac411aa74390"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

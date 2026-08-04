@@ -1,0 +1,169 @@
+{
+  "info": {
+    "_postman_id": "dd5d6809-5d31-4163-9611-31fce4bc8524",
+    "name": "ServiceTitan Accounting Adjustments Attachments API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:02.000Z",
+    "updatedAt": "2026-07-28T02:52:02.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-dd5d6809-5d31-4163-9611-31fce4bc8524"
+  },
+  "item": [
+    {
+      "name": "installed-equipment",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "attachments",
+              "item": [
+                {
+                  "name": "Create Equipment Attachment",
+                  "id": "61f3b2b5-2cff-4ee3-8856-3902fe966616",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "multipart/form-data"
+                      }
+                    ],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "file",
+                          "type": "file",
+                          "value": null
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/installed-equipment/:id/attachments",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "installed-equipment",
+                        ":id",
+                        "attachments"
+                      ],
+                      "variable": [
+                        {
+                          "id": "c7dc8eb3-a972-4d7b-9897-248ac8b36eb0",
+                          "key": "id",
+                          "value": "<long>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "07cd7aa8-25b3-4c03-8699-27a6938149bd",
+                      "name": "Attachment created",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "multipart/form-data"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": [
+                            {
+                              "key": "file",
+                              "type": "file"
+                            }
+                          ]
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/installed-equipment/:id/attachments",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "installed-equipment",
+                            ":id",
+                            "attachments"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:52:02.000Z",
+                      "updatedAt": "2026-07-28T02:52:02.000Z",
+                      "uid": "35240-07cd7aa8-25b3-4c03-8699-27a6938149bd"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:52:02.000Z",
+                  "updatedAt": "2026-07-28T02:52:02.000Z",
+                  "uid": "35240-61f3b2b5-2cff-4ee3-8856-3902fe966616"
+                }
+              ],
+              "id": "367a1c70-50fb-4df9-bcd5-5c6c283e3c98",
+              "createdAt": "2026-07-28T02:52:02.000Z",
+              "updatedAt": "2026-07-28T02:52:02.000Z",
+              "uid": "35240-367a1c70-50fb-4df9-bcd5-5c6c283e3c98"
+            }
+          ],
+          "id": "3cf099b7-8ef2-48bd-8195-beb3db8c56bb",
+          "createdAt": "2026-07-28T02:52:02.000Z",
+          "updatedAt": "2026-07-28T02:52:02.000Z",
+          "uid": "35240-3cf099b7-8ef2-48bd-8195-beb3db8c56bb"
+        }
+      ],
+      "id": "4b11b85a-b183-41c6-b076-cf973a268b1b",
+      "createdAt": "2026-07-28T02:52:02.000Z",
+      "updatedAt": "2026-07-28T02:52:02.000Z",
+      "uid": "35240-4b11b85a-b183-41c6-b076-cf973a268b1b"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

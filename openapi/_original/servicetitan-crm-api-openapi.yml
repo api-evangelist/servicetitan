@@ -1,0 +1,582 @@
+openapi: 3.1.0
+info:
+  title: ServiceTitan CRM API
+  description: |
+    The CRM API provides access to ServiceTitan customer-of-record data — residential and
+    commercial customers, locations, contacts, leads, bookings, tags, and booking provider
+    sessions. All paths are tenant-scoped and require an OAuth 2.0 access token plus the
+    ST-App-Key header.
+  version: "2.0.0"
+  contact:
+    name: ServiceTitan Developer Support
+    url: https://developer.servicetitan.io/
+    email: integrations@servicetitan.com
+  license:
+    name: ServiceTitan Terms of Service
+    url: https://www.servicetitan.com/legal/terms-of-service
+servers:
+  - url: https://api.servicetitan.io/crm/v2/{tenant}
+    description: Production
+    variables:
+      tenant:
+        default: "0000000"
+        description: Tenant ID assigned by ServiceTitan
+  - url: https://api-integration.servicetitan.io/crm/v2/{tenant}
+    description: Integration (Sandbox)
+    variables:
+      tenant:
+        default: "0000000"
+        description: Tenant ID assigned by ServiceTitan
+security:
+  - OAuth2: []
+    AppKey: []
+tags:
+  - name: Customers
+    description: Customer-of-record records
+  - name: Locations
+    description: Customer service locations and addresses
+  - name: Contacts
+    description: Customer contact methods (phone, email)
+  - name: Leads
+    description: Pre-customer lead records
+  - name: Bookings
+    description: Customer-initiated booking requests
+  - name: Tags
+    description: Tag types and customer tagging
+paths:
+  /customers:
+    get:
+      summary: List Customers
+      description: Returns a paginated list of customers matching the provided filters.
+      operationId: listCustomers
+      tags: [Customers]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/IncludeTotal'
+        - $ref: '#/components/parameters/Ids'
+        - $ref: '#/components/parameters/ModifiedBefore'
+        - $ref: '#/components/parameters/ModifiedOnOrAfter'
+        - $ref: '#/components/parameters/CreatedBefore'
+        - $ref: '#/components/parameters/CreatedOnOrAfter'
+      responses:
+        '200':
+          description: Paginated list of customers
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerPagedResponse'
+    post:
+      summary: Create Customer
+      description: Creates a new customer record in the tenant.
+      operationId: createCustomer
+      tags: [Customers]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerCreateRequest'
+      responses:
+        '200':
+          description: Created customer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+  /customers/{id}:
+    get:
+      summary: Get Customer
+      operationId: getCustomer
+      tags: [Customers]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Customer record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+    patch:
+      summary: Update Customer
+      operationId: updateCustomer
+      tags: [Customers]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerUpdateRequest'
+      responses:
+        '200':
+          description: Updated customer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+  /customers/{id}/contacts:
+    get:
+      summary: List Customer Contacts
+      operationId: listCustomerContacts
+      tags: [Contacts]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: List of customer contacts
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactPagedResponse'
+    post:
+      summary: Create Customer Contact
+      operationId: createCustomerContact
+      tags: [Contacts]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContactCreateRequest'
+      responses:
+        '200':
+          description: Created contact
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contact'
+  /locations:
+    get:
+      summary: List Locations
+      operationId: listLocations
+      tags: [Locations]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/CustomerId'
+        - $ref: '#/components/parameters/ModifiedOnOrAfter'
+      responses:
+        '200':
+          description: Paginated list of locations
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LocationPagedResponse'
+    post:
+      summary: Create Location
+      operationId: createLocation
+      tags: [Locations]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LocationCreateRequest'
+      responses:
+        '200':
+          description: Created location
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Location'
+  /locations/{id}:
+    get:
+      summary: Get Location
+      operationId: getLocation
+      tags: [Locations]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Location record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Location'
+    patch:
+      summary: Update Location
+      operationId: updateLocation
+      tags: [Locations]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LocationUpdateRequest'
+      responses:
+        '200':
+          description: Updated location
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Location'
+  /leads:
+    get:
+      summary: List Leads
+      operationId: listLeads
+      tags: [Leads]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/Status'
+        - $ref: '#/components/parameters/ModifiedOnOrAfter'
+      responses:
+        '200':
+          description: Paginated list of leads
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LeadPagedResponse'
+    post:
+      summary: Create Lead
+      operationId: createLead
+      tags: [Leads]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LeadCreateRequest'
+      responses:
+        '200':
+          description: Created lead
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Lead'
+  /leads/{id}/dismiss:
+    put:
+      summary: Dismiss Lead
+      operationId: dismissLead
+      tags: [Leads]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Lead dismissed
+  /bookings:
+    get:
+      summary: List Bookings
+      operationId: listBookings
+      tags: [Bookings]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/ModifiedOnOrAfter'
+      responses:
+        '200':
+          description: Paginated list of bookings
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookingPagedResponse'
+    post:
+      summary: Create Booking
+      operationId: createBooking
+      tags: [Bookings]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BookingCreateRequest'
+      responses:
+        '200':
+          description: Created booking
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Booking'
+  /tagtypes:
+    get:
+      summary: List Tag Types
+      operationId: listTagTypes
+      tags: [Tags]
+      responses:
+        '200':
+          description: Tag types
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TagTypePagedResponse'
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.servicetitan.io/connect/token
+          scopes: {}
+    AppKey:
+      type: apiKey
+      in: header
+      name: ST-App-Key
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema: { type: integer, format: int64 }
+    CustomerId:
+      name: customerId
+      in: query
+      schema: { type: integer, format: int64 }
+    Ids:
+      name: ids
+      in: query
+      schema: { type: string }
+      description: Comma-separated list of IDs
+    Page:
+      name: page
+      in: query
+      schema: { type: integer, default: 1, minimum: 1 }
+    PageSize:
+      name: pageSize
+      in: query
+      schema: { type: integer, default: 50, maximum: 500 }
+    IncludeTotal:
+      name: includeTotal
+      in: query
+      schema: { type: boolean }
+    Status:
+      name: status
+      in: query
+      schema: { type: string }
+    ModifiedBefore:
+      name: modifiedBefore
+      in: query
+      schema: { type: string, format: date-time }
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema: { type: string, format: date-time }
+    CreatedBefore:
+      name: createdBefore
+      in: query
+      schema: { type: string, format: date-time }
+    CreatedOnOrAfter:
+      name: createdOnOrAfter
+      in: query
+      schema: { type: string, format: date-time }
+  schemas:
+    Customer:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        active: { type: boolean }
+        name: { type: string }
+        type: { type: string, enum: [Residential, Commercial] }
+        address: { $ref: '#/components/schemas/Address' }
+        customFields:
+          type: array
+          items: { $ref: '#/components/schemas/CustomField' }
+        balance: { type: number, format: double }
+        doNotMail: { type: boolean }
+        doNotService: { type: boolean }
+        createdOn: { type: string, format: date-time }
+        modifiedOn: { type: string, format: date-time }
+        memberships:
+          type: array
+          items: { type: object }
+        contacts:
+          type: array
+          items: { $ref: '#/components/schemas/Contact' }
+        hasActiveMembership: { type: boolean }
+    CustomerCreateRequest:
+      type: object
+      required: [name, type, locations]
+      properties:
+        name: { type: string }
+        type: { type: string, enum: [Residential, Commercial] }
+        doNotMail: { type: boolean }
+        doNotService: { type: boolean }
+        locations:
+          type: array
+          items: { $ref: '#/components/schemas/LocationCreateRequest' }
+        contacts:
+          type: array
+          items: { $ref: '#/components/schemas/ContactCreateRequest' }
+        customFields:
+          type: array
+          items: { $ref: '#/components/schemas/CustomField' }
+    CustomerUpdateRequest:
+      type: object
+      properties:
+        name: { type: string }
+        type: { type: string }
+        doNotMail: { type: boolean }
+        doNotService: { type: boolean }
+        customFields:
+          type: array
+          items: { $ref: '#/components/schemas/CustomField' }
+    CustomerPagedResponse:
+      type: object
+      properties:
+        page: { type: integer }
+        pageSize: { type: integer }
+        hasMore: { type: boolean }
+        totalCount: { type: integer, nullable: true }
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/Customer' }
+    Location:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        customerId: { type: integer, format: int64 }
+        active: { type: boolean }
+        name: { type: string }
+        address: { $ref: '#/components/schemas/Address' }
+        zoneId: { type: integer, format: int64 }
+        taxZoneId: { type: integer, format: int64, nullable: true }
+        createdOn: { type: string, format: date-time }
+        modifiedOn: { type: string, format: date-time }
+    LocationCreateRequest:
+      type: object
+      required: [address]
+      properties:
+        name: { type: string }
+        address: { $ref: '#/components/schemas/Address' }
+        zoneId: { type: integer }
+    LocationUpdateRequest:
+      type: object
+      properties:
+        name: { type: string }
+        address: { $ref: '#/components/schemas/Address' }
+        zoneId: { type: integer }
+    LocationPagedResponse:
+      type: object
+      properties:
+        page: { type: integer }
+        pageSize: { type: integer }
+        hasMore: { type: boolean }
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/Location' }
+    Contact:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        type: { type: string, enum: [Phone, MobilePhone, Email, Fax] }
+        value: { type: string }
+        memo: { type: string, nullable: true }
+        modifiedOn: { type: string, format: date-time }
+    ContactCreateRequest:
+      type: object
+      required: [type, value]
+      properties:
+        type: { type: string }
+        value: { type: string }
+        memo: { type: string }
+    ContactPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/Contact' }
+    Lead:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        status: { type: string, enum: [Open, Converted, Dismissed] }
+        customerId: { type: integer, format: int64, nullable: true }
+        locationId: { type: integer, format: int64, nullable: true }
+        businessUnitId: { type: integer, format: int64, nullable: true }
+        jobTypeId: { type: integer, format: int64, nullable: true }
+        priority: { type: string }
+        summary: { type: string }
+        callReasonId: { type: integer, nullable: true }
+        campaignId: { type: integer, nullable: true }
+        followUpDate: { type: string, format: date-time, nullable: true }
+        createdOn: { type: string, format: date-time }
+        modifiedOn: { type: string, format: date-time }
+    LeadCreateRequest:
+      type: object
+      required: [summary]
+      properties:
+        customerId: { type: integer, nullable: true }
+        locationId: { type: integer, nullable: true }
+        businessUnitId: { type: integer }
+        jobTypeId: { type: integer }
+        summary: { type: string }
+        priority: { type: string }
+        campaignId: { type: integer }
+    LeadPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/Lead' }
+    Booking:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        source: { type: string }
+        name: { type: string }
+        address: { $ref: '#/components/schemas/Address' }
+        customerType: { type: string }
+        start: { type: string, format: date-time }
+        summary: { type: string }
+        campaignId: { type: integer, nullable: true }
+        businessUnitId: { type: integer, nullable: true }
+        isFirstTimeClient: { type: boolean }
+        uploadedImages:
+          type: array
+          items: { type: string }
+        status: { type: string, enum: [Pending, Converted, Dismissed] }
+        modifiedOn: { type: string, format: date-time }
+    BookingCreateRequest:
+      type: object
+      required: [name, summary, start]
+      properties:
+        source: { type: string }
+        name: { type: string }
+        address: { $ref: '#/components/schemas/Address' }
+        customerType: { type: string }
+        start: { type: string, format: date-time }
+        summary: { type: string }
+        campaignId: { type: integer }
+        businessUnitId: { type: integer }
+    BookingPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/Booking' }
+    TagType:
+      type: object
+      properties:
+        id: { type: integer }
+        name: { type: string }
+        color: { type: string }
+        active: { type: boolean }
+    TagTypePagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/TagType' }
+    Address:
+      type: object
+      properties:
+        street: { type: string }
+        unit: { type: string, nullable: true }
+        city: { type: string }
+        state: { type: string }
+        zip: { type: string }
+        country: { type: string }
+        latitude: { type: number, nullable: true }
+        longitude: { type: number, nullable: true }
+    CustomField:
+      type: object
+      properties:
+        typeId: { type: integer }
+        name: { type: string }
+        value: { type: string }

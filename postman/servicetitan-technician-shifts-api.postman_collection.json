@@ -1,0 +1,243 @@
+{
+  "info": {
+    "_postman_id": "080eb9fa-32e8-4970-818e-b3245fd6bf4e",
+    "name": "ServiceTitan Accounting Adjustments Technician Shifts API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:54.000Z",
+    "updatedAt": "2026-07-28T02:52:55.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-080eb9fa-32e8-4970-818e-b3245fd6bf4e"
+  },
+  "item": [
+    {
+      "name": "technician-shifts",
+      "item": [
+        {
+          "name": "List Technician Shifts",
+          "id": "e9a9ee14-8929-4e26-ad7b-8c4bb525ee15",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/technician-shifts?page=1&pageSize=50&startsOnOrAfter=<dateTime>&endsOnOrBefore=<dateTime>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "technician-shifts"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "key": "startsOnOrAfter",
+                  "value": "<dateTime>"
+                },
+                {
+                  "key": "endsOnOrBefore",
+                  "value": "<dateTime>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f218a32e-6e60-4075-b155-ec9273e89716",
+              "name": "Shifts",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/technician-shifts?page=1&pageSize=50&startsOnOrAfter=<dateTime>&endsOnOrBefore=<dateTime>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "technician-shifts"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "startsOnOrAfter",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "endsOnOrBefore",
+                      "value": "<dateTime>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"<long>\",\n      \"technicianId\": \"<integer>\",\n      \"shiftType\": \"OnCall\",\n      \"title\": \"<string>\",\n      \"note\": \"<string>\",\n      \"start\": \"<dateTime>\",\n      \"end\": \"<dateTime>\",\n      \"active\": \"<boolean>\",\n      \"modifiedOn\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"technicianId\": \"<integer>\",\n      \"shiftType\": \"TimeOff\",\n      \"title\": \"<string>\",\n      \"note\": \"<string>\",\n      \"start\": \"<dateTime>\",\n      \"end\": \"<dateTime>\",\n      \"active\": \"<boolean>\",\n      \"modifiedOn\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:52:55.000Z",
+              "updatedAt": "2026-07-28T02:52:55.000Z",
+              "uid": "35240-f218a32e-6e60-4075-b155-ec9273e89716"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:55.000Z",
+          "updatedAt": "2026-07-28T02:52:55.000Z",
+          "uid": "35240-e9a9ee14-8929-4e26-ad7b-8c4bb525ee15"
+        },
+        {
+          "name": "Create Technician Shift",
+          "id": "16751ec0-2547-4c9f-aa12-4b0dd54246c2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"technicianIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"shiftType\": \"OnCall\",\n  \"title\": \"<string>\",\n  \"start\": \"<dateTime>\",\n  \"end\": \"<dateTime>\",\n  \"note\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/technician-shifts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "technician-shifts"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0e9d6032-2e8b-40ca-913e-cdf5c72f97c9",
+              "name": "Shift created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"technicianIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"shiftType\": \"OnCall\",\n  \"title\": \"<string>\",\n  \"start\": \"<dateTime>\",\n  \"end\": \"<dateTime>\",\n  \"note\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/technician-shifts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "technician-shifts"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:52:55.000Z",
+              "updatedAt": "2026-07-28T02:52:55.000Z",
+              "uid": "35240-0e9d6032-2e8b-40ca-913e-cdf5c72f97c9"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:55.000Z",
+          "updatedAt": "2026-07-28T02:52:55.000Z",
+          "uid": "35240-16751ec0-2547-4c9f-aa12-4b0dd54246c2"
+        }
+      ],
+      "id": "6a98f707-86c3-4a64-bd65-e7d5bbabea48",
+      "createdAt": "2026-07-28T02:52:55.000Z",
+      "updatedAt": "2026-07-28T02:52:55.000Z",
+      "uid": "35240-6a98f707-86c3-4a64-bd65-e7d5bbabea48"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

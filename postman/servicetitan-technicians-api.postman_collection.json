@@ -1,0 +1,441 @@
+{
+  "info": {
+    "_postman_id": "35330b3d-ee21-4ef6-bc00-c823c3390562",
+    "name": "ServiceTitan Accounting Adjustments Technicians API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:55.000Z",
+    "updatedAt": "2026-07-28T02:52:56.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-35330b3d-ee21-4ef6-bc00-c823c3390562"
+  },
+  "item": [
+    {
+      "name": "technicians",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "Get Technician",
+              "id": "b1bd59af-8985-40bf-a86d-e20301108fa2",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/technicians/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "technicians",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "b9c73f0f-1c3b-4906-ae89-83fb39e33a5d",
+                      "key": "id",
+                      "value": "<long>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "a1524d8a-82c2-41d8-a705-40f9b9220f2a",
+                  "name": "Technician",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/technicians/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "technicians",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<long>\",\n  \"userId\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"roleIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"businessUnitId\": \"<integer>\",\n  \"loginName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"email\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"memo\": \"<string>\",\n  \"dailyGoal\": \"<number>\",\n  \"hourlyGoal\": \"<number>\",\n  \"modifiedOn\": \"<dateTime>\"\n}",
+                  "createdAt": "2026-07-28T02:52:56.000Z",
+                  "updatedAt": "2026-07-28T02:52:56.000Z",
+                  "uid": "35240-a1524d8a-82c2-41d8-a705-40f9b9220f2a"
+                }
+              ],
+              "createdAt": "2026-07-28T02:52:56.000Z",
+              "updatedAt": "2026-07-28T02:52:56.000Z",
+              "uid": "35240-b1bd59af-8985-40bf-a86d-e20301108fa2"
+            },
+            {
+              "name": "Update Technician",
+              "id": "84c1b5dc-2405-42e5-9685-b539b731aecb",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"businessUnitId\": \"<integer>\",\n  \"loginName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"email\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"roleIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/technicians/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "technicians",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "06620ef2-2243-4b82-b6eb-dcf70415b03c",
+                      "key": "id",
+                      "value": "<long>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "6426cf2a-a160-4b6b-b386-beb38b1c7a1a",
+                  "name": "Updated",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"businessUnitId\": \"<integer>\",\n  \"loginName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"email\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"roleIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/technicians/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "technicians",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:52:56.000Z",
+                  "updatedAt": "2026-07-28T02:52:56.000Z",
+                  "uid": "35240-6426cf2a-a160-4b6b-b386-beb38b1c7a1a"
+                }
+              ],
+              "createdAt": "2026-07-28T02:52:56.000Z",
+              "updatedAt": "2026-07-28T02:52:56.000Z",
+              "uid": "35240-84c1b5dc-2405-42e5-9685-b539b731aecb"
+            }
+          ],
+          "id": "f5333e6f-72b8-4c1b-9fb0-35bd5eca2699",
+          "createdAt": "2026-07-28T02:52:56.000Z",
+          "updatedAt": "2026-07-28T02:52:56.000Z",
+          "uid": "35240-f5333e6f-72b8-4c1b-9fb0-35bd5eca2699"
+        },
+        {
+          "name": "List Technicians",
+          "id": "8afca69e-e532-4851-94f3-c4632638f3bb",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/technicians?page=1&pageSize=50&modifiedOnOrAfter=<dateTime>&active=true",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "technicians"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                },
+                {
+                  "key": "active",
+                  "value": "true"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "65917985-191c-4053-b7ca-6aff03fc64d1",
+              "name": "Technicians",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/technicians?page=1&pageSize=50&modifiedOnOrAfter=<dateTime>&active=true",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "technicians"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "active",
+                      "value": "true"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"page\": \"<integer>\",\n  \"pageSize\": \"<integer>\",\n  \"hasMore\": \"<boolean>\",\n  \"data\": [\n    {\n      \"id\": \"<long>\",\n      \"userId\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"roleIds\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"businessUnitId\": \"<integer>\",\n      \"loginName\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"email\": \"<string>\",\n      \"active\": \"<boolean>\",\n      \"memo\": \"<string>\",\n      \"dailyGoal\": \"<number>\",\n      \"hourlyGoal\": \"<number>\",\n      \"modifiedOn\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"userId\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"roleIds\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"businessUnitId\": \"<integer>\",\n      \"loginName\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"email\": \"<string>\",\n      \"active\": \"<boolean>\",\n      \"memo\": \"<string>\",\n      \"dailyGoal\": \"<number>\",\n      \"hourlyGoal\": \"<number>\",\n      \"modifiedOn\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:52:56.000Z",
+              "updatedAt": "2026-07-28T02:52:56.000Z",
+              "uid": "35240-65917985-191c-4053-b7ca-6aff03fc64d1"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:56.000Z",
+          "updatedAt": "2026-07-28T02:52:56.000Z",
+          "uid": "35240-8afca69e-e532-4851-94f3-c4632638f3bb"
+        },
+        {
+          "name": "Create Technician",
+          "id": "ac7ac191-8f80-4ef1-8762-378d64a05978",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"businessUnitId\": \"<integer>\",\n  \"loginName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"email\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"roleIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/technicians",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "technicians"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "781dba34-0ed2-46b2-95ea-2eec4f84f599",
+              "name": "Created technician",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"businessUnitId\": \"<integer>\",\n  \"loginName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"email\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"roleIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/technicians",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "technicians"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:52:56.000Z",
+              "updatedAt": "2026-07-28T02:52:56.000Z",
+              "uid": "35240-781dba34-0ed2-46b2-95ea-2eec4f84f599"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:56.000Z",
+          "updatedAt": "2026-07-28T02:52:56.000Z",
+          "uid": "35240-ac7ac191-8f80-4ef1-8762-378d64a05978"
+        }
+      ],
+      "id": "35fbca53-93c1-46c0-8ba3-901f50acbe86",
+      "createdAt": "2026-07-28T02:52:56.000Z",
+      "updatedAt": "2026-07-28T02:52:56.000Z",
+      "uid": "35240-35fbca53-93c1-46c0-8ba3-901f50acbe86"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

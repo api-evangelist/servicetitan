@@ -1,0 +1,343 @@
+openapi: 3.1.0
+info:
+  title: ServiceTitan Inventory API
+  description: |
+    The Inventory API manages purchase orders, types, transfers, returns, adjustments, receipts,
+    warehouses, trucks, vendors, and inventory bills. Backed by the open-source
+    request-middleware-templates Liquid framework for supply-chain partner integrations.
+    Tenant-scoped; OAuth 2.0 + App Key.
+  version: "2.0.0"
+  contact:
+    name: ServiceTitan Developer Support
+    url: https://developer.servicetitan.io/
+    email: integrations@servicetitan.com
+  license:
+    name: ServiceTitan Terms of Service
+    url: https://www.servicetitan.com/legal/terms-of-service
+servers:
+  - url: https://api.servicetitan.io/inventory/v2/{tenant}
+    description: Production
+    variables:
+      tenant:
+        default: "0000000"
+  - url: https://api-integration.servicetitan.io/inventory/v2/{tenant}
+    description: Integration (Sandbox)
+    variables:
+      tenant:
+        default: "0000000"
+security:
+  - OAuth2: []
+    AppKey: []
+tags:
+  - name: Purchase Orders
+  - name: Vendors
+  - name: Warehouses
+  - name: Trucks
+  - name: Adjustments
+  - name: Transfers
+  - name: Returns
+  - name: Receipts
+paths:
+  /purchase-orders:
+    get:
+      summary: List Purchase Orders
+      operationId: listPurchaseOrders
+      tags: [Purchase Orders]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+        - $ref: '#/components/parameters/ModifiedOnOrAfter'
+        - name: vendorId
+          in: query
+          schema: { type: integer }
+        - name: status
+          in: query
+          schema: { type: string, enum: [Pending, Sent, Received, Canceled, PartiallyReceived] }
+      responses:
+        '200':
+          description: Purchase orders
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PurchaseOrderPagedResponse'
+    post:
+      summary: Create Purchase Order
+      operationId: createPurchaseOrder
+      tags: [Purchase Orders]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PurchaseOrderCreateRequest'
+      responses:
+        '200':
+          description: Created purchase order
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PurchaseOrder'
+  /purchase-orders/{id}:
+    get:
+      summary: Get Purchase Order
+      operationId: getPurchaseOrder
+      tags: [Purchase Orders]
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: Purchase order
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PurchaseOrder'
+  /vendors:
+    get:
+      summary: List Vendors
+      operationId: listVendors
+      tags: [Vendors]
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+      responses:
+        '200':
+          description: Vendors
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VendorPagedResponse'
+  /warehouses:
+    get:
+      summary: List Warehouses
+      operationId: listWarehouses
+      tags: [Warehouses]
+      responses:
+        '200':
+          description: Warehouses
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id: { type: integer }
+                        name: { type: string }
+                        active: { type: boolean }
+                        address:
+                          type: object
+  /trucks:
+    get:
+      summary: List Trucks
+      operationId: listTrucks
+      tags: [Trucks]
+      responses:
+        '200':
+          description: Trucks
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id: { type: integer }
+                        name: { type: string }
+                        active: { type: boolean }
+  /adjustments:
+    post:
+      summary: Create Inventory Adjustment
+      operationId: createAdjustment
+      tags: [Adjustments]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                items:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      skuId: { type: integer }
+                      quantity: { type: number }
+                      cost: { type: number }
+                fromWarehouseId: { type: integer }
+                date: { type: string, format: date-time }
+                memo: { type: string }
+      responses:
+        '200':
+          description: Adjustment created
+  /transfers:
+    post:
+      summary: Create Inventory Transfer
+      operationId: createTransfer
+      tags: [Transfers]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fromWarehouseId: { type: integer }
+                toWarehouseId: { type: integer }
+                items:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      skuId: { type: integer }
+                      quantity: { type: number }
+      responses:
+        '200':
+          description: Transfer created
+  /receipts:
+    post:
+      summary: Create Receipt
+      operationId: createReceipt
+      tags: [Receipts]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                purchaseOrderId: { type: integer }
+                items:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      skuId: { type: integer }
+                      quantity: { type: number }
+                      cost: { type: number }
+      responses:
+        '200':
+          description: Receipt created
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://auth.servicetitan.io/connect/token
+          scopes: {}
+    AppKey:
+      type: apiKey
+      in: header
+      name: ST-App-Key
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema: { type: integer, format: int64 }
+    Page:
+      name: page
+      in: query
+      schema: { type: integer, default: 1 }
+    PageSize:
+      name: pageSize
+      in: query
+      schema: { type: integer, default: 50, maximum: 500 }
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema: { type: string, format: date-time }
+  schemas:
+    PurchaseOrder:
+      type: object
+      properties:
+        id: { type: integer, format: int64 }
+        active: { type: boolean }
+        number: { type: string }
+        typeId: { type: integer }
+        status: { type: string }
+        date: { type: string, format: date-time }
+        requiredOn: { type: string, format: date-time, nullable: true }
+        sentOn: { type: string, format: date-time, nullable: true }
+        receivedOn: { type: string, format: date-time, nullable: true }
+        memo: { type: string, nullable: true }
+        jobId: { type: integer, nullable: true }
+        projectId: { type: integer, nullable: true }
+        technicianId: { type: integer, nullable: true }
+        vendor:
+          type: object
+          properties:
+            id: { type: integer }
+            name: { type: string }
+        warehouse:
+          type: object
+          properties:
+            id: { type: integer }
+            name: { type: string }
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              skuId: { type: integer }
+              skuName: { type: string }
+              quantity: { type: number }
+              cost: { type: number }
+              total: { type: number }
+        total: { type: number }
+        tax: { type: number }
+        shipping: { type: number }
+        modifiedOn: { type: string, format: date-time }
+    PurchaseOrderCreateRequest:
+      type: object
+      required: [typeId, vendorId, items]
+      properties:
+        typeId: { type: integer }
+        vendorId: { type: integer }
+        warehouseId: { type: integer }
+        jobId: { type: integer }
+        projectId: { type: integer }
+        technicianId: { type: integer }
+        memo: { type: string }
+        date: { type: string, format: date-time }
+        requiredOn: { type: string, format: date-time }
+        items:
+          type: array
+          items:
+            type: object
+            required: [skuId, quantity, cost]
+            properties:
+              skuId: { type: integer }
+              quantity: { type: number }
+              cost: { type: number }
+    PurchaseOrderPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/PurchaseOrder' }
+    Vendor:
+      type: object
+      properties:
+        id: { type: integer }
+        name: { type: string }
+        active: { type: boolean }
+        memo: { type: string, nullable: true }
+        phone: { type: string, nullable: true }
+        email: { type: string, nullable: true }
+        address:
+          type: object
+        modifiedOn: { type: string, format: date-time }
+    VendorPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items: { $ref: '#/components/schemas/Vendor' }

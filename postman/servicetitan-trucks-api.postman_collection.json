@@ -1,0 +1,120 @@
+{
+  "info": {
+    "_postman_id": "794f4d3a-987e-44c2-88c3-fe0d5a07b8e1",
+    "name": "ServiceTitan Accounting Adjustments Trucks API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:57.000Z",
+    "updatedAt": "2026-07-28T02:52:57.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-794f4d3a-987e-44c2-88c3-fe0d5a07b8e1"
+  },
+  "item": [
+    {
+      "name": "trucks",
+      "item": [
+        {
+          "name": "List Trucks",
+          "id": "ccfcbc58-4524-4464-9f54-018931271c70",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/trucks",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "trucks"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "221ab4b6-92f0-44fb-8358-5cd83ae41d01",
+              "name": "Trucks",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/trucks",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "trucks"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"active\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"active\": \"<boolean>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:52:58.000Z",
+              "updatedAt": "2026-07-28T02:52:58.000Z",
+              "uid": "35240-221ab4b6-92f0-44fb-8358-5cd83ae41d01"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:58.000Z",
+          "updatedAt": "2026-07-28T02:52:58.000Z",
+          "uid": "35240-ccfcbc58-4524-4464-9f54-018931271c70"
+        }
+      ],
+      "id": "8aa0601c-ee1d-4501-9121-e251e9319fb8",
+      "createdAt": "2026-07-28T02:52:58.000Z",
+      "updatedAt": "2026-07-28T02:52:58.000Z",
+      "uid": "35240-8aa0601c-ee1d-4501-9121-e251e9319fb8"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

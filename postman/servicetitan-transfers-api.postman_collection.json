@@ -1,0 +1,135 @@
+{
+  "info": {
+    "_postman_id": "cf6fad02-9b7d-42b8-b047-c2f0e4ad26cb",
+    "name": "ServiceTitan Accounting Adjustments Transfers API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:56.000Z",
+    "updatedAt": "2026-07-28T02:52:57.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-cf6fad02-9b7d-42b8-b047-c2f0e4ad26cb"
+  },
+  "item": [
+    {
+      "name": "transfers",
+      "item": [
+        {
+          "name": "Create Inventory Transfer",
+          "id": "35125845-d295-46e4-bf74-afea0fcb0aac",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fromWarehouseId\": \"<integer>\",\n  \"toWarehouseId\": \"<integer>\",\n  \"items\": [\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/transfers",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "transfers"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1967c2e1-a192-4694-a25f-f918d556745f",
+              "name": "Transfer created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fromWarehouseId\": \"<integer>\",\n  \"toWarehouseId\": \"<integer>\",\n  \"items\": [\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    },\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/transfers",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "transfers"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:52:57.000Z",
+              "updatedAt": "2026-07-28T02:52:57.000Z",
+              "uid": "35240-1967c2e1-a192-4694-a25f-f918d556745f"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:57.000Z",
+          "updatedAt": "2026-07-28T02:52:57.000Z",
+          "uid": "35240-35125845-d295-46e4-bf74-afea0fcb0aac"
+        }
+      ],
+      "id": "beac2949-39f1-4d25-ab1d-c32eeb2559fa",
+      "createdAt": "2026-07-28T02:52:57.000Z",
+      "updatedAt": "2026-07-28T02:52:57.000Z",
+      "uid": "35240-beac2949-39f1-4d25-ab1d-c32eeb2559fa"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

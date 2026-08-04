@@ -1,0 +1,135 @@
+{
+  "info": {
+    "_postman_id": "b2be79eb-2cb2-4ab0-a7a8-29f9e7f5e251",
+    "name": "ServiceTitan Accounting Adjustments Receipts API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:49.000Z",
+    "updatedAt": "2026-07-28T02:52:49.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b2be79eb-2cb2-4ab0-a7a8-29f9e7f5e251"
+  },
+  "item": [
+    {
+      "name": "receipts",
+      "item": [
+        {
+          "name": "Create Receipt",
+          "id": "e6840aab-82c7-4fe0-acb6-f9db8399baaa",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"purchaseOrderId\": \"<integer>\",\n  \"items\": [\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\"\n    },\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/receipts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "receipts"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e6e21105-aa32-4228-a588-4e472ff1bd56",
+              "name": "Receipt created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"purchaseOrderId\": \"<integer>\",\n  \"items\": [\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\"\n    },\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/receipts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "receipts"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:52:49.000Z",
+              "updatedAt": "2026-07-28T02:52:49.000Z",
+              "uid": "35240-e6e21105-aa32-4228-a588-4e472ff1bd56"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:49.000Z",
+          "updatedAt": "2026-07-28T02:52:49.000Z",
+          "uid": "35240-e6840aab-82c7-4fe0-acb6-f9db8399baaa"
+        }
+      ],
+      "id": "563da2b4-bbfc-4caf-bf2e-318ddd95aa71",
+      "createdAt": "2026-07-28T02:52:49.000Z",
+      "updatedAt": "2026-07-28T02:52:49.000Z",
+      "uid": "35240-563da2b4-bbfc-4caf-bf2e-318ddd95aa71"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

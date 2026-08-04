@@ -1,0 +1,467 @@
+{
+  "info": {
+    "_postman_id": "0cb5eb8e-88c9-42e6-a7ed-1b7686166487",
+    "name": "ServiceTitan Accounting Adjustments Locations API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:36.000Z",
+    "updatedAt": "2026-07-28T02:52:37.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0cb5eb8e-88c9-42e6-a7ed-1b7686166487"
+  },
+  "item": [
+    {
+      "name": "locations",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "Get Location",
+              "id": "cf158d41-52fd-4e39-b524-e6da6958db01",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/locations/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "locations",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "0e8d95c2-1d4a-4115-a3a0-ad077aed946b",
+                      "key": "id",
+                      "value": "<long>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "089c61b5-621d-4e20-9882-f31739110e8c",
+                  "name": "Location record",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/locations/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "locations",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<long>\",\n  \"customerId\": \"<long>\",\n  \"active\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"address\": {\n    \"street\": \"<string>\",\n    \"unit\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"zip\": \"<string>\",\n    \"country\": \"<string>\",\n    \"latitude\": \"<number>\",\n    \"longitude\": \"<number>\"\n  },\n  \"zoneId\": \"<long>\",\n  \"taxZoneId\": \"<long>\",\n  \"createdOn\": \"<dateTime>\",\n  \"modifiedOn\": \"<dateTime>\"\n}",
+                  "createdAt": "2026-07-28T02:52:37.000Z",
+                  "updatedAt": "2026-07-28T02:52:37.000Z",
+                  "uid": "35240-089c61b5-621d-4e20-9882-f31739110e8c"
+                }
+              ],
+              "createdAt": "2026-07-28T02:52:37.000Z",
+              "updatedAt": "2026-07-28T02:52:37.000Z",
+              "uid": "35240-cf158d41-52fd-4e39-b524-e6da6958db01"
+            },
+            {
+              "name": "Update Location",
+              "id": "2d0a4723-b65e-4da7-b059-43d860bdc45f",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"address\": {\n    \"street\": \"<string>\",\n    \"unit\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"zip\": \"<string>\",\n    \"country\": \"<string>\",\n    \"latitude\": \"<number>\",\n    \"longitude\": \"<number>\"\n  },\n  \"zoneId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/locations/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "locations",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "194062ba-ccaf-4e47-ae48-d7c45b7834c1",
+                      "key": "id",
+                      "value": "<long>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "08b419a9-98e0-4f6b-b493-63d109338614",
+                  "name": "Updated location",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"address\": {\n    \"street\": \"<string>\",\n    \"unit\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"zip\": \"<string>\",\n    \"country\": \"<string>\",\n    \"latitude\": \"<number>\",\n    \"longitude\": \"<number>\"\n  },\n  \"zoneId\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/locations/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "locations",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<long>\",\n  \"customerId\": \"<long>\",\n  \"active\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"address\": {\n    \"street\": \"<string>\",\n    \"unit\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"zip\": \"<string>\",\n    \"country\": \"<string>\",\n    \"latitude\": \"<number>\",\n    \"longitude\": \"<number>\"\n  },\n  \"zoneId\": \"<long>\",\n  \"taxZoneId\": \"<long>\",\n  \"createdOn\": \"<dateTime>\",\n  \"modifiedOn\": \"<dateTime>\"\n}",
+                  "createdAt": "2026-07-28T02:52:37.000Z",
+                  "updatedAt": "2026-07-28T02:52:37.000Z",
+                  "uid": "35240-08b419a9-98e0-4f6b-b493-63d109338614"
+                }
+              ],
+              "createdAt": "2026-07-28T02:52:37.000Z",
+              "updatedAt": "2026-07-28T02:52:37.000Z",
+              "uid": "35240-2d0a4723-b65e-4da7-b059-43d860bdc45f"
+            }
+          ],
+          "id": "ce2f2ea6-6a07-4cf9-a130-22b28321567d",
+          "createdAt": "2026-07-28T02:52:37.000Z",
+          "updatedAt": "2026-07-28T02:52:37.000Z",
+          "uid": "35240-ce2f2ea6-6a07-4cf9-a130-22b28321567d"
+        },
+        {
+          "name": "List Locations",
+          "id": "337e2f3e-e9d3-4f0b-9332-e6e5db024846",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/locations?page=1&pageSize=50&customerId=<long>&modifiedOnOrAfter=<dateTime>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "locations"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "key": "customerId",
+                  "value": "<long>"
+                },
+                {
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "aa74e323-ba19-4b81-9119-a512df106610",
+              "name": "Paginated list of locations",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/locations?page=1&pageSize=50&customerId=<long>&modifiedOnOrAfter=<dateTime>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "locations"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "customerId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"page\": \"<integer>\",\n  \"pageSize\": \"<integer>\",\n  \"hasMore\": \"<boolean>\",\n  \"data\": [\n    {\n      \"id\": \"<long>\",\n      \"customerId\": \"<long>\",\n      \"active\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"address\": {\n        \"street\": \"<string>\",\n        \"unit\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"country\": \"<string>\",\n        \"latitude\": \"<number>\",\n        \"longitude\": \"<number>\"\n      },\n      \"zoneId\": \"<long>\",\n      \"taxZoneId\": \"<long>\",\n      \"createdOn\": \"<dateTime>\",\n      \"modifiedOn\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"customerId\": \"<long>\",\n      \"active\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"address\": {\n        \"street\": \"<string>\",\n        \"unit\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"country\": \"<string>\",\n        \"latitude\": \"<number>\",\n        \"longitude\": \"<number>\"\n      },\n      \"zoneId\": \"<long>\",\n      \"taxZoneId\": \"<long>\",\n      \"createdOn\": \"<dateTime>\",\n      \"modifiedOn\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:52:37.000Z",
+              "updatedAt": "2026-07-28T02:52:37.000Z",
+              "uid": "35240-aa74e323-ba19-4b81-9119-a512df106610"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:37.000Z",
+          "updatedAt": "2026-07-28T02:52:37.000Z",
+          "uid": "35240-337e2f3e-e9d3-4f0b-9332-e6e5db024846"
+        },
+        {
+          "name": "Create Location",
+          "id": "8e255e3a-e803-4ecf-8aef-20e24cc7c505",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"address\": {\n    \"street\": \"<string>\",\n    \"unit\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"zip\": \"<string>\",\n    \"country\": \"<string>\",\n    \"latitude\": \"<number>\",\n    \"longitude\": \"<number>\"\n  },\n  \"name\": \"<string>\",\n  \"zoneId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/locations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "locations"
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a05f7ea7-4aee-4540-8dd8-4db5667519fb",
+              "name": "Created location",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"address\": {\n    \"street\": \"<string>\",\n    \"unit\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"zip\": \"<string>\",\n    \"country\": \"<string>\",\n    \"latitude\": \"<number>\",\n    \"longitude\": \"<number>\"\n  },\n  \"name\": \"<string>\",\n  \"zoneId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/locations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "locations"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"id\": \"<long>\",\n  \"customerId\": \"<long>\",\n  \"active\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"address\": {\n    \"street\": \"<string>\",\n    \"unit\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"zip\": \"<string>\",\n    \"country\": \"<string>\",\n    \"latitude\": \"<number>\",\n    \"longitude\": \"<number>\"\n  },\n  \"zoneId\": \"<long>\",\n  \"taxZoneId\": \"<long>\",\n  \"createdOn\": \"<dateTime>\",\n  \"modifiedOn\": \"<dateTime>\"\n}",
+              "createdAt": "2026-07-28T02:52:37.000Z",
+              "updatedAt": "2026-07-28T02:52:37.000Z",
+              "uid": "35240-a05f7ea7-4aee-4540-8dd8-4db5667519fb"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:37.000Z",
+          "updatedAt": "2026-07-28T02:52:37.000Z",
+          "uid": "35240-8e255e3a-e803-4ecf-8aef-20e24cc7c505"
+        }
+      ],
+      "id": "5dc47c97-2098-47e6-b02f-a631ff37ed25",
+      "createdAt": "2026-07-28T02:52:37.000Z",
+      "updatedAt": "2026-07-28T02:52:37.000Z",
+      "uid": "35240-5dc47c97-2098-47e6-b02f-a631ff37ed25"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}

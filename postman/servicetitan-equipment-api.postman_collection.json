@@ -1,0 +1,244 @@
+{
+  "info": {
+    "_postman_id": "ddfea409-6661-48cd-8702-9fd2237c0f82",
+    "name": "ServiceTitan Accounting Adjustments Equipment API",
+    "description": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:52:12.000Z",
+    "updatedAt": "2026-07-28T02:52:12.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-ddfea409-6661-48cd-8702-9fd2237c0f82"
+  },
+  "item": [
+    {
+      "name": "equipment",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "Get Equipment",
+              "id": "843400cf-6f43-40f3-a84d-bd2db1200541",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/equipment/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "equipment",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "4283a0a0-8ad3-49d2-8af1-5e459dd25daf",
+                      "key": "id",
+                      "value": "<long>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "e26b688a-b29b-4e9a-b590-c14f8f4ae803",
+                  "name": "Equipment",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/equipment/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "equipment",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<long>\",\n  \"code\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"cost\": \"<number>\",\n  \"price\": \"<number>\",\n  \"memberPrice\": \"<number>\",\n  \"active\": \"<boolean>\",\n  \"warranty\": {\n    \"duration\": \"<integer>\",\n    \"description\": \"<string>\"\n  },\n  \"modifiedOn\": \"<dateTime>\"\n}",
+                  "createdAt": "2026-07-28T02:52:12.000Z",
+                  "updatedAt": "2026-07-28T02:52:12.000Z",
+                  "uid": "35240-e26b688a-b29b-4e9a-b590-c14f8f4ae803"
+                }
+              ],
+              "createdAt": "2026-07-28T02:52:12.000Z",
+              "updatedAt": "2026-07-28T02:52:12.000Z",
+              "uid": "35240-843400cf-6f43-40f3-a84d-bd2db1200541"
+            }
+          ],
+          "id": "9e49c850-de6f-4c12-a0f4-7d37df2b31c8",
+          "createdAt": "2026-07-28T02:52:12.000Z",
+          "updatedAt": "2026-07-28T02:52:12.000Z",
+          "uid": "35240-9e49c850-de6f-4c12-a0f4-7d37df2b31c8"
+        },
+        {
+          "name": "List Equipment",
+          "id": "67c92528-1386-4ac1-a3d4-a3aa7f91b172",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/equipment?page=1&pageSize=50&modifiedOnOrAfter=<dateTime>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "equipment"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "98012d6b-710e-4093-afe2-ab899dfd3c6b",
+              "name": "Paginated equipment",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/equipment?page=1&pageSize=50&modifiedOnOrAfter=<dateTime>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "equipment"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"<long>\",\n      \"code\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"description\": \"<string>\",\n      \"cost\": \"<number>\",\n      \"price\": \"<number>\",\n      \"memberPrice\": \"<number>\",\n      \"active\": \"<boolean>\",\n      \"warranty\": {\n        \"duration\": \"<integer>\",\n        \"description\": \"<string>\"\n      },\n      \"modifiedOn\": \"<dateTime>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"code\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"description\": \"<string>\",\n      \"cost\": \"<number>\",\n      \"price\": \"<number>\",\n      \"memberPrice\": \"<number>\",\n      \"active\": \"<boolean>\",\n      \"warranty\": {\n        \"duration\": \"<integer>\",\n        \"description\": \"<string>\"\n      },\n      \"modifiedOn\": \"<dateTime>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:52:12.000Z",
+              "updatedAt": "2026-07-28T02:52:12.000Z",
+              "uid": "35240-98012d6b-710e-4093-afe2-ab899dfd3c6b"
+            }
+          ],
+          "createdAt": "2026-07-28T02:52:12.000Z",
+          "updatedAt": "2026-07-28T02:52:12.000Z",
+          "uid": "35240-67c92528-1386-4ac1-a3d4-a3aa7f91b172"
+        }
+      ],
+      "id": "040ac82d-1943-410d-ac0d-b58bfece0a74",
+      "createdAt": "2026-07-28T02:52:12.000Z",
+      "updatedAt": "2026-07-28T02:52:12.000Z",
+      "uid": "35240-040ac82d-1943-410d-ac0d-b58bfece0a74"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "tenant",
+      "value": "0000000"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}"
+    }
+  ]
+}
