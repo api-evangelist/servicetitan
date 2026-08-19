@@ -1,0 +1,405 @@
+{
+  "item": [
+    {
+      "id": "a61e6fbd-c478-4651-bd53-ad738fee540c",
+      "name": "Projects",
+      "description": {
+        "content": "Multi-job projects",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f39dd842-518c-4d96-a2e3-d9a9ac8c56b3",
+          "name": "List Projects",
+          "request": {
+            "name": "List Projects",
+            "description": {},
+            "url": {
+              "path": [
+                "projects"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ad733ac1-c9e6-4f7d-a850-54db947b1959",
+              "name": "Paginated list of projects",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 1826,\n      \"number\": \"string\",\n      \"name\": \"string\",\n      \"summary\": \"string\",\n      \"status\": \"string\",\n      \"statusId\": 2596,\n      \"substatusId\": 7128,\n      \"customerId\": 7638,\n      \"locationId\": 5216,\n      \"projectManagerIds\": [\n        5710,\n        9845\n      ],\n      \"businessUnitIds\": [\n        2750,\n        5577\n      ],\n      \"startDate\": \"1978-06-03\",\n      \"targetCompletionDate\": \"1971-09-03\",\n      \"actualCompletionDate\": \"1954-11-04\",\n      \"modifiedOn\": \"1955-04-27T06:31:49.469Z\"\n    },\n    {\n      \"id\": 6532,\n      \"number\": \"string\",\n      \"name\": \"string\",\n      \"summary\": \"string\",\n      \"status\": \"string\",\n      \"statusId\": 9879,\n      \"substatusId\": 5275,\n      \"customerId\": 4806,\n      \"locationId\": 1025,\n      \"projectManagerIds\": [\n        3628,\n        8610\n      ],\n      \"businessUnitIds\": [\n        4629,\n        3615\n      ],\n      \"startDate\": \"2012-12-05\",\n      \"targetCompletionDate\": \"1948-12-21\",\n      \"actualCompletionDate\": \"2010-07-02\",\n      \"modifiedOn\": \"1960-06-05T14:46:45.117Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4945df8b-53fa-4a96-b985-ed4220ffec55",
+          "name": "Create Project",
+          "request": {
+            "name": "Create Project",
+            "description": {},
+            "url": {
+              "path": [
+                "projects"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerId\": \"<integer>\",\n  \"locationId\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"projectManagerIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"startDate\": \"<date>\",\n  \"targetCompletionDate\": \"<date>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "aceadb56-584f-4d96-a0a2-7bdd75ecfdff",
+              "name": "Created project",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customerId\": \"<integer>\",\n  \"locationId\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"projectManagerIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"startDate\": \"<date>\",\n  \"targetCompletionDate\": \"<date>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 4139,\n  \"number\": \"string\",\n  \"name\": \"string\",\n  \"summary\": \"string\",\n  \"status\": \"string\",\n  \"statusId\": 9037,\n  \"substatusId\": 4013,\n  \"customerId\": 3453,\n  \"locationId\": 9583,\n  \"projectManagerIds\": [\n    3718,\n    9465\n  ],\n  \"businessUnitIds\": [\n    9169,\n    7520\n  ],\n  \"startDate\": \"2008-08-16\",\n  \"targetCompletionDate\": \"1950-01-13\",\n  \"actualCompletionDate\": \"1983-08-08\",\n  \"modifiedOn\": \"1960-09-24T01:15:51.952Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3d51749c-3dca-4033-a700-a3be90c3c877",
+          "name": "Get Project",
+          "request": {
+            "name": "Get Project",
+            "description": {},
+            "url": {
+              "path": [
+                "projects",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cccef581-7e52-43cf-bc76-2fbf72fc6689",
+              "name": "Project record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 4139,\n  \"number\": \"string\",\n  \"name\": \"string\",\n  \"summary\": \"string\",\n  \"status\": \"string\",\n  \"statusId\": 9037,\n  \"substatusId\": 4013,\n  \"customerId\": 3453,\n  \"locationId\": 9583,\n  \"projectManagerIds\": [\n    3718,\n    9465\n  ],\n  \"businessUnitIds\": [\n    9169,\n    7520\n  ],\n  \"startDate\": \"2008-08-16\",\n  \"targetCompletionDate\": \"1950-01-13\",\n  \"actualCompletionDate\": \"1983-08-08\",\n  \"modifiedOn\": \"1960-09-24T01:15:51.952Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "0000000",
+      "key": "tenant"
+    },
+    {
+      "type": "string",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ce510fda-673d-45d7-b91f-b9be10375b8f",
+    "name": "ServiceTitan Accounting Adjustments Projects API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+      "type": "text/plain"
+    }
+  }
+}

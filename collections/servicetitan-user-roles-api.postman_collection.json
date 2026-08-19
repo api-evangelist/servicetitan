@@ -1,0 +1,149 @@
+{
+  "item": [
+    {
+      "id": "4f9dbfeb-6bdd-4c39-8853-c467d3e54f90",
+      "name": "User Roles",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ec130dd0-9710-4844-af70-56ff346cadc0",
+          "name": "List User Roles",
+          "request": {
+            "name": "List User Roles",
+            "description": {},
+            "url": {
+              "path": [
+                "user-roles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "78599763-09ec-419f-a5b5-9c1d64ef42f8",
+              "name": "User roles",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "user-roles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 7272,\n      \"name\": \"string\",\n      \"active\": false,\n      \"employeeType\": \"string\"\n    },\n    {\n      \"id\": 2859,\n      \"name\": \"string\",\n      \"active\": true,\n      \"employeeType\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "0000000",
+      "key": "tenant"
+    },
+    {
+      "type": "string",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "20b64c69-aff6-4e49-881e-63666aa2bbcf",
+    "name": "ServiceTitan Accounting Adjustments User Roles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+      "type": "text/plain"
+    }
+  }
+}

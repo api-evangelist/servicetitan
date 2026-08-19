@@ -1,0 +1,178 @@
+{
+  "item": [
+    {
+      "id": "1849fd8c-ab15-4991-85df-7650cb97925d",
+      "name": "Journal Entries",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6aeca2f6-096e-4c8d-9f7f-a2df4ecfcc5b",
+          "name": "List Journal Entries",
+          "request": {
+            "name": "List Journal Entries",
+            "description": {},
+            "url": {
+              "path": [
+                "journal-entries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e9542eb8-b85f-4f15-bf24-8d2e199b740b",
+              "name": "Paginated list of journal entries",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "journal-entries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 4898,\n      \"number\": \"string\",\n      \"memo\": \"string\",\n      \"date\": \"1986-07-24T10:13:37.186Z\",\n      \"active\": false,\n      \"status\": \"string\",\n      \"modifiedOn\": \"1952-05-03T19:32:18.873Z\",\n      \"details\": [\n        {\n          \"accountId\": 7973,\n          \"debit\": 3812.094088115908,\n          \"credit\": 331.23349615639563,\n          \"description\": \"string\"\n        },\n        {\n          \"accountId\": 9405,\n          \"debit\": 1140.5871609560213,\n          \"credit\": 6894.234971708636,\n          \"description\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": 1059,\n      \"number\": \"string\",\n      \"memo\": \"string\",\n      \"date\": \"1948-02-27T04:20:27.239Z\",\n      \"active\": false,\n      \"status\": \"string\",\n      \"modifiedOn\": \"1997-04-27T07:53:25.355Z\",\n      \"details\": [\n        {\n          \"accountId\": 9894,\n          \"debit\": 4890.729061969295,\n          \"credit\": 6669.248129169042,\n          \"description\": \"string\"\n        },\n        {\n          \"accountId\": 7381,\n          \"debit\": 2116.598046639081,\n          \"credit\": 7073.579866948749,\n          \"description\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"hasMore\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "0000000",
+      "key": "tenant"
+    },
+    {
+      "type": "string",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "fcda6f01-bcf2-4a2a-b872-758efa0271d5",
+    "name": "ServiceTitan Accounting Adjustments Journal Entries API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+      "type": "text/plain"
+    }
+  }
+}

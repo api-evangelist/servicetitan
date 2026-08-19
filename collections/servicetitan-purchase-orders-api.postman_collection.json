@@ -1,0 +1,423 @@
+{
+  "item": [
+    {
+      "id": "591f5ee1-24f0-451a-a8c7-29df79818bb1",
+      "name": "Purchase Orders",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d8c72113-1b9f-44d0-a961-4ba5184f73f1",
+          "name": "List Purchase Orders",
+          "request": {
+            "name": "List Purchase Orders",
+            "description": {},
+            "url": {
+              "path": [
+                "purchase-orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "vendorId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e99890bf-19ba-4a9b-9872-f09a3bc4637e",
+              "name": "Purchase orders",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "purchase-orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "vendorId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 3587,\n      \"active\": false,\n      \"number\": \"string\",\n      \"typeId\": 3164,\n      \"status\": \"string\",\n      \"date\": \"2024-03-02T19:03:18.547Z\",\n      \"requiredOn\": \"1998-06-08T09:18:11.176Z\",\n      \"sentOn\": \"1969-12-12T06:44:31.744Z\",\n      \"receivedOn\": \"1994-01-17T06:32:31.833Z\",\n      \"memo\": \"string\",\n      \"jobId\": 2287,\n      \"projectId\": 6741,\n      \"technicianId\": 8461,\n      \"vendor\": {\n        \"id\": 6532,\n        \"name\": \"string\"\n      },\n      \"warehouse\": {\n        \"id\": 9187,\n        \"name\": \"string\"\n      },\n      \"items\": [\n        {\n          \"skuId\": 852,\n          \"skuName\": \"string\",\n          \"quantity\": 3124.9550745297906,\n          \"cost\": 4149.502501868389,\n          \"total\": 3866.1297375972813\n        },\n        {\n          \"skuId\": 2726,\n          \"skuName\": \"string\",\n          \"quantity\": 920.2742949679788,\n          \"cost\": 7570.212726495288,\n          \"total\": 9478.96436470924\n        }\n      ],\n      \"total\": 6540.940661032493,\n      \"tax\": 9439.023819358055,\n      \"shipping\": 5105.545216808281,\n      \"modifiedOn\": \"1982-05-28T14:36:40.509Z\"\n    },\n    {\n      \"id\": 4687,\n      \"active\": true,\n      \"number\": \"string\",\n      \"typeId\": 730,\n      \"status\": \"string\",\n      \"date\": \"2018-04-14T23:20:52.497Z\",\n      \"requiredOn\": \"1998-09-06T22:39:06.271Z\",\n      \"sentOn\": \"2022-04-27T17:04:56.259Z\",\n      \"receivedOn\": \"1999-10-14T14:21:23.950Z\",\n      \"memo\": \"string\",\n      \"jobId\": 7661,\n      \"projectId\": 3084,\n      \"technicianId\": 6182,\n      \"vendor\": {\n        \"id\": 1507,\n        \"name\": \"string\"\n      },\n      \"warehouse\": {\n        \"id\": 8204,\n        \"name\": \"string\"\n      },\n      \"items\": [\n        {\n          \"skuId\": 1551,\n          \"skuName\": \"string\",\n          \"quantity\": 3632.6148359765966,\n          \"cost\": 2646.6252425175053,\n          \"total\": 4297.818308526118\n        },\n        {\n          \"skuId\": 5645,\n          \"skuName\": \"string\",\n          \"quantity\": 9306.700471663775,\n          \"cost\": 301.356730061666,\n          \"total\": 5914.34875099629\n        }\n      ],\n      \"total\": 3450.2100975839667,\n      \"tax\": 3777.225031489341,\n      \"shipping\": 511.07059254334564,\n      \"modifiedOn\": \"1996-10-03T20:42:51.719Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b3dab610-5a30-4023-a954-39830de90b3d",
+          "name": "Create Purchase Order",
+          "request": {
+            "name": "Create Purchase Order",
+            "description": {},
+            "url": {
+              "path": [
+                "purchase-orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"typeId\": \"<integer>\",\n  \"vendorId\": \"<integer>\",\n  \"items\": [\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\"\n    },\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\"\n    }\n  ],\n  \"warehouseId\": \"<integer>\",\n  \"jobId\": \"<integer>\",\n  \"projectId\": \"<integer>\",\n  \"technicianId\": \"<integer>\",\n  \"memo\": \"<string>\",\n  \"date\": \"<dateTime>\",\n  \"requiredOn\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "af90e637-9650-4999-a7fc-eed3ee77b225",
+              "name": "Created purchase order",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "purchase-orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"typeId\": \"<integer>\",\n  \"vendorId\": \"<integer>\",\n  \"items\": [\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\"\n    },\n    {\n      \"skuId\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"cost\": \"<number>\"\n    }\n  ],\n  \"warehouseId\": \"<integer>\",\n  \"jobId\": \"<integer>\",\n  \"projectId\": \"<integer>\",\n  \"technicianId\": \"<integer>\",\n  \"memo\": \"<string>\",\n  \"date\": \"<dateTime>\",\n  \"requiredOn\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 318,\n  \"active\": false,\n  \"number\": \"string\",\n  \"typeId\": 1144,\n  \"status\": \"string\",\n  \"date\": \"1954-11-17T21:28:45.299Z\",\n  \"requiredOn\": \"2001-10-01T11:31:18.367Z\",\n  \"sentOn\": \"1988-08-29T01:43:17.271Z\",\n  \"receivedOn\": \"1992-06-08T05:53:33.097Z\",\n  \"memo\": \"string\",\n  \"jobId\": 2567,\n  \"projectId\": 7103,\n  \"technicianId\": 5404,\n  \"vendor\": {\n    \"id\": 1110,\n    \"name\": \"string\"\n  },\n  \"warehouse\": {\n    \"id\": 7296,\n    \"name\": \"string\"\n  },\n  \"items\": [\n    {\n      \"skuId\": 8274,\n      \"skuName\": \"string\",\n      \"quantity\": 4226.65003430881,\n      \"cost\": 7743.164592085657,\n      \"total\": 3280.478780920063\n    },\n    {\n      \"skuId\": 5298,\n      \"skuName\": \"string\",\n      \"quantity\": 3256.494516420573,\n      \"cost\": 7236.390772156696,\n      \"total\": 3688.491838406456\n    }\n  ],\n  \"total\": 9004.2149820086,\n  \"tax\": 6760.667005784644,\n  \"shipping\": 9445.78842778399,\n  \"modifiedOn\": \"1973-05-16T09:40:18.974Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3a787380-4120-4895-bc64-5f90ee49a478",
+          "name": "Get Purchase Order",
+          "request": {
+            "name": "Get Purchase Order",
+            "description": {},
+            "url": {
+              "path": [
+                "purchase-orders",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7bbcd769-e2a6-48be-8d8a-bd53d1320ee3",
+              "name": "Purchase order",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "purchase-orders",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 318,\n  \"active\": false,\n  \"number\": \"string\",\n  \"typeId\": 1144,\n  \"status\": \"string\",\n  \"date\": \"1954-11-17T21:28:45.299Z\",\n  \"requiredOn\": \"2001-10-01T11:31:18.367Z\",\n  \"sentOn\": \"1988-08-29T01:43:17.271Z\",\n  \"receivedOn\": \"1992-06-08T05:53:33.097Z\",\n  \"memo\": \"string\",\n  \"jobId\": 2567,\n  \"projectId\": 7103,\n  \"technicianId\": 5404,\n  \"vendor\": {\n    \"id\": 1110,\n    \"name\": \"string\"\n  },\n  \"warehouse\": {\n    \"id\": 7296,\n    \"name\": \"string\"\n  },\n  \"items\": [\n    {\n      \"skuId\": 8274,\n      \"skuName\": \"string\",\n      \"quantity\": 4226.65003430881,\n      \"cost\": 7743.164592085657,\n      \"total\": 3280.478780920063\n    },\n    {\n      \"skuId\": 5298,\n      \"skuName\": \"string\",\n      \"quantity\": 3256.494516420573,\n      \"cost\": 7236.390772156696,\n      \"total\": 3688.491838406456\n    }\n  ],\n  \"total\": 9004.2149820086,\n  \"tax\": 6760.667005784644,\n  \"shipping\": 9445.78842778399,\n  \"modifiedOn\": \"1973-05-16T09:40:18.974Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "0000000",
+      "key": "tenant"
+    },
+    {
+      "type": "string",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6ef46aaa-f099-42fb-983a-523de42ba0e1",
+    "name": "ServiceTitan Accounting Adjustments Purchase Orders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+      "type": "text/plain"
+    }
+  }
+}

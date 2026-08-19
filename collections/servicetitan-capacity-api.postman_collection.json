@@ -1,0 +1,170 @@
+{
+  "item": [
+    {
+      "id": "875ff556-d318-4bac-8528-ba11ead78fc2",
+      "name": "Capacity",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "75006801-5a9d-421d-a479-422b6e83cc61",
+          "name": "Get Capacity",
+          "request": {
+            "name": "Get Capacity",
+            "description": {},
+            "url": {
+              "path": [
+                "capacity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"startsOnOrAfter\": \"<dateTime>\",\n  \"endsOnOrBefore\": \"<dateTime>\",\n  \"businessUnitIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"jobTypeId\": \"<integer>\",\n  \"skillBasedAvailability\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "659ab02b-5ee7-4461-be53-4e36a5ea1656",
+              "name": "Capacity windows",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "capacity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"startsOnOrAfter\": \"<dateTime>\",\n  \"endsOnOrBefore\": \"<dateTime>\",\n  \"businessUnitIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"jobTypeId\": \"<integer>\",\n  \"skillBasedAvailability\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"availabilities\": [\n    {\n      \"start\": \"1950-07-04T14:12:24.326Z\",\n      \"end\": \"1997-06-28T12:26:59.239Z\",\n      \"timeslots\": [\n        {\n          \"start\": \"1951-02-27T21:36:30.572Z\",\n          \"end\": \"1987-02-04T14:27:19.441Z\",\n          \"technicianIds\": [\n            745,\n            1653\n          ],\n          \"isAvailable\": false,\n          \"isExceedingIdealBookingPercentage\": true,\n          \"totalAvailability\": 5261\n        },\n        {\n          \"start\": \"1997-06-08T21:18:44.103Z\",\n          \"end\": \"1987-05-28T20:58:37.133Z\",\n          \"technicianIds\": [\n            1555,\n            1008\n          ],\n          \"isAvailable\": false,\n          \"isExceedingIdealBookingPercentage\": false,\n          \"totalAvailability\": 932\n        }\n      ]\n    },\n    {\n      \"start\": \"1989-03-04T19:57:30.390Z\",\n      \"end\": \"1989-09-12T11:35:11.368Z\",\n      \"timeslots\": [\n        {\n          \"start\": \"1995-07-03T10:42:14.858Z\",\n          \"end\": \"1976-01-23T11:20:34.761Z\",\n          \"technicianIds\": [\n            6279,\n            6473\n          ],\n          \"isAvailable\": false,\n          \"isExceedingIdealBookingPercentage\": false,\n          \"totalAvailability\": 7441\n        },\n        {\n          \"start\": \"1978-07-07T14:54:45.701Z\",\n          \"end\": \"1954-08-07T08:11:10.695Z\",\n          \"technicianIds\": [\n            2217,\n            4713\n          ],\n          \"isAvailable\": false,\n          \"isExceedingIdealBookingPercentage\": false,\n          \"totalAvailability\": 4671\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "0000000",
+      "key": "tenant"
+    },
+    {
+      "type": "string",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7f364663-01b4-4660-a15d-ee82d83e5cd8",
+    "name": "ServiceTitan Accounting Adjustments Capacity API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+      "type": "text/plain"
+    }
+  }
+}

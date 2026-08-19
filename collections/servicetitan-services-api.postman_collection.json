@@ -1,0 +1,639 @@
+{
+  "item": [
+    {
+      "id": "bb0668bb-9da8-4bed-bc15-c609c1e18010",
+      "name": "Services",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2344e819-c89d-4eef-8f66-db1251195f55",
+          "name": "List Services",
+          "request": {
+            "name": "List Services",
+            "description": {},
+            "url": {
+              "path": [
+                "services"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "active",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "47b0e35d-95d2-479c-8ec3-ab6f2dcc378d",
+              "name": "Paginated services",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "active",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 5718,\n  \"pageSize\": 6047,\n  \"hasMore\": false,\n  \"data\": [\n    {\n      \"id\": 9330,\n      \"code\": \"string\",\n      \"displayName\": \"string\",\n      \"description\": \"string\",\n      \"warranty\": {\n        \"duration\": 730,\n        \"description\": \"string\"\n      },\n      \"categories\": [\n        8230,\n        1759\n      ],\n      \"price\": 2582.2318627386253,\n      \"memberPrice\": 8028.909390029276,\n      \"addOnPrice\": 4628.368324373503,\n      \"addOnMemberPrice\": 4551.233719672072,\n      \"taxable\": false,\n      \"account\": \"string\",\n      \"hours\": 3814.817461697829,\n      \"isLabor\": true,\n      \"recommendations\": [\n        9180,\n        9586\n      ],\n      \"upgrades\": [\n        6708,\n        6176\n      ],\n      \"commissionBonus\": {\n        \"type\": \"string\",\n        \"amount\": 1899.0727159341293\n      },\n      \"paysCommission\": false,\n      \"active\": false,\n      \"modifiedOn\": \"2016-06-07T16:53:10.509Z\"\n    },\n    {\n      \"id\": 4706,\n      \"code\": \"string\",\n      \"displayName\": \"string\",\n      \"description\": \"string\",\n      \"warranty\": {\n        \"duration\": 4427,\n        \"description\": \"string\"\n      },\n      \"categories\": [\n        5396,\n        1930\n      ],\n      \"price\": 88.82318847806215,\n      \"memberPrice\": 6933.426148353049,\n      \"addOnPrice\": 8659.631008666605,\n      \"addOnMemberPrice\": 5337.347222415876,\n      \"taxable\": false,\n      \"account\": \"string\",\n      \"hours\": 8824.545742247092,\n      \"isLabor\": true,\n      \"recommendations\": [\n        4625,\n        7192\n      ],\n      \"upgrades\": [\n        2884,\n        521\n      ],\n      \"commissionBonus\": {\n        \"type\": \"string\",\n        \"amount\": 2623.198884343271\n      },\n      \"paysCommission\": true,\n      \"active\": false,\n      \"modifiedOn\": \"1963-08-24T20:36:11.319Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "17da87b0-9e24-46dd-95a6-147275dbb30a",
+          "name": "Create Service",
+          "request": {
+            "name": "Create Service",
+            "description": {},
+            "url": {
+              "path": [
+                "services"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"price\": \"<number>\",\n  \"description\": \"<string>\",\n  \"memberPrice\": \"<number>\",\n  \"hours\": \"<number>\",\n  \"taxable\": \"<boolean>\",\n  \"categories\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3261d900-0532-4177-b17f-e22704d9c8b5",
+              "name": "Created service",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"price\": \"<number>\",\n  \"description\": \"<string>\",\n  \"memberPrice\": \"<number>\",\n  \"hours\": \"<number>\",\n  \"taxable\": \"<boolean>\",\n  \"categories\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 9133,\n  \"code\": \"string\",\n  \"displayName\": \"string\",\n  \"description\": \"string\",\n  \"warranty\": {\n    \"duration\": 7771,\n    \"description\": \"string\"\n  },\n  \"categories\": [\n    130,\n    102\n  ],\n  \"price\": 7392.700172163937,\n  \"memberPrice\": 882.0525289399228,\n  \"addOnPrice\": 4667.733731339554,\n  \"addOnMemberPrice\": 8587.621560185815,\n  \"taxable\": false,\n  \"account\": \"string\",\n  \"hours\": 8316.63396729201,\n  \"isLabor\": false,\n  \"recommendations\": [\n    8446,\n    1963\n  ],\n  \"upgrades\": [\n    3709,\n    2917\n  ],\n  \"commissionBonus\": {\n    \"type\": \"string\",\n    \"amount\": 8276.589143832467\n  },\n  \"paysCommission\": true,\n  \"active\": false,\n  \"modifiedOn\": \"1994-03-09T17:09:46.765Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d00ecde0-4a2c-4c87-b6f5-754a4c984ff0",
+          "name": "Get Service",
+          "request": {
+            "name": "Get Service",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e168cbba-1fe8-4a0e-ade2-8aa89afcef15",
+              "name": "Service",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 9133,\n  \"code\": \"string\",\n  \"displayName\": \"string\",\n  \"description\": \"string\",\n  \"warranty\": {\n    \"duration\": 7771,\n    \"description\": \"string\"\n  },\n  \"categories\": [\n    130,\n    102\n  ],\n  \"price\": 7392.700172163937,\n  \"memberPrice\": 882.0525289399228,\n  \"addOnPrice\": 4667.733731339554,\n  \"addOnMemberPrice\": 8587.621560185815,\n  \"taxable\": false,\n  \"account\": \"string\",\n  \"hours\": 8316.63396729201,\n  \"isLabor\": false,\n  \"recommendations\": [\n    8446,\n    1963\n  ],\n  \"upgrades\": [\n    3709,\n    2917\n  ],\n  \"commissionBonus\": {\n    \"type\": \"string\",\n    \"amount\": 8276.589143832467\n  },\n  \"paysCommission\": true,\n  \"active\": false,\n  \"modifiedOn\": \"1994-03-09T17:09:46.765Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "23b708ec-6d2e-467b-94cf-22bb5241659d",
+          "name": "Update Service",
+          "request": {
+            "name": "Update Service",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<long>\",\n  \"code\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"warranty\": {\n    \"duration\": \"<integer>\",\n    \"description\": \"<string>\"\n  },\n  \"categories\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"price\": \"<double>\",\n  \"memberPrice\": \"<double>\",\n  \"addOnPrice\": \"<double>\",\n  \"addOnMemberPrice\": \"<double>\",\n  \"taxable\": \"<boolean>\",\n  \"account\": \"<string>\",\n  \"hours\": \"<number>\",\n  \"isLabor\": \"<boolean>\",\n  \"recommendations\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"upgrades\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"commissionBonus\": {\n    \"type\": \"<string>\",\n    \"amount\": \"<number>\"\n  },\n  \"paysCommission\": \"<boolean>\",\n  \"active\": \"<boolean>\",\n  \"modifiedOn\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c24af8ff-0d04-4d56-a3e9-694a61c1a6b4",
+              "name": "Updated service",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<long>\",\n  \"code\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"warranty\": {\n    \"duration\": \"<integer>\",\n    \"description\": \"<string>\"\n  },\n  \"categories\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"price\": \"<double>\",\n  \"memberPrice\": \"<double>\",\n  \"addOnPrice\": \"<double>\",\n  \"addOnMemberPrice\": \"<double>\",\n  \"taxable\": \"<boolean>\",\n  \"account\": \"<string>\",\n  \"hours\": \"<number>\",\n  \"isLabor\": \"<boolean>\",\n  \"recommendations\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"upgrades\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"commissionBonus\": {\n    \"type\": \"<string>\",\n    \"amount\": \"<number>\"\n  },\n  \"paysCommission\": \"<boolean>\",\n  \"active\": \"<boolean>\",\n  \"modifiedOn\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e42dea1b-ad1a-41a5-9a59-0f91259efcd4",
+          "name": "Delete Service",
+          "request": {
+            "name": "Delete Service",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2c502e1f-d693-4e6b-97c9-dfc7bfc821b7",
+              "name": "Deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "0000000",
+      "key": "tenant"
+    },
+    {
+      "type": "string",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "35cc3526-2f27-4d3b-bb8d-d8b089586431",
+    "name": "ServiceTitan Accounting Adjustments Services API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "item": [
+    {
+      "id": "00c8ed4a-84b5-4758-bded-c50238ee47cc",
+      "name": "Job Types",
+      "description": {
+        "content": "Job type definitions",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5144cd55-7584-4011-bf83-ab77e4016b69",
+          "name": "List Job Types",
+          "request": {
+            "name": "List Job Types",
+            "description": {},
+            "url": {
+              "path": [
+                "job-types"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9f0e15f7-f39d-4ba1-92ef-bf86568c216e",
+              "name": "Job types",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "job-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 4123,\n      \"name\": \"string\",\n      \"businessUnitIds\": [\n        868,\n        6206\n      ],\n      \"skills\": [\n        \"string\",\n        \"string\"\n      ],\n      \"tagTypeIds\": [\n        9382,\n        5801\n      ],\n      \"priority\": \"string\",\n      \"duration\": 4872,\n      \"soldThreshold\": 4703.808954934004,\n      \"class\": \"string\",\n      \"summary\": \"string\",\n      \"noCharge\": true,\n      \"enforceRecurringServiceEventSelection\": true,\n      \"invoiceSignaturesRequired\": true,\n      \"modifiedOn\": \"1974-04-21T15:45:22.490Z\"\n    },\n    {\n      \"id\": 5646,\n      \"name\": \"string\",\n      \"businessUnitIds\": [\n        3282,\n        5993\n      ],\n      \"skills\": [\n        \"string\",\n        \"string\"\n      ],\n      \"tagTypeIds\": [\n        6781,\n        4643\n      ],\n      \"priority\": \"string\",\n      \"duration\": 5732,\n      \"soldThreshold\": 8900.091384215431,\n      \"class\": \"string\",\n      \"summary\": \"string\",\n      \"noCharge\": false,\n      \"enforceRecurringServiceEventSelection\": true,\n      \"invoiceSignaturesRequired\": true,\n      \"modifiedOn\": \"2001-11-13T20:00:44.915Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "0000000",
+      "key": "tenant"
+    },
+    {
+      "type": "string",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "188182d3-0dfe-49f7-9869-8d2d330d9f2b",
+    "name": "ServiceTitan Accounting Adjustments Job Types API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+      "type": "text/plain"
+    }
+  }
+}

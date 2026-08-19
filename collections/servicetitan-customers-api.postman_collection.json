@@ -1,0 +1,589 @@
+{
+  "item": [
+    {
+      "id": "e10d3690-a4bd-4dfe-84c6-597094a038d7",
+      "name": "Customers",
+      "description": {
+        "content": "Customer-of-record records",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "87fe44f9-88f6-41f7-83eb-fd70a0a5f943",
+          "name": "List Customers",
+          "request": {
+            "name": "List Customers",
+            "description": {
+              "content": "Returns a paginated list of customers matching the provided filters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "customers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeTotal",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<string>",
+                  "description": "Comma-separated list of IDs"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedBefore",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "createdBefore",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "createdOnOrAfter",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a32d8d61-f838-4c0d-9e89-7767c76b1108",
+              "name": "Paginated list of customers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "includeTotal",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "modifiedBefore",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "createdBefore",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "createdOnOrAfter",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 8651,\n  \"pageSize\": 5831,\n  \"hasMore\": true,\n  \"totalCount\": 8128,\n  \"data\": [\n    {\n      \"id\": 8567,\n      \"active\": false,\n      \"name\": \"string\",\n      \"type\": \"Residential\",\n      \"address\": {\n        \"street\": \"string\",\n        \"unit\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"zip\": \"string\",\n        \"country\": \"string\",\n        \"latitude\": 8313.745600556214,\n        \"longitude\": 8414.096691293353\n      },\n      \"customFields\": [\n        {\n          \"typeId\": 9908,\n          \"name\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"typeId\": 4657,\n          \"name\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"balance\": 3276.939797325159,\n      \"doNotMail\": true,\n      \"doNotService\": false,\n      \"createdOn\": \"2003-06-03T17:38:36.262Z\",\n      \"modifiedOn\": \"1993-06-20T22:31:14.976Z\",\n      \"contacts\": [\n        {\n          \"id\": 8016,\n          \"type\": \"Phone\",\n          \"value\": \"string\",\n          \"memo\": \"string\",\n          \"modifiedOn\": \"1963-07-19T01:53:16.709Z\"\n        },\n        {\n          \"id\": 1289,\n          \"type\": \"Fax\",\n          \"value\": \"string\",\n          \"memo\": \"string\",\n          \"modifiedOn\": \"1995-04-17T12:59:27.344Z\"\n        }\n      ],\n      \"hasActiveMembership\": true\n    },\n    {\n      \"id\": 8950,\n      \"active\": true,\n      \"name\": \"string\",\n      \"type\": \"Commercial\",\n      \"address\": {\n        \"street\": \"string\",\n        \"unit\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"zip\": \"string\",\n        \"country\": \"string\",\n        \"latitude\": 1525.936281778031,\n        \"longitude\": 2677.456286178501\n      },\n      \"customFields\": [\n        {\n          \"typeId\": 240,\n          \"name\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"typeId\": 1481,\n          \"name\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"balance\": 4232.286685557839,\n      \"doNotMail\": false,\n      \"doNotService\": false,\n      \"createdOn\": \"2013-09-02T16:50:23.248Z\",\n      \"modifiedOn\": \"1969-10-20T23:52:10.623Z\",\n      \"contacts\": [\n        {\n          \"id\": 9636,\n          \"type\": \"MobilePhone\",\n          \"value\": \"string\",\n          \"memo\": \"string\",\n          \"modifiedOn\": \"1972-01-11T05:31:34.211Z\"\n        },\n        {\n          \"id\": 5896,\n          \"type\": \"Phone\",\n          \"value\": \"string\",\n          \"memo\": \"string\",\n          \"modifiedOn\": \"1993-08-22T10:14:04.872Z\"\n        }\n      ],\n      \"hasActiveMembership\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1dc64718-ad6a-42c0-a9b1-e166ec410a84",
+          "name": "Create Customer",
+          "request": {
+            "name": "Create Customer",
+            "description": {
+              "content": "Creates a new customer record in the tenant.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "customers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"locations\": [\n    {\n      \"address\": {\n        \"street\": \"<string>\",\n        \"unit\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"country\": \"<string>\",\n        \"latitude\": \"<number>\",\n        \"longitude\": \"<number>\"\n      },\n      \"name\": \"<string>\",\n      \"zoneId\": \"<integer>\"\n    },\n    {\n      \"address\": {\n        \"street\": \"<string>\",\n        \"unit\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"zip\": \"<string>\",\n        \"country\": \"<string>\",\n        \"latitude\": \"<number>\",\n        \"longitude\": \"<number>\"\n      },\n      \"name\": \"<string>\",\n      \"zoneId\": \"<integer>\"\n    }\n  ],\n  \"doNotMail\": \"<boolean>\",\n  \"doNotService\": \"<boolean>\",\n  \"contacts\": [\n    {\n      \"type\": \"<string>\",\n      \"value\": \"<string>\",\n      \"memo\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"value\": \"<string>\",\n      \"memo\": \"<string>\"\n    }\n  ],\n  \"customFields\": [\n    {\n      \"typeId\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"typeId\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ef610cac-d8e2-48e0-a911-18d1e9a083a0",
+              "name": "Created customer",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"locations\": [\n    {\n      \"address\": {\n        \"street\": \"string\",\n        \"unit\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"zip\": \"string\",\n        \"country\": \"string\",\n        \"latitude\": 1327.4098573190674,\n        \"longitude\": 2553.2819595615674\n      },\n      \"name\": \"string\",\n      \"zoneId\": 9429\n    },\n    {\n      \"address\": {\n        \"street\": \"string\",\n        \"unit\": \"string\",\n        \"city\": \"string\",\n        \"state\": \"string\",\n        \"zip\": \"string\",\n        \"country\": \"string\",\n        \"latitude\": 4831.082268239438,\n        \"longitude\": 2552.8913205352233\n      },\n      \"name\": \"string\",\n      \"zoneId\": 6500\n    }\n  ],\n  \"doNotMail\": \"<boolean>\",\n  \"doNotService\": \"<boolean>\",\n  \"contacts\": [\n    {\n      \"type\": \"string\",\n      \"value\": \"string\",\n      \"memo\": \"string\"\n    },\n    {\n      \"type\": \"string\",\n      \"value\": \"string\",\n      \"memo\": \"string\"\n    }\n  ],\n  \"customFields\": [\n    {\n      \"typeId\": 8872,\n      \"name\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"typeId\": 2415,\n      \"name\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6467,\n  \"active\": false,\n  \"name\": \"string\",\n  \"type\": \"Commercial\",\n  \"address\": {\n    \"street\": \"string\",\n    \"unit\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"zip\": \"string\",\n    \"country\": \"string\",\n    \"latitude\": 6958.941545026159,\n    \"longitude\": 1238.2363911022276\n  },\n  \"customFields\": [\n    {\n      \"typeId\": 1635,\n      \"name\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"typeId\": 4455,\n      \"name\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"balance\": 622.3960293148989,\n  \"doNotMail\": false,\n  \"doNotService\": false,\n  \"createdOn\": \"1953-10-31T00:50:50.765Z\",\n  \"modifiedOn\": \"1999-04-06T18:14:31.249Z\",\n  \"contacts\": [\n    {\n      \"id\": 8432,\n      \"type\": \"MobilePhone\",\n      \"value\": \"string\",\n      \"memo\": \"string\",\n      \"modifiedOn\": \"2017-04-10T02:21:21.920Z\"\n    },\n    {\n      \"id\": 8783,\n      \"type\": \"Phone\",\n      \"value\": \"string\",\n      \"memo\": \"string\",\n      \"modifiedOn\": \"2000-08-26T11:56:30.756Z\"\n    }\n  ],\n  \"hasActiveMembership\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8655e3ff-46bb-4f56-b56b-dbc8c79a2aa4",
+          "name": "Get Customer",
+          "request": {
+            "name": "Get Customer",
+            "description": {},
+            "url": {
+              "path": [
+                "customers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6014fb43-8ff7-49d3-9963-6b315dccb31e",
+              "name": "Customer record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6467,\n  \"active\": false,\n  \"name\": \"string\",\n  \"type\": \"Commercial\",\n  \"address\": {\n    \"street\": \"string\",\n    \"unit\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"zip\": \"string\",\n    \"country\": \"string\",\n    \"latitude\": 6958.941545026159,\n    \"longitude\": 1238.2363911022276\n  },\n  \"customFields\": [\n    {\n      \"typeId\": 1635,\n      \"name\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"typeId\": 4455,\n      \"name\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"balance\": 622.3960293148989,\n  \"doNotMail\": false,\n  \"doNotService\": false,\n  \"createdOn\": \"1953-10-31T00:50:50.765Z\",\n  \"modifiedOn\": \"1999-04-06T18:14:31.249Z\",\n  \"contacts\": [\n    {\n      \"id\": 8432,\n      \"type\": \"MobilePhone\",\n      \"value\": \"string\",\n      \"memo\": \"string\",\n      \"modifiedOn\": \"2017-04-10T02:21:21.920Z\"\n    },\n    {\n      \"id\": 8783,\n      \"type\": \"Phone\",\n      \"value\": \"string\",\n      \"memo\": \"string\",\n      \"modifiedOn\": \"2000-08-26T11:56:30.756Z\"\n    }\n  ],\n  \"hasActiveMembership\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2a67183e-3936-4714-ada5-72720ca84695",
+          "name": "Update Customer",
+          "request": {
+            "name": "Update Customer",
+            "description": {},
+            "url": {
+              "path": [
+                "customers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"doNotMail\": \"<boolean>\",\n  \"doNotService\": \"<boolean>\",\n  \"customFields\": [\n    {\n      \"typeId\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"typeId\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "79b08790-608d-4043-b0a1-cefb9f02b879",
+              "name": "Updated customer",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"doNotMail\": \"<boolean>\",\n  \"doNotService\": \"<boolean>\",\n  \"customFields\": [\n    {\n      \"typeId\": 361,\n      \"name\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"typeId\": 7322,\n      \"name\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6467,\n  \"active\": false,\n  \"name\": \"string\",\n  \"type\": \"Commercial\",\n  \"address\": {\n    \"street\": \"string\",\n    \"unit\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"zip\": \"string\",\n    \"country\": \"string\",\n    \"latitude\": 6958.941545026159,\n    \"longitude\": 1238.2363911022276\n  },\n  \"customFields\": [\n    {\n      \"typeId\": 1635,\n      \"name\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"typeId\": 4455,\n      \"name\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"balance\": 622.3960293148989,\n  \"doNotMail\": false,\n  \"doNotService\": false,\n  \"createdOn\": \"1953-10-31T00:50:50.765Z\",\n  \"modifiedOn\": \"1999-04-06T18:14:31.249Z\",\n  \"contacts\": [\n    {\n      \"id\": 8432,\n      \"type\": \"MobilePhone\",\n      \"value\": \"string\",\n      \"memo\": \"string\",\n      \"modifiedOn\": \"2017-04-10T02:21:21.920Z\"\n    },\n    {\n      \"id\": 8783,\n      \"type\": \"Phone\",\n      \"value\": \"string\",\n      \"memo\": \"string\",\n      \"modifiedOn\": \"2000-08-26T11:56:30.756Z\"\n    }\n  ],\n  \"hasActiveMembership\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "0000000",
+      "key": "tenant"
+    },
+    {
+      "type": "string",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a5c4a361-0f31-425e-9956-4a5b77511433",
+    "name": "ServiceTitan Accounting Adjustments Customers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+      "type": "text/plain"
+    }
+  }
+}

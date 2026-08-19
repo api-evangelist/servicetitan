@@ -1,0 +1,529 @@
+{
+  "item": [
+    {
+      "id": "8859dde1-883f-4e08-8873-96ca2346ecbd",
+      "name": "Materials",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c28f0ddb-87d1-4144-bde2-86ec258aae25",
+          "name": "List Materials",
+          "request": {
+            "name": "List Materials",
+            "description": {},
+            "url": {
+              "path": [
+                "materials"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c981ac8b-7d2b-4469-94c2-2b566b681802",
+              "name": "Paginated materials",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "materials"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"page\": 9832,\n  \"pageSize\": 2613,\n  \"hasMore\": true,\n  \"data\": [\n    {\n      \"id\": 4914,\n      \"code\": \"string\",\n      \"displayName\": \"string\",\n      \"description\": \"string\",\n      \"cost\": 362.8365523859611,\n      \"price\": 9664.592504373006,\n      \"memberPrice\": 2589.9358477249925,\n      \"addOnPrice\": 473.5359969738695,\n      \"addOnMemberPrice\": 8330.415808318163,\n      \"active\": false,\n      \"taxable\": false,\n      \"account\": \"string\",\n      \"categories\": [\n        5634,\n        4887\n      ],\n      \"vendorParts\": [\n        {\n          \"vendorId\": 7320,\n          \"vendorPartNumber\": \"string\",\n          \"cost\": 7281.285639561154\n        },\n        {\n          \"vendorId\": 4253,\n          \"vendorPartNumber\": \"string\",\n          \"cost\": 3111.0746761375653\n        }\n      ],\n      \"primaryVendor\": {\n        \"vendorId\": 5821,\n        \"vendorPartNumber\": \"string\"\n      },\n      \"modifiedOn\": \"1972-09-21T21:11:07.568Z\"\n    },\n    {\n      \"id\": 1610,\n      \"code\": \"string\",\n      \"displayName\": \"string\",\n      \"description\": \"string\",\n      \"cost\": 6762.8915103884665,\n      \"price\": 7362.047879726573,\n      \"memberPrice\": 8534.930409068413,\n      \"addOnPrice\": 7428.8555257864655,\n      \"addOnMemberPrice\": 3850.3936315624874,\n      \"active\": true,\n      \"taxable\": true,\n      \"account\": \"string\",\n      \"categories\": [\n        4115,\n        4415\n      ],\n      \"vendorParts\": [\n        {\n          \"vendorId\": 987,\n          \"vendorPartNumber\": \"string\",\n          \"cost\": 7569.313021399909\n        },\n        {\n          \"vendorId\": 3529,\n          \"vendorPartNumber\": \"string\",\n          \"cost\": 3702.5877275654852\n        }\n      ],\n      \"primaryVendor\": {\n        \"vendorId\": 6698,\n        \"vendorPartNumber\": \"string\"\n      },\n      \"modifiedOn\": \"1977-11-16T23:58:03.422Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bf94c8dd-a76a-4934-ac5e-d3022f0602bc",
+          "name": "Create Material",
+          "request": {
+            "name": "Create Material",
+            "description": {},
+            "url": {
+              "path": [
+                "materials"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"cost\": \"<number>\",\n  \"price\": \"<number>\",\n  \"description\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"taxable\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e27fa5ab-8c9b-464e-9267-5c4ce50aa39c",
+              "name": "Created material",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "materials"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"cost\": \"<number>\",\n  \"price\": \"<number>\",\n  \"description\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"taxable\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 4292,\n  \"code\": \"string\",\n  \"displayName\": \"string\",\n  \"description\": \"string\",\n  \"cost\": 329.8389432315341,\n  \"price\": 1807.6107311817746,\n  \"memberPrice\": 742.1960896040247,\n  \"addOnPrice\": 2782.0797871242908,\n  \"addOnMemberPrice\": 5075.295247398994,\n  \"active\": true,\n  \"taxable\": false,\n  \"account\": \"string\",\n  \"categories\": [\n    3735,\n    1832\n  ],\n  \"vendorParts\": [\n    {\n      \"vendorId\": 5495,\n      \"vendorPartNumber\": \"string\",\n      \"cost\": 6047.6594063600805\n    },\n    {\n      \"vendorId\": 8855,\n      \"vendorPartNumber\": \"string\",\n      \"cost\": 496.82681328660385\n    }\n  ],\n  \"primaryVendor\": {\n    \"vendorId\": 7950,\n    \"vendorPartNumber\": \"string\"\n  },\n  \"modifiedOn\": \"1982-06-11T06:34:19.333Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "23773d3d-ef27-4d7f-8359-ebf74d318995",
+          "name": "Get Material",
+          "request": {
+            "name": "Get Material",
+            "description": {},
+            "url": {
+              "path": [
+                "materials",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "75706f72-ed08-46b4-88db-30cdb8f60f52",
+              "name": "Material",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "materials",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 4292,\n  \"code\": \"string\",\n  \"displayName\": \"string\",\n  \"description\": \"string\",\n  \"cost\": 329.8389432315341,\n  \"price\": 1807.6107311817746,\n  \"memberPrice\": 742.1960896040247,\n  \"addOnPrice\": 2782.0797871242908,\n  \"addOnMemberPrice\": 5075.295247398994,\n  \"active\": true,\n  \"taxable\": false,\n  \"account\": \"string\",\n  \"categories\": [\n    3735,\n    1832\n  ],\n  \"vendorParts\": [\n    {\n      \"vendorId\": 5495,\n      \"vendorPartNumber\": \"string\",\n      \"cost\": 6047.6594063600805\n    },\n    {\n      \"vendorId\": 8855,\n      \"vendorPartNumber\": \"string\",\n      \"cost\": 496.82681328660385\n    }\n  ],\n  \"primaryVendor\": {\n    \"vendorId\": 7950,\n    \"vendorPartNumber\": \"string\"\n  },\n  \"modifiedOn\": \"1982-06-11T06:34:19.333Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0ebe258a-e6f3-4da2-8a22-69a57ab18078",
+          "name": "Update Material",
+          "request": {
+            "name": "Update Material",
+            "description": {},
+            "url": {
+              "path": [
+                "materials",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<long>\",\n  \"code\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"cost\": \"<number>\",\n  \"price\": \"<number>\",\n  \"memberPrice\": \"<number>\",\n  \"addOnPrice\": \"<number>\",\n  \"addOnMemberPrice\": \"<number>\",\n  \"active\": \"<boolean>\",\n  \"taxable\": \"<boolean>\",\n  \"account\": \"<string>\",\n  \"categories\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"vendorParts\": [\n    {\n      \"vendorId\": \"<integer>\",\n      \"vendorPartNumber\": \"<string>\",\n      \"cost\": \"<number>\"\n    },\n    {\n      \"vendorId\": \"<integer>\",\n      \"vendorPartNumber\": \"<string>\",\n      \"cost\": \"<number>\"\n    }\n  ],\n  \"primaryVendor\": {\n    \"vendorId\": \"<integer>\",\n    \"vendorPartNumber\": \"<string>\"\n  },\n  \"modifiedOn\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5ddd6ed6-0d23-4c19-9523-d1486aa02c79",
+              "name": "Updated material",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "materials",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<long>\",\n  \"code\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"cost\": \"<number>\",\n  \"price\": \"<number>\",\n  \"memberPrice\": \"<number>\",\n  \"addOnPrice\": \"<number>\",\n  \"addOnMemberPrice\": \"<number>\",\n  \"active\": \"<boolean>\",\n  \"taxable\": \"<boolean>\",\n  \"account\": \"<string>\",\n  \"categories\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"vendorParts\": [\n    {\n      \"vendorId\": \"<integer>\",\n      \"vendorPartNumber\": \"<string>\",\n      \"cost\": \"<number>\"\n    },\n    {\n      \"vendorId\": \"<integer>\",\n      \"vendorPartNumber\": \"<string>\",\n      \"cost\": \"<number>\"\n    }\n  ],\n  \"primaryVendor\": {\n    \"vendorId\": \"<integer>\",\n    \"vendorPartNumber\": \"<string>\"\n  },\n  \"modifiedOn\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "0000000",
+      "key": "tenant"
+    },
+    {
+      "type": "string",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f3b3e7d8-886e-4554-b4fc-63a6dba5839f",
+    "name": "ServiceTitan Accounting Adjustments Materials API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+      "type": "text/plain"
+    }
+  }
+}

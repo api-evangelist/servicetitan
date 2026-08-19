@@ -1,0 +1,672 @@
+{
+  "item": [
+    {
+      "id": "77d5d196-109a-4272-a96a-61cb9cd4fcac",
+      "name": "Appointments",
+      "description": {
+        "content": "Job appointments and visits",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "40943d64-4e0c-4b01-a73e-789e29486968",
+          "name": "List Appointments",
+          "request": {
+            "name": "List Appointments",
+            "description": {},
+            "url": {
+              "path": [
+                "appointments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "50"
+                },
+                {
+                  "disabled": false,
+                  "key": "modifiedOnOrAfter",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "jobId",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "91e79d03-4e12-4621-a4f0-e73d64aba8b2",
+              "name": "Paginated list of appointments",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appointments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    },
+                    {
+                      "key": "modifiedOnOrAfter",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "jobId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 8308,\n      \"jobId\": 1785,\n      \"appointmentNumber\": \"string\",\n      \"start\": \"1950-06-14T12:16:45.199Z\",\n      \"end\": \"1978-07-13T15:21:00.645Z\",\n      \"arrivalWindowStart\": \"2008-11-24T23:16:28.309Z\",\n      \"arrivalWindowEnd\": \"2023-10-07T02:30:14.199Z\",\n      \"status\": \"Scheduled\",\n      \"specialInstructions\": \"string\",\n      \"createdOn\": \"1970-04-05T09:35:29.403Z\",\n      \"modifiedOn\": \"1993-12-19T00:12:23.208Z\",\n      \"customerId\": 5962,\n      \"unused\": false\n    },\n    {\n      \"id\": 8847,\n      \"jobId\": 1847,\n      \"appointmentNumber\": \"string\",\n      \"start\": \"1999-10-20T01:18:56.468Z\",\n      \"end\": \"1964-07-13T21:47:02.854Z\",\n      \"arrivalWindowStart\": \"2021-05-21T19:43:40.172Z\",\n      \"arrivalWindowEnd\": \"1990-09-16T17:51:49.232Z\",\n      \"status\": \"Canceled\",\n      \"specialInstructions\": \"string\",\n      \"createdOn\": \"1967-04-18T13:02:11.839Z\",\n      \"modifiedOn\": \"2022-02-09T08:23:17.747Z\",\n      \"customerId\": 9000,\n      \"unused\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e8f81bfc-f781-43f1-947c-6a4f1b645cf9",
+          "name": "Create Appointment",
+          "request": {
+            "name": "Create Appointment",
+            "description": {},
+            "url": {
+              "path": [
+                "appointments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"jobId\": \"<integer>\",\n  \"start\": \"<dateTime>\",\n  \"end\": \"<dateTime>\",\n  \"arrivalWindowStart\": \"<dateTime>\",\n  \"arrivalWindowEnd\": \"<dateTime>\",\n  \"technicianIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"specialInstructions\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ffee294c-58dc-4a7a-beb6-3aeefae4cc78",
+              "name": "Created appointment",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appointments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"jobId\": \"<integer>\",\n  \"start\": \"<dateTime>\",\n  \"end\": \"<dateTime>\",\n  \"arrivalWindowStart\": \"<dateTime>\",\n  \"arrivalWindowEnd\": \"<dateTime>\",\n  \"technicianIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"specialInstructions\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 37,\n  \"jobId\": 5897,\n  \"appointmentNumber\": \"string\",\n  \"start\": \"2025-02-17T11:16:04.346Z\",\n  \"end\": \"1955-12-05T03:27:17.056Z\",\n  \"arrivalWindowStart\": \"1983-03-09T22:34:17.426Z\",\n  \"arrivalWindowEnd\": \"1989-12-05T15:28:29.975Z\",\n  \"status\": \"Canceled\",\n  \"specialInstructions\": \"string\",\n  \"createdOn\": \"1973-10-01T20:40:56.980Z\",\n  \"modifiedOn\": \"1970-06-01T03:45:41.206Z\",\n  \"customerId\": 3429,\n  \"unused\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "414b3f8b-1a35-4f7f-941c-ce90fb710aa7",
+          "name": "Get Appointment",
+          "request": {
+            "name": "Get Appointment",
+            "description": {},
+            "url": {
+              "path": [
+                "appointments",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5d24e0dd-b893-422b-bf73-4bca65e27708",
+              "name": "Appointment record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appointments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 37,\n  \"jobId\": 5897,\n  \"appointmentNumber\": \"string\",\n  \"start\": \"2025-02-17T11:16:04.346Z\",\n  \"end\": \"1955-12-05T03:27:17.056Z\",\n  \"arrivalWindowStart\": \"1983-03-09T22:34:17.426Z\",\n  \"arrivalWindowEnd\": \"1989-12-05T15:28:29.975Z\",\n  \"status\": \"Canceled\",\n  \"specialInstructions\": \"string\",\n  \"createdOn\": \"1973-10-01T20:40:56.980Z\",\n  \"modifiedOn\": \"1970-06-01T03:45:41.206Z\",\n  \"customerId\": 3429,\n  \"unused\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "21afe357-5349-4d54-a9e2-d127a0fbf901",
+          "name": "Update Appointment",
+          "request": {
+            "name": "Update Appointment",
+            "description": {},
+            "url": {
+              "path": [
+                "appointments",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"specialInstructions\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "eaceb20f-7ad3-4286-a7eb-d72e4de6eb30",
+              "name": "Updated appointment",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appointments",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"specialInstructions\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 37,\n  \"jobId\": 5897,\n  \"appointmentNumber\": \"string\",\n  \"start\": \"2025-02-17T11:16:04.346Z\",\n  \"end\": \"1955-12-05T03:27:17.056Z\",\n  \"arrivalWindowStart\": \"1983-03-09T22:34:17.426Z\",\n  \"arrivalWindowEnd\": \"1989-12-05T15:28:29.975Z\",\n  \"status\": \"Canceled\",\n  \"specialInstructions\": \"string\",\n  \"createdOn\": \"1973-10-01T20:40:56.980Z\",\n  \"modifiedOn\": \"1970-06-01T03:45:41.206Z\",\n  \"customerId\": 3429,\n  \"unused\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "174a2210-2bb7-4b05-be40-73974a9a8532",
+          "name": "Reschedule Appointment",
+          "request": {
+            "name": "Reschedule Appointment",
+            "description": {},
+            "url": {
+              "path": [
+                "appointments",
+                ":id",
+                "reschedule"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{tenant}}",
+                  "key": "tenant"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"start\": \"<dateTime>\",\n  \"end\": \"<dateTime>\",\n  \"arrivalWindowStart\": \"<dateTime>\",\n  \"arrivalWindowEnd\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2c562021-3a6e-40ae-b219-50d61e3db06b",
+              "name": "Appointment rescheduled",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appointments",
+                    ":id",
+                    "reschedule"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{tenant}}",
+                      "key": "tenant"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"start\": \"<dateTime>\",\n  \"end\": \"<dateTime>\",\n  \"arrivalWindowStart\": \"<dateTime>\",\n  \"arrivalWindowEnd\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "0000000",
+      "key": "tenant"
+    },
+    {
+      "type": "string",
+      "value": "https://api.servicetitan.io/accounting/v2/{{tenant}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://auth.servicetitan.io/connect/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5f67cecb-8323-4819-a3ef-012f33220a52",
+    "name": "ServiceTitan Accounting Adjustments Appointments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,\npayment types, journal entries, journal entry details, tax zones, and GL accounts.\nTenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.\n\n\nContact Support:\n Name: ServiceTitan Developer Support\n Email: integrations@servicetitan.com",
+      "type": "text/plain"
+    }
+  }
+}
