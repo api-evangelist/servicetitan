@@ -39,6 +39,11 @@ apis:
   - Memberships
   - Recurring Services
   - Contracts
+  - Subscription
+  tags_raw:
+  - Memberships
+  - Recurring Services
+  - Contracts
   - Subscriptions
   humanURL: https://developer.servicetitan.io/api-details/
   baseURL: https://api.servicetitan.io/memberships/v2/{tenant}/
@@ -161,6 +166,10 @@ apis:
 - aid: servicetitan:servicetitan-task-management-api
   name: ServiceTitan Task Management API
   tags:
+  - Task
+  - Workflows
+  - Internal Tickets
+  tags_raw:
   - Tasks
   - Workflow
   - Internal Tickets
@@ -221,6 +230,10 @@ apis:
 - aid: servicetitan:servicetitan-webhooks-api
   name: ServiceTitan Webhooks API
   tags:
+  - Webhook
+  - Event
+  - Integration
+  tags_raw:
   - Webhooks
   - Events
   - Integration
@@ -848,6 +861,8 @@ apis:
   humanURL: https://developer.servicetitan.io/api-details/
   baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
   tags:
+  - Job
+  tags_raw:
   - Jobs
   properties:
   - type: OpenAPI
@@ -1040,6 +1055,8 @@ apis:
   humanURL: https://developer.servicetitan.io/api-details/
   baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
@@ -1516,6 +1533,20 @@ apis:
     url: json-schema/servicetitan-material-schema.json
 name: ServiceTitan
 tags:
+  - Field Service Management
+  - Trades
+  - HVAC
+  - Plumbing
+  - Electrical
+  - Construction
+  - CRM
+  - Dispatch
+  - Accounting
+  - Pricebook
+  - Marketing
+  - Memberships
+  - Webhook
+tags_raw:
   - Field Service Management
   - Trades
   - HVAC
