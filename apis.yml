@@ -1561,6 +1561,18 @@ tags_raw:
   - Memberships
   - Webhooks
 kind: contract
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
@@ -1577,6 +1589,9 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/servicetitan.png
 access: 3rd-Party
 common:
+  - type: CapabilityMap
+    url: capabilities/servicetitan-capability-edges.yml
+    name: ServiceTitan Business Capability Map
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/servicetitan/overview
   - type: AgenticAccess
