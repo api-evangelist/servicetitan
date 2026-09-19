@@ -36,7 +36,7 @@ apis:
 - aid: servicetitan:servicetitan-memberships-api
   name: ServiceTitan Memberships API
   tags:
-  - Memberships
+  - Membership
   - Recurring Services
   - Contracts
   - Subscription
@@ -381,6 +381,8 @@ apis:
   humanURL: https://developer.servicetitan.io/api-details/
   baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
   tags:
+  - Booking
+  tags_raw:
   - Bookings
   properties:
   - type: OpenAPI
@@ -959,6 +961,8 @@ apis:
   humanURL: https://developer.servicetitan.io/api-details/
   baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
   tags:
+  - Location
+  tags_raw:
   - Locations
   properties:
   - type: OpenAPI
@@ -1473,6 +1477,8 @@ apis:
   humanURL: https://developer.servicetitan.io/api-details/
   baseURL: https://api.servicetitan.io/crm/v2/{tenant}/
   tags:
+  - Warehouse
+  tags_raw:
   - Warehouses
   properties:
   - type: OpenAPI
@@ -1534,7 +1540,7 @@ apis:
 name: ServiceTitan
 tags:
   - Field Service Management
-  - Trades
+  - Trade
   - HVAC
   - Plumbing
   - Electrical
@@ -1544,7 +1550,7 @@ tags:
   - Accounting
   - Pricebook
   - Marketing
-  - Memberships
+  - Membership
   - Webhook
 tags_raw:
   - Field Service Management
