@@ -11,7 +11,7 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 10
+edge_count: 11
 edges:
 - tag: Customers
   spec_file: servicetitan-customers-api-openapi.yml
@@ -110,3 +110,13 @@ edges:
   evidence: POST /transfers createTransfer Create Inventory Transfer
   reason: The operation summary explicitly creates an inventory transfer, i.e. movement of stock between
     locations, which is inventory management. The single operation does not pin down a specific sub-capability.
+- tag: Employees
+  spec_file: servicetitan-employees-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.7
+  evidence: GET /employees listEmployees List Employees; schemas Employee, EmployeePagedResponse
+  reason: Exposes the employee roster/records of the contractor, which is HR operations employee-record
+    data; read-only so no broader HCM process is evidenced.
+  recovered_from: vertical-infrastructure-edges.json
