@@ -1,13 +1,11 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: ServiceTitan Accounting Adjustments Business Units API
-  description: 'The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,
+  title: ServiceTitan Settings Business Units API
+  description: 'The Settings API manages business units, employees, technicians, user roles, employee
 
-    payment types, journal entries, journal entry details, tax zones, and GL accounts.
+    permissions, tag types, and tenant-wide settings. The tenant configuration surface for
 
-    Tenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.
-
-    '
+    every other API in the platform. Tenant-scoped; OAuth 2.0 + App Key.'
   version: 2.0.0
   contact:
     name: ServiceTitan Developer Support
@@ -17,12 +15,12 @@ info:
     name: ServiceTitan Terms of Service
     url: https://www.servicetitan.com/legal/terms-of-service
 servers:
-- url: https://api.servicetitan.io/accounting/v2/{tenant}
+- url: https://api.servicetitan.io/settings/v2/{tenant}
   description: Production
   variables:
     tenant:
       default: '0000000'
-- url: https://api-integration.servicetitan.io/accounting/v2/{tenant}
+- url: https://api-integration.servicetitan.io/settings/v2/{tenant}
   description: Integration (Sandbox)
   variables:
     tenant:
@@ -66,14 +64,34 @@ paths:
               schema:
                 $ref: '#/components/schemas/BusinessUnit'
 components:
+  parameters:
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
   schemas:
-    BusinessUnitPagedResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/BusinessUnit'
     BusinessUnit:
       type: object
       properties:
@@ -107,33 +125,13 @@ components:
         modifiedOn:
           type: string
           format: date-time
-  parameters:
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-        format: int64
-    PageSize:
-      name: pageSize
-      in: query
-      schema:
-        type: integer
-        default: 50
-        maximum: 500
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
+    BusinessUnitPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/BusinessUnit'
   securitySchemes:
     OAuth2:
       type: oauth2

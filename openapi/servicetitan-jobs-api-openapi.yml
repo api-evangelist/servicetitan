@@ -1,13 +1,11 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: ServiceTitan Accounting Adjustments Jobs API
-  description: 'The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,
+  title: ServiceTitan Job Planning & Management Jobs API
+  description: 'The JPM API manages jobs, projects, appointments, job types, call reasons, job cancel
 
-    payment types, journal entries, journal entry details, tax zones, and GL accounts.
+    reasons, and job history. It is the operational core of ServiceTitan — every work order
 
-    Tenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.
-
-    '
+    and recurring service rolls through this surface. Tenant-scoped; OAuth 2.0 + App Key.'
   version: 2.0.0
   contact:
     name: ServiceTitan Developer Support
@@ -17,12 +15,12 @@ info:
     name: ServiceTitan Terms of Service
     url: https://www.servicetitan.com/legal/terms-of-service
 servers:
-- url: https://api.servicetitan.io/accounting/v2/{tenant}
+- url: https://api.servicetitan.io/jpm/v2/{tenant}
   description: Production
   variables:
     tenant:
       default: '0000000'
-- url: https://api-integration.servicetitan.io/accounting/v2/{tenant}
+- url: https://api-integration.servicetitan.io/jpm/v2/{tenant}
   description: Integration (Sandbox)
   variables:
     tenant:
@@ -191,6 +189,104 @@ paths:
                           type: boolean
 components:
   schemas:
+    JobHistory:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              eventType:
+                type: string
+              date:
+                type: string
+                format: date-time
+              employeeId:
+                type: integer
+                nullable: true
+              usedSchedulingTool:
+                type: string
+                nullable: true
+              usedSchedulingToolVersion:
+                type: string
+                nullable: true
+    JobCreateRequest:
+      type: object
+      required:
+      - customerId
+      - locationId
+      - businessUnitId
+      - jobTypeId
+      - priority
+      - campaignId
+      - appointments
+      properties:
+        customerId:
+          type: integer
+        locationId:
+          type: integer
+        businessUnitId:
+          type: integer
+        jobTypeId:
+          type: integer
+        priority:
+          type: string
+        campaignId:
+          type: integer
+        appointments:
+          type: array
+          items:
+            type: object
+            properties:
+              start:
+                type: string
+                format: date-time
+              end:
+                type: string
+                format: date-time
+              arrivalWindowStart:
+                type: string
+                format: date-time
+              arrivalWindowEnd:
+                type: string
+                format: date-time
+              technicianIds:
+                type: array
+                items:
+                  type: integer
+        summary:
+          type: string
+        shouldUpdateInvoiceItems:
+          type: boolean
+    JobUpdateRequest:
+      type: object
+      properties:
+        summary:
+          type: string
+        priority:
+          type: string
+        businessUnitId:
+          type: integer
+        jobTypeId:
+          type: integer
+        campaignId:
+          type: integer
+    JobPagedResponse:
+      type: object
+      properties:
+        page:
+          type: integer
+        pageSize:
+          type: integer
+        hasMore:
+          type: boolean
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Job'
     Job:
       type: object
       properties:
@@ -266,118 +362,7 @@ components:
         modifiedOn:
           type: string
           format: date-time
-    JobCreateRequest:
-      type: object
-      required:
-      - customerId
-      - locationId
-      - businessUnitId
-      - jobTypeId
-      - priority
-      - campaignId
-      - appointments
-      properties:
-        customerId:
-          type: integer
-        locationId:
-          type: integer
-        businessUnitId:
-          type: integer
-        jobTypeId:
-          type: integer
-        priority:
-          type: string
-        campaignId:
-          type: integer
-        appointments:
-          type: array
-          items:
-            type: object
-            properties:
-              start:
-                type: string
-                format: date-time
-              end:
-                type: string
-                format: date-time
-              arrivalWindowStart:
-                type: string
-                format: date-time
-              arrivalWindowEnd:
-                type: string
-                format: date-time
-              technicianIds:
-                type: array
-                items:
-                  type: integer
-        summary:
-          type: string
-        shouldUpdateInvoiceItems:
-          type: boolean
-    JobHistory:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: integer
-              eventType:
-                type: string
-              date:
-                type: string
-                format: date-time
-              employeeId:
-                type: integer
-                nullable: true
-              usedSchedulingTool:
-                type: string
-                nullable: true
-              usedSchedulingToolVersion:
-                type: string
-                nullable: true
-    JobPagedResponse:
-      type: object
-      properties:
-        page:
-          type: integer
-        pageSize:
-          type: integer
-        hasMore:
-          type: boolean
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Job'
-    JobUpdateRequest:
-      type: object
-      properties:
-        summary:
-          type: string
-        priority:
-          type: string
-        businessUnitId:
-          type: integer
-        jobTypeId:
-          type: integer
-        campaignId:
-          type: integer
   parameters:
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-        format: int64
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
     PageSize:
       name: pageSize
       in: query
@@ -403,6 +388,19 @@ components:
         - Hold
         - Completed
         - Canceled
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
   securitySchemes:
     OAuth2:
       type: oauth2

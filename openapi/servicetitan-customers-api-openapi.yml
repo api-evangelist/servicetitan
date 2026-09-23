@@ -1,13 +1,13 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: ServiceTitan Accounting Adjustments Customers API
-  description: 'The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,
+  title: ServiceTitan CRM Customers API
+  description: 'The CRM API provides access to ServiceTitan customer-of-record data — residential and
 
-    payment types, journal entries, journal entry details, tax zones, and GL accounts.
+    commercial customers, locations, contacts, leads, bookings, tags, and booking provider
 
-    Tenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.
+    sessions. All paths are tenant-scoped and require an OAuth 2.0 access token plus the
 
-    '
+    ST-App-Key header.'
   version: 2.0.0
   contact:
     name: ServiceTitan Developer Support
@@ -17,16 +17,18 @@ info:
     name: ServiceTitan Terms of Service
     url: https://www.servicetitan.com/legal/terms-of-service
 servers:
-- url: https://api.servicetitan.io/accounting/v2/{tenant}
+- url: https://api.servicetitan.io/crm/v2/{tenant}
   description: Production
   variables:
     tenant:
       default: '0000000'
-- url: https://api-integration.servicetitan.io/accounting/v2/{tenant}
+      description: Tenant ID assigned by ServiceTitan
+- url: https://api-integration.servicetitan.io/crm/v2/{tenant}
   description: Integration (Sandbox)
   variables:
     tenant:
       default: '0000000'
+      description: Tenant ID assigned by ServiceTitan
 security:
 - OAuth2: []
   AppKey: []
@@ -113,36 +115,18 @@ paths:
                 $ref: '#/components/schemas/Customer'
 components:
   parameters:
-    CreatedBefore:
-      name: createdBefore
-      in: query
-      schema:
-        type: string
-        format: date-time
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-        format: int64
-    ModifiedBefore:
-      name: modifiedBefore
-      in: query
-      schema:
-        type: string
-        format: date-time
     Ids:
       name: ids
       in: query
       schema:
         type: string
       description: Comma-separated list of IDs
-    IncludeTotal:
-      name: includeTotal
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
       in: query
       schema:
-        type: boolean
+        type: string
+        format: date-time
     PageSize:
       name: pageSize
       in: query
@@ -150,6 +134,12 @@ components:
         type: integer
         default: 50
         maximum: 500
+    CreatedBefore:
+      name: createdBefore
+      in: query
+      schema:
+        type: string
+        format: date-time
     Page:
       name: page
       in: query
@@ -163,13 +153,46 @@ components:
       schema:
         type: string
         format: date-time
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
+    IncludeTotal:
+      name: includeTotal
+      in: query
+      schema:
+        type: boolean
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+    ModifiedBefore:
+      name: modifiedBefore
       in: query
       schema:
         type: string
         format: date-time
   schemas:
+    Contact:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        type:
+          type: string
+          enum:
+          - Phone
+          - MobilePhone
+          - Email
+          - Fax
+        value:
+          type: string
+        memo:
+          type: string
+          nullable: true
+        modifiedOn:
+          type: string
+          format: date-time
     Address:
       type: object
       properties:
@@ -192,6 +215,33 @@ components:
         longitude:
           type: number
           nullable: true
+    ContactCreateRequest:
+      type: object
+      required:
+      - type
+      - value
+      properties:
+        type:
+          type: string
+        value:
+          type: string
+        memo:
+          type: string
+    CustomerUpdateRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        doNotMail:
+          type: boolean
+        doNotService:
+          type: boolean
+        customFields:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomField'
     CustomerPagedResponse:
       type: object
       properties:
@@ -208,47 +258,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Customer'
-    LocationCreateRequest:
-      type: object
-      required:
-      - address
-      properties:
-        name:
-          type: string
-        address:
-          $ref: '#/components/schemas/Address'
-        zoneId:
-          type: integer
-    CustomerCreateRequest:
-      type: object
-      required:
-      - name
-      - type
-      - locations
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-          enum:
-          - Residential
-          - Commercial
-        doNotMail:
-          type: boolean
-        doNotService:
-          type: boolean
-        locations:
-          type: array
-          items:
-            $ref: '#/components/schemas/LocationCreateRequest'
-        contacts:
-          type: array
-          items:
-            $ref: '#/components/schemas/ContactCreateRequest'
-        customFields:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomField'
     Customer:
       type: object
       properties:
@@ -293,50 +302,43 @@ components:
             $ref: '#/components/schemas/Contact'
         hasActiveMembership:
           type: boolean
-    ContactCreateRequest:
+    LocationCreateRequest:
       type: object
       required:
-      - type
-      - value
+      - address
       properties:
-        type:
+        name:
           type: string
-        value:
-          type: string
-        memo:
-          type: string
-    Contact:
-      type: object
-      properties:
-        id:
+        address:
+          $ref: '#/components/schemas/Address'
+        zoneId:
           type: integer
-          format: int64
-        type:
-          type: string
-          enum:
-          - Phone
-          - MobilePhone
-          - Email
-          - Fax
-        value:
-          type: string
-        memo:
-          type: string
-          nullable: true
-        modifiedOn:
-          type: string
-          format: date-time
-    CustomerUpdateRequest:
+    CustomerCreateRequest:
       type: object
+      required:
+      - name
+      - type
+      - locations
       properties:
         name:
           type: string
         type:
           type: string
+          enum:
+          - Residential
+          - Commercial
         doNotMail:
           type: boolean
         doNotService:
           type: boolean
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/LocationCreateRequest'
+        contacts:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactCreateRequest'
         customFields:
           type: array
           items:

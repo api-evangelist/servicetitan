@@ -1,13 +1,11 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: ServiceTitan Accounting Adjustments Materials API
-  description: 'The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,
+  title: ServiceTitan Pricebook Materials API
+  description: 'The Pricebook API provides CRUD over the technician-facing flat-rate pricebook — categories,
 
-    payment types, journal entries, journal entry details, tax zones, and GL accounts.
+    services, materials, equipment, discounts and fees, images, and bulk operations. Tenant-scoped;
 
-    Tenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.
-
-    '
+    OAuth 2.0 + App Key.'
   version: 2.0.0
   contact:
     name: ServiceTitan Developer Support
@@ -17,12 +15,12 @@ info:
     name: ServiceTitan Terms of Service
     url: https://www.servicetitan.com/legal/terms-of-service
 servers:
-- url: https://api.servicetitan.io/accounting/v2/{tenant}
+- url: https://api.servicetitan.io/pricebook/v2/{tenant}
   description: Production
   variables:
     tenant:
       default: '0000000'
-- url: https://api-integration.servicetitan.io/accounting/v2/{tenant}
+- url: https://api-integration.servicetitan.io/pricebook/v2/{tenant}
   description: Integration (Sandbox)
   variables:
     tenant:
@@ -101,6 +99,19 @@ paths:
           description: Updated material
 components:
   schemas:
+    MaterialPagedResponse:
+      type: object
+      properties:
+        page:
+          type: integer
+        pageSize:
+          type: integer
+        hasMore:
+          type: boolean
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Material'
     MaterialCreateRequest:
       type: object
       required:
@@ -180,27 +191,7 @@ components:
         modifiedOn:
           type: string
           format: date-time
-    MaterialPagedResponse:
-      type: object
-      properties:
-        page:
-          type: integer
-        pageSize:
-          type: integer
-        hasMore:
-          type: boolean
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Material'
   parameters:
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-        format: int64
     PageSize:
       name: pageSize
       in: query
@@ -214,6 +205,13 @@ components:
       schema:
         type: integer
         default: 1
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
     ModifiedOnOrAfter:
       name: modifiedOnOrAfter
       in: query

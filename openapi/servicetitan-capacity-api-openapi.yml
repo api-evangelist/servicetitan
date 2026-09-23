@@ -1,13 +1,11 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: ServiceTitan Accounting Adjustments Capacity API
-  description: 'The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,
+  title: ServiceTitan Dispatch Capacity API
+  description: 'The Dispatch API manages technician shifts, appointment assignments, capacity windows,
 
-    payment types, journal entries, journal entry details, tax zones, and GL accounts.
+    business hours, zones, arrival windows, and gps pings. Drives the dispatch board.
 
-    Tenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.
-
-    '
+    Tenant-scoped; OAuth 2.0 + App Key.'
   version: 2.0.0
   contact:
     name: ServiceTitan Developer Support
@@ -17,12 +15,12 @@ info:
     name: ServiceTitan Terms of Service
     url: https://www.servicetitan.com/legal/terms-of-service
 servers:
-- url: https://api.servicetitan.io/accounting/v2/{tenant}
+- url: https://api.servicetitan.io/dispatch/v2/{tenant}
   description: Production
   variables:
     tenant:
       default: '0000000'
-- url: https://api-integration.servicetitan.io/accounting/v2/{tenant}
+- url: https://api-integration.servicetitan.io/dispatch/v2/{tenant}
   description: Integration (Sandbox)
   variables:
     tenant:

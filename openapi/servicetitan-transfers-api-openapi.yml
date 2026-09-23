@@ -1,13 +1,13 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: ServiceTitan Accounting Adjustments Transfers API
-  description: 'The Accounting API manages invoices, invoice items, AP credits, payments, payment terms,
+  title: ServiceTitan Inventory Transfers API
+  description: 'The Inventory API manages purchase orders, types, transfers, returns, adjustments, receipts,
 
-    payment types, journal entries, journal entry details, tax zones, and GL accounts.
+    warehouses, trucks, vendors, and inventory bills. Backed by the open-source
 
-    Tenant-scoped; OAuth 2.0 + App Key. Integrates with QuickBooks, Sage Intacct, and Acumatica.
+    request-middleware-templates Liquid framework for supply-chain partner integrations.
 
-    '
+    Tenant-scoped; OAuth 2.0 + App Key.'
   version: 2.0.0
   contact:
     name: ServiceTitan Developer Support
@@ -17,12 +17,12 @@ info:
     name: ServiceTitan Terms of Service
     url: https://www.servicetitan.com/legal/terms-of-service
 servers:
-- url: https://api.servicetitan.io/accounting/v2/{tenant}
+- url: https://api.servicetitan.io/inventory/v2/{tenant}
   description: Production
   variables:
     tenant:
       default: '0000000'
-- url: https://api-integration.servicetitan.io/accounting/v2/{tenant}
+- url: https://api-integration.servicetitan.io/inventory/v2/{tenant}
   description: Integration (Sandbox)
   variables:
     tenant:
