@@ -108,35 +108,41 @@ paths:
               schema:
                 $ref: '#/components/schemas/Location'
 components:
+  parameters:
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+        minimum: 1
+    CustomerId:
+      name: customerId
+      in: query
+      schema:
+        type: integer
+        format: int64
   schemas:
-    Location:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        customerId:
-          type: integer
-          format: int64
-        active:
-          type: boolean
-        name:
-          type: string
-        address:
-          $ref: '#/components/schemas/Address'
-        zoneId:
-          type: integer
-          format: int64
-        taxZoneId:
-          type: integer
-          format: int64
-          nullable: true
-        createdOn:
-          type: string
-          format: date-time
-        modifiedOn:
-          type: string
-          format: date-time
     Address:
       type: object
       properties:
@@ -172,15 +178,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Location'
-    LocationUpdateRequest:
-      type: object
-      properties:
-        name:
-          type: string
-        address:
-          $ref: '#/components/schemas/Address'
-        zoneId:
-          type: integer
     LocationCreateRequest:
       type: object
       required:
@@ -192,40 +189,43 @@ components:
           $ref: '#/components/schemas/Address'
         zoneId:
           type: integer
-  parameters:
-    PageSize:
-      name: pageSize
-      in: query
-      schema:
-        type: integer
-        default: 50
-        maximum: 500
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-        minimum: 1
-    CustomerId:
-      name: customerId
-      in: query
-      schema:
-        type: integer
-        format: int64
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-        format: int64
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
+    LocationUpdateRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        address:
+          $ref: '#/components/schemas/Address'
+        zoneId:
+          type: integer
+    Location:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        customerId:
+          type: integer
+          format: int64
+        active:
+          type: boolean
+        name:
+          type: string
+        address:
+          $ref: '#/components/schemas/Address'
+        zoneId:
+          type: integer
+          format: int64
+        taxZoneId:
+          type: integer
+          format: int64
+          nullable: true
+        createdOn:
+          type: string
+          format: date-time
+        modifiedOn:
+          type: string
+          format: date-time
   securitySchemes:
     OAuth2:
       type: oauth2

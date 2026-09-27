@@ -213,6 +213,11 @@ components:
           type: integer
         unused:
           type: boolean
+    AppointmentUpdateRequest:
+      type: object
+      properties:
+        specialInstructions:
+          type: string
     AppointmentPagedResponse:
       type: object
       properties:
@@ -220,12 +225,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Appointment'
-    AppointmentUpdateRequest:
-      type: object
-      properties:
-        specialInstructions:
-          type: string
   parameters:
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
     PageSize:
       name: pageSize
       in: query
@@ -233,12 +239,6 @@ components:
         type: integer
         default: 50
         maximum: 500
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
     Id:
       name: id
       in: path
@@ -246,12 +246,12 @@ components:
       schema:
         type: integer
         format: int64
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
+    Page:
+      name: page
       in: query
       schema:
-        type: string
-        format: date-time
+        type: integer
+        default: 1
   securitySchemes:
     OAuth2:
       type: oauth2

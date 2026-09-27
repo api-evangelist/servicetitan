@@ -146,6 +146,12 @@ components:
           type: string
           format: date-time
   parameters:
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
     PageSize:
       name: pageSize
       in: query
@@ -159,12 +165,6 @@ components:
       schema:
         type: integer
         default: 1
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
   securitySchemes:
     OAuth2:
       type: oauth2

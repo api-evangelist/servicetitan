@@ -105,6 +105,12 @@ paths:
           description: Updated
 components:
   parameters:
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
     PageSize:
       name: pageSize
       in: query
@@ -112,12 +118,6 @@ components:
         type: integer
         default: 50
         maximum: 500
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
     Id:
       name: id
       in: path
@@ -125,13 +125,26 @@ components:
       schema:
         type: integer
         format: int64
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
+    Page:
+      name: page
       in: query
       schema:
-        type: string
-        format: date-time
+        type: integer
+        default: 1
   schemas:
+    InstalledEquipmentPagedResponse:
+      type: object
+      properties:
+        page:
+          type: integer
+        pageSize:
+          type: integer
+        hasMore:
+          type: boolean
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/InstalledEquipment'
     InstalledEquipmentCreateRequest:
       type: object
       required:
@@ -241,19 +254,6 @@ components:
         modifiedOn:
           type: string
           format: date-time
-    InstalledEquipmentPagedResponse:
-      type: object
-      properties:
-        page:
-          type: integer
-        pageSize:
-          type: integer
-        hasMore:
-          type: boolean
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/InstalledEquipment'
   securitySchemes:
     OAuth2:
       type: oauth2

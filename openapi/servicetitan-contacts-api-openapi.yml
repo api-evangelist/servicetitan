@@ -73,6 +73,18 @@ paths:
                 $ref: '#/components/schemas/Contact'
 components:
   schemas:
+    ContactCreateRequest:
+      type: object
+      required:
+      - type
+      - value
+      properties:
+        type:
+          type: string
+        value:
+          type: string
+        memo:
+          type: string
     Contact:
       type: object
       properties:
@@ -101,18 +113,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Contact'
-    ContactCreateRequest:
-      type: object
-      required:
-      - type
-      - value
-      properties:
-        type:
-          type: string
-        value:
-          type: string
-        memo:
-          type: string
   parameters:
     Id:
       name: id

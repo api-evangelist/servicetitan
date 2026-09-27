@@ -84,7 +84,68 @@ paths:
         '200':
           description: Lead dismissed
 components:
+  parameters:
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
+    Status:
+      name: status
+      in: query
+      schema:
+        type: string
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+        minimum: 1
   schemas:
+    LeadPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Lead'
+    LeadCreateRequest:
+      type: object
+      required:
+      - summary
+      properties:
+        customerId:
+          type: integer
+          nullable: true
+        locationId:
+          type: integer
+          nullable: true
+        businessUnitId:
+          type: integer
+        jobTypeId:
+          type: integer
+        summary:
+          type: string
+        priority:
+          type: string
+        campaignId:
+          type: integer
     Lead:
       type: object
       properties:
@@ -133,67 +194,6 @@ components:
         modifiedOn:
           type: string
           format: date-time
-    LeadCreateRequest:
-      type: object
-      required:
-      - summary
-      properties:
-        customerId:
-          type: integer
-          nullable: true
-        locationId:
-          type: integer
-          nullable: true
-        businessUnitId:
-          type: integer
-        jobTypeId:
-          type: integer
-        summary:
-          type: string
-        priority:
-          type: string
-        campaignId:
-          type: integer
-    LeadPagedResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Lead'
-  parameters:
-    Status:
-      name: status
-      in: query
-      schema:
-        type: string
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-        minimum: 1
-    PageSize:
-      name: pageSize
-      in: query
-      schema:
-        type: integer
-        default: 50
-        maximum: 500
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-        format: int64
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
   securitySchemes:
     OAuth2:
       type: oauth2

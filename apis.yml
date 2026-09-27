@@ -184,6 +184,11 @@ apis:
 - aid: servicetitan:servicetitan-telecom-api
   name: ServiceTitan Telecom API
   tags:
+  - Telecommunications
+  - Calls
+  - Voice
+  - Contact Center
+  tags_raw:
   - Telecom
   - Calls
   - Voice
@@ -1552,6 +1557,7 @@ tags:
   - Marketing
   - Membership
   - Webhook
+  - Scheduling
 tags_raw:
   - Field Service Management
   - Trades
@@ -1566,6 +1572,7 @@ tags_raw:
   - Marketing
   - Memberships
   - Webhooks
+  - Scheduling
 kind: contract
 deliveryModel:
   model: saas

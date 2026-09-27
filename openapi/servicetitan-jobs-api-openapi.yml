@@ -188,31 +188,46 @@ paths:
                         active:
                           type: boolean
 components:
+  parameters:
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
+    JobStatus:
+      name: jobStatus
+      in: query
+      schema:
+        type: string
+        enum:
+        - Scheduled
+        - Dispatched
+        - InProgress
+        - Hold
+        - Completed
+        - Canceled
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
   schemas:
-    JobHistory:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: integer
-              eventType:
-                type: string
-              date:
-                type: string
-                format: date-time
-              employeeId:
-                type: integer
-                nullable: true
-              usedSchedulingTool:
-                type: string
-                nullable: true
-              usedSchedulingToolVersion:
-                type: string
-                nullable: true
     JobCreateRequest:
       type: object
       required:
@@ -274,19 +289,6 @@ components:
           type: integer
         campaignId:
           type: integer
-    JobPagedResponse:
-      type: object
-      properties:
-        page:
-          type: integer
-        pageSize:
-          type: integer
-        hasMore:
-          type: boolean
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Job'
     Job:
       type: object
       properties:
@@ -362,45 +364,43 @@ components:
         modifiedOn:
           type: string
           format: date-time
-  parameters:
-    PageSize:
-      name: pageSize
-      in: query
-      schema:
-        type: integer
-        default: 50
-        maximum: 500
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-    JobStatus:
-      name: jobStatus
-      in: query
-      schema:
-        type: string
-        enum:
-        - Scheduled
-        - Dispatched
-        - InProgress
-        - Hold
-        - Completed
-        - Canceled
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-        format: int64
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
+    JobPagedResponse:
+      type: object
+      properties:
+        page:
+          type: integer
+        pageSize:
+          type: integer
+        hasMore:
+          type: boolean
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Job'
+    JobHistory:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              eventType:
+                type: string
+              date:
+                type: string
+                format: date-time
+              employeeId:
+                type: integer
+                nullable: true
+              usedSchedulingTool:
+                type: string
+                nullable: true
+              usedSchedulingToolVersion:
+                type: string
+                nullable: true
   securitySchemes:
     OAuth2:
       type: oauth2
