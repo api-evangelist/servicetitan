@@ -104,74 +104,7 @@ paths:
         '200':
           description: Updated
 components:
-  parameters:
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
-    PageSize:
-      name: pageSize
-      in: query
-      schema:
-        type: integer
-        default: 50
-        maximum: 500
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-        format: int64
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
   schemas:
-    InstalledEquipmentPagedResponse:
-      type: object
-      properties:
-        page:
-          type: integer
-        pageSize:
-          type: integer
-        hasMore:
-          type: boolean
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/InstalledEquipment'
-    InstalledEquipmentCreateRequest:
-      type: object
-      required:
-      - locationId
-      - name
-      properties:
-        locationId:
-          type: integer
-        name:
-          type: string
-        installedOn:
-          type: string
-          format: date-time
-        serialNumber:
-          type: string
-        manufacturer:
-          type: string
-        model:
-          type: string
-        cost:
-          type: number
-        memo:
-          type: string
-        customFields:
-          type: array
-          items:
-            type: object
     InstalledEquipment:
       type: object
       properties:
@@ -254,6 +187,73 @@ components:
         modifiedOn:
           type: string
           format: date-time
+    InstalledEquipmentCreateRequest:
+      type: object
+      required:
+      - locationId
+      - name
+      properties:
+        locationId:
+          type: integer
+        name:
+          type: string
+        installedOn:
+          type: string
+          format: date-time
+        serialNumber:
+          type: string
+        manufacturer:
+          type: string
+        model:
+          type: string
+        cost:
+          type: number
+        memo:
+          type: string
+        customFields:
+          type: array
+          items:
+            type: object
+    InstalledEquipmentPagedResponse:
+      type: object
+      properties:
+        page:
+          type: integer
+        pageSize:
+          type: integer
+        hasMore:
+          type: boolean
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/InstalledEquipment'
+  parameters:
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
   securitySchemes:
     OAuth2:
       type: oauth2

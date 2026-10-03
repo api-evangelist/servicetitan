@@ -115,14 +115,37 @@ paths:
                 $ref: '#/components/schemas/Customer'
 components:
   parameters:
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
+    IncludeTotal:
+      name: includeTotal
+      in: query
+      schema:
+        type: boolean
+    CreatedOnOrAfter:
+      name: createdOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
+    ModifiedBefore:
+      name: modifiedBefore
       in: query
       schema:
         type: string
         format: date-time
     CreatedBefore:
       name: createdBefore
+      in: query
+      schema:
+        type: string
+        format: date-time
+    Ids:
+      name: ids
+      in: query
+      schema:
+        type: string
+      description: Comma-separated list of IDs
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
       in: query
       schema:
         type: string
@@ -134,25 +157,6 @@ components:
         type: integer
         default: 50
         maximum: 500
-    CreatedOnOrAfter:
-      name: createdOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-        format: int64
-    ModifiedBefore:
-      name: modifiedBefore
-      in: query
-      schema:
-        type: string
-        format: date-time
     Page:
       name: page
       in: query
@@ -160,78 +164,14 @@ components:
         type: integer
         default: 1
         minimum: 1
-    IncludeTotal:
-      name: includeTotal
-      in: query
+    Id:
+      name: id
+      in: path
+      required: true
       schema:
-        type: boolean
-    Ids:
-      name: ids
-      in: query
-      schema:
-        type: string
-      description: Comma-separated list of IDs
+        type: integer
+        format: int64
   schemas:
-    Address:
-      type: object
-      properties:
-        street:
-          type: string
-        unit:
-          type: string
-          nullable: true
-        city:
-          type: string
-        state:
-          type: string
-        zip:
-          type: string
-        country:
-          type: string
-        latitude:
-          type: number
-          nullable: true
-        longitude:
-          type: number
-          nullable: true
-    LocationCreateRequest:
-      type: object
-      required:
-      - address
-      properties:
-        name:
-          type: string
-        address:
-          $ref: '#/components/schemas/Address'
-        zoneId:
-          type: integer
-    ContactCreateRequest:
-      type: object
-      required:
-      - type
-      - value
-      properties:
-        type:
-          type: string
-        value:
-          type: string
-        memo:
-          type: string
-    CustomerUpdateRequest:
-      type: object
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        doNotMail:
-          type: boolean
-        doNotService:
-          type: boolean
-        customFields:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomField'
     Contact:
       type: object
       properties:
@@ -262,6 +202,32 @@ components:
           type: string
         value:
           type: string
+    CustomerUpdateRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        doNotMail:
+          type: boolean
+        doNotService:
+          type: boolean
+        customFields:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomField'
+    LocationCreateRequest:
+      type: object
+      required:
+      - address
+      properties:
+        name:
+          type: string
+        address:
+          $ref: '#/components/schemas/Address'
+        zoneId:
+          type: integer
     CustomerCreateRequest:
       type: object
       required:
@@ -292,22 +258,18 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CustomField'
-    CustomerPagedResponse:
+    ContactCreateRequest:
       type: object
+      required:
+      - type
+      - value
       properties:
-        page:
-          type: integer
-        pageSize:
-          type: integer
-        hasMore:
-          type: boolean
-        totalCount:
-          type: integer
-          nullable: true
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Customer'
+        type:
+          type: string
+        value:
+          type: string
+        memo:
+          type: string
     Customer:
       type: object
       properties:
@@ -352,6 +314,44 @@ components:
             $ref: '#/components/schemas/Contact'
         hasActiveMembership:
           type: boolean
+    Address:
+      type: object
+      properties:
+        street:
+          type: string
+        unit:
+          type: string
+          nullable: true
+        city:
+          type: string
+        state:
+          type: string
+        zip:
+          type: string
+        country:
+          type: string
+        latitude:
+          type: number
+          nullable: true
+        longitude:
+          type: number
+          nullable: true
+    CustomerPagedResponse:
+      type: object
+      properties:
+        page:
+          type: integer
+        pageSize:
+          type: integer
+        hasMore:
+          type: boolean
+        totalCount:
+          type: integer
+          nullable: true
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Customer'
   securitySchemes:
     OAuth2:
       type: oauth2

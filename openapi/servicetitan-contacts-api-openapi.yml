@@ -73,6 +73,13 @@ paths:
                 $ref: '#/components/schemas/Contact'
 components:
   schemas:
+    ContactPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Contact'
     ContactCreateRequest:
       type: object
       required:
@@ -106,13 +113,6 @@ components:
         modifiedOn:
           type: string
           format: date-time
-    ContactPagedResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Contact'
   parameters:
     Id:
       name: id

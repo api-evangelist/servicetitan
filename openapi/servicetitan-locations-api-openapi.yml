@@ -109,6 +109,12 @@ paths:
                 $ref: '#/components/schemas/Location'
 components:
   parameters:
+    CustomerId:
+      name: customerId
+      in: query
+      schema:
+        type: integer
+        format: int64
     ModifiedOnOrAfter:
       name: modifiedOnOrAfter
       in: query
@@ -122,13 +128,6 @@ components:
         type: integer
         default: 50
         maximum: 500
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-        format: int64
     Page:
       name: page
       in: query
@@ -136,35 +135,23 @@ components:
         type: integer
         default: 1
         minimum: 1
-    CustomerId:
-      name: customerId
-      in: query
+    Id:
+      name: id
+      in: path
+      required: true
       schema:
         type: integer
         format: int64
   schemas:
-    Address:
+    LocationUpdateRequest:
       type: object
       properties:
-        street:
+        name:
           type: string
-        unit:
-          type: string
-          nullable: true
-        city:
-          type: string
-        state:
-          type: string
-        zip:
-          type: string
-        country:
-          type: string
-        latitude:
-          type: number
-          nullable: true
-        longitude:
-          type: number
-          nullable: true
+        address:
+          $ref: '#/components/schemas/Address'
+        zoneId:
+          type: integer
     LocationPagedResponse:
       type: object
       properties:
@@ -178,26 +165,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Location'
-    LocationCreateRequest:
-      type: object
-      required:
-      - address
-      properties:
-        name:
-          type: string
-        address:
-          $ref: '#/components/schemas/Address'
-        zoneId:
-          type: integer
-    LocationUpdateRequest:
-      type: object
-      properties:
-        name:
-          type: string
-        address:
-          $ref: '#/components/schemas/Address'
-        zoneId:
-          type: integer
     Location:
       type: object
       properties:
@@ -226,6 +193,39 @@ components:
         modifiedOn:
           type: string
           format: date-time
+    LocationCreateRequest:
+      type: object
+      required:
+      - address
+      properties:
+        name:
+          type: string
+        address:
+          $ref: '#/components/schemas/Address'
+        zoneId:
+          type: integer
+    Address:
+      type: object
+      properties:
+        street:
+          type: string
+        unit:
+          type: string
+          nullable: true
+        city:
+          type: string
+        state:
+          type: string
+        zip:
+          type: string
+        country:
+          type: string
+        latitude:
+          type: number
+          nullable: true
+        longitude:
+          type: number
+          nullable: true
   securitySchemes:
     OAuth2:
       type: oauth2

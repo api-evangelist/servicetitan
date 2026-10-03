@@ -188,45 +188,6 @@ paths:
                         active:
                           type: boolean
 components:
-  parameters:
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
-    JobStatus:
-      name: jobStatus
-      in: query
-      schema:
-        type: string
-        enum:
-        - Scheduled
-        - Dispatched
-        - InProgress
-        - Hold
-        - Completed
-        - Canceled
-    PageSize:
-      name: pageSize
-      in: query
-      schema:
-        type: integer
-        default: 50
-        maximum: 500
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-        format: int64
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
   schemas:
     JobCreateRequest:
       type: object
@@ -364,19 +325,6 @@ components:
         modifiedOn:
           type: string
           format: date-time
-    JobPagedResponse:
-      type: object
-      properties:
-        page:
-          type: integer
-        pageSize:
-          type: integer
-        hasMore:
-          type: boolean
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Job'
     JobHistory:
       type: object
       properties:
@@ -401,6 +349,58 @@ components:
               usedSchedulingToolVersion:
                 type: string
                 nullable: true
+    JobPagedResponse:
+      type: object
+      properties:
+        page:
+          type: integer
+        pageSize:
+          type: integer
+        hasMore:
+          type: boolean
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Job'
+  parameters:
+    JobStatus:
+      name: jobStatus
+      in: query
+      schema:
+        type: string
+        enum:
+        - Scheduled
+        - Dispatched
+        - InProgress
+        - Hold
+        - Completed
+        - Canceled
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
   securitySchemes:
     OAuth2:
       type: oauth2

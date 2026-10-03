@@ -112,34 +112,45 @@ paths:
         '200':
           description: Deleted
 components:
-  parameters:
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
-    PageSize:
-      name: pageSize
-      in: query
-      schema:
-        type: integer
-        default: 50
-        maximum: 500
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-        format: int64
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
   schemas:
+    ServiceCreateRequest:
+      type: object
+      required:
+      - code
+      - displayName
+      - price
+      properties:
+        code:
+          type: string
+        displayName:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+        memberPrice:
+          type: number
+        hours:
+          type: number
+        taxable:
+          type: boolean
+        categories:
+          type: array
+          items:
+            type: integer
+    ServicePagedResponse:
+      type: object
+      properties:
+        page:
+          type: integer
+        pageSize:
+          type: integer
+        hasMore:
+          type: boolean
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Service'
     Service:
       type: object
       properties:
@@ -209,44 +220,33 @@ components:
         modifiedOn:
           type: string
           format: date-time
-    ServicePagedResponse:
-      type: object
-      properties:
-        page:
-          type: integer
-        pageSize:
-          type: integer
-        hasMore:
-          type: boolean
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Service'
-    ServiceCreateRequest:
-      type: object
-      required:
-      - code
-      - displayName
-      - price
-      properties:
-        code:
-          type: string
-        displayName:
-          type: string
-        description:
-          type: string
-        price:
-          type: number
-        memberPrice:
-          type: number
-        hours:
-          type: number
-        taxable:
-          type: boolean
-        categories:
-          type: array
-          items:
-            type: integer
+  parameters:
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
   securitySchemes:
     OAuth2:
       type: oauth2

@@ -118,47 +118,7 @@ paths:
         '200':
           description: Items updated
 components:
-  parameters:
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
-    PageSize:
-      name: pageSize
-      in: query
-      schema:
-        type: integer
-        default: 50
-        maximum: 500
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-        format: int64
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
   schemas:
-    InvoicePagedResponse:
-      type: object
-      properties:
-        page:
-          type: integer
-        pageSize:
-          type: integer
-        hasMore:
-          type: boolean
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Invoice'
     Invoice:
       type: object
       properties:
@@ -248,19 +208,19 @@ components:
         modifiedOn:
           type: string
           format: date-time
-    InvoiceUpdateRequest:
+    InvoicePagedResponse:
       type: object
       properties:
-        invoiceDate:
-          type: string
-          format: date
-        dueDate:
-          type: string
-          format: date
-        summary:
-          type: string
-        royalty:
-          type: object
+        page:
+          type: integer
+        pageSize:
+          type: integer
+        hasMore:
+          type: boolean
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Invoice'
     InvoiceItem:
       type: object
       properties:
@@ -292,6 +252,46 @@ components:
           type: boolean
         chargeable:
           type: boolean
+    InvoiceUpdateRequest:
+      type: object
+      properties:
+        invoiceDate:
+          type: string
+          format: date
+        dueDate:
+          type: string
+          format: date
+        summary:
+          type: string
+        royalty:
+          type: object
+  parameters:
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
   securitySchemes:
     OAuth2:
       type: oauth2

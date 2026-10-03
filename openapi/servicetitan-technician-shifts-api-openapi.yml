@@ -99,21 +99,14 @@ paths:
         '200':
           description: Shift created
 components:
-  parameters:
-    PageSize:
-      name: pageSize
-      in: query
-      schema:
-        type: integer
-        default: 50
-        maximum: 500
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
   schemas:
+    ShiftPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/TechnicianShift'
     TechnicianShift:
       type: object
       properties:
@@ -143,13 +136,20 @@ components:
         modifiedOn:
           type: string
           format: date-time
-    ShiftPagedResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/TechnicianShift'
+  parameters:
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
   securitySchemes:
     OAuth2:
       type: oauth2

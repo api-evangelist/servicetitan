@@ -50,20 +50,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/VendorPagedResponse'
 components:
-  parameters:
-    PageSize:
-      name: pageSize
-      in: query
-      schema:
-        type: integer
-        default: 50
-        maximum: 500
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
   schemas:
     Vendor:
       type: object
@@ -95,6 +81,20 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Vendor'
+  parameters:
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
   securitySchemes:
     OAuth2:
       type: oauth2

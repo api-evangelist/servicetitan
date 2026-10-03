@@ -106,13 +106,6 @@ paths:
           description: Technicians unassigned
 components:
   schemas:
-    AssignmentPagedResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AppointmentAssignment'
     AppointmentAssignment:
       type: object
       properties:
@@ -145,6 +138,13 @@ components:
         modifiedOn:
           type: string
           format: date-time
+    AssignmentPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AppointmentAssignment'
   parameters:
     ModifiedOnOrAfter:
       name: modifiedOnOrAfter

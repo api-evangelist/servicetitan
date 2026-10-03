@@ -72,57 +72,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Booking'
 components:
-  parameters:
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
-    PageSize:
-      name: pageSize
-      in: query
-      schema:
-        type: integer
-        default: 50
-        maximum: 500
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-        minimum: 1
   schemas:
-    Address:
-      type: object
-      properties:
-        street:
-          type: string
-        unit:
-          type: string
-          nullable: true
-        city:
-          type: string
-        state:
-          type: string
-        zip:
-          type: string
-        country:
-          type: string
-        latitude:
-          type: number
-          nullable: true
-        longitude:
-          type: number
-          nullable: true
-    BookingPagedResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Booking'
     Booking:
       type: object
       properties:
@@ -163,6 +113,13 @@ components:
         modifiedOn:
           type: string
           format: date-time
+    BookingPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Booking'
     BookingCreateRequest:
       type: object
       required:
@@ -187,6 +144,49 @@ components:
           type: integer
         businessUnitId:
           type: integer
+    Address:
+      type: object
+      properties:
+        street:
+          type: string
+        unit:
+          type: string
+          nullable: true
+        city:
+          type: string
+        state:
+          type: string
+        zip:
+          type: string
+        country:
+          type: string
+        latitude:
+          type: number
+          nullable: true
+        longitude:
+          type: number
+          nullable: true
+  parameters:
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+        minimum: 1
   securitySchemes:
     OAuth2:
       type: oauth2

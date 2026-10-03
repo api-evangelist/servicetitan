@@ -83,33 +83,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/Project'
 components:
-  parameters:
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
-    PageSize:
-      name: pageSize
-      in: query
-      schema:
-        type: integer
-        default: 50
-        maximum: 500
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-        format: int64
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
   schemas:
     ProjectPagedResponse:
       type: object
@@ -118,30 +91,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Project'
-    ProjectCreateRequest:
-      type: object
-      required:
-      - customerId
-      - locationId
-      properties:
-        name:
-          type: string
-        summary:
-          type: string
-        customerId:
-          type: integer
-        locationId:
-          type: integer
-        projectManagerIds:
-          type: array
-          items:
-            type: integer
-        startDate:
-          type: string
-          format: date
-        targetCompletionDate:
-          type: string
-          format: date
     Project:
       type: object
       properties:
@@ -189,6 +138,57 @@ components:
         modifiedOn:
           type: string
           format: date-time
+    ProjectCreateRequest:
+      type: object
+      required:
+      - customerId
+      - locationId
+      properties:
+        name:
+          type: string
+        summary:
+          type: string
+        customerId:
+          type: integer
+        locationId:
+          type: integer
+        projectManagerIds:
+          type: array
+          items:
+            type: integer
+        startDate:
+          type: string
+          format: date
+        targetCompletionDate:
+          type: string
+          format: date
+  parameters:
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
   securitySchemes:
     OAuth2:
       type: oauth2
