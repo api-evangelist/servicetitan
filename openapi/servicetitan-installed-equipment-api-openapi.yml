@@ -105,6 +105,19 @@ paths:
           description: Updated
 components:
   schemas:
+    InstalledEquipmentPagedResponse:
+      type: object
+      properties:
+        page:
+          type: integer
+        pageSize:
+          type: integer
+        hasMore:
+          type: boolean
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/InstalledEquipment'
     InstalledEquipment:
       type: object
       properties:
@@ -214,26 +227,7 @@ components:
           type: array
           items:
             type: object
-    InstalledEquipmentPagedResponse:
-      type: object
-      properties:
-        page:
-          type: integer
-        pageSize:
-          type: integer
-        hasMore:
-          type: boolean
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/InstalledEquipment'
   parameters:
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
     PageSize:
       name: pageSize
       in: query
@@ -241,6 +235,12 @@ components:
         type: integer
         default: 50
         maximum: 500
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
     Page:
       name: page
       in: query

@@ -237,6 +237,30 @@ components:
           type: string
         shouldUpdateInvoiceItems:
           type: boolean
+    JobHistory:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              eventType:
+                type: string
+              date:
+                type: string
+                format: date-time
+              employeeId:
+                type: integer
+                nullable: true
+              usedSchedulingTool:
+                type: string
+                nullable: true
+              usedSchedulingToolVersion:
+                type: string
+                nullable: true
     JobUpdateRequest:
       type: object
       properties:
@@ -325,30 +349,6 @@ components:
         modifiedOn:
           type: string
           format: date-time
-    JobHistory:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: integer
-              eventType:
-                type: string
-              date:
-                type: string
-                format: date-time
-              employeeId:
-                type: integer
-                nullable: true
-              usedSchedulingTool:
-                type: string
-                nullable: true
-              usedSchedulingToolVersion:
-                type: string
-                nullable: true
     JobPagedResponse:
       type: object
       properties:
@@ -363,18 +363,12 @@ components:
           items:
             $ref: '#/components/schemas/Job'
   parameters:
-    JobStatus:
-      name: jobStatus
+    Page:
+      name: page
       in: query
       schema:
-        type: string
-        enum:
-        - Scheduled
-        - Dispatched
-        - InProgress
-        - Hold
-        - Completed
-        - Canceled
+        type: integer
+        default: 1
     ModifiedOnOrAfter:
       name: modifiedOnOrAfter
       in: query
@@ -388,12 +382,18 @@ components:
         type: integer
         default: 50
         maximum: 500
-    Page:
-      name: page
+    JobStatus:
+      name: jobStatus
       in: query
       schema:
-        type: integer
-        default: 1
+        type: string
+        enum:
+        - Scheduled
+        - Dispatched
+        - InProgress
+        - Hold
+        - Completed
+        - Canceled
     Id:
       name: id
       in: path

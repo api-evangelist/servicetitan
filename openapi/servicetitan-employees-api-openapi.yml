@@ -49,6 +49,26 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmployeePagedResponse'
 components:
+  parameters:
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
   schemas:
     Employee:
       type: object
@@ -82,26 +102,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Employee'
-  parameters:
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-    PageSize:
-      name: pageSize
-      in: query
-      schema:
-        type: integer
-        default: 50
-        maximum: 500
   securitySchemes:
     OAuth2:
       type: oauth2

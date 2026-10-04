@@ -84,6 +84,30 @@ paths:
                 $ref: '#/components/schemas/Project'
 components:
   schemas:
+    ProjectCreateRequest:
+      type: object
+      required:
+      - customerId
+      - locationId
+      properties:
+        name:
+          type: string
+        summary:
+          type: string
+        customerId:
+          type: integer
+        locationId:
+          type: integer
+        projectManagerIds:
+          type: array
+          items:
+            type: integer
+        startDate:
+          type: string
+          format: date
+        targetCompletionDate:
+          type: string
+          format: date
     ProjectPagedResponse:
       type: object
       properties:
@@ -138,31 +162,13 @@ components:
         modifiedOn:
           type: string
           format: date-time
-    ProjectCreateRequest:
-      type: object
-      required:
-      - customerId
-      - locationId
-      properties:
-        name:
-          type: string
-        summary:
-          type: string
-        customerId:
-          type: integer
-        locationId:
-          type: integer
-        projectManagerIds:
-          type: array
-          items:
-            type: integer
-        startDate:
-          type: string
-          format: date
-        targetCompletionDate:
-          type: string
-          format: date
   parameters:
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
     ModifiedOnOrAfter:
       name: modifiedOnOrAfter
       in: query
@@ -176,12 +182,6 @@ components:
         type: integer
         default: 50
         maximum: 500
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
     Id:
       name: id
       in: path

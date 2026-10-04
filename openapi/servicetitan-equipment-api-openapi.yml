@@ -104,6 +104,12 @@ components:
           items:
             $ref: '#/components/schemas/Equipment'
   parameters:
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
     ModifiedOnOrAfter:
       name: modifiedOnOrAfter
       in: query
@@ -117,12 +123,6 @@ components:
         type: integer
         default: 50
         maximum: 500
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
     Id:
       name: id
       in: path

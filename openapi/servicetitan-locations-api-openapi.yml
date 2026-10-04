@@ -115,6 +115,13 @@ components:
       schema:
         type: integer
         format: int64
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+        minimum: 1
     ModifiedOnOrAfter:
       name: modifiedOnOrAfter
       in: query
@@ -128,13 +135,6 @@ components:
         type: integer
         default: 50
         maximum: 500
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-        minimum: 1
     Id:
       name: id
       in: path
@@ -143,15 +143,6 @@ components:
         type: integer
         format: int64
   schemas:
-    LocationUpdateRequest:
-      type: object
-      properties:
-        name:
-          type: string
-        address:
-          $ref: '#/components/schemas/Address'
-        zoneId:
-          type: integer
     LocationPagedResponse:
       type: object
       properties:
@@ -165,6 +156,28 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Location'
+    Address:
+      type: object
+      properties:
+        street:
+          type: string
+        unit:
+          type: string
+          nullable: true
+        city:
+          type: string
+        state:
+          type: string
+        zip:
+          type: string
+        country:
+          type: string
+        latitude:
+          type: number
+          nullable: true
+        longitude:
+          type: number
+          nullable: true
     Location:
       type: object
       properties:
@@ -204,28 +217,15 @@ components:
           $ref: '#/components/schemas/Address'
         zoneId:
           type: integer
-    Address:
+    LocationUpdateRequest:
       type: object
       properties:
-        street:
+        name:
           type: string
-        unit:
-          type: string
-          nullable: true
-        city:
-          type: string
-        state:
-          type: string
-        zip:
-          type: string
-        country:
-          type: string
-        latitude:
-          type: number
-          nullable: true
-        longitude:
-          type: number
-          nullable: true
+        address:
+          $ref: '#/components/schemas/Address'
+        zoneId:
+          type: integer
   securitySchemes:
     OAuth2:
       type: oauth2

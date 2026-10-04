@@ -112,32 +112,34 @@ paths:
         '200':
           description: Deleted
 components:
+  parameters:
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
   schemas:
-    ServiceCreateRequest:
-      type: object
-      required:
-      - code
-      - displayName
-      - price
-      properties:
-        code:
-          type: string
-        displayName:
-          type: string
-        description:
-          type: string
-        price:
-          type: number
-        memberPrice:
-          type: number
-        hours:
-          type: number
-        taxable:
-          type: boolean
-        categories:
-          type: array
-          items:
-            type: integer
     ServicePagedResponse:
       type: object
       properties:
@@ -220,33 +222,31 @@ components:
         modifiedOn:
           type: string
           format: date-time
-  parameters:
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
-    PageSize:
-      name: pageSize
-      in: query
-      schema:
-        type: integer
-        default: 50
-        maximum: 500
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-        format: int64
+    ServiceCreateRequest:
+      type: object
+      required:
+      - code
+      - displayName
+      - price
+      properties:
+        code:
+          type: string
+        displayName:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+        memberPrice:
+          type: number
+        hours:
+          type: number
+        taxable:
+          type: boolean
+        categories:
+          type: array
+          items:
+            type: integer
   securitySchemes:
     OAuth2:
       type: oauth2

@@ -137,12 +137,6 @@ components:
           type: string
           format: date-time
   parameters:
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
     PageSize:
       name: pageSize
       in: query
@@ -150,6 +144,12 @@ components:
         type: integer
         default: 50
         maximum: 500
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
   securitySchemes:
     OAuth2:
       type: oauth2

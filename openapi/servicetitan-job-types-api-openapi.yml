@@ -47,13 +47,6 @@ paths:
                 $ref: '#/components/schemas/JobTypePagedResponse'
 components:
   schemas:
-    JobTypePagedResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/JobType'
     JobType:
       type: object
       properties:
@@ -98,6 +91,13 @@ components:
           type: array
           items:
             type: object
+    JobTypePagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/JobType'
   securitySchemes:
     OAuth2:
       type: oauth2

@@ -141,13 +141,11 @@ paths:
           description: Appointment rescheduled
 components:
   schemas:
-    AppointmentPagedResponse:
+    AppointmentUpdateRequest:
       type: object
       properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Appointment'
+        specialInstructions:
+          type: string
     AppointmentCreateRequest:
       type: object
       required:
@@ -173,11 +171,6 @@ components:
           type: array
           items:
             type: integer
-        specialInstructions:
-          type: string
-    AppointmentUpdateRequest:
-      type: object
-      properties:
         specialInstructions:
           type: string
     Appointment:
@@ -225,26 +218,26 @@ components:
           type: integer
         unused:
           type: boolean
+    AppointmentPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Appointment'
   parameters:
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
-    PageSize:
-      name: pageSize
-      in: query
-      schema:
-        type: integer
-        default: 50
-        maximum: 500
     Page:
       name: page
       in: query
       schema:
         type: integer
         default: 1
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
     Id:
       name: id
       in: path
@@ -252,6 +245,13 @@ components:
       schema:
         type: integer
         format: int64
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
   securitySchemes:
     OAuth2:
       type: oauth2

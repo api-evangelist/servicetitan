@@ -156,6 +156,19 @@ components:
         modifiedOn:
           type: string
           format: date-time
+    MaterialPagedResponse:
+      type: object
+      properties:
+        page:
+          type: integer
+        pageSize:
+          type: integer
+        hasMore:
+          type: boolean
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Material'
     MaterialCreateRequest:
       type: object
       required:
@@ -178,20 +191,13 @@ components:
           type: boolean
         taxable:
           type: boolean
-    MaterialPagedResponse:
-      type: object
-      properties:
-        page:
-          type: integer
-        pageSize:
-          type: integer
-        hasMore:
-          type: boolean
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Material'
   parameters:
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
     ModifiedOnOrAfter:
       name: modifiedOnOrAfter
       in: query
@@ -205,12 +211,6 @@ components:
         type: integer
         default: 50
         maximum: 500
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
     Id:
       name: id
       in: path

@@ -72,6 +72,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Contact'
 components:
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
   schemas:
     ContactPagedResponse:
       type: object
@@ -80,18 +88,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Contact'
-    ContactCreateRequest:
-      type: object
-      required:
-      - type
-      - value
-      properties:
-        type:
-          type: string
-        value:
-          type: string
-        memo:
-          type: string
     Contact:
       type: object
       properties:
@@ -113,14 +109,18 @@ components:
         modifiedOn:
           type: string
           format: date-time
-  parameters:
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-        format: int64
+    ContactCreateRequest:
+      type: object
+      required:
+      - type
+      - value
+      properties:
+        type:
+          type: string
+        value:
+          type: string
+        memo:
+          type: string
   securitySchemes:
     OAuth2:
       type: oauth2
