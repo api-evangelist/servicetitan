@@ -214,7 +214,6 @@
   arazzo: null
 - slug: servicetitan-monday-com
   label: monday.com
-  partner: monday-com
   partner_name: monday.com
   category: Project Management
   type: marketplace
@@ -222,11 +221,10 @@
   channel: ipaas-usage
   evidence: https://zapier.com/apps/servicetitan/integrations/monday
   source: edge
-  status: pending-generation
+  status: pending-partner-spec
   arazzo: null
 - slug: servicetitan-microsoft-excel
   label: Microsoft Excel
-  partner: microsoft-excel
   partner_name: Microsoft Excel
   category: Microsoft
   type: marketplace
@@ -234,7 +232,7 @@
   channel: ipaas-usage
   evidence: https://zapier.com/apps/servicetitan/integrations/excel
   source: edge
-  status: pending-generation
+  status: pending-partner-spec
   arazzo: null
 - slug: servicetitan-pipedrive
   label: Pipedrive
@@ -412,4 +410,1975 @@
   evidence: https://zapier.com/apps/servicetitan/integrations/constant-contact
   source: edge
   status: pending-generation
+  arazzo: null
+- slug: servicetitan-angi
+  label: Angi
+  partner_name: Angi
+  category: Leads & Bookings
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/angi
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-bdr
+  label: BDR
+  partner_name: BDR
+  category: Associations, Accounting & Tax, Coaching & Associations
+  type: marketplace
+  marketplace: own
+  evidence: https://marketplace.servicetitan.com/partner/bdr
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-bryant
+  label: Bryant
+  partner_name: Bryant
+  category: Suppliers, Catalogs & Pricebooks, Leads & Bookings
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/bryant
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-carrier
+  label: Carrier
+  partner: carrier-global
+  partner_name: Carrier
+  category: Suppliers, Catalogs & Pricebooks, Leads & Bookings
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/carrier
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-ipermit
+  label: iPermit
+  partner_name: iPermit
+  category: Permitting
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/ipermit
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-jb-warranties
+  label: JB Warranties
+  partner_name: JB Warranties
+  category: Warranties, Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/jb-warranties
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-lennox
+  label: Lennox
+  partner: lennox-international
+  partner_name: Lennox
+  category: Suppliers, Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/lennox
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-reserve-with-google
+  label: Reserve with Google
+  partner_name: Reserve with Google
+  category: Leads & Bookings
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/reserve-with-google
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-scorpion
+  label: Scorpion
+  partner: scorpion
+  partner_name: Scorpion
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/scorpion
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-servicechannel
+  label: ServiceChannel
+  partner: servicechannel
+  partner_name: ServiceChannel
+  category: Leads & Bookings, Property & Facilities Management
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/servicechannel
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-servicetitan-ai-voice-agent
+  label: ServiceTitan AI Voice Agent
+  partner_name: ServiceTitan AI Voice Agent
+  category: Live Services, Telecom
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  evidence: https://marketplace.servicetitan.com/partner/servicetitan-ai-voice-agent
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-servicetitan-fleet-pro
+  label: ServiceTitan Fleet Pro
+  partner_name: ServiceTitan Fleet Pro
+  category: Fleet & GPS
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  evidence: https://marketplace.servicetitan.com/partner/servicetitan-fleet-pro
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-servicetitan-marketing-pro
+  label: ServiceTitan Marketing Pro
+  partner_name: ServiceTitan Marketing Pro
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  evidence: https://marketplace.servicetitan.com/partner/servicetitan-marketing-pro
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-servicetitan-payments
+  label: ServiceTitan Payments
+  partner_name: ServiceTitan Payments
+  category: Payments & Financing
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  evidence: https://marketplace.servicetitan.com/partner/ServiceTitan-payments
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-servicetitan-pricebook-pro
+  label: ServiceTitan Pricebook Pro
+  partner_name: ServiceTitan Pricebook Pro
+  category: Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  evidence: https://marketplace.servicetitan.com/partner/servicetitan-pricebook-pro
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-servicetitan-phones-pro
+  label: ServiceTitan Phones Pro
+  partner_name: ServiceTitan Phones Pro
+  category: Telecom
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  evidence: https://marketplace.servicetitan.com/partner/servicetitan-phones-pro
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-servicetitan-scheduling-pro
+  label: ServiceTitan Scheduling Pro
+  partner_name: ServiceTitan Scheduling Pro
+  category: Live Services, Web Schedulers
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  evidence: https://marketplace.servicetitan.com/partner/schedule-engine
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-the-home-depot
+  label: The Home Depot
+  partner: home-depot
+  partner_name: The Home Depot
+  category: Leads & Bookings
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/the-home-depot
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-thumbtack
+  label: Thumbtack
+  partner: thumbtack
+  partner_name: Thumbtack
+  category: Leads & Bookings
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/thumbtack
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-trane
+  label: Trane
+  partner_name: Trane
+  category: Suppliers, Catalogs & Pricebooks, Leads & Bookings, Procurement
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/trane
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-wells-fargo
+  label: Wells Fargo
+  partner: wells-fargo
+  partner_name: Wells Fargo
+  category: Payments & Financing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/wells-fargo
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-xoi
+  label: XOi
+  partner_name: XOi
+  category: On-The-Job
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/xoi
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-abc-supply
+  label: ABC Supply
+  partner_name: ABC Supply
+  category: Suppliers, Procurement, Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/abc-supply
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-aclarify
+  label: Aclarify
+  partner_name: Aclarify
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/aclarify
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-activeprospect
+  label: ActiveProspect
+  partner_name: ActiveProspect
+  category: Leads & Bookings
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/activeprospect
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-airadvice
+  label: AirAdvice
+  partner_name: AirAdvice
+  category: On-The-Job
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/airadvice
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-amana
+  label: Amana
+  partner_name: Amana
+  category: Suppliers, Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/amana
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-american-standard
+  label: American Standard
+  partner_name: American Standard
+  category: Suppliers, Catalogs & Pricebooks, Leads & Bookings
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/american-standard
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-apr-supply-co
+  label: APR Supply Co.
+  partner_name: APR Supply Co.
+  category: Suppliers, Procurement, Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/apr-supply
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-arcsite
+  label: ArcSite
+  partner_name: ArcSite
+  category: Measurements & Estimations, On-The-Job
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/arcsite
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-avalara
+  label: Avalara
+  partner_name: Avalara
+  category: Accounting & Tax
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/avalara
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-avoca-ai
+  label: Avoca AI
+  partner: avoca
+  partner_name: Avoca AI
+  category: Live Services, Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/avoca-ai
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-bench-accounting
+  label: Bench Accounting
+  partner: bench
+  partner_name: Bench Accounting
+  category: Accounting & Tax
+  type: marketplace
+  marketplace: own
+  evidence: https://marketplace.servicetitan.com/partner/bench-accounting
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-birdeye
+  label: Birdeye
+  partner: birdeye
+  partner_name: Birdeye
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/birdeye
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-broccoli-ai
+  label: Broccoli AI
+  partner_name: Broccoli AI
+  category: Marketing, Live Services
+  type: marketplace
+  marketplace: own
+  evidence: https://marketplace.servicetitan.com/partner/broccoli-ai
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-bucs
+  label: BUCS
+  partner_name: BUCS
+  category: Business Intelligence & Analytics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/bucs
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-building36
+  label: Building36
+  partner_name: Building36
+  category: Leads & Bookings
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/building36
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-business-financing-with-bluevine
+  label: Business Financing with Bluevine
+  partner: bluevine
+  partner_name: Business Financing with Bluevine
+  category: Payments & Financing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/business-financing-with-bluevine
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-callpoint-contact-center-solutions
+  label: CallPoint Contact Center Solutions
+  partner_name: CallPoint Contact Center Solutions
+  category: Live Services
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/callpoint
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-camp-digital
+  label: CAMP Digital
+  partner_name: CAMP Digital
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/camp-digital
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-chiirp
+  label: CHIIRP
+  partner_name: CHIIRP
+  category: Leads & Bookings, Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/chiirp
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-clearpathgps
+  label: ClearPathGPS
+  partner_name: ClearPathGPS
+  category: Fleet & GPS
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/clearpath-gps
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-coburn-supply-company
+  label: Coburn Supply Company
+  partner_name: Coburn Supply Company
+  category: Suppliers, Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/coburn-supply-company
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-companycam
+  label: CompanyCam
+  partner: companycam
+  partner_name: CompanyCam
+  category: On-The-Job
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/companycam
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-consolidated-supply
+  label: Consolidated Supply
+  partner_name: Consolidated Supply
+  category: Catalogs & Pricebooks, Suppliers, Procurement
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/consolidated-supply
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-contractor-commerce
+  label: Contractor Commerce
+  partner_name: Contractor Commerce
+  category: E-Commerce
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/contractor-commerce
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-contractor-university-powered-by-egia
+  label: Contractor University Powered by EGIA
+  partner_name: Contractor University Powered by EGIA
+  category: Associations
+  type: marketplace
+  marketplace: own
+  evidence: https://marketplace.servicetitan.com/partner/egia
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-copperfield-chimney-supply
+  label: Copperfield Chimney Supply
+  partner_name: Copperfield Chimney Supply
+  category: Suppliers, Catalogs & Pricebooks, Procurement
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/copperfield
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-coral
+  label: Coral
+  partner_name: Coral
+  category: Payments & Financing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/coral
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-craft
+  label: Craft
+  partner_name: Craft
+  category: On-The-Job
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/craft
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-cxc
+  label: CxC
+  partner_name: CxC
+  category: On-The-Job
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/cxc
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-daikin
+  label: Daikin
+  partner_name: Daikin
+  category: Suppliers, Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/daikin
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-darwill
+  label: Darwill
+  partner_name: Darwill
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/darwill
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-datacube-ai
+  label: datacube.ai
+  partner_name: datacube.ai
+  category: Business Intelligence & Analytics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/datacube-ai
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-dexcomm-answering-communications-services
+  label: Dexcomm Answering & Communications Services
+  partner_name: Dexcomm Answering & Communications Services
+  category: Live Services
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/dexcomm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-dispatch
+  label: Dispatch
+  partner_name: Dispatch
+  category: E-Commerce
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/dispatch
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-drillbit
+  label: Drillbit
+  partner_name: Drillbit
+  category: Sales and Leads
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/drillbit
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-dynamic-air-quality-solutions
+  label: Dynamic Air Quality Solutions
+  partner_name: Dynamic Air Quality Solutions
+  category: Suppliers, Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/dynamic-air-quality-solutions
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-eagleview-technologies-inc
+  label: EagleView Technologies, Inc.
+  partner_name: EagleView Technologies, Inc.
+  category: Measurements & Estimations
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/eagleview
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-famous-supply
+  label: Famous Supply
+  partner_name: Famous Supply
+  category: Suppliers, Catalogs & Pricebooks, Procurement
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/famous-supply
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-ferguson
+  label: Ferguson
+  partner: ferguson
+  partner_name: Ferguson
+  category: Suppliers, Procurement, Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/ferguson
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-financeit
+  label: Financeit
+  partner_name: Financeit
+  category: Payments & Financing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/financeit
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-flat
+  label: Flat
+  partner_name: Flat
+  category: Marketing, Leads & Bookings, Property & Facilities Management, Sales and Leads
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/flat
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-flowpath
+  label: FlowPath
+  partner_name: FlowPath
+  category: Leads & Bookings, Property & Facilities Management
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/flowpath
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-foundation-integrations-by-mindcloud
+  label: Foundation Integrations by MindCloud
+  partner_name: Foundation Integrations by MindCloud
+  category: Accounting & Tax
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/foundation-mindcloud
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-free2grow
+  label: Free2Grow
+  partner_name: Free2Grow
+  category: Live Services, Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/free2grow
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-free-agency
+  label: Free Agency
+  partner_name: Free Agency
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/free-agency
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-gaf
+  label: GAF
+  partner_name: GAF
+  category: Measurements & Estimations, Suppliers
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/gaf
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-gensco
+  label: Gensco
+  partner_name: Gensco
+  category: Suppliers, Procurement, Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/gensco
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-goodman
+  label: Goodman
+  partner_name: Goodman
+  category: Suppliers, Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/goodman
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-greensky
+  label: GreenSky
+  partner_name: GreenSky
+  category: Payments & Financing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/greensky
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-hajoca
+  label: Hajoca
+  partner_name: Hajoca
+  category: Suppliers, Procurement, Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/hajoca
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-hatch-ai
+  label: Hatch AI
+  partner: hatch
+  partner_name: Hatch AI
+  category: Marketing, Leads & Bookings
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/hatch-ai
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-home-solutions
+  label: Home Solutions
+  partner_name: Home Solutions
+  category: Leads & Bookings
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/home-solutions
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-hover
+  label: Hover
+  partner: hover
+  partner_name: Hover
+  category: Measurements & Estimations, On-The-Job
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/hover
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-hyperspace-inc
+  label: Hyperspace Inc.
+  partner_name: Hyperspace Inc.
+  category: Admin & Operation, Payment Processing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/hyperspace
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-imanifold
+  label: iManifold
+  partner_name: iManifold
+  category: On-The-Job
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/imanifold
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-intuit
+  label: Intuit
+  partner: intuit
+  partner_name: Intuit
+  category: Accounting & Tax
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/intuit
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-international-comfort-products
+  label: International Comfort Products
+  partner_name: International Comfort Products
+  category: Suppliers, Catalogs & Pricebooks, Leads & Bookings
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/icp
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-justcall
+  label: JustCall
+  partner: justcall
+  partner_name: JustCall
+  category: Live Services, Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/justcall
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-kinetico
+  label: Kinetico
+  partner_name: Kinetico
+  category: Suppliers, Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/kinetico
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-lace
+  label: Lace
+  partner_name: Lace
+  category: Leads & Bookings
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/lace
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-lettrlabs
+  label: LettrLabs
+  partner_name: LettrLabs
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/lettr-labs
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-levitate
+  label: Levitate
+  partner: levitate
+  partner_name: Levitate
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/levitate
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-liveswitch
+  label: LiveSwitch
+  partner_name: LiveSwitch
+  category: On-The-Job
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/liveswitch
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-local-optics
+  label: Local Optics
+  partner_name: Local Optics
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/local-optics
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-localiq
+  label: LocaliQ
+  partner_name: LocaliQ
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/localiq
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-lumber
+  label: Lumber
+  partner_name: Lumber
+  category: HR & Payroll
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/lumber
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-mail-shark
+  label: Mail Shark
+  partner_name: Mail Shark
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/mail-shark
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-marchex
+  label: Marchex
+  partner_name: Marchex
+  category: Live Services, Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/marchex
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-mcaa
+  label: MCAA
+  partner_name: MCAA
+  category: Associations
+  type: marketplace
+  marketplace: own
+  evidence: https://marketplace.servicetitan.com/partner/mcaa
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-measure-square-corp
+  label: Measure Square Corp.
+  partner_name: Measure Square Corp.
+  category: Measurements & Estimations, On-The-Job
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/measure-square
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-mindcloud
+  label: MindCloud
+  partner_name: MindCloud
+  category: Accounting & Tax
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/mindcloud
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-miter
+  label: Miter
+  partner: miter
+  partner_name: Miter
+  category: HR & Payroll
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/miter
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-modernize-home-services
+  label: Modernize Home Services
+  partner_name: Modernize Home Services
+  category: Leads & Bookings
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/modernize
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-nationwide-inbound
+  label: Nationwide Inbound
+  partner_name: Nationwide Inbound
+  category: Live Services
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/nationwide-inbound
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-motive
+  label: Motive
+  partner: motive
+  partner_name: Motive
+  category: Fleet & GPS
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/go-motive
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-nearby-now
+  label: Nearby Now
+  partner_name: Nearby Now
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/nearby-now
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-neca
+  label: NECA
+  partner_name: NECA
+  category: Associations
+  type: marketplace
+  marketplace: own
+  evidence: https://marketplace.servicetitan.com/partner/neca
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-netic-ai
+  label: Netic AI
+  partner: netic
+  partner_name: Netic AI
+  category: Live Services, Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/netic
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-oracle-netsuite
+  label: Oracle NetSuite
+  partner: netsuite
+  partner_name: Oracle NetSuite
+  category: Accounting & Tax
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/oracle-netsuite
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-peaka
+  label: Peaka
+  partner_name: Peaka
+  category: Business Intelligence & Analytics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/peaka
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-permitflow
+  label: PermitFlow
+  partner: permitflow
+  partner_name: PermitFlow
+  category: Permitting
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/permitflow
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-phcc
+  label: PHCC
+  partner_name: PHCC
+  category: Associations
+  type: marketplace
+  marketplace: own
+  evidence: https://marketplace.servicetitan.com/partner/phcc
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-phonetap
+  label: PhoneTAP
+  partner_name: PhoneTAP
+  category: Live Services, Business Intelligence & Analytics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/phonetap
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-ply
+  label: Ply
+  partner_name: Ply
+  category: Suppliers, Inventory
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/ply
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-praxis-s-10
+  label: PRAXIS S-10
+  partner_name: PRAXIS S-10
+  category: Associations, Coaching & Associations
+  type: marketplace
+  marketplace: own
+  evidence: https://marketplace.servicetitan.com/partner/praxis-s-10
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-pricebookplus
+  label: PricebookPlus
+  partner_name: PricebookPlus
+  category: Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  evidence: https://marketplace.servicetitan.com/partner/pricebook-plus
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-probook
+  label: Probook
+  partner_name: Probook
+  category: Dispatch
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/probook
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-quality-service-contractors
+  label: Quality Service Contractors
+  partner_name: Quality Service Contractors
+  category: Associations
+  type: marketplace
+  marketplace: own
+  evidence: https://marketplace.servicetitan.com/partner/quality-service-contractors
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-qxo
+  label: QXO
+  partner: qxo-building-products
+  partner_name: QXO
+  category: Suppliers, Catalogs & Pricebooks, Procurement
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/qxo
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-ramp
+  label: Ramp
+  partner: ramp
+  partner_name: Ramp
+  category: Expense Management, Payments & Financing
+  type: marketplace
+  marketplace: own
+  evidence: https://marketplace.servicetitan.com/partner/ramp
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-r-e-michel
+  label: R.E. Michel
+  partner_name: R.E. Michel
+  category: Suppliers, Catalogs & Pricebooks, Procurement
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/re-michel
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-reece
+  label: Reece
+  partner_name: Reece
+  category: Suppliers, Catalogs & Pricebooks, Procurement
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/reece
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-referpro
+  label: ReferPro
+  partner_name: ReferPro
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/referpro
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-reins
+  label: Reins
+  partner_name: Reins
+  category: HR & Payroll
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/reins
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-relentless-digital
+  label: Relentless Digital
+  partner_name: Relentless Digital
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/relentless-digital
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-resq
+  label: ResQ
+  partner: res
+  partner_name: ResQ
+  category: Leads & Bookings, Property & Facilities Management
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/resq
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-revin
+  label: Revin
+  partner_name: Revin
+  category: Live Services, Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/revin
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-rheem
+  label: Rheem
+  partner_name: Rheem
+  category: Suppliers, Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/rheem
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-robertson-heating-supply
+  label: Robertson Heating Supply
+  partner_name: Robertson Heating Supply
+  category: Suppliers, Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/robertson-heating-supply
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-ruud
+  label: Ruud
+  partner_name: Ruud
+  category: Suppliers, Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/ruud
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-sage-intacct
+  label: Sage Intacct
+  partner_name: Sage Intacct
+  category: Accounting & Tax
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/sage-intacct
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-sales-ask-inc
+  label: Sales Ask Inc.
+  partner_name: Sales Ask Inc.
+  category: On-The-Job
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/sales-ask
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-sameday-ai
+  label: Sameday AI
+  partner_name: Sameday AI
+  category: Leads & Bookings, Telecom
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/sameday-ai
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-sbe
+  label: SBE
+  partner_name: SBE
+  category: Associations
+  type: marketplace
+  marketplace: own
+  evidence: https://marketplace.servicetitan.com/partner/sbe
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-searchlight
+  label: SearchLight
+  partner_name: SearchLight
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/searchlight
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-servicecall
+  label: ServiceCall
+  partner_name: ServiceCall
+  category: On-The-Job, Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/service-call
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-servicetitan-dispatch-pro
+  label: ServiceTitan Dispatch Pro
+  partner_name: ServiceTitan Dispatch Pro
+  category: Dispatch
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  evidence: https://marketplace.servicetitan.com/partner/servicetitan-dispatch-pro
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-servicetitan-sales-pro
+  label: ServiceTitan Sales Pro
+  partner_name: ServiceTitan Sales Pro
+  category: On-The-Job
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  evidence: https://marketplace.servicetitan.com/partner/servicetitan-sales-pro
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-service-finance
+  label: Service Finance
+  partner_name: Service Finance
+  category: Payments & Financing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/service-finance
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-service-nation-alliance
+  label: Service Nation Alliance
+  partner_name: Service Nation Alliance
+  category: Associations
+  type: marketplace
+  marketplace: own
+  evidence: https://marketplace.servicetitan.com/partner/service-nation-alliance
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-service-roundtable
+  label: Service Roundtable
+  partner_name: Service Roundtable
+  category: Associations
+  type: marketplace
+  marketplace: own
+  evidence: https://marketplace.servicetitan.com/partner/service-roundtable
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-setsale
+  label: SetSale
+  partner_name: SetSale
+  category: Sales and Leads
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/setsale
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-sharewillow
+  label: ShareWillow
+  partner_name: ShareWillow
+  category: HR & Payroll
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/sharewillow
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-smacna
+  label: SMACNA
+  partner_name: SMACNA
+  category: Associations
+  type: marketplace
+  marketplace: own
+  evidence: https://marketplace.servicetitan.com/partner/smacna
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-smartac
+  label: SmartAC
+  partner_name: SmartAC
+  category: Leads & Bookings
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/smartac
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-spotio
+  label: SPOTIO
+  partner: spotio
+  partner_name: SPOTIO
+  category: On-The-Job, Field Management
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/spotio
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-srs-distribution-inc
+  label: SRS Distribution Inc.
+  partner_name: SRS Distribution Inc.
+  category: Suppliers, Procurement, Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/srs-distribution-inc
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-standard-plumbing-supply-company
+  label: Standard Plumbing Supply Company
+  partner_name: Standard Plumbing Supply Company
+  category: Suppliers, Procurement, Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/standard-plumbing-supply
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-stuut
+  label: Stuut
+  partner_name: Stuut
+  category: Accounting & Tax
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/stuut-industries
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-surveysquare
+  label: SurveySquare
+  partner_name: SurveySquare
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/surveysquare
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-synchrony
+  label: Synchrony
+  partner_name: Synchrony
+  category: Payments & Financing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/synchrony
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-the-graphite-lab
+  label: The Graphite Lab
+  partner_name: The Graphite Lab
+  category: Accounting & Tax
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/the-graphite-lab
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-the-new-flat-rate
+  label: 'The New Flat Rate '
+  partner_name: 'The New Flat Rate '
+  category: Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/the-new-flat-rate
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-to-your-success
+  label: To Your Success
+  partner_name: To Your Success
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/to-your-success
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-togal-ai
+  label: Togal.AI
+  partner: togal-ai
+  partner_name: Togal.AI
+  category: On-The-Job, Measurements & Estimations
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/togal
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-tradeengage-referrals
+  label: TradeEngage Referrals
+  partner_name: TradeEngage Referrals
+  category: Marketing & Growth
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/trade-engage
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-turns-financing-services
+  label: 'TURNS Financing Services '
+  partner_name: 'TURNS Financing Services '
+  category: Payments & Financing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/turns-financing-services
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-ukg
+  label: UKG
+  partner_name: UKG
+  category: HR & Payroll
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/ukg-ready-now
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-upsmith
+  label: UpSmith
+  partner: upsmith
+  partner_name: UpSmith
+  category: On-The-Job
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/upsmith
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-upswell-marketing
+  label: UpSwell Marketing
+  partner_name: UpSwell Marketing
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/upswell-marketing
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-us-fleet-tracking
+  label: 'US Fleet Tracking '
+  partner_name: 'US Fleet Tracking '
+  category: Fleet & GPS
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/us-fleet-tracking
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-verisk-xactimate
+  label: Verisk (Xactimate™)
+  partner: verisk
+  partner_name: Verisk (Xactimate™)
+  category: On-The-Job
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/verisk
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-vestige
+  label: Vestige
+  partner_name: Vestige
+  category: Fleet & GPS
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/vestige
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-viewpoint-spectrum-integrations-by-mindcloud
+  label: Viewpoint Spectrum Integrations by MindCloud
+  partner_name: Viewpoint Spectrum Integrations by MindCloud
+  category: Accounting & Tax
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/viewpoint-spectrum-mindcloud
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-viewpoint-vista-integrations-by-mindcloud
+  label: Viewpoint Vista Integrations by MindCloud
+  partner_name: Viewpoint Vista Integrations by MindCloud
+  category: Accounting & Tax
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/viewpoint-vista-mindcloud
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-viirl-marketing
+  label: VIIRL Marketing
+  partner_name: VIIRL Marketing
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/viirl-marketing
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-wingen
+  label: WinGen
+  partner_name: WinGen
+  category: Leads & Bookings
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/wingen
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-winsupply
+  label: Winsupply
+  partner_name: Winsupply
+  category: Suppliers, Procurement, Catalogs & Pricebooks
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/winsupply
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-wink-toolbox
+  label: Wink Toolbox
+  partner_name: Wink Toolbox
+  category: Business Intelligence & Analytics
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/wink-toolbox
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-xapp-ai
+  label: XAPP AI
+  partner_name: XAPP AI
+  category: Marketing, Leads & Bookings
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/xapp-ai
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-zyratalk
+  label: ZyraTalk
+  partner_name: ZyraTalk
+  category: Live Services, Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/zyratalk
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
   arazzo: null
