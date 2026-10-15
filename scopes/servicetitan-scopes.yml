@@ -1,53 +1,226 @@
-generated: '2026-07-11'
-method: derived
-docs: https://developer.servicetitan.io/docs/oauth20/
-note: ServiceTitan supports only the OAuth 2.0 client_credentials grant and publishes
-  no OAuth scope strings — access is governed by per-app "API scopes" (View/Modify
-  per API resource) selected in the developer portal and approved by the tenant admin
-  (https://developer.servicetitan.io/docs/oauth20/, https://partnerapis.servicetitan.io/docs/create-and-manage-applications/).
-source: openapi/servicetitan-accounting-api-openapi.yml, openapi/servicetitan-crm-api-openapi.yml,
-  openapi/servicetitan-dispatch-api-openapi.yml, openapi/servicetitan-equipment-systems-api-openapi.yml,
-  openapi/servicetitan-inventory-api-openapi.yml, openapi/servicetitan-jpm-api-openapi.yml,
-  openapi/servicetitan-pricebook-api-openapi.yml, openapi/servicetitan-settings-api-openapi.yml
+generated: '2026-10-14'
+method: none
+source: openapi/servicetitan-adjustments-api-openapi.yml, openapi/servicetitan-appointment-assignments-api-openapi.yml,
+  openapi/servicetitan-appointments-api-openapi.yml, openapi/servicetitan-attachments-api-openapi.yml,
+  openapi/servicetitan-bookings-api-openapi.yml, openapi/servicetitan-business-hours-api-openapi.yml,
+  openapi/servicetitan-business-units-api-openapi.yml, openapi/servicetitan-capacity-api-openapi.yml,
+  openapi/servicetitan-categories-api-openapi.yml, openapi/servicetitan-contacts-api-openapi.yml,
+  openapi/servicetitan-customers-api-openapi.yml, openapi/servicetitan-discounts-and-fees-api-openapi.yml,
+  openapi/servicetitan-employees-api-openapi.yml, openapi/servicetitan-equipment-api-openapi.yml,
+  openapi/servicetitan-gl-accounts-api-openapi.yml, openapi/servicetitan-gps-api-openapi.yml,
+  openapi/servicetitan-installed-equipment-api-openapi.yml, openapi/servicetitan-invoices-api-openapi.yml,
+  openapi/servicetitan-job-types-api-openapi.yml, openapi/servicetitan-jobs-api-openapi.yml,
+  openapi/servicetitan-journal-entries-api-openapi.yml, openapi/servicetitan-leads-api-openapi.yml,
+  openapi/servicetitan-locations-api-openapi.yml, openapi/servicetitan-materials-api-openapi.yml,
+  openapi/servicetitan-payments-api-openapi.yml, openapi/servicetitan-projects-api-openapi.yml,
+  openapi/servicetitan-purchase-orders-api-openapi.yml, openapi/servicetitan-receipts-api-openapi.yml,
+  openapi/servicetitan-services-api-openapi.yml, openapi/servicetitan-tag-types-api-openapi.yml,
+  openapi/servicetitan-tags-api-openapi.yml, openapi/servicetitan-tax-zones-api-openapi.yml,
+  openapi/servicetitan-technician-shifts-api-openapi.yml, openapi/servicetitan-technicians-api-openapi.yml,
+  openapi/servicetitan-transfers-api-openapi.yml, openapi/servicetitan-trucks-api-openapi.yml,
+  openapi/servicetitan-user-roles-api-openapi.yml, openapi/servicetitan-vendors-api-openapi.yml,
+  openapi/servicetitan-warehouses-api-openapi.yml, openapi/servicetitan-zones-api-openapi.yml
 schemes:
 - name: OAuth2
-  source: openapi/servicetitan-accounting-api-openapi.yml
+  source: openapi/servicetitan-adjustments-api-openapi.yml
   flows:
   - flow: clientCredentials
     tokenUrl: https://auth.servicetitan.io/connect/token
 - name: OAuth2
-  source: openapi/servicetitan-crm-api-openapi.yml
+  source: openapi/servicetitan-appointment-assignments-api-openapi.yml
   flows:
   - flow: clientCredentials
     tokenUrl: https://auth.servicetitan.io/connect/token
 - name: OAuth2
-  source: openapi/servicetitan-dispatch-api-openapi.yml
+  source: openapi/servicetitan-appointments-api-openapi.yml
   flows:
   - flow: clientCredentials
     tokenUrl: https://auth.servicetitan.io/connect/token
 - name: OAuth2
-  source: openapi/servicetitan-equipment-systems-api-openapi.yml
+  source: openapi/servicetitan-attachments-api-openapi.yml
   flows:
   - flow: clientCredentials
     tokenUrl: https://auth.servicetitan.io/connect/token
 - name: OAuth2
-  source: openapi/servicetitan-inventory-api-openapi.yml
+  source: openapi/servicetitan-bookings-api-openapi.yml
   flows:
   - flow: clientCredentials
     tokenUrl: https://auth.servicetitan.io/connect/token
 - name: OAuth2
-  source: openapi/servicetitan-jpm-api-openapi.yml
+  source: openapi/servicetitan-business-hours-api-openapi.yml
   flows:
   - flow: clientCredentials
     tokenUrl: https://auth.servicetitan.io/connect/token
 - name: OAuth2
-  source: openapi/servicetitan-pricebook-api-openapi.yml
+  source: openapi/servicetitan-business-units-api-openapi.yml
   flows:
   - flow: clientCredentials
     tokenUrl: https://auth.servicetitan.io/connect/token
 - name: OAuth2
-  source: openapi/servicetitan-settings-api-openapi.yml
+  source: openapi/servicetitan-capacity-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-categories-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-contacts-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-customers-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-discounts-and-fees-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-employees-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-equipment-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-gl-accounts-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-gps-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-installed-equipment-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-invoices-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-job-types-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-jobs-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-journal-entries-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-leads-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-locations-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-materials-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-payments-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-projects-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-purchase-orders-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-receipts-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-services-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-tag-types-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-tags-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-tax-zones-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-technician-shifts-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-technicians-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-transfers-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-trucks-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-user-roles-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-vendors-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-warehouses-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://auth.servicetitan.io/connect/token
+- name: OAuth2
+  source: openapi/servicetitan-zones-api-openapi.yml
   flows:
   - flow: clientCredentials
     tokenUrl: https://auth.servicetitan.io/connect/token
 scopes: []
+note: The OAuth2 security scheme(s) in the OpenAPI declare no scopes, and no security requirement
+  references one.
