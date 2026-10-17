@@ -94,13 +94,30 @@ components:
         default: 50
         maximum: 500
   schemas:
-    BookingPagedResponse:
+    BookingCreateRequest:
       type: object
+      required:
+      - name
+      - summary
+      - start
       properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Booking'
+        source:
+          type: string
+        name:
+          type: string
+        address:
+          $ref: '#/components/schemas/Address'
+        customerType:
+          type: string
+        start:
+          type: string
+          format: date-time
+        summary:
+          type: string
+        campaignId:
+          type: integer
+        businessUnitId:
+          type: integer
     Address:
       type: object
       properties:
@@ -123,6 +140,13 @@ components:
         longitude:
           type: number
           nullable: true
+    BookingPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Booking'
     Booking:
       type: object
       properties:
@@ -163,30 +187,6 @@ components:
         modifiedOn:
           type: string
           format: date-time
-    BookingCreateRequest:
-      type: object
-      required:
-      - name
-      - summary
-      - start
-      properties:
-        source:
-          type: string
-        name:
-          type: string
-        address:
-          $ref: '#/components/schemas/Address'
-        customerType:
-          type: string
-        start:
-          type: string
-          format: date-time
-        summary:
-          type: string
-        campaignId:
-          type: integer
-        businessUnitId:
-          type: integer
   securitySchemes:
     OAuth2:
       type: oauth2

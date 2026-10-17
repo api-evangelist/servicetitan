@@ -189,54 +189,6 @@ paths:
                           type: boolean
 components:
   schemas:
-    JobCreateRequest:
-      type: object
-      required:
-      - customerId
-      - locationId
-      - businessUnitId
-      - jobTypeId
-      - priority
-      - campaignId
-      - appointments
-      properties:
-        customerId:
-          type: integer
-        locationId:
-          type: integer
-        businessUnitId:
-          type: integer
-        jobTypeId:
-          type: integer
-        priority:
-          type: string
-        campaignId:
-          type: integer
-        appointments:
-          type: array
-          items:
-            type: object
-            properties:
-              start:
-                type: string
-                format: date-time
-              end:
-                type: string
-                format: date-time
-              arrivalWindowStart:
-                type: string
-                format: date-time
-              arrivalWindowEnd:
-                type: string
-                format: date-time
-              technicianIds:
-                type: array
-                items:
-                  type: integer
-        summary:
-          type: string
-        shouldUpdateInvoiceItems:
-          type: boolean
     JobHistory:
       type: object
       properties:
@@ -261,19 +213,6 @@ components:
               usedSchedulingToolVersion:
                 type: string
                 nullable: true
-    JobUpdateRequest:
-      type: object
-      properties:
-        summary:
-          type: string
-        priority:
-          type: string
-        businessUnitId:
-          type: integer
-        jobTypeId:
-          type: integer
-        campaignId:
-          type: integer
     Job:
       type: object
       properties:
@@ -349,6 +288,67 @@ components:
         modifiedOn:
           type: string
           format: date-time
+    JobUpdateRequest:
+      type: object
+      properties:
+        summary:
+          type: string
+        priority:
+          type: string
+        businessUnitId:
+          type: integer
+        jobTypeId:
+          type: integer
+        campaignId:
+          type: integer
+    JobCreateRequest:
+      type: object
+      required:
+      - customerId
+      - locationId
+      - businessUnitId
+      - jobTypeId
+      - priority
+      - campaignId
+      - appointments
+      properties:
+        customerId:
+          type: integer
+        locationId:
+          type: integer
+        businessUnitId:
+          type: integer
+        jobTypeId:
+          type: integer
+        priority:
+          type: string
+        campaignId:
+          type: integer
+        appointments:
+          type: array
+          items:
+            type: object
+            properties:
+              start:
+                type: string
+                format: date-time
+              end:
+                type: string
+                format: date-time
+              arrivalWindowStart:
+                type: string
+                format: date-time
+              arrivalWindowEnd:
+                type: string
+                format: date-time
+              technicianIds:
+                type: array
+                items:
+                  type: integer
+        summary:
+          type: string
+        shouldUpdateInvoiceItems:
+          type: boolean
     JobPagedResponse:
       type: object
       properties:
@@ -363,12 +363,31 @@ components:
           items:
             $ref: '#/components/schemas/Job'
   parameters:
+    JobStatus:
+      name: jobStatus
+      in: query
+      schema:
+        type: string
+        enum:
+        - Scheduled
+        - Dispatched
+        - InProgress
+        - Hold
+        - Completed
+        - Canceled
     Page:
       name: page
       in: query
       schema:
         type: integer
         default: 1
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
     ModifiedOnOrAfter:
       name: modifiedOnOrAfter
       in: query
@@ -382,25 +401,6 @@ components:
         type: integer
         default: 50
         maximum: 500
-    JobStatus:
-      name: jobStatus
-      in: query
-      schema:
-        type: string
-        enum:
-        - Scheduled
-        - Dispatched
-        - InProgress
-        - Hold
-        - Completed
-        - Canceled
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-        format: int64
   securitySchemes:
     OAuth2:
       type: oauth2

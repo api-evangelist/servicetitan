@@ -46,6 +46,13 @@ paths:
                 $ref: '#/components/schemas/CategoryPagedResponse'
 components:
   schemas:
+    CategoryPagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Category'
     Category:
       type: object
       properties:
@@ -68,13 +75,6 @@ components:
         modifiedOn:
           type: string
           format: date-time
-    CategoryPagedResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Category'
   securitySchemes:
     OAuth2:
       type: oauth2

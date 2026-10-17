@@ -102,57 +102,7 @@ paths:
         '200':
           description: Updated
 components:
-  parameters:
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
-    PageSize:
-      name: pageSize
-      in: query
-      schema:
-        type: integer
-        default: 50
-        maximum: 500
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-        format: int64
   schemas:
-    TechnicianCreateRequest:
-      type: object
-      required:
-      - name
-      - businessUnitId
-      - loginName
-      properties:
-        name:
-          type: string
-        businessUnitId:
-          type: integer
-        loginName:
-          type: string
-        phoneNumber:
-          type: string
-        email:
-          type: string
-        active:
-          type: boolean
-        roleIds:
-          type: array
-          items:
-            type: integer
     Technician:
       type: object
       properties:
@@ -187,6 +137,29 @@ components:
         modifiedOn:
           type: string
           format: date-time
+    TechnicianCreateRequest:
+      type: object
+      required:
+      - name
+      - businessUnitId
+      - loginName
+      properties:
+        name:
+          type: string
+        businessUnitId:
+          type: integer
+        loginName:
+          type: string
+        phoneNumber:
+          type: string
+        email:
+          type: string
+        active:
+          type: boolean
+        roleIds:
+          type: array
+          items:
+            type: integer
     TechnicianPagedResponse:
       type: object
       properties:
@@ -200,6 +173,33 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Technician'
+  parameters:
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
   securitySchemes:
     OAuth2:
       type: oauth2

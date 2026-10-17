@@ -105,19 +105,6 @@ components:
       schema:
         type: integer
         default: 1
-    PageSize:
-      name: pageSize
-      in: query
-      schema:
-        type: integer
-        default: 50
-        maximum: 500
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
     Id:
       name: id
       in: path
@@ -125,7 +112,62 @@ components:
       schema:
         type: integer
         format: int64
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
   schemas:
+    PurchaseOrderCreateRequest:
+      type: object
+      required:
+      - typeId
+      - vendorId
+      - items
+      properties:
+        typeId:
+          type: integer
+        vendorId:
+          type: integer
+        warehouseId:
+          type: integer
+        jobId:
+          type: integer
+        projectId:
+          type: integer
+        technicianId:
+          type: integer
+        memo:
+          type: string
+        date:
+          type: string
+          format: date-time
+        requiredOn:
+          type: string
+          format: date-time
+        items:
+          type: array
+          items:
+            type: object
+            required:
+            - skuId
+            - quantity
+            - cost
+            properties:
+              skuId:
+                type: integer
+              quantity:
+                type: number
+              cost:
+                type: number
     PurchaseOrderPagedResponse:
       type: object
       properties:
@@ -212,48 +254,6 @@ components:
         modifiedOn:
           type: string
           format: date-time
-    PurchaseOrderCreateRequest:
-      type: object
-      required:
-      - typeId
-      - vendorId
-      - items
-      properties:
-        typeId:
-          type: integer
-        vendorId:
-          type: integer
-        warehouseId:
-          type: integer
-        jobId:
-          type: integer
-        projectId:
-          type: integer
-        technicianId:
-          type: integer
-        memo:
-          type: string
-        date:
-          type: string
-          format: date-time
-        requiredOn:
-          type: string
-          format: date-time
-        items:
-          type: array
-          items:
-            type: object
-            required:
-            - skuId
-            - quantity
-            - cost
-            properties:
-              skuId:
-                type: integer
-              quantity:
-                type: number
-              cost:
-                type: number
   securitySchemes:
     OAuth2:
       type: oauth2

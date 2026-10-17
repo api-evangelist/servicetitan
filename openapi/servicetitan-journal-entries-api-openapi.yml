@@ -63,6 +63,12 @@ components:
       schema:
         type: string
         format: date-time
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
     PageSize:
       name: pageSize
       in: query
@@ -70,12 +76,6 @@ components:
         type: integer
         default: 50
         maximum: 500
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
   schemas:
     JournalEntry:
       type: object

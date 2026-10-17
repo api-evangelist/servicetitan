@@ -119,6 +119,13 @@ components:
       schema:
         type: integer
         default: 1
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
     ModifiedOnOrAfter:
       name: modifiedOnOrAfter
       in: query
@@ -132,27 +139,32 @@ components:
         type: integer
         default: 50
         maximum: 500
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-        format: int64
   schemas:
-    ServicePagedResponse:
+    ServiceCreateRequest:
       type: object
+      required:
+      - code
+      - displayName
+      - price
       properties:
-        page:
-          type: integer
-        pageSize:
-          type: integer
-        hasMore:
+        code:
+          type: string
+        displayName:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+        memberPrice:
+          type: number
+        hours:
+          type: number
+        taxable:
           type: boolean
-        data:
+        categories:
           type: array
           items:
-            $ref: '#/components/schemas/Service'
+            type: integer
     Service:
       type: object
       properties:
@@ -222,31 +234,19 @@ components:
         modifiedOn:
           type: string
           format: date-time
-    ServiceCreateRequest:
+    ServicePagedResponse:
       type: object
-      required:
-      - code
-      - displayName
-      - price
       properties:
-        code:
-          type: string
-        displayName:
-          type: string
-        description:
-          type: string
-        price:
-          type: number
-        memberPrice:
-          type: number
-        hours:
-          type: number
-        taxable:
+        page:
+          type: integer
+        pageSize:
+          type: integer
+        hasMore:
           type: boolean
-        categories:
+        data:
           type: array
           items:
-            type: integer
+            $ref: '#/components/schemas/Service'
   securitySchemes:
     OAuth2:
       type: oauth2

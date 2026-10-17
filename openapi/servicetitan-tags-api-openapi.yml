@@ -51,13 +51,6 @@ paths:
                 $ref: '#/components/schemas/TagTypePagedResponse'
 components:
   schemas:
-    TagTypePagedResponse:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/TagType'
     TagType:
       type: object
       properties:
@@ -69,6 +62,13 @@ components:
           type: string
         active:
           type: boolean
+    TagTypePagedResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagType'
   securitySchemes:
     OAuth2:
       type: oauth2

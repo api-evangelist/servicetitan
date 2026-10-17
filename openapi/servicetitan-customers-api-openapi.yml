@@ -114,79 +114,44 @@ paths:
               schema:
                 $ref: '#/components/schemas/Customer'
 components:
-  parameters:
-    Ids:
-      name: ids
-      in: query
-      schema:
-        type: string
-      description: Comma-separated list of IDs
-    CreatedBefore:
-      name: createdBefore
-      in: query
-      schema:
-        type: string
-        format: date-time
-    Page:
-      name: page
-      in: query
-      schema:
-        type: integer
-        default: 1
-        minimum: 1
-    IncludeTotal:
-      name: includeTotal
-      in: query
-      schema:
-        type: boolean
-    ModifiedBefore:
-      name: modifiedBefore
-      in: query
-      schema:
-        type: string
-        format: date-time
-    ModifiedOnOrAfter:
-      name: modifiedOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
-    PageSize:
-      name: pageSize
-      in: query
-      schema:
-        type: integer
-        default: 50
-        maximum: 500
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-        format: int64
-    CreatedOnOrAfter:
-      name: createdOnOrAfter
-      in: query
-      schema:
-        type: string
-        format: date-time
   schemas:
-    CustomerUpdateRequest:
+    CustomerPagedResponse:
       type: object
       properties:
-        name:
-          type: string
-        type:
-          type: string
-        doNotMail:
+        page:
+          type: integer
+        pageSize:
+          type: integer
+        hasMore:
           type: boolean
-        doNotService:
-          type: boolean
-        customFields:
+        totalCount:
+          type: integer
+          nullable: true
+        data:
           type: array
           items:
-            $ref: '#/components/schemas/CustomField'
+            $ref: '#/components/schemas/Customer'
+    Contact:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        type:
+          type: string
+          enum:
+          - Phone
+          - MobilePhone
+          - Email
+          - Fax
+        value:
+          type: string
+        memo:
+          type: string
+          nullable: true
+        modifiedOn:
+          type: string
+          format: date-time
     CustomerCreateRequest:
       type: object
       required:
@@ -217,22 +182,30 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CustomField'
-    CustomerPagedResponse:
+    CustomField:
       type: object
       properties:
-        page:
+        typeId:
           type: integer
-        pageSize:
-          type: integer
-        hasMore:
+        name:
+          type: string
+        value:
+          type: string
+    CustomerUpdateRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        doNotMail:
           type: boolean
-        totalCount:
-          type: integer
-          nullable: true
-        data:
+        doNotService:
+          type: boolean
+        customFields:
           type: array
           items:
-            $ref: '#/components/schemas/Customer'
+            $ref: '#/components/schemas/CustomField'
     Address:
       type: object
       properties:
@@ -255,6 +228,29 @@ components:
         longitude:
           type: number
           nullable: true
+    ContactCreateRequest:
+      type: object
+      required:
+      - type
+      - value
+      properties:
+        type:
+          type: string
+        value:
+          type: string
+        memo:
+          type: string
+    LocationCreateRequest:
+      type: object
+      required:
+      - address
+      properties:
+        name:
+          type: string
+        address:
+          $ref: '#/components/schemas/Address'
+        zoneId:
+          type: integer
     Customer:
       type: object
       properties:
@@ -299,59 +295,63 @@ components:
             $ref: '#/components/schemas/Contact'
         hasActiveMembership:
           type: boolean
-    ContactCreateRequest:
-      type: object
-      required:
-      - type
-      - value
-      properties:
-        type:
-          type: string
-        value:
-          type: string
-        memo:
-          type: string
-    LocationCreateRequest:
-      type: object
-      required:
-      - address
-      properties:
-        name:
-          type: string
-        address:
-          $ref: '#/components/schemas/Address'
-        zoneId:
-          type: integer
-    CustomField:
-      type: object
-      properties:
-        typeId:
-          type: integer
-        name:
-          type: string
-        value:
-          type: string
-    Contact:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-        type:
-          type: string
-          enum:
-          - Phone
-          - MobilePhone
-          - Email
-          - Fax
-        value:
-          type: string
-        memo:
-          type: string
-          nullable: true
-        modifiedOn:
-          type: string
-          format: date-time
+  parameters:
+    CreatedOnOrAfter:
+      name: createdOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+        minimum: 1
+    PageSize:
+      name: pageSize
+      in: query
+      schema:
+        type: integer
+        default: 50
+        maximum: 500
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int64
+    ModifiedOnOrAfter:
+      name: modifiedOnOrAfter
+      in: query
+      schema:
+        type: string
+        format: date-time
+    ModifiedBefore:
+      name: modifiedBefore
+      in: query
+      schema:
+        type: string
+        format: date-time
+    CreatedBefore:
+      name: createdBefore
+      in: query
+      schema:
+        type: string
+        format: date-time
+    IncludeTotal:
+      name: includeTotal
+      in: query
+      schema:
+        type: boolean
+    Ids:
+      name: ids
+      in: query
+      schema:
+        type: string
+      description: Comma-separated list of IDs
   securitySchemes:
     OAuth2:
       type: oauth2
