@@ -1544,7 +1544,7 @@ apis:
     url: json-schema/servicetitan-material-schema.json
 name: ServiceTitan
 tags:
-  - Field Service Management
+  - Field Service
   - Trade
   - HVAC
   - Plumbing
