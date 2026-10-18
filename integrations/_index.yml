@@ -2431,7 +2431,7 @@
     - connectors/applications/servicetitan
     vendor_link: https://www.servicetitan.com/
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: servicetitan-meltano
   label: Meltano
@@ -2460,5 +2460,5 @@
     quality:
     - gold
     builder: 'community (Meltano Hub variant maintainers: meltanolabs)'
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
