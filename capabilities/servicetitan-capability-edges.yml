@@ -12,8 +12,18 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 20
+edge_count: 21
 edges:
+- tag: Appointment Assignments
+  spec_file: servicetitan-appointment-assignments-api-openapi.yml
+  capability_id: BC-1050.20
+  capability_id_l1: BC-1050
+  capability_name: Service Dispatch Management
+  confidence: 0.9
+  evidence: POST /appointment-assignments/assign-technicians Assign Technicians; 'The Dispatch API manages
+    technician shifts, appointment assignments... Drives the dispatch board.'
+  reason: Operations assign/unassign technicians to appointments — field service dispatch and technician
+    scheduling.
 - tag: Customers
   spec_file: servicetitan-customers-api-openapi.yml
   capability_id: BC-420.10
@@ -32,6 +42,16 @@ edges:
   evidence: GET /purchase-orders listPurchaseOrders; POST /purchase-orders createPurchaseOrder; "manages
     purchase orders, types, transfers, returns, adjustments, receipts, warehouses, trucks, vendors"
   reason: Explicit purchase order creation and retrieval against vendors is purchase order management.
+- tag: Installed Equipment
+  spec_file: servicetitan-installed-equipment-api-openapi.yml
+  capability_id: BC-1060.70
+  capability_id_l1: BC-1060
+  capability_name: Installed Base Management
+  confidence: 0.88
+  evidence: manages installed equipment records per customer location — make, model, serial, install date,
+    warranty terms, attachments, and equipment history. The asset-of-record API
+  reason: CRUD over installed equipment at customer locations with serial, install date and history is
+    precisely installed base data management for the serviced fleet.
 - tag: Journal Entries
   spec_file: servicetitan-journal-entries-api-openapi.yml
   capability_id: BC-200.10
@@ -42,15 +62,6 @@ edges:
     ''journal entries, journal entry details, tax zones, and GL accounts'''
   reason: Journal entries and GL accounts are plainly general ledger accounting objects; the accounting
     API integrates with QuickBooks/Sage Intacct.
-- tag: Appointment Assignments
-  spec_file: servicetitan-appointment-assignments-api-openapi.yml
-  capability_id: BC-1050.20
-  capability_id_l1: BC-1050
-  capability_name: Service Dispatch Management
-  confidence: 0.85
-  evidence: POST /appointment-assignments/assign-technicians 'Assign Technicians'; 'The Dispatch API manages
-    technician shifts, appointment assignments ... Drives the dispatch board.'
-  reason: Assigning and unassigning technicians to appointments on a dispatch board is field service dispatch/scheduling.
 - tag: GL Accounts
   spec_file: servicetitan-gl-accounts-api-openapi.yml
   capability_id: BC-200.10
@@ -61,15 +72,17 @@ edges:
   reason: General ledger account listing, and the document description confirms the Accounting API 'manages
     ... journal entries, journal entry details, tax zones, and GL accounts' — chart of accounts / general
     ledger management.
-- tag: Installed Equipment
-  spec_file: servicetitan-installed-equipment-api-openapi.yml
-  capability_id: BC-1060.70
-  capability_id_l1: BC-1060
-  capability_name: Installed Base Management
+- tag: Jobs
+  spec_file: servicetitan-jobs-api-openapi.yml
+  capability_id: BC-1050
+  capability_id_l1: BC-1050
+  capability_name: Field Service Management
   confidence: 0.85
-  evidence: '"manages installed equipment records per customer location — make, model, serial, install
-    date, warranty terms ... The asset-of-record API"; POST /installed-equipment createInstalledEquipment'
-  reason: Installed equipment per customer location with warranty terms is installed base management.
+  evidence: Create Job ... Cancel Job ... Hold Job ... Get Job History — 'It is the operational core of
+    ServiceTitan — every work order and recurring service rolls through this surface.'
+  reason: Full lifecycle of field service jobs (work orders) for a field service management platform,
+    so BC-1050 Field Service Management at L1. Left L2 null because the operations span request capture,
+    scheduling and execution without naming one sub-capability.
 - tag: Contacts
   spec_file: servicetitan-contacts-api-openapi.yml
   capability_id: BC-420.10
@@ -109,16 +122,6 @@ edges:
     Drives the dispatch board"; POST /technician-shifts createTechnicianShift'
   reason: Creating and listing technician shifts for the dispatch board is field service technician scheduling
     and dispatch.
-- tag: Jobs
-  spec_file: servicetitan-jobs-api-openapi.yml
-  capability_id: BC-1050.30
-  capability_id_l1: BC-1050
-  capability_name: Service Execution Management
-  confidence: 0.8
-  evidence: POST /jobs createJob, PUT /jobs/{id}/cancel cancelJob, PUT /jobs/{id}/hold holdJob; "every
-    work order and recurring service rolls through this surface"
-  reason: Full lifecycle of field service jobs/work orders for a field service management platform — service
-    execution management.
 - tag: Payments
   spec_file: servicetitan-payments-api-openapi.yml
   capability_id: BC-200.30
@@ -129,6 +132,26 @@ edges:
     ''manages invoices, invoice items, AP credits, payments, payment terms, payment types'''
   reason: Customer payments recorded against invoices with payment types and terms is receivables cash
     application within the accounting surface.
+- tag: Appointments
+  spec_file: servicetitan-appointments-api-openapi.yml
+  capability_id: BC-1050.20
+  capability_id_l1: BC-1050
+  capability_name: Service Dispatch Management
+  confidence: 0.75
+  evidence: PATCH /appointments/{id}/reschedule rescheduleAppointment; 'every work order and recurring
+    service rolls through this surface'
+  reason: Appointment scheduling/rescheduling for field service jobs maps to Field Service Management;
+    dispatch/scheduling is the best fit though it borders on service request/execution.
+- tag: Bookings
+  spec_file: servicetitan-bookings-api-openapi.yml
+  capability_id: BC-1050.10
+  capability_id_l1: BC-1050
+  capability_name: Service Request Management
+  confidence: 0.75
+  evidence: POST /bookings createBooking; 'customers, locations, contacts, leads, bookings, tags, and
+    booking provider sessions'
+  reason: Bookings capture inbound service requests for a field service platform, aligning with Service
+    Request Management; some ambiguity as bookings sit in the CRM/lead surface.
 - tag: GPS
   spec_file: servicetitan-gps-api-openapi.yml
   capability_id: BC-1050.20
@@ -147,16 +170,16 @@ edges:
   evidence: POST /transfers createTransfer Create Inventory Transfer
   reason: The operation summary explicitly creates an inventory transfer, i.e. movement of stock between
     locations, which is inventory management. The single operation does not pin down a specific sub-capability.
-- tag: Appointments
-  spec_file: servicetitan-appointments-api-openapi.yml
+- tag: Zones
+  spec_file: servicetitan-zones-api-openapi.yml
   capability_id: BC-1050.20
   capability_id_l1: BC-1050
   capability_name: Service Dispatch Management
-  confidence: 0.7
-  evidence: PATCH /appointments/{id}/reschedule rescheduleAppointment; 'The JPM API manages jobs, projects,
-    appointments ... every work order and recurring service rolls through this surface'
-  reason: Creating and rescheduling service appointments for trade jobs is field service scheduling; L2
-    choice between dispatch and execution carries some ambiguity.
+  confidence: 0.72
+  evidence: The Dispatch API manages technician shifts, appointment assignments, capacity windows, business
+    hours, zones, arrival windows, and gps pings. Drives the dispatch board.
+  reason: Zones are the geographic territories used by the dispatch board for technician assignment and
+    routing, which is Service Dispatch Management; only a single list operation, so confidence is moderate.
 - tag: Discounts And Fees
   spec_file: servicetitan-discounts-and-fees-api-openapi.yml
   capability_id: BC-440.30
@@ -197,13 +220,3 @@ edges:
     "List User Roles"'
   reason: Role and permission definitions for platform users is access management. Read-only single endpoint,
     so moderate confidence.
-- tag: Zones
-  spec_file: servicetitan-zones-api-openapi.yml
-  capability_id: BC-1050.20
-  capability_id_l1: BC-1050
-  capability_name: Service Dispatch Management
-  confidence: 0.7
-  evidence: '"The Dispatch API manages technician shifts, appointment assignments, capacity windows, business
-    hours, zones, arrival windows, and gps pings. Drives the dispatch board."'
-  reason: Zones are dispatch geography used for technician routing/assignment on the dispatch board —
-    service dispatch management. Single list endpoint, hence 0.7.
