@@ -15,6 +15,7 @@
   evidence: https://zapier.com/apps/google-ads/integrations/servicetitan/1007607/send-offline-conversion-to-google-ads-for-new-job-in-servicetitan
   template: https://zapier.com/apps/google-ads/integrations/servicetitan/1007607/send-offline-conversion-to-google-ads-for-new-job-in-servicetitan
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: servicetitan-create-detailed-events-in-google-calendar-for-new-servicetitan-appointments
@@ -29,6 +30,7 @@
   evidence: https://zapier.com/apps/google-calendar/integrations/servicetitan/1244424/create-detailed-events-in-google-calendar-for-new-servicetitan-appointments
   template: https://zapier.com/apps/google-calendar/integrations/servicetitan/1244424/create-detailed-events-in-google-calendar-for-new-servicetitan-appointments
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: servicetitan-send-channel-messages-in-slack-for-updated-estimates-in-servicetitan
@@ -43,6 +45,7 @@
   evidence: https://zapier.com/apps/servicetitan/integrations/slack/1412744/send-channel-messages-in-slack-for-updated-estimates-in-servicetitan
   template: https://zapier.com/apps/servicetitan/integrations/slack/1412744/send-channel-messages-in-slack-for-updated-estimates-in-servicetitan
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: servicetitan-automatically-create-servicetitan-non-job-appointments-for-new-microsoft-outl
@@ -57,6 +60,7 @@
   evidence: https://zapier.com/apps/microsoft-outlook/integrations/servicetitan/1388814/automatically-create-servicetitan-non-job-appointments-for-new-microsoft-outlook-calendar-events
   template: https://zapier.com/apps/microsoft-outlook/integrations/servicetitan/1388814/automatically-create-servicetitan-non-job-appointments-for-new-microsoft-outlook-calendar-events
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: servicetitan-create-bookings-in-servicetitan-for-new-leads-in-yelp-leads
@@ -71,6 +75,7 @@
   evidence: https://zapier.com/apps/servicetitan/integrations/yelp-leads/255647043/create-bookings-in-servicetitan-for-new-leads-in-yelp-leads
   template: https://zapier.com/apps/servicetitan/integrations/yelp-leads/255647043/create-bookings-in-servicetitan-for-new-leads-in-yelp-leads
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: servicetitan-add-new-servicetitan-jobs-to-google-sheets-rows-automatically
@@ -85,6 +90,7 @@
   evidence: https://zapier.com/apps/google-sheets/integrations/servicetitan/1258430/add-new-servicetitan-jobs-to-google-sheets-rows-automatically
   template: https://zapier.com/apps/google-sheets/integrations/servicetitan/1258430/add-new-servicetitan-jobs-to-google-sheets-rows-automatically
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: servicetitan-add-new-servicetitan-customers-to-google-sheets-as-spreadsheet-rows
@@ -99,6 +105,7 @@
   evidence: https://zapier.com/apps/google-sheets/integrations/servicetitan/1524834/add-new-servicetitan-customers-to-google-sheets-as-spreadsheet-rows
   template: https://zapier.com/apps/google-sheets/integrations/servicetitan/1524834/add-new-servicetitan-customers-to-google-sheets-as-spreadsheet-rows
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: servicetitan-create-microsoft-outlook-events-for-new-servicetitan-appointments
@@ -113,6 +120,7 @@
   evidence: https://zapier.com/apps/microsoft-outlook/integrations/servicetitan/1626595/create-microsoft-outlook-events-for-new-servicetitan-appointments
   template: https://zapier.com/apps/microsoft-outlook/integrations/servicetitan/1626595/create-microsoft-outlook-events-for-new-servicetitan-appointments
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: servicetitan-add-new-servicetitan-form-submissions-to-google-sheets-as-rows
@@ -127,10 +135,12 @@
   evidence: https://zapier.com/apps/google-sheets/integrations/servicetitan/1398349/add-new-servicetitan-form-submissions-to-google-sheets-as-rows
   template: https://zapier.com/apps/google-sheets/integrations/servicetitan/1398349/add-new-servicetitan-form-submissions-to-google-sheets-as-rows
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: servicetitan-share-updates-from-servicetitan-as-funnel-events-to-facebook-conversions
   label: Share updates from ServiceTitan as funnel events to Facebook Conversions
+  partner: facebook
   partner_name: Facebook Conversions
   category: Ads & Conversion
   use_case: Share updates from ServiceTitan as funnel events to Facebook Conversions
@@ -140,276 +150,33 @@
   evidence: https://zapier.com/apps/facebook-conversions/integrations/servicetitan/789597/share-updates-from-servicetitan-as-funnel-events-to-facebook-conversions
   template: https://zapier.com/apps/facebook-conversions/integrations/servicetitan/789597/share-updates-from-servicetitan-as-funnel-events-to-facebook-conversions
   source: template
-  status: pending-partner-spec
-  arazzo: null
-- slug: servicetitan-leadconnector
-  label: LeadConnector
-  partner_name: LeadConnector
-  category: Marketing Automation
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/leadconnector
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: servicetitan-gravity-forms
-  label: Gravity Forms
-  partner: gravity-forms
-  partner_name: Gravity Forms
-  category: Forms & Surveys
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/gravity-forms
-  source: edge
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
-- slug: servicetitan-gmail
-  label: Gmail
-  partner: gmail
-  partner_name: Gmail
-  category: Email
+- slug: servicetitan-zapier
+  label: Zapier
+  partner: zapier
+  partner_name: Zapier
   type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/gmail
+  marketplace: zapier-directory
+  channel: ipaas-listing
+  evidence: https://zapier.com/apps/servicetitan/integrations
   source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: servicetitan-facebook-lead-ads
-  label: Facebook Lead Ads
-  partner: facebook-lead-ads
-  partner_name: Facebook Lead Ads
-  category: Ads & Conversion
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/facebook-lead-ads
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: servicetitan-whatconverts
-  label: WhatConverts
-  partner_name: WhatConverts
-  category: CRM (Customer Relationship Management)
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/whatconverts
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: servicetitan-hubspot
-  label: HubSpot
-  partner: hubspot
-  partner_name: HubSpot
-  category: Marketing Automation
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/hubspot
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: servicetitan-monday-com
-  label: monday.com
-  partner_name: monday.com
-  category: Project Management
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/monday
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: servicetitan-microsoft-excel
-  label: Microsoft Excel
-  partner_name: Microsoft Excel
-  category: Microsoft
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/excel
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: servicetitan-pipedrive
-  label: Pipedrive
-  partner: pipedrive
-  partner_name: Pipedrive
-  category: CRM (Customer Relationship Management)
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/pipedrive
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: servicetitan-callrail
-  label: CallRail
-  partner: callrail
-  partner_name: CallRail
-  category: Call Tracking
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/callrail
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: servicetitan-wpforms
-  label: WPForms
-  partner_name: WPForms
-  category: Forms & Surveys
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/wpforms
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: servicetitan-google-forms
-  label: Google Forms
-  partner: google-forms
-  partner_name: Google Forms
-  category: Forms & Surveys
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/google-forms
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: servicetitan-mailchimp
-  label: Mailchimp
-  partner: mailchimp
-  partner_name: Mailchimp
-  category: Marketing Automation
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/mailchimp
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: servicetitan-salesmate
-  label: Salesmate
-  partner_name: Salesmate
-  category: CRM (Customer Relationship Management)
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/salesmate
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: servicetitan-airtable
-  label: Airtable
-  partner: airtable
-  partner_name: Airtable
-  category: Databases
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/airtable
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: servicetitan-google-chat
-  label: Google Chat
-  partner: google-chat
-  partner_name: Google Chat
-  category: Google
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/google-chat
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: servicetitan-podium
-  label: Podium
-  partner: podium
-  partner_name: Podium
-  category: Communication
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/podium
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: servicetitan-clickup
-  label: ClickUp
-  partner: clickup
-  partner_name: ClickUp
-  category: Project Management
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/clickup
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: servicetitan-signnow
-  label: SignNow
-  partner: signnow
-  partner_name: SignNow
-  category: Signatures
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/signnow
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: servicetitan-typeform
-  label: Typeform
-  partner: typeform
-  partner_name: Typeform
-  category: Forms & Surveys
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/typeform
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: servicetitan-trello
-  label: Trello
-  partner: trello
-  partner_name: Trello
-  category: Project Management
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/trello
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: servicetitan-facebook-lead-ads-for-business-admins
-  label: Facebook Lead Ads (for Business admins)
-  partner_name: Facebook Lead Ads (for Business admins)
-  category: Ads & Conversion
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/facebook-lead-ads-beta
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: servicetitan-constant-contact
-  label: Constant Contact
-  partner: constant-contact
-  partner_name: Constant Contact
-  category: Email Newsletters
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/constant-contact
-  source: edge
-  status: pending-generation
+  relationship: ipaas-bridge
+  contract_reference:
+    register: Zapier app directory (zapier.com/api/v4/apps)
+    spec_file: null
+    role: ipaas-connector:zapier
+    registered_name: ServiceTitan
+    matched_domain: servicetitan.com
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    app_slug: servicetitan
+    beta: false
+    builder: unknown (not in the directory record)
+  status: not-a-workflow
   arazzo: null
 - slug: servicetitan-angi
   label: Angi
@@ -487,7 +254,7 @@
   label: Lennox
   partner: lennox-international
   partner_name: Lennox
-  category: Suppliers, Catalogs & Pricebooks
+  category: Suppliers, Catalogs & Pricebooks, Procurement
   type: marketplace
   marketplace: own
   channel: partner-built
@@ -883,6 +650,19 @@
   marketplace: own
   channel: partner-built
   evidence: https://marketplace.servicetitan.com/partner/callpoint
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-callrail
+  label: CallRail
+  partner: callrail
+  partner_name: CallRail
+  category: Marketing, Marketing & Growth
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/callrail
   source: edge
   relationship: platform-app
   status: not-a-workflow
@@ -2066,6 +1846,17 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: servicetitan-snoball
+  label: Snoball
+  partner_name: Snoball
+  category: Marketing & Growth
+  type: marketplace
+  marketplace: own
+  evidence: https://marketplace.servicetitan.com/partner/snoball
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
 - slug: servicetitan-spotio
   label: SPOTIO
   partner: spotio
@@ -2382,31 +2173,6 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: servicetitan-zapier
-  label: Zapier
-  partner: zapier
-  partner_name: Zapier
-  type: marketplace
-  marketplace: zapier-directory
-  channel: ipaas-listing
-  evidence: https://zapier.com/apps/servicetitan/integrations
-  source: edge
-  relationship: ipaas-bridge
-  contract_reference:
-    register: Zapier app directory (zapier.com/api/v4/apps)
-    spec_file: null
-    role: ipaas-connector:zapier
-    registered_name: ServiceTitan
-    matched_domain: servicetitan.com
-    matched_by: domain
-    detected_by: sweep-workflow-automation.py
-    detected: '2026-10-15'
-    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
-    app_slug: servicetitan
-    beta: false
-    builder: unknown (not in the directory record)
-  status: not-a-workflow
-  arazzo: null
 - slug: servicetitan-fivetran
   label: Fivetran
   partner: fivetran
@@ -2461,4 +2227,285 @@
     - gold
     builder: 'community (Meltano Hub variant maintainers: meltanolabs)'
   status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-leadconnector
+  label: LeadConnector
+  partner_name: LeadConnector
+  category: Marketing Automation
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/leadconnector
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: servicetitan-gravity-forms
+  label: Gravity Forms
+  partner: gravity-forms
+  partner_name: Gravity Forms
+  category: Forms & Surveys
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/gravity-forms
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: servicetitan-gmail
+  label: Gmail
+  partner: gmail
+  partner_name: Gmail
+  category: Email
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/gmail
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: servicetitan-facebook-lead-ads
+  label: Facebook Lead Ads
+  partner: facebook-lead-ads
+  partner_name: Facebook Lead Ads
+  category: Ads & Conversion
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/facebook-lead-ads
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: servicetitan-whatconverts
+  label: WhatConverts
+  partner_name: WhatConverts
+  category: CRM (Customer Relationship Management)
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/whatconverts
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: servicetitan-monday-com
+  label: monday.com
+  partner: monday-com
+  partner_name: monday.com
+  category: Project Management
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/monday
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: servicetitan-microsoft-excel
+  label: Microsoft Excel
+  partner_name: Microsoft Excel
+  category: Microsoft
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/excel
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: servicetitan-pipedrive
+  label: Pipedrive
+  partner: pipedrive
+  partner_name: Pipedrive
+  category: CRM (Customer Relationship Management)
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/pipedrive
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: servicetitan-wpforms
+  label: WPForms
+  partner_name: WPForms
+  category: Forms & Surveys
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/wpforms
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: servicetitan-google-forms
+  label: Google Forms
+  partner: google-forms
+  partner_name: Google Forms
+  category: Forms & Surveys
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/google-forms
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: servicetitan-mailchimp
+  label: Mailchimp
+  partner: mailchimp
+  partner_name: Mailchimp
+  category: Marketing Automation
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/mailchimp
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: servicetitan-salesmate
+  label: Salesmate
+  partner_name: Salesmate
+  category: CRM (Customer Relationship Management)
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/salesmate
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: servicetitan-airtable
+  label: Airtable
+  partner: airtable
+  partner_name: Airtable
+  category: Databases
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/airtable
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: servicetitan-google-chat
+  label: Google Chat
+  partner: google-chat
+  partner_name: Google Chat
+  category: Google
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/google-chat
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: servicetitan-podium
+  label: Podium
+  partner: podium
+  partner_name: Podium
+  category: Communication
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/podium
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: servicetitan-signnow
+  label: SignNow
+  partner: signnow
+  partner_name: SignNow
+  category: Signatures
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/signnow
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: servicetitan-clickup
+  label: ClickUp
+  partner: clickup
+  partner_name: ClickUp
+  category: Project Management
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/clickup
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: servicetitan-trello
+  label: Trello
+  partner: trello
+  partner_name: Trello
+  category: Project Management
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/trello
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: servicetitan-typeform
+  label: Typeform
+  partner: typeform
+  partner_name: Typeform
+  category: Forms & Surveys
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/typeform
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: servicetitan-facebook-lead-ads-for-business-admins
+  label: Facebook Lead Ads (for Business admins)
+  partner: facebook-lead-ads
+  partner_name: Facebook Lead Ads (for Business admins)
+  category: Ads & Conversion
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/facebook-lead-ads-beta
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: servicetitan-ringcentral
+  label: RingCentral
+  partner: ringcentral
+  partner_name: RingCentral
+  category: Phone & SMS
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/ringcentral
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: servicetitan-constant-contact
+  label: Constant Contact
+  partner: constant-contact
+  partner_name: Constant Contact
+  category: Email Newsletters
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/servicetitan/integrations/constant-contact
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
   arazzo: null

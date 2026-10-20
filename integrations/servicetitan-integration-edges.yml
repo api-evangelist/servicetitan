@@ -1,8 +1,9 @@
-generated: '2026-10-12'
+generated: '2026-10-20'
 method: searched
 source:
 - https://zapier.com/apps/servicetitan/integrations
 - https://composio.dev/toolkits/servicetitan
+- https://marketplace.servicetitan.com/
 checked:
 - https://composio.dev/toolkits/servicetitan
 - https://fivetran.com/docs-sitemap.xml
@@ -827,2861 +828,11 @@ marketplace_apps:
   channel: partner-built
   app: servicetitan
   url: https://marketplace.servicetitan.com/
-  app_count: 179
+  app_count: 180
   adapter: sweep-construction.py:gatsby-page-data
-  listed: 164
+  listed: 165
   note: filter Service Provider only (15) is a services relationship and is not written
 edges:
-- partner_name: LeadConnector
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/leadconnector
-  direction: third-party
-  category: Marketing Automation
-  partner_url: https://www.leadconnectorhq.com/
-- partner_name: Gravity Forms
-  partner: gravity-forms
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/gravity-forms
-  direction: third-party
-  category: Forms & Surveys
-  partner_url: https://www.gravityforms.com/?utm_campaign=partners&utm_source=zapier-listing-learn-more&utm_medium=free-placement
-- partner_name: Microsoft Outlook
-  partner: microsoft-outlook
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/microsoft-outlook
-  direction: third-party
-  category: Calendar
-  partner_url: https://outlook.live.com/
-- partner_name: Google Calendar
-  partner: google-calendar
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/google-calendar
-  direction: third-party
-  category: Calendar
-  partner_url: https://calendar.google.com/
-- partner_name: Gmail
-  partner: gmail
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/gmail
-  direction: third-party
-  category: Email
-  partner_url: https://mail.google.com/
-- partner_name: Google Ads
-  partner: google-ads
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/google-ads
-  direction: third-party
-  category: Ads & Conversion
-  partner_url: https://ads.google.com/
-- partner_name: Facebook Lead Ads
-  partner: facebook-lead-ads
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/facebook-lead-ads
-  direction: third-party
-  category: Ads & Conversion
-  partner_url: https://www.facebook.com/business/ads/lead-ads
-- partner_name: WhatConverts
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/whatconverts
-  direction: third-party
-  category: CRM (Customer Relationship Management)
-  partner_url: https://www.whatconverts.com/
-- partner_name: HubSpot
-  partner: hubspot
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/hubspot
-  direction: third-party
-  category: Marketing Automation
-  partner_url: http://www.hubspot.com/
-- partner_name: monday.com
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/monday
-  direction: third-party
-  category: Project Management
-  partner_url: https://monday.com/
-- partner_name: Microsoft Excel
-  partner: null
-  partner_match: null
-  partner_candidate: zapier
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/excel
-  direction: third-party
-  category: Microsoft
-  partner_url: https://zapier.com/office.com
-- partner_name: Pipedrive
-  partner: pipedrive
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/pipedrive
-  direction: third-party
-  category: CRM (Customer Relationship Management)
-  partner_url: https://pipedrive.com/
-- partner_name: Google Sheets
-  partner: google-sheets
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/google-sheets
-  direction: third-party
-  category: Google
-  partner_url: http://sheets.google.com/
-- partner_name: CallRail
-  partner: callrail
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/callrail
-  direction: third-party
-  category: Call Tracking
-  partner_url: https://www.callrail.com/?utm_medium=strategicpartner&utm_source=zapier&utm_campaign=app_listing&utm_content=app_listing
-- partner_name: WPForms
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/wpforms
-  direction: third-party
-  category: Forms & Surveys
-  partner_url: https://wpforms.com/
-- partner_name: Slack
-  partner: slack
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/slack
-  direction: third-party
-  category: Team Chat
-  partner_url: https://slack.com/
-- partner_name: Google Forms
-  partner: google-forms
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/google-forms
-  direction: third-party
-  category: Forms & Surveys
-  partner_url: http://google.com/
-- partner_name: Mailchimp
-  partner: mailchimp
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/mailchimp
-  direction: third-party
-  category: Marketing Automation
-  partner_url: https://mailchimp.com/
-- partner_name: Salesmate
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/salesmate
-  direction: third-party
-  category: CRM (Customer Relationship Management)
-  partner_url: http://salesmate.io/
-- partner_name: Airtable
-  partner: airtable
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/airtable
-  direction: third-party
-  category: Databases
-  partner_url: https://airtable.com/
-- partner_name: Google Chat
-  partner: google-chat
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/google-chat
-  direction: third-party
-  category: Google
-  partner_url: https://gsuite.google.com/products/chat/
-- partner_name: Podium
-  partner: podium
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/podium
-  direction: third-party
-  category: Communication
-  partner_url: https://www.podium.com/
-- partner_name: Facebook Conversions
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/facebook-conversions
-  direction: third-party
-  category: Ads & Conversion
-  partner_url: https://developers.facebook.com/docs/marketing-api/server-side-api/guides/zapier-integration
-- partner_name: ClickUp
-  partner: clickup
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/clickup
-  direction: third-party
-  category: Project Management
-  partner_url: https://clickup.com/zapier
-- partner_name: Yelp Leads
-  partner: yelp
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/yelp-leads
-  direction: third-party
-  category: Ads & Conversion
-  partner_url: https://business.yelp.com/brands/leads-api/
-- partner_name: SignNow
-  partner: signnow
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/signnow
-  direction: third-party
-  category: Signatures
-  partner_url: https://www.signnow.com/
-- partner_name: Typeform
-  partner: typeform
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/typeform
-  direction: third-party
-  category: Forms & Surveys
-  partner_url: https://www.typeform.com/signup?utm_medium=referral&utm_source=zapier&utm_campaign=zapier_integration&utm_content=marketplace
-- partner_name: Trello
-  partner: trello
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/trello
-  direction: third-party
-  category: Project Management
-  partner_url: https://trello.com/
-- partner_name: Facebook Lead Ads (for Business admins)
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/facebook-lead-ads-beta
-  direction: third-party
-  category: Ads & Conversion
-  partner_url: https://facebook.com/
-- partner_name: Constant Contact
-  partner: constant-contact
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/servicetitan/integrations/constant-contact
-  direction: third-party
-  category: Email Newsletters
-  partner_url: http://www.constantcontact.com/signup.jsp?pn=zapier
-- partner_name: Angi
-  app: Angi
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/angi
-  category: Leads & Bookings
-  partner_domain: homeadvisor.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: BDR
-  app: BDR
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: null
-  relationship: platform-app
-  direction: unknown
-  evidence: https://marketplace.servicetitan.com/partner/bdr
-  category: Associations, Accounting & Tax, Coaching & Associations
-  partner_domain: bdrco.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Bryant
-  app: Bryant
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/bryant
-  category: Suppliers, Catalogs & Pricebooks, Leads & Bookings
-  partner_domain: bryant.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Carrier
-  app: Carrier
-  partner: carrier-global
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/carrier
-  category: Suppliers, Catalogs & Pricebooks, Leads & Bookings
-  partner_domain: carrier.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: iPermit
-  app: iPermit
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/ipermit
-  category: Permitting
-  partner_domain: ipermitusa.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: JB Warranties
-  app: JB Warranties
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/jb-warranties
-  category: Warranties, Catalogs & Pricebooks
-  partner_domain: jbwarranties.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Lennox
-  app: Lennox
-  partner: lennox-international
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/lennox
-  category: Suppliers, Catalogs & Pricebooks
-  partner_domain: lennox.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Reserve with Google
-  app: Reserve with Google
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/reserve-with-google
-  category: Leads & Bookings
-  partner_domain: null
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Scorpion
-  app: Scorpion
-  partner: scorpion
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/scorpion
-  category: Marketing
-  partner_domain: scorpion.co
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: ServiceChannel
-  app: ServiceChannel
-  partner: servicechannel
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/servicechannel
-  category: Leads & Bookings, Property & Facilities Management
-  partner_domain: servicechannel.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: ServiceTitan AI Voice Agent
-  app: ServiceTitan AI Voice Agent
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: provider-built
-  relationship: platform-app
-  direction: provider-built
-  evidence: https://marketplace.servicetitan.com/partner/servicetitan-ai-voice-agent
-  category: Live Services, Telecom
-  partner_domain: null
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: ServiceTitan Fleet Pro
-  app: ServiceTitan Fleet Pro
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: provider-built
-  relationship: platform-app
-  direction: provider-built
-  evidence: https://marketplace.servicetitan.com/partner/servicetitan-fleet-pro
-  category: Fleet & GPS
-  partner_domain: null
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: ServiceTitan Marketing Pro
-  app: ServiceTitan Marketing Pro
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: provider-built
-  relationship: platform-app
-  direction: provider-built
-  evidence: https://marketplace.servicetitan.com/partner/servicetitan-marketing-pro
-  category: Marketing
-  partner_domain: null
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: ServiceTitan Payments
-  app: ServiceTitan Payments
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: provider-built
-  relationship: platform-app
-  direction: provider-built
-  evidence: https://marketplace.servicetitan.com/partner/ServiceTitan-payments
-  category: Payments & Financing
-  partner_domain: null
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: ServiceTitan Pricebook Pro
-  app: ServiceTitan Pricebook Pro
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: provider-built
-  relationship: platform-app
-  direction: provider-built
-  evidence: https://marketplace.servicetitan.com/partner/servicetitan-pricebook-pro
-  category: Catalogs & Pricebooks
-  partner_domain: null
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: ServiceTitan Phones Pro
-  app: ServiceTitan Phones Pro
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: provider-built
-  relationship: platform-app
-  direction: provider-built
-  evidence: https://marketplace.servicetitan.com/partner/servicetitan-phones-pro
-  category: Telecom
-  partner_domain: null
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: ServiceTitan Scheduling Pro
-  app: ServiceTitan Scheduling Pro
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: provider-built
-  relationship: platform-app
-  direction: provider-built
-  evidence: https://marketplace.servicetitan.com/partner/schedule-engine
-  category: Live Services, Web Schedulers
-  partner_domain: null
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: The Home Depot
-  app: The Home Depot
-  partner: home-depot
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/the-home-depot
-  category: Leads & Bookings
-  partner_domain: homedepot.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Thumbtack
-  app: Thumbtack
-  partner: thumbtack
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/thumbtack
-  category: Leads & Bookings
-  partner_domain: thumbtack.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Trane
-  app: Trane
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/trane
-  category: Suppliers, Catalogs & Pricebooks, Leads & Bookings, Procurement
-  partner_domain: trane.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Wells Fargo
-  app: Wells Fargo
-  partner: wells-fargo
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/wells-fargo
-  category: Payments & Financing
-  partner_domain: wellsfargo.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: XOi
-  app: XOi
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/xoi
-  category: On-The-Job
-  partner_domain: xoi.io
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: ABC Supply
-  app: ABC Supply
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/abc-supply
-  category: Suppliers, Procurement, Catalogs & Pricebooks
-  partner_domain: abcsupply.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Aclarify
-  app: Aclarify
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/aclarify
-  category: Marketing
-  partner_domain: aclarify.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: ActiveProspect
-  app: ActiveProspect
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/activeprospect
-  category: Leads & Bookings
-  partner_domain: activeprospect.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: AirAdvice
-  app: AirAdvice
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/airadvice
-  category: On-The-Job
-  partner_domain: airadviceforhomes.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Amana
-  app: Amana
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/amana
-  category: Suppliers, Catalogs & Pricebooks
-  partner_domain: amana-hac.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: American Standard
-  app: American Standard
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/american-standard
-  category: Suppliers, Catalogs & Pricebooks, Leads & Bookings
-  partner_domain: americanstandardair.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: APR Supply Co.
-  app: APR Supply Co.
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/apr-supply
-  category: Suppliers, Procurement, Catalogs & Pricebooks
-  partner_domain: aprsupply.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: ArcSite
-  app: ArcSite
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/arcsite
-  category: Measurements & Estimations, On-The-Job
-  partner_domain: arcsite.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Avalara
-  app: Avalara
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/avalara
-  category: Accounting & Tax
-  partner_domain: avlr.co
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Avoca AI
-  app: Avoca AI
-  partner: avoca
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/avoca-ai
-  category: Live Services, Marketing
-  partner_domain: avoca.ai
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: Bench Accounting
-  app: Bench Accounting
-  partner: bench
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: null
-  relationship: platform-app
-  direction: unknown
-  evidence: https://marketplace.servicetitan.com/partner/bench-accounting
-  category: Accounting & Tax
-  partner_domain: bench.co
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Birdeye
-  app: Birdeye
-  partner: birdeye
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/birdeye
-  category: Marketing
-  partner_domain: birdeye.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Broccoli AI
-  app: Broccoli AI
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: null
-  relationship: platform-app
-  direction: unknown
-  evidence: https://marketplace.servicetitan.com/partner/broccoli-ai
-  category: Marketing, Live Services
-  partner_domain: broccoli.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: BUCS
-  app: BUCS
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/bucs
-  category: Business Intelligence & Analytics
-  partner_domain: bucsanalytics.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Building36
-  app: Building36
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/building36
-  category: Leads & Bookings
-  partner_domain: building36.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Business Financing with Bluevine
-  app: Business Financing with Bluevine
-  partner: bluevine
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/business-financing-with-bluevine
-  category: Payments & Financing
-  partner_domain: bluevine.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: CallPoint Contact Center Solutions
-  app: CallPoint Contact Center Solutions
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/callpoint
-  category: Live Services
-  partner_domain: callpointusa.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: CallRail
-  app: CallRail
-  partner: callrail
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/callrail
-  category: Marketing, Marketing & Growth
-  partner_domain: callrail.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: CAMP Digital
-  app: CAMP Digital
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/camp-digital
-  category: Marketing
-  partner_domain: campdigital.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: CHIIRP
-  app: CHIIRP
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/chiirp
-  category: Leads & Bookings, Marketing
-  partner_domain: chiirp.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: ClearPathGPS
-  app: ClearPathGPS
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/clearpath-gps
-  category: Fleet & GPS
-  partner_domain: clearpathgps.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Coburn Supply Company
-  app: Coburn Supply Company
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/coburn-supply-company
-  category: Suppliers, Catalogs & Pricebooks
-  partner_domain: coburns.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: CompanyCam
-  app: CompanyCam
-  partner: companycam
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/companycam
-  category: On-The-Job
-  partner_domain: companycam.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: Consolidated Supply
-  app: Consolidated Supply
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/consolidated-supply
-  category: Catalogs & Pricebooks, Suppliers, Procurement
-  partner_domain: consolidatedsupply.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Contractor Commerce
-  app: Contractor Commerce
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/contractor-commerce
-  category: E-Commerce
-  partner_domain: contractorcommerce.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: Contractor University Powered by EGIA
-  app: Contractor University Powered by EGIA
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: null
-  relationship: platform-app
-  direction: unknown
-  evidence: https://marketplace.servicetitan.com/partner/egia
-  category: Associations
-  partner_domain: mycontractoruniversity.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Copperfield Chimney Supply
-  app: Copperfield Chimney Supply
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/copperfield
-  category: Suppliers, Catalogs & Pricebooks, Procurement
-  partner_domain: copperfield.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Coral
-  app: Coral
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/coral
-  category: Payments & Financing
-  partner_domain: startcoral.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Craft
-  app: Craft
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/craft
-  category: On-The-Job
-  partner_domain: craftflow.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: CxC
-  app: CxC
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/cxc
-  category: On-The-Job
-  partner_domain: cxc.ai
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Daikin
-  app: Daikin
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/daikin
-  category: Suppliers, Catalogs & Pricebooks
-  partner_domain: northamerica-daikin.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Darwill
-  app: Darwill
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/darwill
-  category: Marketing
-  partner_domain: darwill.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: datacube.ai
-  app: datacube.ai
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/datacube-ai
-  category: Business Intelligence & Analytics
-  partner_domain: datacube.ai
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Dexcomm Answering & Communications Services
-  app: Dexcomm Answering & Communications Services
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/dexcomm
-  category: Live Services
-  partner_domain: dexcomm.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Dispatch
-  app: Dispatch
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/dispatch
-  category: E-Commerce
-  partner_domain: dispatchit.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Drillbit
-  app: Drillbit
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/drillbit
-  category: Sales and Leads
-  partner_domain: drillbit.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Dynamic Air Quality Solutions
-  app: Dynamic Air Quality Solutions
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/dynamic-air-quality-solutions
-  category: Suppliers, Catalogs & Pricebooks
-  partner_domain: dynamicaqs.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: EagleView Technologies, Inc.
-  app: EagleView Technologies, Inc.
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/eagleview
-  category: Measurements & Estimations
-  partner_domain: eagleview.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Famous Supply
-  app: Famous Supply
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/famous-supply
-  category: Suppliers, Catalogs & Pricebooks, Procurement
-  partner_domain: famous-supply.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Ferguson
-  app: Ferguson
-  partner: ferguson
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/ferguson
-  category: Suppliers, Procurement, Catalogs & Pricebooks
-  partner_domain: ferguson.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Financeit
-  app: Financeit
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/financeit
-  category: Payments & Financing
-  partner_domain: null
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Flat
-  app: Flat
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/flat
-  category: Marketing, Leads & Bookings, Property & Facilities Management, Sales and Leads
-  partner_domain: flathomecare.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: FlowPath
-  app: FlowPath
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/flowpath
-  category: Leads & Bookings, Property & Facilities Management
-  partner_domain: getflowpath.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Foundation Integrations by MindCloud
-  app: Foundation Integrations by MindCloud
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/foundation-mindcloud
-  category: Accounting & Tax
-  partner_domain: mindcloud.co
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Free2Grow
-  app: Free2Grow
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/free2grow
-  category: Live Services, Marketing
-  partner_domain: free-2-grow.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: Free Agency
-  app: Free Agency
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/free-agency
-  category: Marketing
-  partner_domain: freeagency.ai
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: GAF
-  app: GAF
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/gaf
-  category: Measurements & Estimations, Suppliers
-  partner_domain: gaf.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Gensco
-  app: Gensco
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/gensco
-  category: Suppliers, Procurement, Catalogs & Pricebooks
-  partner_domain: gensco.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Goodman
-  app: Goodman
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/goodman
-  category: Suppliers, Catalogs & Pricebooks
-  partner_domain: goodmanmfg.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: GreenSky
-  app: GreenSky
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/greensky
-  category: Payments & Financing
-  partner_domain: greenskycredit.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Hajoca
-  app: Hajoca
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/hajoca
-  category: Suppliers, Procurement, Catalogs & Pricebooks
-  partner_domain: hajoca.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Hatch AI
-  app: Hatch AI
-  partner: hatch
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/hatch-ai
-  category: Marketing, Leads & Bookings
-  partner_domain: usehatchapp.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: Home Solutions
-  app: Home Solutions
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/home-solutions
-  category: Leads & Bookings
-  partner_domain: homesolutions.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Hover
-  app: Hover
-  partner: hover
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/hover
-  category: Measurements & Estimations, On-The-Job
-  partner_domain: hover.to
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Hyperspace Inc.
-  app: Hyperspace Inc.
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/hyperspace
-  category: Admin & Operation, Payment Processing
-  partner_domain: hyperspacehq.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: iManifold
-  app: iManifold
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/imanifold
-  category: On-The-Job
-  partner_domain: imanifold.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Intuit
-  app: Intuit
-  partner: intuit
-  partner_match: domain+name-among-holders
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/intuit
-  category: Accounting & Tax
-  partner_domain: intuit.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: International Comfort Products
-  app: International Comfort Products
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/icp
-  category: Suppliers, Catalogs & Pricebooks, Leads & Bookings
-  partner_domain: icpusa.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: JustCall
-  app: JustCall
-  partner: justcall
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/justcall
-  category: Live Services, Marketing
-  partner_domain: justcall.io
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Kinetico
-  app: Kinetico
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/kinetico
-  category: Suppliers, Catalogs & Pricebooks
-  partner_domain: kinetico.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Lace
-  app: Lace
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/lace
-  category: Leads & Bookings
-  partner_domain: lace.ai
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: LettrLabs
-  app: LettrLabs
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/lettr-labs
-  category: Marketing
-  partner_domain: lettrlabs.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: Levitate
-  app: Levitate
-  partner: levitate
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/levitate
-  category: Marketing
-  partner_domain: levitate.ai
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: LiveSwitch
-  app: LiveSwitch
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/liveswitch
-  category: On-The-Job
-  partner_domain: liveswitch.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Local Optics
-  app: Local Optics
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/local-optics
-  category: Marketing
-  partner_domain: localoptics.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: LocaliQ
-  app: LocaliQ
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/localiq
-  category: Marketing
-  partner_domain: localiq.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Lumber
-  app: Lumber
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/lumber
-  category: HR & Payroll
-  partner_domain: lumberfi.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Mail Shark
-  app: Mail Shark
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/mail-shark
-  category: Marketing
-  partner_domain: themailshark.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: Marchex
-  app: Marchex
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/marchex
-  category: Live Services, Marketing
-  partner_domain: marchex.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: MCAA
-  app: MCAA
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: null
-  relationship: platform-app
-  direction: unknown
-  evidence: https://marketplace.servicetitan.com/partner/mcaa
-  category: Associations
-  partner_domain: mcaa.org
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Measure Square Corp.
-  app: Measure Square Corp.
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/measure-square
-  category: Measurements & Estimations, On-The-Job
-  partner_domain: measuresquare.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: MindCloud
-  app: MindCloud
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/mindcloud
-  category: Accounting & Tax
-  partner_domain: mindcloud.co
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Miter
-  app: Miter
-  partner: miter
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/miter
-  category: HR & Payroll
-  partner_domain: miter.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Modernize Home Services
-  app: Modernize Home Services
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/modernize
-  category: Leads & Bookings
-  partner_domain: modernize.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Nationwide Inbound
-  app: Nationwide Inbound
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/nationwide-inbound
-  category: Live Services
-  partner_domain: nationwideinbound.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Motive
-  app: Motive
-  partner: motive
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/go-motive
-  category: Fleet & GPS
-  partner_domain: gomotive.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: Nearby Now
-  app: Nearby Now
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/nearby-now
-  category: Marketing
-  partner_domain: nearbynow.co
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: NECA
-  app: NECA
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: null
-  relationship: platform-app
-  direction: unknown
-  evidence: https://marketplace.servicetitan.com/partner/neca
-  category: Associations
-  partner_domain: necanet.org
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Netic AI
-  app: Netic AI
-  partner: netic
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/netic
-  category: Live Services, Marketing
-  partner_domain: netic.ai
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: Oracle NetSuite
-  app: Oracle NetSuite
-  partner: netsuite
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/oracle-netsuite
-  category: Accounting & Tax
-  partner_domain: netsuite.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Peaka
-  app: Peaka
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/peaka
-  category: Business Intelligence & Analytics
-  partner_domain: peaka.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: PermitFlow
-  app: PermitFlow
-  partner: permitflow
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/permitflow
-  category: Permitting
-  partner_domain: permitflow.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: PHCC
-  app: PHCC
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: null
-  relationship: platform-app
-  direction: unknown
-  evidence: https://marketplace.servicetitan.com/partner/phcc
-  category: Associations
-  partner_domain: phccweb.org
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: PhoneTAP
-  app: PhoneTAP
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/phonetap
-  category: Live Services, Business Intelligence & Analytics
-  partner_domain: phonetap.ai
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: Ply
-  app: Ply
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/ply
-  category: Suppliers, Inventory
-  partner_domain: getply.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: PRAXIS S-10
-  app: PRAXIS S-10
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: null
-  relationship: platform-app
-  direction: unknown
-  evidence: https://marketplace.servicetitan.com/partner/praxis-s-10
-  category: Associations, Coaching & Associations
-  partner_domain: praxiss10.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: PricebookPlus
-  app: PricebookPlus
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: null
-  relationship: platform-app
-  direction: unknown
-  evidence: https://marketplace.servicetitan.com/partner/pricebook-plus
-  category: Catalogs & Pricebooks
-  partner_domain: pricebook.digital
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Probook
-  app: Probook
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/probook
-  category: Dispatch
-  partner_domain: probook.ai
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Quality Service Contractors
-  app: Quality Service Contractors
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: null
-  relationship: platform-app
-  direction: unknown
-  evidence: https://marketplace.servicetitan.com/partner/quality-service-contractors
-  category: Associations
-  partner_domain: qsc-phcc.org
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: QXO
-  app: QXO
-  partner: qxo-building-products
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/qxo
-  category: Suppliers, Catalogs & Pricebooks, Procurement
-  partner_domain: qxo.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Ramp
-  app: Ramp
-  partner: ramp
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: null
-  relationship: platform-app
-  direction: unknown
-  evidence: https://marketplace.servicetitan.com/partner/ramp
-  category: Expense Management, Payments & Financing
-  partner_domain: ramp.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: R.E. Michel
-  app: R.E. Michel
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/re-michel
-  category: Suppliers, Catalogs & Pricebooks, Procurement
-  partner_domain: remichel.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Reece
-  app: Reece
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/reece
-  category: Suppliers, Catalogs & Pricebooks, Procurement
-  partner_domain: reece.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: ReferPro
-  app: ReferPro
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/referpro
-  category: Marketing
-  partner_domain: referpro.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: Reins
-  app: Reins
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/reins
-  category: HR & Payroll
-  partner_domain: myreins.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: Relentless Digital
-  app: Relentless Digital
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/relentless-digital
-  category: Marketing
-  partner_domain: relentless-digital.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: ResQ
-  app: ResQ
-  partner: res
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/resq
-  category: Leads & Bookings, Property & Facilities Management
-  partner_domain: getresq.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Revin
-  app: Revin
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/revin
-  category: Live Services, Marketing
-  partner_domain: revin.ai
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: Rheem
-  app: Rheem
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/rheem
-  category: Suppliers, Catalogs & Pricebooks
-  partner_domain: rheem.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Robertson Heating Supply
-  app: Robertson Heating Supply
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/robertson-heating-supply
-  category: Suppliers, Catalogs & Pricebooks
-  partner_domain: rhs1.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Ruud
-  app: Ruud
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/ruud
-  category: Suppliers, Catalogs & Pricebooks
-  partner_domain: ruud.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Sage Intacct
-  app: Sage Intacct
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/sage-intacct
-  category: Accounting & Tax
-  partner_domain: sageintacct.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Sales Ask Inc.
-  app: Sales Ask Inc.
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/sales-ask
-  category: On-The-Job
-  partner_domain: salesask.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Sameday AI
-  app: Sameday AI
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/sameday-ai
-  category: Leads & Bookings, Telecom
-  partner_domain: sameday.ai
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: SBE
-  app: SBE
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: null
-  relationship: platform-app
-  direction: unknown
-  evidence: https://marketplace.servicetitan.com/partner/sbe
-  category: Associations
-  partner_domain: sbeodyssey.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: SearchLight
-  app: SearchLight
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/searchlight
-  category: Marketing
-  partner_domain: searchlightdigital.io
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: ServiceCall
-  app: ServiceCall
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/service-call
-  category: On-The-Job, Marketing
-  partner_domain: servicecall.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: ServiceTitan Dispatch Pro
-  app: ServiceTitan Dispatch Pro
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: provider-built
-  relationship: platform-app
-  direction: provider-built
-  evidence: https://marketplace.servicetitan.com/partner/servicetitan-dispatch-pro
-  category: Dispatch
-  partner_domain: null
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: ServiceTitan Sales Pro
-  app: ServiceTitan Sales Pro
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: provider-built
-  relationship: platform-app
-  direction: provider-built
-  evidence: https://marketplace.servicetitan.com/partner/servicetitan-sales-pro
-  category: On-The-Job
-  partner_domain: null
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Service Finance
-  app: Service Finance
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/service-finance
-  category: Payments & Financing
-  partner_domain: svcfin.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Service Nation Alliance
-  app: Service Nation Alliance
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: null
-  relationship: platform-app
-  direction: unknown
-  evidence: https://marketplace.servicetitan.com/partner/service-nation-alliance
-  category: Associations
-  partner_domain: servicenationalliance.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Service Roundtable
-  app: Service Roundtable
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: null
-  relationship: platform-app
-  direction: unknown
-  evidence: https://marketplace.servicetitan.com/partner/service-roundtable
-  category: Associations
-  partner_domain: serviceroundtable.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: SetSale
-  app: SetSale
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/setsale
-  category: Sales and Leads
-  partner_domain: setsale.ai
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: ShareWillow
-  app: ShareWillow
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/sharewillow
-  category: HR & Payroll
-  partner_domain: sharewillow.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: SMACNA
-  app: SMACNA
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: null
-  relationship: platform-app
-  direction: unknown
-  evidence: https://marketplace.servicetitan.com/partner/smacna
-  category: Associations
-  partner_domain: smacna.org
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: SmartAC
-  app: SmartAC
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/smartac
-  category: Leads & Bookings
-  partner_domain: null
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: SPOTIO
-  app: SPOTIO
-  partner: spotio
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/spotio
-  category: On-The-Job, Field Management
-  partner_domain: spotio.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: SRS Distribution Inc.
-  app: SRS Distribution Inc.
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/srs-distribution-inc
-  category: Suppliers, Procurement, Catalogs & Pricebooks
-  partner_domain: srsdistribution.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Standard Plumbing Supply Company
-  app: Standard Plumbing Supply Company
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/standard-plumbing-supply
-  category: Suppliers, Procurement, Catalogs & Pricebooks
-  partner_domain: standardplumbing.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Stuut
-  app: Stuut
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/stuut-industries
-  category: Accounting & Tax
-  partner_domain: stuut.ai
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: SurveySquare
-  app: SurveySquare
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/surveysquare
-  category: Marketing
-  partner_domain: surveysquare.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Synchrony
-  app: Synchrony
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/synchrony
-  category: Payments & Financing
-  partner_domain: synchronybusiness.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: The Graphite Lab
-  app: The Graphite Lab
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/the-graphite-lab
-  category: Accounting & Tax
-  partner_domain: thegraphitelab.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: 'The New Flat Rate '
-  app: 'The New Flat Rate '
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/the-new-flat-rate
-  category: Catalogs & Pricebooks
-  partner_domain: thenewflatrate.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: To Your Success
-  app: To Your Success
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/to-your-success
-  category: Marketing
-  partner_domain: toyoursuccess.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Togal.AI
-  app: Togal.AI
-  partner: togal-ai
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/togal
-  category: On-The-Job, Measurements & Estimations
-  partner_domain: togal.ai
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: TradeEngage Referrals
-  app: TradeEngage Referrals
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/trade-engage
-  category: Marketing & Growth
-  partner_domain: tradeengage.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: 'TURNS Financing Services '
-  app: 'TURNS Financing Services '
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/turns-financing-services
-  category: Payments & Financing
-  partner_domain: turnsfinancing.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: UKG
-  app: UKG
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/ukg-ready-now
-  category: HR & Payroll
-  partner_domain: inovapayroll.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: UpSmith
-  app: UpSmith
-  partner: upsmith
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/upsmith
-  category: On-The-Job
-  partner_domain: upsmith.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: UpSwell Marketing
-  app: UpSwell Marketing
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/upswell-marketing
-  category: Marketing
-  partner_domain: upswellmarketing.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: 'US Fleet Tracking '
-  app: 'US Fleet Tracking '
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/us-fleet-tracking
-  category: Fleet & GPS
-  partner_domain: usfleettracking.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Verisk (Xactimate™)
-  app: Verisk (Xactimate™)
-  partner: verisk
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/verisk
-  category: On-The-Job
-  partner_domain: verisk.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Vestige
-  app: Vestige
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/vestige
-  category: Fleet & GPS
-  partner_domain: vestigeview.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Viewpoint Spectrum Integrations by MindCloud
-  app: Viewpoint Spectrum Integrations by MindCloud
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/viewpoint-spectrum-mindcloud
-  category: Accounting & Tax
-  partner_domain: mindcloud.co
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Viewpoint Vista Integrations by MindCloud
-  app: Viewpoint Vista Integrations by MindCloud
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/viewpoint-vista-mindcloud
-  category: Accounting & Tax
-  partner_domain: mindcloud.co
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: VIIRL Marketing
-  app: VIIRL Marketing
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/viirl-marketing
-  category: Marketing
-  partner_domain: viirl.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: WinGen
-  app: WinGen
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/wingen
-  category: Leads & Bookings
-  partner_domain: wingenapp.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-  badges:
-  - Certified App
-- partner_name: Winsupply
-  app: Winsupply
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/winsupply
-  category: Suppliers, Procurement, Catalogs & Pricebooks
-  partner_domain: winsupplyinc.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: Wink Toolbox
-  app: Wink Toolbox
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/wink-toolbox
-  category: Business Intelligence & Analytics
-  partner_domain: winkreports.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: XAPP AI
-  app: XAPP AI
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/xapp-ai
-  category: Marketing, Leads & Bookings
-  partner_domain: xapp.ai
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
-- partner_name: ZyraTalk
-  app: ZyraTalk
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  relationship: platform-app
-  direction: partner-built
-  evidence: https://marketplace.servicetitan.com/partner/zyratalk
-  category: Live Services, Marketing
-  partner_domain: zyratalk.com
-  detected_by: sweep-construction.py
-  detected: '2026-10-14'
 - partner_name: Zapier
   partner: zapier
   partner_match: aggregator
@@ -3707,6 +858,2543 @@ edges:
     builder: unknown (not in the directory record)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
+- partner_name: Angi
+  app: Angi
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/angi
+  category: Leads & Bookings
+  partner_domain: homeadvisor.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: BDR
+  app: BDR
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: null
+  relationship: platform-app
+  direction: unknown
+  evidence: https://marketplace.servicetitan.com/partner/bdr
+  category: Associations, Accounting & Tax, Coaching & Associations
+  partner_domain: bdrco.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Bryant
+  app: Bryant
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/bryant
+  category: Suppliers, Catalogs & Pricebooks, Leads & Bookings
+  partner_domain: bryant.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Carrier
+  app: Carrier
+  partner: carrier-global
+  partner_match: domain+verified
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/carrier
+  category: Suppliers, Catalogs & Pricebooks, Leads & Bookings
+  partner_domain: carrier.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: iPermit
+  app: iPermit
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/ipermit
+  category: Permitting
+  partner_domain: ipermitusa.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: JB Warranties
+  app: JB Warranties
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/jb-warranties
+  category: Warranties, Catalogs & Pricebooks
+  partner_domain: jbwarranties.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Lennox
+  app: Lennox
+  partner: lennox-international
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/lennox
+  category: Suppliers, Catalogs & Pricebooks, Procurement
+  partner_domain: lennox.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Reserve with Google
+  app: Reserve with Google
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/reserve-with-google
+  category: Leads & Bookings
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Scorpion
+  app: Scorpion
+  partner: scorpion
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/scorpion
+  category: Marketing
+  partner_domain: scorpion.co
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: ServiceChannel
+  app: ServiceChannel
+  partner: servicechannel
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/servicechannel
+  category: Leads & Bookings, Property & Facilities Management
+  partner_domain: servicechannel.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: ServiceTitan AI Voice Agent
+  app: ServiceTitan AI Voice Agent
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.servicetitan.com/partner/servicetitan-ai-voice-agent
+  category: Live Services, Telecom
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: ServiceTitan Fleet Pro
+  app: ServiceTitan Fleet Pro
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.servicetitan.com/partner/servicetitan-fleet-pro
+  category: Fleet & GPS
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: ServiceTitan Marketing Pro
+  app: ServiceTitan Marketing Pro
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.servicetitan.com/partner/servicetitan-marketing-pro
+  category: Marketing
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: ServiceTitan Payments
+  app: ServiceTitan Payments
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.servicetitan.com/partner/ServiceTitan-payments
+  category: Payments & Financing
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: ServiceTitan Pricebook Pro
+  app: ServiceTitan Pricebook Pro
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.servicetitan.com/partner/servicetitan-pricebook-pro
+  category: Catalogs & Pricebooks
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: ServiceTitan Phones Pro
+  app: ServiceTitan Phones Pro
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.servicetitan.com/partner/servicetitan-phones-pro
+  category: Telecom
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: ServiceTitan Scheduling Pro
+  app: ServiceTitan Scheduling Pro
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.servicetitan.com/partner/schedule-engine
+  category: Live Services, Web Schedulers
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: The Home Depot
+  app: The Home Depot
+  partner: home-depot
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/the-home-depot
+  category: Leads & Bookings
+  partner_domain: homedepot.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Thumbtack
+  app: Thumbtack
+  partner: thumbtack
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/thumbtack
+  category: Leads & Bookings
+  partner_domain: thumbtack.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Trane
+  app: Trane
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/trane
+  category: Suppliers, Catalogs & Pricebooks, Leads & Bookings, Procurement
+  partner_domain: trane.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Wells Fargo
+  app: Wells Fargo
+  partner: wells-fargo
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/wells-fargo
+  category: Payments & Financing
+  partner_domain: wellsfargo.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: XOi
+  app: XOi
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/xoi
+  category: On-The-Job
+  partner_domain: xoi.io
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: ABC Supply
+  app: ABC Supply
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/abc-supply
+  category: Suppliers, Procurement, Catalogs & Pricebooks
+  partner_domain: abcsupply.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Aclarify
+  app: Aclarify
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/aclarify
+  category: Marketing
+  partner_domain: aclarify.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: ActiveProspect
+  app: ActiveProspect
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/activeprospect
+  category: Leads & Bookings
+  partner_domain: activeprospect.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: AirAdvice
+  app: AirAdvice
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/airadvice
+  category: On-The-Job
+  partner_domain: airadviceforhomes.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Amana
+  app: Amana
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/amana
+  category: Suppliers, Catalogs & Pricebooks
+  partner_domain: amana-hac.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: American Standard
+  app: American Standard
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/american-standard
+  category: Suppliers, Catalogs & Pricebooks, Leads & Bookings
+  partner_domain: americanstandardair.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: APR Supply Co.
+  app: APR Supply Co.
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/apr-supply
+  category: Suppliers, Procurement, Catalogs & Pricebooks
+  partner_domain: aprsupply.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: ArcSite
+  app: ArcSite
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/arcsite
+  category: Measurements & Estimations, On-The-Job
+  partner_domain: arcsite.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Avalara
+  app: Avalara
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/avalara
+  category: Accounting & Tax
+  partner_domain: avlr.co
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Avoca AI
+  app: Avoca AI
+  partner: avoca
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/avoca-ai
+  category: Live Services, Marketing
+  partner_domain: avoca.ai
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: Bench Accounting
+  app: Bench Accounting
+  partner: bench
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: null
+  relationship: platform-app
+  direction: unknown
+  evidence: https://marketplace.servicetitan.com/partner/bench-accounting
+  category: Accounting & Tax
+  partner_domain: bench.co
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Birdeye
+  app: Birdeye
+  partner: birdeye
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/birdeye
+  category: Marketing
+  partner_domain: birdeye.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Broccoli AI
+  app: Broccoli AI
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: null
+  relationship: platform-app
+  direction: unknown
+  evidence: https://marketplace.servicetitan.com/partner/broccoli-ai
+  category: Marketing, Live Services
+  partner_domain: broccoli.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: BUCS
+  app: BUCS
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/bucs
+  category: Business Intelligence & Analytics
+  partner_domain: bucsanalytics.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Building36
+  app: Building36
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/building36
+  category: Leads & Bookings
+  partner_domain: building36.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Business Financing with Bluevine
+  app: Business Financing with Bluevine
+  partner: bluevine
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/business-financing-with-bluevine
+  category: Payments & Financing
+  partner_domain: bluevine.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: CallPoint Contact Center Solutions
+  app: CallPoint Contact Center Solutions
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/callpoint
+  category: Live Services
+  partner_domain: callpointusa.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: CallRail
+  app: CallRail
+  partner: callrail
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/callrail
+  category: Marketing, Marketing & Growth
+  partner_domain: callrail.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: CAMP Digital
+  app: CAMP Digital
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/camp-digital
+  category: Marketing
+  partner_domain: campdigital.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: CHIIRP
+  app: CHIIRP
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/chiirp
+  category: Leads & Bookings, Marketing
+  partner_domain: chiirp.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: ClearPathGPS
+  app: ClearPathGPS
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/clearpath-gps
+  category: Fleet & GPS
+  partner_domain: clearpathgps.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Coburn Supply Company
+  app: Coburn Supply Company
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/coburn-supply-company
+  category: Suppliers, Catalogs & Pricebooks
+  partner_domain: coburns.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: CompanyCam
+  app: CompanyCam
+  partner: companycam
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/companycam
+  category: On-The-Job
+  partner_domain: companycam.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: Consolidated Supply
+  app: Consolidated Supply
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/consolidated-supply
+  category: Catalogs & Pricebooks, Suppliers, Procurement
+  partner_domain: consolidatedsupply.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Contractor Commerce
+  app: Contractor Commerce
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/contractor-commerce
+  category: E-Commerce
+  partner_domain: contractorcommerce.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: Contractor University Powered by EGIA
+  app: Contractor University Powered by EGIA
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: null
+  relationship: platform-app
+  direction: unknown
+  evidence: https://marketplace.servicetitan.com/partner/egia
+  category: Associations
+  partner_domain: mycontractoruniversity.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Copperfield Chimney Supply
+  app: Copperfield Chimney Supply
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/copperfield
+  category: Suppliers, Catalogs & Pricebooks, Procurement
+  partner_domain: copperfield.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Coral
+  app: Coral
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/coral
+  category: Payments & Financing
+  partner_domain: startcoral.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Craft
+  app: Craft
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/craft
+  category: On-The-Job
+  partner_domain: craftflow.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: CxC
+  app: CxC
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/cxc
+  category: On-The-Job
+  partner_domain: cxc.ai
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Daikin
+  app: Daikin
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/daikin
+  category: Suppliers, Catalogs & Pricebooks
+  partner_domain: northamerica-daikin.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Darwill
+  app: Darwill
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/darwill
+  category: Marketing
+  partner_domain: darwill.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: datacube.ai
+  app: datacube.ai
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/datacube-ai
+  category: Business Intelligence & Analytics
+  partner_domain: datacube.ai
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Dexcomm Answering & Communications Services
+  app: Dexcomm Answering & Communications Services
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/dexcomm
+  category: Live Services
+  partner_domain: dexcomm.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Dispatch
+  app: Dispatch
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/dispatch
+  category: E-Commerce
+  partner_domain: dispatchit.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Drillbit
+  app: Drillbit
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/drillbit
+  category: Sales and Leads
+  partner_domain: drillbit.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Dynamic Air Quality Solutions
+  app: Dynamic Air Quality Solutions
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/dynamic-air-quality-solutions
+  category: Suppliers, Catalogs & Pricebooks
+  partner_domain: dynamicaqs.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: EagleView Technologies, Inc.
+  app: EagleView Technologies, Inc.
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/eagleview
+  category: Measurements & Estimations
+  partner_domain: eagleview.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Famous Supply
+  app: Famous Supply
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/famous-supply
+  category: Suppliers, Catalogs & Pricebooks, Procurement
+  partner_domain: famous-supply.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Ferguson
+  app: Ferguson
+  partner: ferguson
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/ferguson
+  category: Suppliers, Procurement, Catalogs & Pricebooks
+  partner_domain: ferguson.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Financeit
+  app: Financeit
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/financeit
+  category: Payments & Financing
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Flat
+  app: Flat
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/flat
+  category: Marketing, Leads & Bookings, Property & Facilities Management, Sales and Leads
+  partner_domain: flathomecare.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: FlowPath
+  app: FlowPath
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/flowpath
+  category: Leads & Bookings, Property & Facilities Management
+  partner_domain: getflowpath.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Foundation Integrations by MindCloud
+  app: Foundation Integrations by MindCloud
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/foundation-mindcloud
+  category: Accounting & Tax
+  partner_domain: mindcloud.co
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Free2Grow
+  app: Free2Grow
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/free2grow
+  category: Live Services, Marketing
+  partner_domain: free-2-grow.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: Free Agency
+  app: Free Agency
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/free-agency
+  category: Marketing
+  partner_domain: freeagency.ai
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: GAF
+  app: GAF
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/gaf
+  category: Measurements & Estimations, Suppliers
+  partner_domain: gaf.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Gensco
+  app: Gensco
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/gensco
+  category: Suppliers, Procurement, Catalogs & Pricebooks
+  partner_domain: gensco.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Goodman
+  app: Goodman
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/goodman
+  category: Suppliers, Catalogs & Pricebooks
+  partner_domain: goodmanmfg.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: GreenSky
+  app: GreenSky
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/greensky
+  category: Payments & Financing
+  partner_domain: greenskycredit.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Hajoca
+  app: Hajoca
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/hajoca
+  category: Suppliers, Procurement, Catalogs & Pricebooks
+  partner_domain: hajoca.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Hatch AI
+  app: Hatch AI
+  partner: hatch
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/hatch-ai
+  category: Marketing, Leads & Bookings
+  partner_domain: usehatchapp.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: Home Solutions
+  app: Home Solutions
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/home-solutions
+  category: Leads & Bookings
+  partner_domain: homesolutions.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Hover
+  app: Hover
+  partner: hover
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/hover
+  category: Measurements & Estimations, On-The-Job
+  partner_domain: hover.to
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Hyperspace Inc.
+  app: Hyperspace Inc.
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/hyperspace
+  category: Admin & Operation, Payment Processing
+  partner_domain: hyperspacehq.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: iManifold
+  app: iManifold
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/imanifold
+  category: On-The-Job
+  partner_domain: imanifold.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Intuit
+  app: Intuit
+  partner: intuit
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/intuit
+  category: Accounting & Tax
+  partner_domain: intuit.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: International Comfort Products
+  app: International Comfort Products
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/icp
+  category: Suppliers, Catalogs & Pricebooks, Leads & Bookings
+  partner_domain: icpusa.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: JustCall
+  app: JustCall
+  partner: justcall
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/justcall
+  category: Live Services, Marketing
+  partner_domain: justcall.io
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Kinetico
+  app: Kinetico
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/kinetico
+  category: Suppliers, Catalogs & Pricebooks
+  partner_domain: kinetico.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Lace
+  app: Lace
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/lace
+  category: Leads & Bookings
+  partner_domain: lace.ai
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: LettrLabs
+  app: LettrLabs
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/lettr-labs
+  category: Marketing
+  partner_domain: lettrlabs.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: Levitate
+  app: Levitate
+  partner: levitate
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/levitate
+  category: Marketing
+  partner_domain: levitate.ai
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: LiveSwitch
+  app: LiveSwitch
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/liveswitch
+  category: On-The-Job
+  partner_domain: liveswitch.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Local Optics
+  app: Local Optics
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/local-optics
+  category: Marketing
+  partner_domain: localoptics.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: LocaliQ
+  app: LocaliQ
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/localiq
+  category: Marketing
+  partner_domain: localiq.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Lumber
+  app: Lumber
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/lumber
+  category: HR & Payroll
+  partner_domain: lumberfi.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Mail Shark
+  app: Mail Shark
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/mail-shark
+  category: Marketing
+  partner_domain: themailshark.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: Marchex
+  app: Marchex
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/marchex
+  category: Live Services, Marketing
+  partner_domain: marchex.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: MCAA
+  app: MCAA
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: null
+  relationship: platform-app
+  direction: unknown
+  evidence: https://marketplace.servicetitan.com/partner/mcaa
+  category: Associations
+  partner_domain: mcaa.org
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Measure Square Corp.
+  app: Measure Square Corp.
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/measure-square
+  category: Measurements & Estimations, On-The-Job
+  partner_domain: measuresquare.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: MindCloud
+  app: MindCloud
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/mindcloud
+  category: Accounting & Tax
+  partner_domain: mindcloud.co
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Miter
+  app: Miter
+  partner: miter
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/miter
+  category: HR & Payroll
+  partner_domain: miter.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Modernize Home Services
+  app: Modernize Home Services
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/modernize
+  category: Leads & Bookings
+  partner_domain: modernize.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Nationwide Inbound
+  app: Nationwide Inbound
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/nationwide-inbound
+  category: Live Services
+  partner_domain: nationwideinbound.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Motive
+  app: Motive
+  partner: motive
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/go-motive
+  category: Fleet & GPS
+  partner_domain: gomotive.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: Nearby Now
+  app: Nearby Now
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/nearby-now
+  category: Marketing
+  partner_domain: nearbynow.co
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: NECA
+  app: NECA
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: null
+  relationship: platform-app
+  direction: unknown
+  evidence: https://marketplace.servicetitan.com/partner/neca
+  category: Associations
+  partner_domain: necanet.org
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Netic AI
+  app: Netic AI
+  partner: netic
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/netic
+  category: Live Services, Marketing
+  partner_domain: netic.ai
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: Oracle NetSuite
+  app: Oracle NetSuite
+  partner: netsuite
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/oracle-netsuite
+  category: Accounting & Tax
+  partner_domain: netsuite.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Peaka
+  app: Peaka
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/peaka
+  category: Business Intelligence & Analytics
+  partner_domain: peaka.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: PermitFlow
+  app: PermitFlow
+  partner: permitflow
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/permitflow
+  category: Permitting
+  partner_domain: permitflow.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: PHCC
+  app: PHCC
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: null
+  relationship: platform-app
+  direction: unknown
+  evidence: https://marketplace.servicetitan.com/partner/phcc
+  category: Associations
+  partner_domain: phccweb.org
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: PhoneTAP
+  app: PhoneTAP
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/phonetap
+  category: Live Services, Business Intelligence & Analytics
+  partner_domain: phonetap.ai
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: Ply
+  app: Ply
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/ply
+  category: Suppliers, Inventory
+  partner_domain: getply.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: PRAXIS S-10
+  app: PRAXIS S-10
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: null
+  relationship: platform-app
+  direction: unknown
+  evidence: https://marketplace.servicetitan.com/partner/praxis-s-10
+  category: Associations, Coaching & Associations
+  partner_domain: praxiss10.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: PricebookPlus
+  app: PricebookPlus
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: null
+  relationship: platform-app
+  direction: unknown
+  evidence: https://marketplace.servicetitan.com/partner/pricebook-plus
+  category: Catalogs & Pricebooks
+  partner_domain: pricebook.digital
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Probook
+  app: Probook
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/probook
+  category: Dispatch
+  partner_domain: probook.ai
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Quality Service Contractors
+  app: Quality Service Contractors
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: null
+  relationship: platform-app
+  direction: unknown
+  evidence: https://marketplace.servicetitan.com/partner/quality-service-contractors
+  category: Associations
+  partner_domain: qsc-phcc.org
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: QXO
+  app: QXO
+  partner: qxo-building-products
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/qxo
+  category: Suppliers, Catalogs & Pricebooks, Procurement
+  partner_domain: qxo.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Ramp
+  app: Ramp
+  partner: ramp
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: null
+  relationship: platform-app
+  direction: unknown
+  evidence: https://marketplace.servicetitan.com/partner/ramp
+  category: Expense Management, Payments & Financing
+  partner_domain: ramp.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: R.E. Michel
+  app: R.E. Michel
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/re-michel
+  category: Suppliers, Catalogs & Pricebooks, Procurement
+  partner_domain: remichel.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Reece
+  app: Reece
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/reece
+  category: Suppliers, Catalogs & Pricebooks, Procurement
+  partner_domain: reece.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: ReferPro
+  app: ReferPro
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/referpro
+  category: Marketing
+  partner_domain: referpro.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: Reins
+  app: Reins
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/reins
+  category: HR & Payroll
+  partner_domain: myreins.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: Relentless Digital
+  app: Relentless Digital
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/relentless-digital
+  category: Marketing
+  partner_domain: relentless-digital.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: ResQ
+  app: ResQ
+  partner: res
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/resq
+  category: Leads & Bookings, Property & Facilities Management
+  partner_domain: getresq.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Revin
+  app: Revin
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/revin
+  category: Live Services, Marketing
+  partner_domain: revin.ai
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: Rheem
+  app: Rheem
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/rheem
+  category: Suppliers, Catalogs & Pricebooks
+  partner_domain: rheem.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Robertson Heating Supply
+  app: Robertson Heating Supply
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/robertson-heating-supply
+  category: Suppliers, Catalogs & Pricebooks
+  partner_domain: rhs1.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Ruud
+  app: Ruud
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/ruud
+  category: Suppliers, Catalogs & Pricebooks
+  partner_domain: ruud.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Sage Intacct
+  app: Sage Intacct
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/sage-intacct
+  category: Accounting & Tax
+  partner_domain: sageintacct.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Sales Ask Inc.
+  app: Sales Ask Inc.
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/sales-ask
+  category: On-The-Job
+  partner_domain: salesask.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Sameday AI
+  app: Sameday AI
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/sameday-ai
+  category: Leads & Bookings, Telecom
+  partner_domain: sameday.ai
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: SBE
+  app: SBE
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: null
+  relationship: platform-app
+  direction: unknown
+  evidence: https://marketplace.servicetitan.com/partner/sbe
+  category: Associations
+  partner_domain: sbeodyssey.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: SearchLight
+  app: SearchLight
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/searchlight
+  category: Marketing
+  partner_domain: searchlightdigital.io
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: ServiceCall
+  app: ServiceCall
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/service-call
+  category: On-The-Job, Marketing
+  partner_domain: servicecall.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: ServiceTitan Dispatch Pro
+  app: ServiceTitan Dispatch Pro
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.servicetitan.com/partner/servicetitan-dispatch-pro
+  category: Dispatch
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: ServiceTitan Sales Pro
+  app: ServiceTitan Sales Pro
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.servicetitan.com/partner/servicetitan-sales-pro
+  category: On-The-Job
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Service Finance
+  app: Service Finance
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/service-finance
+  category: Payments & Financing
+  partner_domain: svcfin.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Service Nation Alliance
+  app: Service Nation Alliance
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: null
+  relationship: platform-app
+  direction: unknown
+  evidence: https://marketplace.servicetitan.com/partner/service-nation-alliance
+  category: Associations
+  partner_domain: servicenationalliance.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Service Roundtable
+  app: Service Roundtable
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: null
+  relationship: platform-app
+  direction: unknown
+  evidence: https://marketplace.servicetitan.com/partner/service-roundtable
+  category: Associations
+  partner_domain: serviceroundtable.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: SetSale
+  app: SetSale
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/setsale
+  category: Sales and Leads
+  partner_domain: setsale.ai
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: ShareWillow
+  app: ShareWillow
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/sharewillow
+  category: HR & Payroll
+  partner_domain: sharewillow.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: SMACNA
+  app: SMACNA
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: null
+  relationship: platform-app
+  direction: unknown
+  evidence: https://marketplace.servicetitan.com/partner/smacna
+  category: Associations
+  partner_domain: smacna.org
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: SmartAC
+  app: SmartAC
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/smartac
+  category: Leads & Bookings
+  partner_domain: null
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: Snoball
+  app: Snoball
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: null
+  relationship: platform-app
+  direction: unknown
+  evidence: https://marketplace.servicetitan.com/partner/snoball
+  category: Marketing & Growth
+  partner_domain: snoball.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: SPOTIO
+  app: SPOTIO
+  partner: spotio
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/spotio
+  category: On-The-Job, Field Management
+  partner_domain: spotio.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: SRS Distribution Inc.
+  app: SRS Distribution Inc.
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/srs-distribution-inc
+  category: Suppliers, Procurement, Catalogs & Pricebooks
+  partner_domain: srsdistribution.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Standard Plumbing Supply Company
+  app: Standard Plumbing Supply Company
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/standard-plumbing-supply
+  category: Suppliers, Procurement, Catalogs & Pricebooks
+  partner_domain: standardplumbing.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Stuut
+  app: Stuut
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/stuut-industries
+  category: Accounting & Tax
+  partner_domain: stuut.ai
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: SurveySquare
+  app: SurveySquare
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/surveysquare
+  category: Marketing
+  partner_domain: surveysquare.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Synchrony
+  app: Synchrony
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/synchrony
+  category: Payments & Financing
+  partner_domain: synchronybusiness.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: The Graphite Lab
+  app: The Graphite Lab
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/the-graphite-lab
+  category: Accounting & Tax
+  partner_domain: thegraphitelab.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: 'The New Flat Rate '
+  app: 'The New Flat Rate '
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/the-new-flat-rate
+  category: Catalogs & Pricebooks
+  partner_domain: thenewflatrate.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: To Your Success
+  app: To Your Success
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/to-your-success
+  category: Marketing
+  partner_domain: toyoursuccess.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Togal.AI
+  app: Togal.AI
+  partner: togal-ai
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/togal
+  category: On-The-Job, Measurements & Estimations
+  partner_domain: togal.ai
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: TradeEngage Referrals
+  app: TradeEngage Referrals
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/trade-engage
+  category: Marketing & Growth
+  partner_domain: tradeengage.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: 'TURNS Financing Services '
+  app: 'TURNS Financing Services '
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/turns-financing-services
+  category: Payments & Financing
+  partner_domain: turnsfinancing.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: UKG
+  app: UKG
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/ukg-ready-now
+  category: HR & Payroll
+  partner_domain: inovapayroll.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: UpSmith
+  app: UpSmith
+  partner: upsmith
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/upsmith
+  category: On-The-Job
+  partner_domain: upsmith.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: UpSwell Marketing
+  app: UpSwell Marketing
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/upswell-marketing
+  category: Marketing
+  partner_domain: upswellmarketing.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: 'US Fleet Tracking '
+  app: 'US Fleet Tracking '
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/us-fleet-tracking
+  category: Fleet & GPS
+  partner_domain: usfleettracking.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Verisk (Xactimate™)
+  app: Verisk (Xactimate™)
+  partner: verisk
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/verisk
+  category: On-The-Job
+  partner_domain: verisk.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Vestige
+  app: Vestige
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/vestige
+  category: Fleet & GPS
+  partner_domain: vestigeview.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Viewpoint Spectrum Integrations by MindCloud
+  app: Viewpoint Spectrum Integrations by MindCloud
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/viewpoint-spectrum-mindcloud
+  category: Accounting & Tax
+  partner_domain: mindcloud.co
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Viewpoint Vista Integrations by MindCloud
+  app: Viewpoint Vista Integrations by MindCloud
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/viewpoint-vista-mindcloud
+  category: Accounting & Tax
+  partner_domain: mindcloud.co
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: VIIRL Marketing
+  app: VIIRL Marketing
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/viirl-marketing
+  category: Marketing
+  partner_domain: viirl.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: WinGen
+  app: WinGen
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/wingen
+  category: Leads & Bookings
+  partner_domain: wingenapp.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+  badges:
+  - Certified App
+- partner_name: Winsupply
+  app: Winsupply
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/winsupply
+  category: Suppliers, Procurement, Catalogs & Pricebooks
+  partner_domain: winsupplyinc.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: Wink Toolbox
+  app: Wink Toolbox
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/wink-toolbox
+  category: Business Intelligence & Analytics
+  partner_domain: winkreports.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: XAPP AI
+  app: XAPP AI
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/xapp-ai
+  category: Marketing, Leads & Bookings
+  partner_domain: xapp.ai
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
+- partner_name: ZyraTalk
+  app: ZyraTalk
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.servicetitan.com/partner/zyratalk
+  category: Live Services, Marketing
+  partner_domain: zyratalk.com
+  detected_by: sweep-construction.py
+  detected: '2026-10-19'
 - partner_name: Fivetran
   partner: fivetran
   partner_match: aggregator
@@ -3762,6 +3450,366 @@ edges:
     builder: 'community (Meltano Hub variant maintainers: meltanolabs)'
   detected_by: sweep-data-integration.py
   first_seen: '2026-10-18'
+- partner_name: LeadConnector
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/leadconnector
+  direction: third-party
+  category: Marketing Automation
+  partner_url: https://www.leadconnectorhq.com/
+- partner_name: Gravity Forms
+  partner: gravity-forms
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/gravity-forms
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://www.gravityforms.com/?utm_campaign=partners&utm_source=zapier-listing-learn-more&utm_medium=free-placement
+- partner_name: Microsoft Outlook
+  partner: microsoft-outlook
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/microsoft-outlook
+  direction: third-party
+  category: Calendar
+  partner_url: https://outlook.live.com/
+- partner_name: Google Calendar
+  partner: google-calendar
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/google-calendar
+  direction: third-party
+  category: Calendar
+  partner_url: https://calendar.google.com/
+- partner_name: Google Ads
+  partner: google-ads
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/google-ads
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://ads.google.com/
+- partner_name: Gmail
+  partner: gmail
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/gmail
+  direction: third-party
+  category: Email
+  partner_url: https://mail.google.com/
+- partner_name: Facebook Lead Ads
+  partner: facebook-lead-ads
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/facebook-lead-ads
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://www.facebook.com/business/ads/lead-ads
+- partner_name: WhatConverts
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/whatconverts
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://www.whatconverts.com/
+- partner_name: monday.com
+  partner: monday-com
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/monday
+  direction: third-party
+  category: Project Management
+  partner_url: https://monday.com/
+- partner_name: Microsoft Excel
+  partner: null
+  partner_match: null
+  partner_candidate: zapier
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/excel
+  direction: third-party
+  category: Microsoft
+  partner_url: https://zapier.com/office.com
+- partner_name: Google Sheets
+  partner: google-sheets
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/google-sheets
+  direction: third-party
+  category: Google
+  partner_url: http://sheets.google.com/
+- partner_name: Pipedrive
+  partner: pipedrive
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/pipedrive
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://pipedrive.com/
+- partner_name: CallRail
+  partner: callrail
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/callrail
+  direction: third-party
+  category: Call Tracking
+  partner_url: https://www.callrail.com/?utm_medium=strategicpartner&utm_source=zapier&utm_campaign=app_listing&utm_content=app_listing
+- partner_name: WPForms
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/wpforms
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://wpforms.com/
+- partner_name: Slack
+  partner: slack
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/slack
+  direction: third-party
+  category: Team Chat
+  partner_url: https://slack.com/
+- partner_name: Google Forms
+  partner: google-forms
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/google-forms
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: http://google.com/
+- partner_name: Mailchimp
+  partner: mailchimp
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/mailchimp
+  direction: third-party
+  category: Marketing Automation
+  partner_url: https://mailchimp.com/
+- partner_name: Salesmate
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/salesmate
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: http://salesmate.io/
+- partner_name: Airtable
+  partner: airtable
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/airtable
+  direction: third-party
+  category: Databases
+  partner_url: https://airtable.com/
+- partner_name: Google Chat
+  partner: google-chat
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/google-chat
+  direction: third-party
+  category: Google
+  partner_url: https://gsuite.google.com/products/chat/
+- partner_name: Podium
+  partner: podium
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/podium
+  direction: third-party
+  category: Communication
+  partner_url: https://www.podium.com/
+- partner_name: Facebook Conversions
+  partner: facebook
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/facebook-conversions
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://developers.facebook.com/docs/marketing-api/server-side-api/guides/zapier-integration
+- partner_name: SignNow
+  partner: signnow
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/signnow
+  direction: third-party
+  category: Signatures
+  partner_url: https://www.signnow.com/
+- partner_name: ClickUp
+  partner: clickup
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/clickup
+  direction: third-party
+  category: Project Management
+  partner_url: https://clickup.com/zapier
+- partner_name: Yelp Leads
+  partner: yelp
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/yelp-leads
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://business.yelp.com/brands/leads-api/
+- partner_name: Trello
+  partner: trello
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/trello
+  direction: third-party
+  category: Project Management
+  partner_url: https://trello.com/
+- partner_name: Typeform
+  partner: typeform
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/typeform
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://www.typeform.com/signup?utm_medium=referral&utm_source=zapier&utm_campaign=zapier_integration&utm_content=marketplace
+- partner_name: Facebook Lead Ads (for Business admins)
+  partner: facebook-lead-ads
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/facebook-lead-ads-beta
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://facebook.com/
+- partner_name: RingCentral
+  partner: ringcentral
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/ringcentral
+  direction: third-party
+  category: Phone & SMS
+  partner_url: http://www.ringcentral.com/
+- partner_name: Constant Contact
+  partner: constant-contact
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/servicetitan/integrations/constant-contact
+  direction: third-party
+  category: Email Newsletters
+  partner_url: http://www.constantcontact.com/signup.jsp?pn=zapier
 templates:
 - title: Send Offline Conversion to Google Ads for New Job in ServiceTitan
   url: https://zapier.com/apps/google-ads/integrations/servicetitan/1007607/send-offline-conversion-to-google-ads-for-new-job-in-servicetitan
@@ -3823,4 +3871,4 @@ templates:
   apps:
   - servicetitan
   - facebook-conversions
-template_total: 460
+template_total: 461
