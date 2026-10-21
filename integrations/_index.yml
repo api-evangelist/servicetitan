@@ -2509,3 +2509,59 @@
   relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
+- slug: servicetitan-battery-ventures
+  label: Battery Ventures
+  partner: battery-ventures
+  partner_name: Battery Ventures
+  category: vc portfolio participation
+  type: register
+  channel: standard-directory
+  evidence: https://www.battery.com/company/servicetitan/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: Battery Ventures companies (battery.com/company/, the page's own admin-ajax list + company pages)
+    standard: null
+    spec_file: null
+    role: vc-portfolio-company
+    registered_name: ServiceTitan
+    register_id: https://www.battery.com/company/servicetitan/
+    register_country: Glendale, California
+    register_website: https://www.servicetitan.com/
+    matched_domain: servicetitan.com
+    matched_by: domain
+    signal_note: 'participation only: the venture firm''s own published portfolio lists the company (investment);
+      an ownership and participation record, not conformance or certification'
+    detected_by: sweep-vc-portfolios.py
+    detected: '2026-10-21'
+    status: 'NASDAQ: TTAN'
+  status: not-a-workflow
+  arazzo: null
+- slug: servicetitan-index-ventures
+  label: Index Ventures
+  partner: index-ventures
+  partner_name: Index Ventures
+  category: vc portfolio participation
+  type: register
+  channel: standard-directory
+  evidence: https://www.indexventures.com/companies/servicetitan/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: Index Ventures companies (indexventures.com/companies/)
+    standard: null
+    spec_file: null
+    role: vc-portfolio-company
+    registered_name: ServiceTitan
+    register_id: https://www.indexventures.com/companies/servicetitan/
+    register_country: null
+    register_website: http://servicetitan.com
+    matched_domain: servicetitan.com
+    matched_by: domain
+    signal_note: 'participation only: the venture firm''s own published portfolio lists the company (investment);
+      an ownership and participation record, not conformance or certification'
+    detected_by: sweep-vc-portfolios.py
+    detected: '2026-10-21'
+    sector: business-applications
+  status: not-a-workflow
+  arazzo: null
