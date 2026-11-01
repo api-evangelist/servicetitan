@@ -1,4 +1,4 @@
-# ServiceTitan (servicetitan)
+# ServiceTitan
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,779 +66,248 @@
 
 ServiceTitan is the operating system for the trades — all-in-one field service management software for residential and commercial contractors in HVAC, plumbing, electrical, roofing, garage door, pest control, refrigeration, fire & life safety, septic, landscape, and other service-based industries. The platform unifies CRM, dispatch, scheduling, job management, pricebook, mobile field execution, invoicing, payments, payroll, marketing attribution, memberships, service agreements, reporting, and Contact Center / Voice Agent capabilities behind a tenant-scoped V2 REST API surface accessed via OAuth 2.0 client credentials and a per-application App Key. ServiceTitan is the parent of FieldRoutes (pest), Aspire (landscape), and Convex (commercial sales), and ships Conduit as its integration platform.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/servicetitan/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/servicetitan/refs/heads/main/apis.yml)
+**Areas:** Field Service Management · Trade · HVAC · Plumbing · Electrical · Construction · CRM · Dispatch · Accounting · Pricebook · Marketing · Membership
+
+## ServiceTitan on APIs.io
+
+Everything profiled for ServiceTitan is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/servicetitan/](https://apis.io/providers/servicetitan/)** — or go straight to one of the APIs or properties below.
+
+### APIs (55)
+
+- [ServiceTitan Marketing API](https://apis.io/apis/servicetitan/servicetitan-marketing-api/) — Manage marketing campaigns, campaign categories, suppression lists, and attribution data that powers cost-per-lead and cost-per-booked-job reporting.…
+- [ServiceTitan Marketing Reputation API](https://apis.io/apis/servicetitan/servicetitan-marketing-reputation-api/) — Retrieve aggregated customer reviews and reputation metrics across Google, Facebook, Yelp, BBB, and other connected review providers. Read-only API…
+- [ServiceTitan Memberships API](https://apis.io/apis/servicetitan/servicetitan-memberships-api/) — Manage membership types, customer memberships, membership invoice templates, recurring service types, and recurring service events. Drives the recurring…
+- [ServiceTitan Service Agreements API](https://apis.io/apis/servicetitan/servicetitan-service-agreements-api/) — Manage commercial service agreements — contract terms, billed locations, line items, renewal cadence, and invoice generation rules. Used by commercial…
+- [ServiceTitan Forms API](https://apis.io/apis/servicetitan/servicetitan-forms-api/) — Retrieve form definitions and field-completed form submissions including photos, signatures, checkbox values, and free-text responses. Used for safety…
+- [ServiceTitan Payroll API](https://apis.io/apis/servicetitan/servicetitan-payroll-api/) — Manage payroll adjustments, gross-pay items, job splits, timesheet codes, activity codes, non-job timesheets, and payroll settings. Exports to ADP, Paychex,…
+- [ServiceTitan Timesheets API](https://apis.io/apis/servicetitan/servicetitan-timesheets-api/) — Read and write timesheet entries, activity codes, and shift segments tying technician time to jobs, non-job activities, paid time off, and travel. Feeds the…
+- [ServiceTitan Reporting API](https://apis.io/apis/servicetitan/servicetitan-reporting-api/) — Run published custom reports with parameters and retrieve dynamic value sets used by report inputs. Lower rate limit than other surfaces — 1 of the same…
+- [ServiceTitan Sales & Estimates API](https://apis.io/apis/servicetitan/servicetitan-sales-estimates-api/) — Create and retrieve estimates, estimate items, and proposal templates. Backs the Proposal Builder feature used to convert leads into approved scopes of work…
+- [ServiceTitan Customer Interactions API](https://apis.io/apis/servicetitan/servicetitan-customer-interactions-api/) — Submit and retrieve post-service technician ratings and customer feedback. Powers the "How did we do?" SMS / email flow that aggregates into Marketing…
+- [ServiceTitan Task Management API](https://apis.io/apis/servicetitan/servicetitan-task-management-api/) — Create, update, and resolve internal tasks, task types, sub-tasks, and task statuses. Used for office-to-field handoffs, escalations, and back-office…
+- [ServiceTitan Telecom API](https://apis.io/apis/servicetitan/servicetitan-telecom-api/) — Retrieve inbound and outbound call records, call recordings, call analytics, and call reasons. Powers Contact Center Pro reporting and Voice Agent…
+- [ServiceTitan Scheduling Pro API](https://apis.io/apis/servicetitan/servicetitan-scheduling-pro-api/) — Power online booking widgets — list configured schedulers, retrieve scheduler availability, create and update booking sessions. Backed by the Schedule…
+- [ServiceTitan Job Booking & Capacity API](https://apis.io/apis/servicetitan/servicetitan-jbce-api/) — Retrieve call reasons, job booking call reason metadata, capacity-aware booking windows, and recommended slot suggestions. Bridges Telecom call intake with…
+- [ServiceTitan Webhooks API](https://apis.io/apis/servicetitan/servicetitan-webhooks-api/) — Manage webhook subscriptions for customer, job, appointment, invoice, payment, and membership lifecycle events. V1 is closed to new subscriptions; V2…
+- [ServiceTitan Adjustments API](https://apis.io/apis/servicetitan/servicetitan-adjustments-api/) — The Adjustments API from ServiceTitan — 1 operation(s) for adjustments.
+- [ServiceTitan Appointment Assignments API](https://apis.io/apis/servicetitan/servicetitan-appointment-assignments-api/) — The Appointment Assignments API from ServiceTitan — 3 operation(s) for appointment assignments.
+- [ServiceTitan Appointments API](https://apis.io/apis/servicetitan/servicetitan-appointments-api/) — Job appointments and visits
+- [ServiceTitan Attachments API](https://apis.io/apis/servicetitan/servicetitan-attachments-api/) — The Attachments API from ServiceTitan — 1 operation(s) for attachments.
+- [ServiceTitan Bookings API](https://apis.io/apis/servicetitan/servicetitan-bookings-api/) — Customer-initiated booking requests
+- [ServiceTitan Business Hours API](https://apis.io/apis/servicetitan/servicetitan-business-hours-api/) — The Business Hours API from ServiceTitan — 1 operation(s) for business hours.
+- [ServiceTitan Business Units API](https://apis.io/apis/servicetitan/servicetitan-business-units-api/) — The Business Units API from ServiceTitan — 2 operation(s) for business units.
+- [ServiceTitan Capacity API](https://apis.io/apis/servicetitan/servicetitan-capacity-api/) — The Capacity API from ServiceTitan — 1 operation(s) for capacity.
+- [ServiceTitan Categories API](https://apis.io/apis/servicetitan/servicetitan-categories-api/) — The Categories API from ServiceTitan — 1 operation(s) for categories.
+- [ServiceTitan Contacts API](https://apis.io/apis/servicetitan/servicetitan-contacts-api/) — Customer contact methods (phone, email)
+- [ServiceTitan Customers API](https://apis.io/apis/servicetitan/servicetitan-customers-api/) — Customer-of-record records
+- [ServiceTitan Discounts And Fees API](https://apis.io/apis/servicetitan/servicetitan-discounts-and-fees-api/) — The Discounts And Fees API from ServiceTitan — 1 operation(s) for discounts and fees.
+- [ServiceTitan Employees API](https://apis.io/apis/servicetitan/servicetitan-employees-api/) — The Employees API from ServiceTitan — 1 operation(s) for employees.
+- [ServiceTitan Equipment API](https://apis.io/apis/servicetitan/servicetitan-equipment-api/) — The Equipment API from ServiceTitan — 2 operation(s) for equipment.
+- [ServiceTitan GL Accounts API](https://apis.io/apis/servicetitan/servicetitan-gl-accounts-api/) — The GL Accounts API from ServiceTitan — 1 operation(s) for gl accounts.
+- [ServiceTitan GPS API](https://apis.io/apis/servicetitan/servicetitan-gps-api/) — The GPS API from ServiceTitan — 1 operation(s) for gps.
+- [ServiceTitan Installed Equipment API](https://apis.io/apis/servicetitan/servicetitan-installed-equipment-api/) — The Installed Equipment API from ServiceTitan — 2 operation(s) for installed equipment.
+- [ServiceTitan Invoices API](https://apis.io/apis/servicetitan/servicetitan-invoices-api/) — The Invoices API from ServiceTitan — 3 operation(s) for invoices.
+- [ServiceTitan Job Types API](https://apis.io/apis/servicetitan/servicetitan-job-types-api/) — Job type definitions
+- [ServiceTitan Jobs API](https://apis.io/apis/servicetitan/servicetitan-jobs-api/) — Service jobs (work orders)
+- [ServiceTitan Journal Entries API](https://apis.io/apis/servicetitan/servicetitan-journal-entries-api/) — The Journal Entries API from ServiceTitan — 1 operation(s) for journal entries.
+- [ServiceTitan Leads API](https://apis.io/apis/servicetitan/servicetitan-leads-api/) — Pre-customer lead records
+- [ServiceTitan Locations API](https://apis.io/apis/servicetitan/servicetitan-locations-api/) — Customer service locations and addresses
+- [ServiceTitan Materials API](https://apis.io/apis/servicetitan/servicetitan-materials-api/) — The Materials API from ServiceTitan — 2 operation(s) for materials.
+- [ServiceTitan Payments API](https://apis.io/apis/servicetitan/servicetitan-payments-api/) — The Payments API from ServiceTitan — 3 operation(s) for payments.
+- [ServiceTitan Projects API](https://apis.io/apis/servicetitan/servicetitan-projects-api/) — Multi-job projects
+- [ServiceTitan Purchase Orders API](https://apis.io/apis/servicetitan/servicetitan-purchase-orders-api/) — The Purchase Orders API from ServiceTitan — 2 operation(s) for purchase orders.
+- [ServiceTitan Receipts API](https://apis.io/apis/servicetitan/servicetitan-receipts-api/) — The Receipts API from ServiceTitan — 1 operation(s) for receipts.
+- [ServiceTitan Services API](https://apis.io/apis/servicetitan/servicetitan-services-api/) — The Services API from ServiceTitan — 2 operation(s) for services.
+- [ServiceTitan Tag Types API](https://apis.io/apis/servicetitan/servicetitan-tag-types-api/) — The Tag Types API from ServiceTitan — 1 operation(s) for tag types.
+- [ServiceTitan Tags API](https://apis.io/apis/servicetitan/servicetitan-tags-api/) — Tag types and customer tagging
+- [ServiceTitan Tax Zones API](https://apis.io/apis/servicetitan/servicetitan-tax-zones-api/) — The Tax Zones API from ServiceTitan — 1 operation(s) for tax zones.
+- [ServiceTitan Technician Shifts API](https://apis.io/apis/servicetitan/servicetitan-technician-shifts-api/) — The Technician Shifts API from ServiceTitan — 1 operation(s) for technician shifts.
+- [ServiceTitan Technicians API](https://apis.io/apis/servicetitan/servicetitan-technicians-api/) — The Technicians API from ServiceTitan — 2 operation(s) for technicians.
+- [ServiceTitan Transfers API](https://apis.io/apis/servicetitan/servicetitan-transfers-api/) — The Transfers API from ServiceTitan — 1 operation(s) for transfers.
+- [ServiceTitan Trucks API](https://apis.io/apis/servicetitan/servicetitan-trucks-api/) — The Trucks API from ServiceTitan — 1 operation(s) for trucks.
+- [ServiceTitan User Roles API](https://apis.io/apis/servicetitan/servicetitan-user-roles-api/) — The User Roles API from ServiceTitan — 1 operation(s) for user roles.
+- [ServiceTitan Vendors API](https://apis.io/apis/servicetitan/servicetitan-vendors-api/) — The Vendors API from ServiceTitan — 1 operation(s) for vendors.
+- [ServiceTitan Warehouses API](https://apis.io/apis/servicetitan/servicetitan-warehouses-api/) — The Warehouses API from ServiceTitan — 1 operation(s) for warehouses.
+- [ServiceTitan Zones API](https://apis.io/apis/servicetitan/servicetitan-zones-api/) — The Zones API from ServiceTitan — 1 operation(s) for zones.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Servicetitan Agentic Access](https://apis.io/agentic-access/servicetitan/servicetitan-agentic-access/)
+
+#### JSON Schema (9)
+
+The data models the API reads and writes.
+
+- [ServiceTitan Appointment](https://apis.io/schemas/servicetitan/servicetitan-appointment/)
+- [ServiceTitan Customer](https://apis.io/schemas/servicetitan/servicetitan-customer/)
+- [ServiceTitan Invoice](https://apis.io/schemas/servicetitan/servicetitan-invoice/)
+- [ServiceTitan Job](https://apis.io/schemas/servicetitan/servicetitan-job/)
+- [ServiceTitan Location](https://apis.io/schemas/servicetitan/servicetitan-location/)
+- [ServiceTitan Pricebook Material](https://apis.io/schemas/servicetitan/servicetitan-material/)
+- [ServiceTitan Payment](https://apis.io/schemas/servicetitan/servicetitan-payment/)
+- [ServiceTitan Project](https://apis.io/schemas/servicetitan/servicetitan-project/)
+- [ServiceTitan Pricebook Service](https://apis.io/schemas/servicetitan/servicetitan-service/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Servicetitan Context](https://apis.io/jsonld/servicetitan/servicetitan-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Servicetitan Vocabulary](https://apis.io/vocabularies/servicetitan/servicetitan-vocabulary/)
+
+#### Examples (3)
 
-## Scope
+Example requests and responses.
 
-- **Position:** Consuming
-- **Access:** 3rd-Party
+- [Servicetitan Customer Create Example](https://apis.io/examples/servicetitan/servicetitan-customer-create-example/)
+- [Servicetitan Invoice List Example](https://apis.io/examples/servicetitan/servicetitan-invoice-list-example/)
+- [Servicetitan Job Create Example](https://apis.io/examples/servicetitan/servicetitan-job-create-example/)
 
-## Tags
+#### Collections (88)
 
-- Field Service Management
-- Trades
-- HVAC
-- Plumbing
-- Electrical
-- Construction
-- CRM
-- Dispatch
-- Accounting
-- Pricebook
-- Marketing
-- Memberships
-- Webhooks
+Postman and Open Collection request collections.
 
-## Timestamps
+- [ServiceTitan Accounting API](https://apis.io/collections/servicetitan/open-servicetitan-accounting-api/)
+- [ServiceTitan Accounting Adjustments API](https://apis.io/collections/servicetitan/open-servicetitan-adjustments-api/)
+- [ServiceTitan Accounting Adjustments Appointment Assignments API](https://apis.io/collections/servicetitan/open-servicetitan-appointment-assignments-api/)
+- [ServiceTitan Accounting Adjustments Appointments API](https://apis.io/collections/servicetitan/open-servicetitan-appointments-api/)
+- [ServiceTitan Accounting Adjustments Attachments API](https://apis.io/collections/servicetitan/open-servicetitan-attachments-api/)
+- [ServiceTitan Accounting Adjustments Bookings API](https://apis.io/collections/servicetitan/open-servicetitan-bookings-api/)
+- [ServiceTitan Accounting Adjustments Business Hours API](https://apis.io/collections/servicetitan/open-servicetitan-business-hours-api/)
+- [ServiceTitan Accounting Adjustments Business Units API](https://apis.io/collections/servicetitan/open-servicetitan-business-units-api/)
+- [ServiceTitan Accounting Adjustments Capacity API](https://apis.io/collections/servicetitan/open-servicetitan-capacity-api/)
+- [ServiceTitan Accounting Adjustments Categories API](https://apis.io/collections/servicetitan/open-servicetitan-categories-api/)
+- [ServiceTitan Accounting Adjustments Contacts API](https://apis.io/collections/servicetitan/open-servicetitan-contacts-api/)
+- [ServiceTitan CRM API](https://apis.io/collections/servicetitan/open-servicetitan-crm-api/)
+- [ServiceTitan Accounting Adjustments Customers API](https://apis.io/collections/servicetitan/open-servicetitan-customers-api/)
+- [ServiceTitan Accounting Adjustments Discounts And Fees API](https://apis.io/collections/servicetitan/open-servicetitan-discounts-and-fees-api/)
+- [ServiceTitan Dispatch API](https://apis.io/collections/servicetitan/open-servicetitan-dispatch-api/)
+- [ServiceTitan Accounting Adjustments Employees API](https://apis.io/collections/servicetitan/open-servicetitan-employees-api/)
+- [ServiceTitan Accounting Adjustments Equipment API](https://apis.io/collections/servicetitan/open-servicetitan-equipment-api/)
+- [ServiceTitan Equipment Systems API](https://apis.io/collections/servicetitan/open-servicetitan-equipment-systems-api/)
+- [ServiceTitan Accounting Adjustments GL Accounts API](https://apis.io/collections/servicetitan/open-servicetitan-gl-accounts-api/)
+- [ServiceTitan Accounting Adjustments GPS API](https://apis.io/collections/servicetitan/open-servicetitan-gps-api/)
+- [ServiceTitan Accounting Adjustments Installed Equipment API](https://apis.io/collections/servicetitan/open-servicetitan-installed-equipment-api/)
+- [ServiceTitan Inventory API](https://apis.io/collections/servicetitan/open-servicetitan-inventory-api/)
+- [ServiceTitan Accounting Adjustments Invoices API](https://apis.io/collections/servicetitan/open-servicetitan-invoices-api/)
+- [ServiceTitan Accounting Adjustments Job Types API](https://apis.io/collections/servicetitan/open-servicetitan-job-types-api/)
+- [ServiceTitan Accounting Adjustments Jobs API](https://apis.io/collections/servicetitan/open-servicetitan-jobs-api/)
+- …and 63 more published on APIs.io
 
-- **Created:** 2026-05-25T00:00:00.000Z
-- **Modified:** 2026-05-25
+#### Governance rules (1)
 
-## APIs
+Spectral rulesets for the provider's contracts.
 
-### ServiceTitan CRM API
+- [ServiceTitan — jsonschema rules](https://apis.io/rules/servicetitan/servicetitan-jsonschema-spectral-rules/)
 
-Manage residential and commercial customer records, locations, contacts, leads, bookings, tags, and booking provider sessions. The CRM API is the primary entry point for customer-of-record data, address geocoding, and lead-to-customer conversion flows in ServiceTitan.
+#### Security (2)
 
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/crm/v2/{tenant}/`
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Tags
+- [Servicetitan Authentication](https://apis.io/security/servicetitan/servicetitan-authentication/)
+- [Servicetitan Domain Security](https://apis.io/security/servicetitan/servicetitan-domain-security/)
 
-- CRM
-- Customers
-- Leads
-- Bookings
-- Field Service
+#### OAuth scopes (1)
 
-#### Properties
+The permissions the API asks for.
 
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [OpenAPI](openapi/servicetitan-crm-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/servicetitan-crm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-crm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/servicetitan-customer-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/servicetitan-location-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](json-ld/servicetitan-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+- [Servicetitan Scopes](https://apis.io/scopes/servicetitan/servicetitan-scopes/)
 
-### ServiceTitan Job Planning & Management API
+#### Plans and pricing (1)
 
-Create, retrieve, update, hold, cancel, and reschedule jobs, projects, appointments, job types, call reasons, job cancel reasons, and job history. JPM is the operational core of ServiceTitan — every work order and recurring service rolls through this surface.
+Published plans, tiers and prices.
 
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/jpm/v2/{tenant}/`
+- [Servicetitan Plans Pricing](https://apis.io/plans/servicetitan/servicetitan-plans-pricing/)
 
-#### Tags
+#### Rate limits (1)
 
-- Jobs
-- Projects
-- Appointments
-- Field Service
-- Dispatch
+Published request limits.
 
-#### Properties
+- [Servicetitan Rate Limits](https://apis.io/rate-limits/servicetitan/servicetitan-rate-limits/)
 
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [OpenAPI](openapi/servicetitan-jpm-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/servicetitan-jpm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-jpm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/servicetitan-job-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/servicetitan-project-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/servicetitan-appointment-schema.json) — [JSON Schema](https://json-schema.org/specification)
+#### FinOps (1)
 
-### ServiceTitan Dispatch API
+What the API costs to run, by operation.
 
-Manage technician shifts, appointment assignments, capacity windows, business hours, zones, arrival windows, and gps pings. Drives the dispatch board and integrates with Dispatch Pro automation.
+- [Servicetitan Finops](https://apis.io/finops/servicetitan/servicetitan-finops/)
 
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/dispatch/v2/{tenant}/`
+## Where to find this API
 
-#### Tags
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- Dispatch
-- Scheduling
-- Capacity
-- Zones
-- Field Service
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [OpenAPI](openapi/servicetitan-dispatch-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/servicetitan-dispatch-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-dispatch-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ServiceTitan Accounting API
-
-Read and write invoices, invoice items, AP credits, payments, payment terms, payment types, journal entries, journal entry details, tax zones, and GL accounts. Integrates with QuickBooks Online, QuickBooks Desktop, Sage Intacct, and Acumatica exports.
-
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/accounting/v2/{tenant}/`
-
-#### Tags
-
-- Accounting
-- Invoices
-- Payments
-- Journal Entries
-- Tax Zones
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [OpenAPI](openapi/servicetitan-accounting-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/servicetitan-accounting-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-accounting-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/servicetitan-invoice-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/servicetitan-payment-schema.json) — [JSON Schema](https://json-schema.org/specification)
-
-### ServiceTitan Pricebook API
-
-CRUD over the pricebook — categories, services, materials, equipment, discounts and fees, images, and pricebook bulk operations. Powers Pricebook Pro dynamic pricing and technician-facing flat-rate presentations.
-
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/pricebook/v2/{tenant}/`
-
-#### Tags
-
-- Pricebook
-- Services
-- Materials
-- Equipment
-- Pricing
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [OpenAPI](openapi/servicetitan-pricebook-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/servicetitan-pricebook-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-pricebook-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/servicetitan-service-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/servicetitan-material-schema.json) — [JSON Schema](https://json-schema.org/specification)
-
-### ServiceTitan Inventory API
-
-Manage purchase orders, purchase order types, transfers, returns, adjustments, receipts, warehouses, trucks, vendors, and inventory bills. Backed by ServiceTitan's request-middleware-templates Liquid framework for supply-chain partner integrations.
-
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/inventory/v2/{tenant}/`
-
-#### Tags
-
-- Inventory
-- Purchase Orders
-- Warehouses
-- Trucks
-- Supply Chain
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [OpenAPI](openapi/servicetitan-inventory-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/servicetitan-inventory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-inventory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ServiceTitan Marketing API
-
-Manage marketing campaigns, campaign categories, suppression lists, and attribution data that powers cost-per-lead and cost-per-booked-job reporting. Underpins Marketing Pro email and SMS campaigns.
-
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/marketing/v2/{tenant}/`
-
-#### Tags
-
-- Marketing
-- Campaigns
-- Attribution
-- Categories
-- Suppression
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [Postman Collection](collections/servicetitan-accounting-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-accounting-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-crm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-crm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-dispatch-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-dispatch-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-equipment-systems-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-equipment-systems-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-inventory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-inventory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-jpm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-jpm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-pricebook-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-pricebook-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-settings-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-settings-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ServiceTitan Marketing Reputation API
-
-Retrieve aggregated customer reviews and reputation metrics across Google, Facebook, Yelp, BBB, and other connected review providers. Read-only API surfacing review text, ratings, sentiment, and response state.
-
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/marketingreputation/v2/{tenant}/`
-
-#### Tags
-
-- Marketing
-- Reputation
-- Reviews
-- Sentiment
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [Postman Collection](collections/servicetitan-accounting-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-accounting-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-crm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-crm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-dispatch-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-dispatch-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-equipment-systems-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-equipment-systems-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-inventory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-inventory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-jpm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-jpm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-pricebook-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-pricebook-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-settings-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-settings-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ServiceTitan Memberships API
-
-Manage membership types, customer memberships, membership invoice templates, recurring service types, and recurring service events. Drives the recurring revenue surface — maintenance agreements, club memberships, and annual tune-up plans.
-
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/memberships/v2/{tenant}/`
-
-#### Tags
-
-- Memberships
-- Recurring Services
-- Contracts
-- Subscriptions
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [Postman Collection](collections/servicetitan-accounting-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-accounting-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-crm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-crm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-dispatch-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-dispatch-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-equipment-systems-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-equipment-systems-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-inventory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-inventory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-jpm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-jpm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-pricebook-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-pricebook-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-settings-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-settings-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ServiceTitan Service Agreements API
-
-Manage commercial service agreements — contract terms, billed locations, line items, renewal cadence, and invoice generation rules. Used by commercial trades for multi-site recurring service contracts.
-
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/serviceagreements/v2/{tenant}/`
-
-#### Tags
-
-- Service Agreements
-- Contracts
-- Commercial
-- Renewals
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [Postman Collection](collections/servicetitan-accounting-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-accounting-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-crm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-crm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-dispatch-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-dispatch-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-equipment-systems-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-equipment-systems-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-inventory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-inventory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-jpm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-jpm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-pricebook-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-pricebook-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-settings-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-settings-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ServiceTitan Equipment Systems API
-
-Read and write installed equipment records per customer location — make, model, serial, install date, warranty terms, attachments, and equipment history. The asset-of-record API for HVAC, plumbing, electrical, and refrigeration trades.
-
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/equipmentsystems/v2/{tenant}/`
-
-#### Tags
-
-- Equipment
-- Installed Equipment
-- Assets
-- Field Service
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [OpenAPI](openapi/servicetitan-equipment-systems-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/servicetitan-equipment-systems-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-equipment-systems-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ServiceTitan Forms API
-
-Retrieve form definitions and field-completed form submissions including photos, signatures, checkbox values, and free-text responses. Used for safety checklists, equipment commissioning, compliance audits, and post-service surveys.
-
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/forms/v2/{tenant}/`
-
-#### Tags
-
-- Forms
-- Submissions
-- Compliance
-- Field Capture
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [Postman Collection](collections/servicetitan-accounting-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-accounting-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-crm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-crm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-dispatch-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-dispatch-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-equipment-systems-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-equipment-systems-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-inventory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-inventory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-jpm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-jpm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-pricebook-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-pricebook-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-settings-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-settings-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ServiceTitan Payroll API
-
-Manage payroll adjustments, gross-pay items, job splits, timesheet codes, activity codes, non-job timesheets, and payroll settings. Exports to ADP, Paychex, Gusto, Paylocity, and other downstream payroll providers.
-
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/payroll/v2/{tenant}/`
-
-#### Tags
-
-- Payroll
-- Timesheets
-- Adjustments
-- Compensation
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [Postman Collection](collections/servicetitan-accounting-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-accounting-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-crm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-crm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-dispatch-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-dispatch-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-equipment-systems-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-equipment-systems-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-inventory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-inventory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-jpm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-jpm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-pricebook-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-pricebook-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-settings-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-settings-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ServiceTitan Timesheets API
-
-Read and write timesheet entries, activity codes, and shift segments tying technician time to jobs, non-job activities, paid time off, and travel. Feeds the Payroll API and FieldRoutes reconciliation.
-
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/timesheets/v2/{tenant}/`
-
-#### Tags
-
-- Timesheets
-- Time Tracking
-- Activity
-- Payroll
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [Postman Collection](collections/servicetitan-accounting-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-accounting-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-crm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-crm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-dispatch-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-dispatch-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-equipment-systems-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-equipment-systems-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-inventory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-inventory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-jpm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-jpm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-pricebook-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-pricebook-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-settings-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-settings-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ServiceTitan Reporting API
-
-Run published custom reports with parameters and retrieve dynamic value sets used by report inputs. Lower rate limit than other surfaces — 1 of the same report per minute per tenant. Replaces fragile UI exports for BI pipelines.
-
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/reporting/v2/{tenant}/`
-
-#### Tags
-
-- Reporting
-- Analytics
-- Custom Reports
-- Beta
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [Postman Collection](collections/servicetitan-accounting-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-accounting-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-crm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-crm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-dispatch-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-dispatch-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-equipment-systems-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-equipment-systems-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-inventory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-inventory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-jpm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-jpm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-pricebook-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-pricebook-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-settings-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-settings-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ServiceTitan Sales & Estimates API
-
-Create and retrieve estimates, estimate items, and proposal templates. Backs the Proposal Builder feature used to convert leads into approved scopes of work — including good / better / best presentations from technicians in the field.
-
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/sales/v2/{tenant}/`
-
-#### Tags
-
-- Sales
-- Estimates
-- Quotes
-- Proposals
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [Postman Collection](collections/servicetitan-accounting-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-accounting-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-crm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-crm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-dispatch-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-dispatch-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-equipment-systems-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-equipment-systems-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-inventory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-inventory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-jpm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-jpm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-pricebook-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-pricebook-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-settings-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-settings-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ServiceTitan Customer Interactions API
-
-Submit and retrieve post-service technician ratings and customer feedback. Powers the "How did we do?" SMS / email flow that aggregates into Marketing Reputation.
-
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/customerinteractions/v2/{tenant}/`
-
-#### Tags
-
-- Customer Feedback
-- Technician Ratings
-- NPS
-- Surveys
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [Postman Collection](collections/servicetitan-accounting-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-accounting-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-crm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-crm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-dispatch-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-dispatch-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-equipment-systems-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-equipment-systems-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-inventory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-inventory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-jpm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-jpm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-pricebook-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-pricebook-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-settings-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-settings-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ServiceTitan Settings API
-
-Manage business units, employees, technicians, user roles, employee permissions, tag types, and tenant-wide settings. The tenant configuration surface for every other API in the platform.
-
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/settings/v2/{tenant}/`
-
-#### Tags
-
-- Settings
-- Business Units
-- Technicians
-- User Roles
-- Tenants
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [OpenAPI](openapi/servicetitan-settings-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/servicetitan-settings-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-settings-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ServiceTitan Task Management API
-
-Create, update, and resolve internal tasks, task types, sub-tasks, and task statuses. Used for office-to-field handoffs, escalations, and back-office workflows that aren't customer jobs.
-
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/taskmanagement/v2/{tenant}/`
-
-#### Tags
-
-- Tasks
-- Workflow
-- Internal Tickets
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [Postman Collection](collections/servicetitan-accounting-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-accounting-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-crm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-crm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-dispatch-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-dispatch-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-equipment-systems-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-equipment-systems-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-inventory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-inventory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-jpm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-jpm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-pricebook-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-pricebook-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-settings-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-settings-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ServiceTitan Telecom API
-
-Retrieve inbound and outbound call records, call recordings, call analytics, and call reasons. Powers Contact Center Pro reporting and Voice Agent transcript analysis.
-
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/telecom/v3/{tenant}/`
-
-#### Tags
-
-- Telecom
-- Calls
-- Voice
-- Contact Center
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [Postman Collection](collections/servicetitan-accounting-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-accounting-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-crm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-crm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-dispatch-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-dispatch-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-equipment-systems-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-equipment-systems-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-inventory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-inventory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-jpm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-jpm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-pricebook-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-pricebook-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-settings-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-settings-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ServiceTitan Scheduling Pro API
-
-Power online booking widgets — list configured schedulers, retrieve scheduler availability, create and update booking sessions. Backed by the Schedule Engine acquisition; required for customer-facing self-service scheduling.
-
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/schedulingpro/v2/{tenant}/`
-
-#### Tags
-
-- Scheduling Pro
-- Online Booking
-- Schedulers
-- Sessions
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [Postman Collection](collections/servicetitan-accounting-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-accounting-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-crm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-crm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-dispatch-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-dispatch-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-equipment-systems-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-equipment-systems-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-inventory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-inventory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-jpm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-jpm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-pricebook-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-pricebook-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-settings-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-settings-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ServiceTitan Job Booking & Capacity API
-
-Retrieve call reasons, job booking call reason metadata, capacity-aware booking windows, and recommended slot suggestions. Bridges Telecom call intake with JPM job creation.
-
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/jbce/v2/{tenant}/`
-
-#### Tags
-
-- Job Booking
-- Call Reasons
-- Capacity Estimation
-- Field Service
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [Postman Collection](collections/servicetitan-accounting-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-accounting-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-crm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-crm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-dispatch-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-dispatch-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-equipment-systems-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-equipment-systems-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-inventory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-inventory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-jpm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-jpm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-pricebook-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-pricebook-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-settings-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-settings-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### ServiceTitan Webhooks API
-
-Manage webhook subscriptions for customer, job, appointment, invoice, payment, and membership lifecycle events. V1 is closed to new subscriptions; V2 webhooks are in development. Polling-based change-tracking via `modifiedOnOrAfter` filters is the recommended interim pattern.
-
-- **Human URL:** [https://developer.servicetitan.io/api-details/](https://developer.servicetitan.io/api-details/)
-- **Base URL:** `https://api.servicetitan.io/webhooks/v1/{tenant}/`
-
-#### Tags
-
-- Webhooks
-- Events
-- Integration
-
-#### Properties
-
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [Postman Collection](collections/servicetitan-accounting-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-accounting-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-crm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-crm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-dispatch-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-dispatch-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-equipment-systems-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-equipment-systems-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-inventory-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-inventory-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-jpm-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-jpm-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-pricebook-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-pricebook-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/servicetitan-settings-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/servicetitan-settings-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/servicetitan)
-- [GitHub Organization](https://github.com/servicetitan)
-- [Portal](https://developer.servicetitan.io/)
-- [Getting Started](https://developer.servicetitan.io/docs/welcome/)
+- [Website](https://www.servicetitan.com/)
 - [Documentation](https://developer.servicetitan.io/docs/apis)
-- [Documentation](https://developer.servicetitan.io/api-details/)
-- [Documentation](https://developer.servicetitan.io/docs/get-going-environments/)
-- [Documentation](https://developer.servicetitan.io/docs/faqs-apis-app-keys-client-keys/)
-- [Portal](https://partnerapis.servicetitan.io/apis/)
-- [Getting Started](https://help.servicetitan.com/how-to/get-started-with-apidev-portal-v2)
-- [Rate Limits](https://help.servicetitan.com/problem-solution/what-are-the-default-api-rate-limits-in-servicetitan-for-regular-apis-and)
-- [Status Page](https://status.servicetitan.com/)
-- [Portal](https://www.servicetitan.com/)
-- [Documentation](https://www.servicetitan.com/products)
-- [Blog](https://www.servicetitan.com/blog)
-- [Blog](https://www.servicetitan.com/news)
-- [About Us](https://www.servicetitan.com/about-us)
-- [Case Studies](https://www.servicetitan.com/customer-stories)
-- [Careers](https://www.servicetitan.com/careers)
-- [Forum](https://community.servicetitan.com/)
-- [Privacy Policy](https://www.servicetitan.com/legal/privacy-policy)
-- [Terms of Service](https://www.servicetitan.com/legal/terms-of-service)
-- [Trust Center](https://www.servicetitan.com/trust)
+- [Getting started](https://developer.servicetitan.io/docs/welcome/)
 - [Pricing](https://www.servicetitan.com/pricing)
-- [Contact Info](https://www.servicetitan.com/contact)
-- [Partners](https://www.servicetitan.com/partners)
-- [Sign In](https://app.servicetitan.com/)
-- [Tool](https://github.com/servicetitan/request-middleware-templates)
-- [Tool](https://github.com/servicetitan/Stl.Fusion)
-- [Documentation](https://www.postman.com/api-evangelist/servicetitan)
-- [Marketplace](https://www.servicetitan.com/products/integrations)
-- [Documentation](https://www.servicetitan.com/products/conduit)
-- [Documentation](https://www.servicetitan.com/products/fieldroutes)
-- [Documentation](https://www.servicetitan.com/products/aspire)
-- [Documentation](https://www.servicetitan.com/products/convex)
-- [Documentation](https://www.servicetitan.com/products/atlas)
-- [Plans](plans/servicetitan-plans-pricing.yml)
-- [Rate Limits](rate-limits/servicetitan-rate-limits.yml)
-- [Fin Ops](finops/servicetitan-finops.yml)
-- [Vocabulary](vocabulary/servicetitan-vocabulary.yml)
-- [Spectral Rules](rules/servicetitan-rules.yml)
-- [Authentication](undefined)
-- [Environments](undefined)
-- [Features](undefined)
+- [Blog](https://www.servicetitan.com/blog)
+- [Trust centre](https://www.servicetitan.com/trust)
+- [Terms of service](https://www.servicetitan.com/legal/terms-of-service)
+- [Privacy policy](https://www.servicetitan.com/legal/privacy-policy)
+- [GitHub](https://github.com/servicetitan)
+- [Status](https://status.servicetitan.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** info@apievangelist.com
-**URL:** https://apievangelist.com
+**Kin Score 54.0** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.4 |
+| Contract quality | 55.1 |
+| Contract governance | 23.5 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 51.2 |
+| Access clarity | 68.4 |
+
+**Agent readiness 26.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | partial |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 39.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/servicetitan/](https://apis.io/providers/servicetitan/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for ServiceTitan: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/servicetitan/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
